@@ -63,7 +63,7 @@ cp -r skills/turkish-humanify ~/.claude/skills/
 
 `skills/turkish-humanify/SKILL.md` is a thin router: pick a mode, identify the
 register, pick a voice, run the layers, check, emit. Everything else lives in
-six reference files that are read at the moment they are used, because worked
+seven reference files that are read at the moment they are used, because worked
 before/after pairs are the instruction and a remembered summary of them is not.
 
 Default output is the text and nothing else — no preamble, no report. It

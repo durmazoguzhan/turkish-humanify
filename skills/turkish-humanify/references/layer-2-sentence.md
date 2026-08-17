@@ -396,7 +396,7 @@ once or twice across a blog or technical piece.
 
 ## 16. Sprinkling — how this layer fails
 
-The other fourteen sections tell you what to do. This one tells you how doing
+The other fifteen sections tell you what to do. This one tells you how doing
 it goes wrong, and it is not hypothetical: in a blind comparison, judges who
 did not know a skill was involved diagnosed exactly this in output produced by
 these rules.
@@ -477,7 +477,8 @@ to a target, stop — the count is a ceiling, never a quota.
 
 ## Reading the layer as a whole
 
-These fourteen are not a checklist to run top to bottom. Two of them —
+The first fourteen sections are the divergences; §15 is a device and §16 is how
+the whole layer fails. None of them is a checklist to run top to bottom. Two —
 branching direction and the converb system — account for most of what makes
 machine Turkish feel machine-made, because both are about how clauses attach to
 each other, which is the level at which English structure survives translation

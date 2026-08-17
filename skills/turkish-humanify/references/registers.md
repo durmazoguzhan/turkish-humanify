@@ -70,8 +70,11 @@ named unprompted:
 > "maddeleri paragrafa eritmesi … insan elinden çıkmış gibi değil, düzleştirilmiş gibi okunuyor"
 > "tüm katalogu tek cümleye noktalı virgüllerle sıkıştırıyor … bu Türkçede kimsenin kurmadığı bir cümle"
 
-Both were losses in the blind comparison, and corporate is the only register this
-skill loses. Keep the list, fix what is inside it.
+Both were losses in the blind comparison. Keep the list, fix what is inside it.
+
+**This worked, and the number is worth carrying.** Corporate was 2–3 with the
+conversion on and is **4–1** with it off, against an unchanged competitor. It is
+no longer the register this skill loses; academic is, at 3–2.
 
 ### academic / official
 Conventions are binding and deviation costs credibility. Journal articles,
@@ -101,7 +104,8 @@ the claims got stronger than their source. A reviewer would flag it.
 two ends. Measured across five Turkish journal articles published between 2015
 and 2019 — early enough that none of them can be model output — `-mAktAdIr` runs
 **0.4 to 2.3 per 100 words** (median 1.6) and the `-DIr` copula runs **2.3 to
-4.0**. The articles are in `evals/human-reference/`.
+4.0**. The articles are in `evals/human-reference/` in the
+project repository: https://github.com/durmazoguzhan/turkish-humanify/blob/master/evals/human-reference
 
 Both ends are live failures, not hypotheticals:
 

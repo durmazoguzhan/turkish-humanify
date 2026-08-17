@@ -37,7 +37,8 @@ additions across twenty-one repair inputs. Keep it here; do not carry it across.
 test rewards fabrication, because inventing the writer's experience is the
 fastest route to sounding like a writer. Four independent judges preferred a
 competing text specifically for three invented sentences. Fidelity outranks that
-test; see `evals/RESULTS.md`.
+test; see `evals/RESULTS.md` in the project repository
+(https://github.com/durmazoguzhan/turkish-humanify/blob/master/evals/RESULTS.md).
 
 ---
 
