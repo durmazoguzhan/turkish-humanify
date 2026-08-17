@@ -717,6 +717,78 @@ written to cover the examples that had been looked at.
   file remains unwinnable without lying, and the fidelity result above is the
   reason we do not.
 
+---
+
+## Round six — the rest of the academic objection, tested
+
+Round five left two of the judges' three academic complaints unchecked. Both are
+now checked, and the reference corpus settles them differently.
+
+### Nominalisation: not a defect
+
+Verbal nouns carrying a further suffix (`-mA` + possessive/case, `-mAK` + case)
+plus `-lIk` abstract nouns, per 100 words:
+
+| | range |
+|---|---|
+| published Turkish journal articles, 2015–2019 | 4.64 – 8.55 |
+| **ours, v9 academic** | **4.50 – 8.52** |
+| competitor, academic | 2.96 – 7.00 |
+
+We sit inside the published band; the competitor sits below its floor in three
+of five files. The two files we lost measure 7.00 and 8.52, against a published
+ceiling of 8.55. So this objection goes the same way the semicolon one did: the
+judges named a feature that published Turkish academic prose has.
+
+The measure is a floor, not a census — it cannot see `-Iş` nominals or
+noun-noun compounding, so the real rate is higher than these numbers in every
+column equally.
+
+### Paragraph length: a real defect, in exactly one file
+
+This one is confirmed, and it is ours.
+
+| file | source | ours | competitor |
+|---|---|---|---|
+| `academic-1` | 71 w/para, 5 paragraphs | **51 w, 7 paragraphs** | 60 w |
+| `academic-2` | 51 | 50 | 44 |
+| `academic-3` | 63 | 63 | 53 |
+| `academic-4` | 46 | 46 | 48 |
+| `academic-5` | 72 | 72 | 70 |
+
+Four of five are returned untouched, which is the register working. `academic-1`
+is not: the skill split two paragraphs in a register whose dosage sets the
+structure layer to **off**, and the judge named that specific thing while
+choosing the other text — *"B aynı içeriği sekiz kısa bloğa bölmüş … İngilizce
+web yazısı formatına benziyor"*.
+
+**The rule's own limit did not mention the register.** `layer-1-structure.md` §2
+tells you to break a paragraph where the text turns, and its "where it stops"
+named only procedural writing. The dosage table said off; the rule did not say
+so where the rule is read. Fixed by naming academic in §2.
+
+A caution about the earlier attempt at this measurement: paragraph length across
+the *full* article bodies reads 14, 49, 54, 106 and 274 words, which looks like
+a finding and is not one — those numbers are an artefact of the reflow scripts
+used to extract the PDFs, which produced different paragraph granularity per
+file. Only the hand-checked excerpts are usable here. Same lesson as the `len_sd`
+episode: a number computed through a pipeline you built is a number about the
+pipeline until you check it.
+
+### Pre-registered, before running anything
+
+The fix touches one register and, on this corpus, can only move one file.
+
+| outcome | reading |
+|---|---|
+| academic ≥ 4–1 and `academic-1` flips | the dosage violation was the cause on that file |
+| academic stays 3–2 | the paragraph split was not why `academic-1` lost, and the remaining cause is unidentified |
+| academic worse than 3–2 | the fix broke a file it should not have touched; revert |
+
+**This is weak evidence by construction and is recorded as such**: one file can
+change, so the round can confirm a mechanism but cannot establish a size. The
+value is the check that the other four are not disturbed.
+
 ## What this does not establish
 
 Twelve texts, one model, one afternoon, and judges that are themselves language

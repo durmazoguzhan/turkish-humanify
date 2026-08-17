@@ -74,6 +74,15 @@ guide — genuinely wants uniform paragraphs, because the reader is scanning for
 their step and irregular rhythm makes that harder. Do not break a structure
 that is doing work.
 
+**And it stops entirely in academic register**, where `registers.md` sets the
+structure layer to **off**. This rule broke that once, measurably: on
+`academic-1` the source had five paragraphs and the output had seven, and the
+blind judge named it — *"B aynı içeriği sekiz kısa bloğa bölmüş … B'nin
+bölünmüş yapısı İngilizce web yazısı formatına benziyor"* — while choosing the
+other text. Turkish journal prose runs long paragraphs and a reader of it
+expects them. In academic and official registers the paragraph you are given is
+the paragraph you return.
+
 ---
 
 ## 3. The closing
