@@ -70,25 +70,40 @@ explains what it changed only when asked.
 
 ## Evidence
 
-Every claim above is checkable in this repository. `evals/` holds twelve
+Every claim above is checkable in this repository. `evals/` holds twenty-one
 baseline texts of unaided model Turkish, produced by clean-context subagents
 given ordinary short prompts, plus excerpts of published Turkish writing for
-calibration. `evals/count.sh` measures what can be measured; `evals/rubric.md`
-says what it cannot.
+calibration — including five Turkish journal articles published between 2015 and
+2019, early enough that none of them can be model output. `evals/count.sh`
+measures what can be measured; `evals/rubric.md` says what it cannot, and lists
+the six counting bugs found so far, each of which had already produced a
+confident wrong finding.
 
-`evals/RESULTS.md` records a three-way comparison against
+**Repair mode.** `evals/RESULTS.md` records a three-way comparison against
 [`turkce-humanizer`](https://github.com/bushrabeg/turkce-humanizer). Read it
 before believing anything here. The short version:
 
 - Against unaided model Turkish, both skills win clearly. Raw output never took
   first place in twelve blind rankings and came last nine times.
-- Against `turkce-humanizer` on reading quality, **it is a tie** — six firsts
-  each. This project does not claim to write better Turkish than that skill.
-- On fidelity it is not a tie: zero added claims here against twenty-three
-  there, including one misstatement of what a cited theory says.
+- Against `turkce-humanizer` on reading quality: **15–6 across twenty-one files**,
+  p=0.039. Discounted in that file rather than claimed, because the same twelve
+  files that once scored 6–6 now score 7–5, so almost all of the signal comes
+  from the nine files added in the same round.
+- On fidelity it is not close: zero added claims here across twenty-one files
+  against twenty-three across nine there, including one misstatement of what a
+  cited theory says.
 - `turkce-humanizer` preserves document structure exactly, by design. If you
   are repairing a document whose skeleton must survive — a form, a
   specification, a template — that behaviour is better than this one's.
+
+**Write mode.** `evals/RESULTS-write.md` records the same twelve prompts run with
+and without the skill, the no-skill arm held byte-identical between rounds:
+**11–1, p=0.0032**, up from 7–5 (p=0.387) before the mode split. Corporate is the
+one register it still loses.
+
+One caveat that applies to the repair figure and not the write one: it was
+measured before `references/rewrite-mode.md` became its own file, so it describes
+the skill one revision back and has not been re-run since the split.
 
 The most useful thing the evaluation produced is a warning about evaluation
 itself: a blind "which reads more human" test **rewards fabrication**, because
