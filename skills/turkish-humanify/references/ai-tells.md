@@ -71,3 +71,29 @@ but a repair pass that finds only those has not found the problem.
 
 If a text shows none of the common tells, say so and change little. Rewriting
 a text that was already fine is a failure mode too, and a quieter one.
+
+---
+
+## Do not flag these
+
+A repair pass that cuts everything on this list will make the text worse. Check
+against it before starting.
+
+- **Clean grammar and correct punctuation.** Machine text is usually correct.
+  Correctness is not the tell.
+- **A single em dash used as a range**: `04.30–05.00`, `Nisan–haziran`,
+  `MÖ 738 – MÖ 696`. Correct Turkish.
+- **Semicolons.** The Turkish semicolon is legitimate. Only the English
+  `; and` chain grates.
+- **`-DIr` in a definition, a specification, a standard, or a legal clause**,
+  and **`-mektedir` in academic register**. Both are the register working.
+- **The passive in a methods section.** A convention of the form.
+- **One short sentence.** Length variance means variance, and a short sentence
+  is half of it.
+- **Formal vocabulary in a formal text.** An academic abstract is supposed to
+  sound like one.
+- **Bullets that are genuinely a list** — prices, hours, prerequisites, an
+  ordered procedure.
+- **Bold on the one warning that prevents data loss**, or on a landing page's
+  single primary action.
+- **A text that already reads well.** The correct output is then the input.

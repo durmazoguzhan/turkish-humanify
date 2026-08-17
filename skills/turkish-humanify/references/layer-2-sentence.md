@@ -336,6 +336,87 @@ makes it read as an unpublishable draft.
 
 ---
 
+## 15. Sprinkling — how this layer fails
+
+The other fourteen sections tell you what to do. This one tells you how doing
+it goes wrong, and it is not hypothetical: in a blind comparison, judges who
+did not know a skill was involved diagnosed exactly this in output produced by
+these rules.
+
+> "bunlar sonradan uygulanmış devrik dokunuşlar gibi duruyor; iskelet neredeyse birebir aynı kalmış"
+> "samimiyet sonradan serpiştirilmiş gibi duruyor"
+> "'Ne o olur, ne bu.' zaten söyleneni tekrar eden, yerine oturmamış bir deyim eklentisi"
+> "'Peki hangisi doğru? …' kalıbı yapay bir soru-cevap tikine benziyor"
+
+Every one of those is a device from this file, applied where it was not doing
+work. The reader does not experience them as voice; they experience them as
+retouching.
+
+### The bookend failure
+
+A machine draft opens with a personal note, goes impersonal for the middle
+eighty percent, and closes with a flourish. Applying this layer only to the
+first and last paragraphs reproduces that shape exactly — and it is worse than
+applying nothing, because the contrast between the lively edges and the flat
+middle is itself the tell.
+
+If the sixth paragraph reads the same as the input's sixth paragraph, the layer
+did not run. Check the middle first.
+
+### The test for any device
+
+Delete it. If the sentence loses nothing, it was decoration and it goes.
+
+An inversion must be carrying emphasis onto the fronted element. A particle
+must be marking a real contrast or a real return to something. A `-mIş` must be
+marking that the writer did not witness it. A short sentence must be short
+because that is how long the thought is.
+
+### Over-application tells
+
+These are what this layer produces when it is applied by quota. Each is the
+Turkish form of a pattern that reads as machine-written in any language.
+
+**Staccato fragments.** §13 asks for length variance. Variance is not a
+drumbeat of three-word sentences.
+
+> Fazla: Hata yok. Uyarı yok. Her şey yeşil.
+> İyi: Ne hata vardı ne uyarı; her şey yolunda görünüyordu.
+
+**Bumper-sticker aphorisms.** A compressed maxim standing in for the
+explanation.
+
+> Fazla: Göremediğin şeyi düzeltemezsin.
+> İyi: İsteğin nerede takıldığını göremiyorsan, tahmin ediyorsun demektir.
+
+**Three-beat reveals.** Two negations and a punchline.
+
+> Fazla: Config sorunu değildi. Kod hatası değildi. Deploy eskiydi.
+> İyi: Ne config sorunuydu ne de kod hatası; deploy eskiydi.
+
+**Smug simplicity.** Ending on a self-congratulating flourish.
+
+> Fazla: [kod] Bu kadar. Hepsi bu.
+> İyi: [kod] sonra kodun ne yaptığını anlat, ya da hiçbir şey deme.
+
+**Parallel ad copy.** Two symmetrical clauses that sound like a slogan.
+
+> Fazla: Metrikler neyin bozulduğunu söyler, trace'ler nedenini.
+> İyi: Metrikler neyin bozulduğunu gösteriyor ama nedenini asıl trace'lerde buluyorsun.
+
+**Manufactured question-and-answer.** A question the writer immediately answers,
+used as a rhythm trick rather than because the reader would ask it.
+
+> Fazla: Peki hangisi doğru? Ekibinize bağlı.
+> İyi: Doğru cevap ekibinizin geçmişten ne beklediğine bağlı.
+
+### Density
+
+In blog register, across a whole piece: two or three inversions, a handful of
+particles, `-mIş` wherever the content is genuinely non-witnessed. In technical
+register, roughly half that and no inversion. If you find yourself counting up
+to a target, stop — the count is a ceiling, never a quota.
+
 ## Reading the layer as a whole
 
 These fourteen are not a checklist to run top to bottom. Two of them —

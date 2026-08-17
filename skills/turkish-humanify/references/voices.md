@@ -30,6 +30,8 @@ checked.
 ### `senli-benli anlatıcı`
 Travel and lifestyle blogging. The default voice for blog register.
 
+*Who is speaking:* someone who just got back and is telling you about it across a table, not writing it up.
+
 address **sen** · length short, wide swing · linkage converb and sentence break ·
 mood `-DI` and `-mIş`, aorist for asides · particles **frequent** ·
 terminology established Turkish · inversion frequent · paragraphs uneven ·
@@ -42,6 +44,8 @@ concreteness high — real place names, real prices
 
 ### `teknik anlatıcı`
 An engineer explaining to a peer, not to a beginner and not to a manager.
+
+*Who is speaking:* the colleague who debugged this at 2am last month and is saving you the same night.
 
 address **biz / impersonal, occasional sen** · length medium, moderate swing ·
 linkage converb and semicolon · mood aorist and `-yor` · particles **sparse** ·
@@ -56,6 +60,8 @@ concreteness high — commands, numbers, failure modes
 A thinking first person. Essay register, and the voice to reach for when the
 piece has a turn in it rather than a list.
 
+*Who is speaking:* someone working out what they think while writing, and willing to let you watch.
+
 address **ben** · length wide swing, deliberately · linkage sentence break ·
 mood `-DI` and aorist, `-mIş` for things realised later · particles sparse but
 placed · terminology either, consistently · inversion two or three per piece ·
@@ -68,6 +74,8 @@ moderate — one concrete image carrying an abstract point
 
 ### `kurumsal ama insan`
 A brand addressing `siz`. Short, committed, no inflated adjectives, no emoji.
+
+*Who is speaking:* the founder answering a customer's email personally, because the company is still small enough that they do.
 
 address **siz** · length short, low swing · linkage sentence break · mood
 `-yor` and aorist · particles none · terminology established Turkish ·
@@ -82,6 +90,8 @@ hours, what actually happens next
 Academic and official. Impersonal but correct and fluent — the goal here is
 not personality, it is prose that does not fight its reader.
 
+*Who is speaking:* nobody, deliberately — but a nobody who has been edited by someone competent.
+
 address **impersonal** · length long, moderate swing · linkage semicolon and
 `-mektedir` chains · mood `-mektedir` and `-DIr` · particles none ·
 terminology established Turkish, English in parentheses on first use ·
@@ -92,6 +102,72 @@ and defined terms
 > Ampirik alanyazın tek yönlü bir tablo sunmamaktadır.
 
 ---
+
+## Where voice comes from — and where it must not
+
+This is the most important rule in this file, and it exists because of a
+measured result.
+
+In a blind comparison, a judge ranked one text first and named three sentences
+as proof a human wrote it: *"Aşağıdaki rotayı biz de yürüdük"*, *"Bizde kalan,
+sabahın köründe vadiye çöken o sessizlik oldu"*, *"Adı katedral, aslı
+manastır"*. None of the three was in the source. A voice had been manufactured
+by inventing the writer's experience.
+
+The judge was not wrong that those sentences read as human. **That is the
+problem.** Inventing first-person experience is the fastest available route to
+sounding like a person, which means a "does this read as human" test can be won
+by lying, and a skill that optimises for it will learn to lie.
+
+**Voice comes from stance toward material that is already there.** Not from
+new material.
+
+Available, always:
+
+- **Ordering** — what you put first, what you make the reader wait for
+- **Emphasis** — which of the source's own points gets the preverbal slot
+- **Hedging** — *sanırım*, *bana kalırsa*, *galiba*, *bildiğim kadarıyla*, where
+  the source's own claim is genuinely uncertain
+- **Admitting difficulty** — *burası kolay değil*, *bunu ilk okuduğumda
+  anlamamıştım*, where the material really is hard
+- **Self-correction** — see below
+- **Register and address** — the nine dimensions above
+
+Forbidden, always:
+
+- A first-person experience the source does not report: *biz de gittik*, *bizde
+  kalan*, *denedim*, *başıma geldi*
+- A fact, name, date, number or causal explanation the source does not contain
+- Turning the source's advice to the reader into the writer's own decision:
+  source *"turu ikinci güne koymak akıllıca"* → output *"turu neden ikinci güne
+  koyduk?"* is a fabrication, not a rewrite
+
+**In write mode there is a third option, and it is the right one.** If the
+piece needs concrete detail it does not have — a number, an example, a real
+case — go and find it, or ask the user for it. Do not fill the gap by
+inventing. Concrete detail is genuinely what makes prose feel written by a
+person; the honest way to get it is to acquire it.
+
+### Self-correction
+
+The device the blind judges rewarded most consistently is the writer visibly
+revising mid-sentence: *"Daha doğrusu, …"*, *"Ya da şöyle demek daha doğru
+olur"*, *"Ya da değildi, bilmiyorum"*, *"Ya da daha dikkatli söyleyelim, …"*.
+
+It works because it shows someone thinking rather than reciting.
+
+> AI: Silme işlemi idempotenttir, bu yüzden tercih edilir.
+> İnsan: Silme idempotent olduğu için tercih ediliyor. Daha doğrusu, güncellemek de çalışır; ama yanlış gittiğinde sessizce yanlış gider.
+
+**The limit, and it is strict.** The correction must correct something. Judges
+penalised it exactly as often as they rewarded it when it did not: *"hiçbir
+düzeltme getirmeyen 'Ya da şöyle demek daha doğru olur' ara cümlesi"*, *"araya
+sıkıştırılmış, akışı bozan yapay bir samimiyet eki"*. And the corrected version
+must still be a claim the source makes — narrowing or qualifying what is there,
+never adding.
+
+At most once or twice in a piece. It is a hesitation, and a writer who
+hesitates in every paragraph is not thinking, they are performing.
 
 ## Extracting the user's own voice
 

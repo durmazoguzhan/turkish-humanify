@@ -29,6 +29,12 @@ it lands. Then write with the sentence rules already in force. A piece drafted
 in English shape and cleaned afterwards keeps its English skeleton, and the
 skeleton is the thing the reader feels.
 
+**If the piece needs concrete detail you do not have — a number, a real
+example, a case — find it or ask the user for it.** Do not invent it. Specific
+detail is what makes prose read as written by a person, and that is exactly why
+inventing it is the tempting failure. Research is the honest route to the same
+effect.
+
 ## 2. Identify the register
 
 | Register | How to recognise it |
@@ -82,6 +88,21 @@ Silently, without reporting it:
   sentence layer did not run.
 - Count the bold spans and the bullet lines. If they came through unchanged
   from a text that had many, the structure layer did not run either.
+- **Read the middle third alone.** If it is indistinguishable from the input's
+  middle third, the work landed only on the opening and closing — which is the
+  shape of a machine draft, not a repair of one.
+- **Delete-test every device you added.** Each inversion, particle and short
+  sentence: remove it and see whether anything is lost. If nothing is, it was
+  decoration and it goes.
+
+### The bar
+
+Would a Turkish editor publish this without touching it?
+
+Not "is it grammatical" and not "does it sound human" — the second question can
+be passed by inventing an experience the writer never had, which is forbidden
+and which a blind reader will reward anyway. The editor test is the useful one
+because an editor notices both the tics and the padding.
 
 ## 6. Emit
 

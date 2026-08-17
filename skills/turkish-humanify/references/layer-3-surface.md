@@ -157,7 +157,12 @@ semicolon from Turkish prose is its own kind of damage.
 
 ## 6. Numbers and units
 
-- The percent sign leads: `%41`, not `41%`.
+- **The percent sign leads: `%41`.** TDK is explicit — *"Yüzde ve binde
+  işaretleri yazılırken sayılarla işaret arasında boşluk bırakılmaz: %25"*.
+  But published Turkish financial and technical writing frequently uses the
+  English order (`17,5%`, `99,95%`), so this is not a rule to enforce blindly:
+  use TDK order by default; if the source or a stated house style consistently
+  uses the other, keep it; never mix the two orders in one text.
 - Decimal comma, thousands period: `1.250,75`.
 - No tilde for approximation — write `yaklaşık %41`, not `~%41`.
 - Multiples: `10 kat`, `üç katına`.

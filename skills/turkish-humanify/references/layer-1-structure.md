@@ -58,6 +58,17 @@ allowed and is often where the piece turns.
 >
 > Üçü de para değil, dikkat istiyor. İşin ciddiye alınacak tarafı da burası zaten, ekipman değil.
 
+**Break the paragraph where the text turns.** When a sentence introduces the
+contrast — `ama`, `ancak`, `oysa`, `fakat`, `buna karşılık`, `öte yandan` —
+start a new paragraph there instead of burying the turn mid-block. The break
+does the emphasis work that a reader scrolling will actually see.
+
+> AI: Klasik izleme istek sayısını ve gecikmeyi takip eder. Durumsuz HTTP servisleri için bu yeterlidir. AI ajanları ise farklıdır. Tek bir çalıştırma birden fazla LLM çağrısı, araç yürütmesi ve devir içerebilir.
+>
+> İnsan: Klasik izleme istek sayısını ve gecikmeyi takip eder. Durumsuz HTTP servisleri için bu yeterli.
+>
+> AI ajanları ise başka. Tek bir çalıştırmada birden fazla LLM çağrısı, araç yürütmesi ve devir olabiliyor.
+
 **Where it stops.** Procedural writing — a runbook, a recipe, a migration
 guide — genuinely wants uniform paragraphs, because the reader is scanning for
 their step and irregular rhythm makes that harder. Do not break a structure
@@ -176,6 +187,27 @@ style. And in reference documentation, noun-phrase headings are usually better
 than sentence headings, because they are what a reader scans for.
 
 ---
+
+## 8. The writer must be present in the middle
+
+The most reliable shape of a machine draft is not any single sentence. It is
+the distribution: a personal note in the opening, eighty percent of impersonal
+body, then a closing flourish. Voice at the edges and nothing in between.
+
+Applying layers 1 and 2 to the opening and the closing reproduces that shape
+precisely, and the contrast between lively edges and a flat middle is louder
+than having no voice at all.
+
+> AI: [kişisel bir açılış] → [sekiz paragraf kişisiz açıklama] → [duygusal bir kapanış]
+> İnsan: the same first person keeps interrupting — *"burası beni de yanıltmıştı"*, *"ben olsam önce şuraya bakardım"*, *"bunu anlatınca insanlar genelde gülüyor"* — in paragraph four and paragraph seven, not only in one and nine.
+
+**How to check.** Read the middle third alone, with the opening and closing
+covered. If it is indistinguishable from the input's middle third, the layers
+did not run where it counts.
+
+**Where it stops.** Academic and official registers put the writer nowhere,
+including the edges, and that is correct for them. This section applies where
+a voice is permitted at all — and there, it must be permitted throughout.
 
 ## Reading the layer as a whole
 
