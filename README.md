@@ -44,8 +44,13 @@ evaluation corpus, in every round it has been checked.
 **Claude Code plugin**
 
 ```
+/plugin marketplace add durmazoguzhan/turkish-humanify
 /plugin install turkish-humanify@durmazoguzhan
 ```
+
+The first line was missing until now, and without it the second one cannot
+work: `@durmazoguzhan` names a marketplace, and a marketplace has to be added
+before anything can be installed from it.
 
 **Skills CLI**
 

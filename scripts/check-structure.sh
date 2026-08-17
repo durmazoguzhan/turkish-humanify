@@ -12,6 +12,8 @@ check 'node -e "JSON.parse(require(\"fs\").readFileSync(\".claude-plugin/plugin.
 check '[ "$(node -p "require(\"./.claude-plugin/plugin.json\").name")" = turkish-humanify ]' \
                                                           "plugin name is turkish-humanify"
 check '[ -d skills/turkish-humanify/references ]'         "skill directory exists"
+check '[ -f .claude-plugin/marketplace.json ]'            "marketplace manifest exists"
+check 'python3 -c "import json,sys; json.load(open(\".claude-plugin/marketplace.json\"))"' "marketplace manifest is valid JSON"
 check '[ -f LICENSE ]'                                    "LICENSE exists"
 check '[ -f README.md ]'                                  "README exists"
 

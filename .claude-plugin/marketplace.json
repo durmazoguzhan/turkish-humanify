@@ -1,0 +1,20 @@
+{
+  "name": "durmazoguzhan",
+  "owner": {
+    "name": "Oguzhan Durmaz",
+    "url": "https://github.com/durmazoguzhan"
+  },
+  "description": "Turkish-language writing skills",
+  "plugins": [
+    {
+      "name": "turkish-humanify",
+      "source": "./",
+      "description": "Writes and repairs Turkish that reads as human-written: native sentence architecture, register-aware intervention, and technical terms left intact",
+      "author": {
+        "name": "Oguzhan Durmaz"
+      },
+      "category": "writing",
+      "tags": ["turkish", "turkce", "writing", "localization"]
+    }
+  ]
+}
