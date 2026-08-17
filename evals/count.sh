@@ -83,11 +83,17 @@ for src in "$@"; do
               printf "%d %.1f %.1f\n", s, m, sqrt(d / s) }'
   )
 
-  # Only a space-flanked dash that does not follow a digit counts. A dash
+  # Only a space-flanked dash with a digit on neither side counts. A dash
   # inside a range is correct Turkish and is not the calqued explanatory dash
   # this signal looks for — whether written tight (04.30–05.00, Nisan–haziran)
-  # or spaced (MÖ 738 – MÖ 696).
-  em_dash=$(count_re '[^0-9] [—–] ' "$f")
+  # or spaced (MÖ 738 – MÖ 696, 15 Aralık – 2 Ocak).
+  #
+  # The trailing [^0-9] was added on 2026-08-17. Without it, a range whose left
+  # side ends in a word ("15 Aralık – 2 Ocak") was counted as an explanatory
+  # dash, and round five briefly reported a hard-rule violation that was not
+  # one. The first version of this exclusion covered only the cases that had
+  # been looked at, which is how the previous six counting bugs also happened.
+  em_dash=$(count_re '[^0-9] [—–] [^0-9]' "$f")
   # Vowel harmony gives two forms of this suffix and the count needs both.
   # This regex read '(mekte|makta)dır' until 2026-08-17, which matched only the
   # back-vowel -maktadır and silently missed every -mektedir — the form the

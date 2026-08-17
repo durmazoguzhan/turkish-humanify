@@ -36,7 +36,8 @@ English term still inflects from its **pronunciation**, not its spelling —
 `cache'i`, `SQL'i`, `JSON'ı`, `queue'yu`.
 
 **It never adds anything.** No number, name, date or claim that is not in the
-source. Measured: zero additions across the twelve-text evaluation corpus.
+source. Measured: zero additions across all twenty-one texts of the
+evaluation corpus, in every round it has been checked.
 
 ## Install
 
@@ -76,7 +77,7 @@ given ordinary short prompts, plus excerpts of published Turkish writing for
 calibration — including five Turkish journal articles published between 2015 and
 2019, early enough that none of them can be model output. `evals/count.sh`
 measures what can be measured; `evals/rubric.md` says what it cannot, and lists
-the six counting bugs found so far, each of which had already produced a
+the seven counting bugs found so far, each of which had already produced a
 confident wrong finding.
 
 **Repair mode.** `evals/RESULTS.md` records a three-way comparison against
@@ -85,25 +86,26 @@ before believing anything here. The short version:
 
 - Against unaided model Turkish, both skills win clearly. Raw output never took
   first place in twelve blind rankings and came last nine times.
-- Against `turkce-humanizer` on reading quality: **15–6 across twenty-one files**,
-  p=0.039. Discounted in that file rather than claimed, because the same twelve
-  files that once scored 6–6 now score 7–5, so almost all of the signal comes
-  from the nine files added in the same round.
-- On fidelity it is not close: zero added claims here across twenty-one files
-  against twenty-three across nine there, including one misstatement of what a
-  cited theory says.
+- Against `turkce-humanizer` on reading quality: **16–5 across twenty-one
+  files**, two-sided sign test p=0.027, with the competitor's outputs held
+  byte-identical so that the only thing that moved was this skill.
+- On fidelity it is not close: **zero added claims across twenty-one files**
+  here, against twenty-three across nine there, including one misstatement of
+  what a cited theory says.
+- One file, `blog-1`, has now lost five times to the same three invented
+  sentences. It is not winnable without fabricating, so it stays lost.
 - `turkce-humanizer` preserves document structure exactly, by design. If you
   are repairing a document whose skeleton must survive — a form, a
   specification, a template — that behaviour is better than this one's.
 
 **Write mode.** `evals/RESULTS-write.md` records the same twelve prompts run with
 and without the skill, the no-skill arm held byte-identical between rounds:
-**11–1, p=0.0032**, up from 7–5 (p=0.387) before the mode split. Corporate is the
-one register it still loses.
+**11–1, p=0.0032**, up from 7–5 (p=0.387) before the mode split.
 
-One caveat that applies to the repair figure and not the write one: it was
-measured before `references/rewrite-mode.md` became its own file, so it describes
-the skill one revision back and has not been re-run since the split.
+Both figures come from `evals/repair-protocol.md`, which fixes the generation
+wrapper, the judge prompt, the randomisation and the fidelity check so that
+rounds are comparable to each other. It exists because the first four rounds
+described their procedure in prose and never committed it.
 
 The most useful thing the evaluation produced is a warning about evaluation
 itself: a blind "which reads more human" test **rewards fabrication**, because
@@ -128,7 +130,7 @@ Layer 3 is entirely local.
 
 Two things are worth copying whatever the language. Build the measuring
 instrument before the corpus, and calibrate it against published writing in
-that language — in this project that check caught four separate bugs, each of
+that language — in this project that check caught seven separate bugs, each of
 which had already produced a confident wrong finding. And decide in advance
 what beats what, in writing, before you see any results.
 

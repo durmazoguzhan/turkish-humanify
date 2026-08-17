@@ -23,6 +23,16 @@
   both — the register's characteristic present tense and copula are absent, not
   merely sparse.
 
+### Repair mode re-measured after the split
+
+- Round five in `evals/RESULTS.md`: **16-5 against `turkce-humanizer` across
+  twenty-one files**, two-sided p=0.027, competitor arm held byte-identical.
+  Corporate went from 2-3 to 4-1 and is no longer the register this skill loses;
+  academic went from 5-0 to 3-2.
+- Fidelity: zero added claims across all twenty-one outputs.
+- `evals/repair-protocol.md` and `evals/pair.sh` commit the procedure that four
+  earlier rounds only described.
+
 ### Fixed
 
 - `count.sh` matched `-mektedir` with `(mekte|makta)dır`, which sees only the
@@ -38,6 +48,10 @@
   each paragraph onto one line before splitting.
 - `ve_p` matched ` ve ` and so missed every `ve` sitting next to a line break or
   a sentence start; now `\b[Vv]e\b`. 16 files change.
+- `em_dash` counted date ranges whose left side ends in a word ("15 Aralık – 2
+  Ocak"), because the range exclusion only skipped a dash preceded by a digit.
+  It now requires a non-digit on both sides. Round five briefly reported a
+  hard-rule violation that was not one.
 - Neither moves a conclusion: `len_sd` still fails to separate unaided from
   published non-academic Turkish (5.6 against 5.6), and the prose-language arms
   stay indistinguishable. The fixture now carries a wrapped sentence and a

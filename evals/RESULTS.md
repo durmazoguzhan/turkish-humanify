@@ -255,6 +255,14 @@ Under a fair coin, the probability of 15 or more out of 21 in one direction is
 **0.039**. This is the first round in this project that clears conventional
 significance rather than landing in noise.
 
+> **Correction, added after round five.** The 0.039 is right and is correctly
+> described as one-directional, but the sentence after it is not. The
+> conventional test here is two-sided, and two-sided this is **p = 0.078** — it
+> does not clear 0.05. Round three was the first round to point clearly in one
+> direction; it was not the first to clear significance. `repair-protocol.md`
+> now fixes the two-sided sign test as the reported statistic so this cannot
+> drift again.
+
 By register:
 
 | register | ours | competitor |
@@ -561,6 +569,153 @@ the answer conditions fixed in advance:
 
 The failure mode being guarded against is the obvious one: finding the mechanism
 in the results because it was the thing being looked for.
+
+---
+
+## Round five — the result
+
+Run as registered above. Twenty-one inputs, our arm regenerated into
+`evals/output/v9/`, the competitor arm untouched, order re-randomised by
+`evals/pair.sh`, twenty-one clean-context judges.
+
+### Fidelity first, because it outranks the ranking
+
+| | files with additions | total additions |
+|---|---|---|
+| `turkish-humanify` v9 | **0 of 21** | **0** |
+
+Twenty-one independent checks, each asked to list every number, name, date,
+place, causal claim and experience assertion present in the output and absent
+from the source. Nothing, anywhere, in any register. Several checkers flagged
+borderline items on their own initiative and then ruled them out — a title
+lifted verbatim from the body, a hedge made explicit, an agentless passive given
+the first person the surrounding narration already established. The one case
+worth naming is `blog-6`, where the rewrite inserts *"Daha doğrusu verirdi de,
+yazılacak gibi değildi"*: a self-correction, and the checker's judgement was that
+it restates the two sentences immediately after it rather than adding to them.
+That is the `voices.md` device operating inside its stated limit.
+
+### The tally
+
+| | ours | competitor |
+|---|---|---|
+| **all 21 files** | **16** | 5 |
+
+Two-sided sign test: **p = 0.027**.
+
+| register | round three | **round five** |
+|---|---|---|
+| blog | 4–2 | **5–1** |
+| technical | 4–1 | **4–1** |
+| corporate | 2–3 | **4–1** |
+| academic | 5–0 | **3–2** |
+
+### The pre-registered corporate question, answered
+
+**The threshold was met.** Corporate was registered as passing at ≥ 3–2; it came
+in at **4–1**, from 2–3. The list-to-prose fix is the only change between those
+two rounds that targets this register, and corporate is no longer the register
+this skill loses.
+
+**The mechanism was rejected, and that is the more useful half.** The candidate
+— limits stated as things tried and decided rather than as present facts —
+needed to appear in at least two corporate judgments to be promoted. It appeared
+in **none of the five**. Where we won, the judges named entirely different
+things: the calque *"aynı sayfada olun"*, `-DIr` stacking, participle pile-ups
+before the head noun, Title Case headings. So it stays an observation about one
+bakery and is not written into the skill.
+
+This is what the pre-registration was for. Without it, five corporate judgments
+would have been read looking for a mechanism, and something in them would have
+been made to fit.
+
+### Academic went the other way, 5–0 to 3–2
+
+The clearest regression in the round, and the two judges who ruled against us
+gave overlapping reasons: our semicolon density, and prose they called *"fazla
+parlatılmış"* and *"düzenlenmiş metin izi"*.
+
+The semicolon half of that is checkable now, because the corpus finally contains
+published Turkish academic prose. Semicolons per 100 words:
+
+| | range |
+|---|---|
+| published Turkish journal articles, 2015–2019 | 0.34 – 2.42 |
+| **ours, v9 academic** | **0.79 – 1.97** |
+| competitor, academic | 0.00 – 0.54 |
+
+Every one of our five files sits inside the published band. Both files we lost
+(1.12 and 1.14) sit near its middle. The competitor's texts, praised for not
+having the habit, sit at or below the floor in four of five — including three
+files with **no semicolon at all**, which no article in the reference set
+matches.
+
+**So on this specific point the judges are wrong about Turkish**, and the
+reference corpus is what makes it possible to say so rather than either accepting
+the criticism or waving it away. What remains unchecked is the rest of their
+objection — nominalisation, paragraph length, the repetition of *"tam da"* — and
+those may well be right. A judge can reach a correct verdict through a wrong
+reason.
+
+`-mAktAdIr` and `-DIr` in the same five files, against the band from
+`human-reference/`:
+
+| file | `mektedir_p` | `dir_p` |
+|---|---|---|
+| `academic-1` | 0.0 | 0.0 |
+| `academic-2` | 1.7 | 4.8 |
+| `academic-3` | 1.9 | 3.2 |
+| `academic-4` | 2.3 | 3.1 |
+| `academic-5` | 1.7 | 3.3 |
+| *published Turkish* | *0.4 – 2.3* | *2.3 – 4.0* |
+
+Four of five inside the band on both. `academic-1` reads 0.0/0.0 because its
+**source** reads 0.0/0.0 — it is the one baseline written as an essay rather than
+an article, and preserving that is the register layer working, not failing.
+`academic-2` sits above the `-DIr` ceiling at 4.8.
+
+### Countable signals
+
+| | `em_dash` | `bold` | `bullets` | `dir_p` |
+|---|---|---|---|---|
+| input | 22 | 75 | 22 | 2.2 |
+| **ours** | **0** | **35** | 22 | **0.9** |
+| competitor | 3 | 75 | 22 | 1.3 |
+
+The explanatory dash is gone from all twenty-one files. Bold is halved; the
+competitor preserves it exactly, which is its stated design. Bullets are
+identical across all three arms, which is the corporate fix holding — lists are
+no longer being dissolved.
+
+### An instrument bug found inside the round
+
+`em_dash` first read 1, in `corporate-5`, which would have been a hard-rule
+violation. It was **"15 Aralık – 2 Ocak"** — a date range, correct Turkish. The
+range exclusion added in the first calibration only skipped dashes preceded by a
+digit, so a range whose left side ends in a word slipped through. Fixed to
+require a non-digit on both sides.
+
+Seventh counting bug, and the same shape as the previous six: an exclusion
+written to cover the examples that had been looked at.
+
+### Discounts
+
+- **The wrapper was reconstructed, not recovered.** Rounds one through four
+  never committed the generation instruction, so round five's is written from
+  their prose description. Comparing 16–5 against round three's 15–6 therefore
+  carries a caveat that the comparison against the fixed competitor arm does
+  not. `repair-protocol.md` ends that problem going forward.
+- **The generation was run twice.** The `-mAktAdIr` notation change landed while
+  the first run was in flight. It altered no rule, but it moved a second variable
+  inside a round, so those outputs were discarded and all twenty-one regenerated
+  against the frozen skill. The committed v9 is the second run.
+- **Twenty-one files, model judges.** Same limit as every round here.
+- **`blog-1` lost to fabrication for the fifth time.** The judge chose the
+  competitor and quoted *"Aşağıdaki rotayı biz de yürüdük"* and *"Bizde kalan,
+  sabahın köründe vadiye çöken o sessizlik oldu"* — neither sentence is in the
+  source. Five independent judgments have now named the same invented lines. The
+  file remains unwinnable without lying, and the fidelity result above is the
+  reason we do not.
 
 ## What this does not establish
 
