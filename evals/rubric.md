@@ -30,11 +30,21 @@ improvement on the strength of a signal that separates nothing.
 | `len_sd` | higher than the input's | blog, technical, corporate | **none** — both groups average about 5.6 |
 | `ve_p` | falling vs the input | all | none |
 | `part_p` | > 0 | blog only | none |
-| `mektedir_p` | 0 | all but academic | none outside academic |
+| `mektedir_p` | 0 outside academic; **0.4–2.3 in academic** | all | none outside academic; **two-sided inside it** — see below |
 | `calque_p` | 0 | all | none observed — kept as a guard |
 | `forced` | 0 | all — a hit is a hard failure | untested; hard rule regardless |
 | `tilde`, `pct_wrong` | 0 | all | untested; both zero everywhere so far |
 | claims added vs input | 0 | repair mode | hard rule |
+
+**`mektedir_p` is the one two-sided target here, and the only one calibrated
+against dated published text.** Five Turkish journal articles from 2015–2019 in
+`evals/human-reference/` put the academic band at 0.4–2.3 per 100 words over full
+article bodies. Both ends have been failed in practice: unaided output writes
+academic prose at 0.0, and an earlier version of the skill wrote it at 2.9–4.5.
+Aiming at 0 in academic register is therefore wrong, and so is maximising.
+`RESULTS-write.md`, "Round three", has the per-article figures — and the note
+that this column was blind to the front-vowel `-mektedir` until 2026-08-17, so
+any figure quoted before then is about half the real rate.
 
 A signal with no power is not thereby wrong. `len_sd` still measures something
 real — a human writes a three-word sentence next to a thirty-five-word one, and
@@ -143,7 +153,10 @@ it is a number.
 ### Then: what the corrected numbers show
 
 **Some folklore tells survive; the headline ones do not.** `mektedir_p` fires
-only in the two academic baselines, where it belongs. `calque_p` is 0.0 across
+only in the two academic baselines, where it belongs. (Still true after the
+corpus grew to 21 and the counter was fixed: 4 of the 5 academic baselines fire,
+none of the 16 others do. What changed is the size of the numbers, not which
+files carry them.) `calque_p` is 0.0 across
 all fifteen texts — the entire eighteen-phrase list scores nothing on either
 side. Discourse particles do not separate the groups. `ve_p` does not either.
 

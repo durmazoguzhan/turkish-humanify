@@ -192,6 +192,11 @@ journal article makes the article sound like a blog post — which is a
 different failure, not a fix. Keep it in academic register; remove it
 everywhere else.
 
+How much it uses it is measured, not guessed: 0.4 to 2.3 per 100 words across
+five Turkish journal articles from 2015–2019. `registers.md` carries the band and
+what happens on either side of it. Writing academic prose with none of this form
+is as wrong as writing a blog post full of it.
+
 ---
 
 ## 8. `devrik cümle` — inversion

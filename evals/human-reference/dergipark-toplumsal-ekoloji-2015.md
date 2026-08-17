@@ -1,0 +1,27 @@
+---
+source: https://dergipark.org.tr/tr/pub/dpusbe/article/65578
+publisher: Dumlupınar Üniversitesi Sosyal Bilimler Dergisi, Sayı 26
+author: Feyzullah Ünal
+register: academic
+published: 2015-06-20
+retrieved: 2026-08-17
+note: |
+  Opening of the article's GİRİŞ section, quoted for evaluation purposes.
+  Published before 2022, so it cannot be model output. The oldest academic
+  sample in the corpus; kept partly for that. Reflowed from the journal PDF,
+  which encodes İ as Đ — restored. Paragraph breaks recovered from line
+  widths, so they may not match the print layout exactly.
+---
+
+Toplumsal ekoloji, Amerikalı anarşist bilim adamı Murray Bookchin tarafından geliştirilmiş ve işlenmiş bir düşünce akımıdır. Bookchin, 1960’lı yıllardan itibaren günümüzdeki toplumsal yapıyı radikal ekolojik bir perspektifle eleştirerek, ekolojik bunalımın toplumsal ve siyasal kökenleri üzerinde bir çok araştırma ve inceleme yapmıştır. Bookchin’e göre salt doğal kaynakları korumayı öne çıkarıp konunun diğer boyutlarını gözardı eden ekolojist akımlar hümanist değildir ve çevreyi tahrip etmektedir. Ona göre, bu tür ekolojist akımların ekolojik krize çözüm getireceğini ve toplumsal değişime önderlik edebileceğini düşünmek boşuna bir beklentidir.
+
+Bookchin’in anarşist gelenek içinde sol-liberter çizgide olması toplumsal ekolojinin anarşist unsurlar içermesine yol açmıştır. Bookchin, anarşist olan Kroopotkin’den etkilendiği için toplumsal ekoloji üzerinde anarko-komünizmin etkileri açıkça görülmektedir. Bookchin’in amacı, ekolojik sorunların toplumsal kaynaklarına ilişkin tutarlı bir görüş geliştirmek, böylece toplumu akılcı bir çizgide tutarak yeniden yapılandıracak eko-anarşist bir proje sunmaktır(Önder, 2003:186-187).
+
+Çağımızın ekolojik krizinin tehlikesi ve özü, Bookchin’in de belirttiği gibi, günümüzdeki toplumun geçmişteki tüm toplumlardan daha çok organik evrimi bozuyor olmasıdır. Bookchin’e göre, insanlık hayatın dokusunun bir parçasıdır ve insanlığın geleceği, hayatın çeşitliliği ve karmaşıklığına bağlıdır. İnsanın gelecekte hayatını sürdürebilmesi de organizmaların uzun dönemde giderek karmaşık ve karşılıklı bağımlılık biçimlerine evrilmesine dayanmaktadır. Ona göre, hayatın karmaşık bir ağ haline gelmesi, ilksel hayvan ve bitkilerin son derece çeşitli biçimler alması, insanlık ve doğanın evrimi ve hayatta kalması için bir önkoşul teşkil etmektedir(Bookchin, 1996a:40). Bununla birlikte insanın organik evrimin dışında olmadığını hatırlatmak önemlidir. Daha da önemlisi insanın, doğal evrim tarafından kendisine bahşedilen potansiyelleri sonucu önemli bir noktada olduğunun vurgulanmasıdır. Zira artık insan evrim sürecinin yönünü belirleyebilme yetisine sahiptir. Yani insanlar şimdi hiç olmadığı kadar hayati bir yol ayrımına gelip dayanmışlardır. İnsanlar, ya bu sistemin temel çelişkilerini görmezden gelip – hiyerarşi sistemi ve sınıfları- var olan yıkıcı sistem içinde yok olmayı bekleyecek ya da tahakkümü bertaraf eden özgürlükçü demokratik yapılanmalarla oluşan ekolojik bir toplum oluşturacaklardır. İşte Toplumsal Ekoloji, şu anki sınıflı ve hiyerarşik topluma alternatif olarak, özgürlükçü ekolojik bir toplumu hedeflemektedir(İdem, 2002:10). Bu çalışmada da ifade edileceği gibi toplumsal ekoloji, ekolojik sorunlara kısa vadede ve pragmatist yaklaşan reformcu çevrecilikten tamamen farklı olarak radikal bir bakış açısı ortaya koymaktadır.
+
+## EKOLOJİK SORUNLAR VE TOPLUM
+
+Toplumsal ekolojinin temel hareket noktasını, toplumla doğayı karşı karşıya getiren sorunların toplum ile doğa arasında ortaya çıkmadığı, toplumsal gelişmenin içinden çıktığı, toplumsal gelişmeden kaynaklandığı düşüncesi oluşturmaktadır(Önder, 2002:70). Bugün genellikle kabul edilen toplumla doğa arasındaki karşıtlık ve bölünme, toplumsal alandaki bölünmelerden, insanların kendi aralarındaki çatışmalardan kaynaklanmaktadır(Bookchin, 1999a:44). Bu nedenle Bookchin’e göre ortaya konulması gereken temel husus; ekolojik sorunlar ile içinde yaşadığımız “akıl dışı”, “anti-ekolojik” toplumun doğrudan ilişki içinde olduğudur. Sorunun kökeni, insanlığın doğayı sömürmesi ve hükmü altına alması gerektiği yolundaki kavrayıştır ki bu kavrayış, insanın insan üzerindeki tahakkümü ve sömürüsünden kaynaklanmaktadır. Bookchin’e göre, bu kavrayış erkeğin ataerkil ailede kadını sömürmeye ve hükmü altına almaya başlamasına kadar uzanmaktadır. O zamandan beri, insanlar giderek yalnızca kaynak, özne yerine nesne olarak görülmektedir. Toplumsal tahakkümle ortaya çıkan hiyerarşiler, sınıflar, mülkiyet biçimleri ve devletçi kurumlar kavramsal olarak insanlığın doğayla ilişkisine taşınmıştır. Doğa da giderek tıpkı latifundiyalardaki köleler gibi acımasızca sömürülecek bir kaynak, bir nesne, bir hammadde olarak görülmeye başlanmıştır(Bookchin, 1996a:45). Bu anlayışın sonucu olarak da, bugün içinde bulunduğumuz ekolojik sorunlar ortaya çıkmıştır.
+
+Bu noktada, toplumsal ekoloji bazı sorulardan yola çıkarak ekolojik sorunlara çözüm aramaktadır: “ İnsan ve doğayı birbirinden ayıran çatışmacı toplumsal ilişki biçimi nasıl ortaya çıkmıştır? Bu çatışmayı mümkün kılan kurumsal oluşumlar ve ideolojiler nelerdir? İnsan ihtiyaçlarındaki artış ve teknolojideki gelişmeler bilindiğine göre, böyle bir çatışmanın önüne geçilebilirmiydi? Bu çatışma, ekolojik bir toplumda ortadan kaldırılabilir mi? Akılcı ve ekolojik bir toplum doğal evrim sürecinin içine nasıl yerleştirilebilir?”(Önder, 2002:51). Toplumsal ekoloji,bu sorulara cevap arayarak diğer ekolojik düşüncelerden farklı bir bakış açısı sergilemektedir.
+

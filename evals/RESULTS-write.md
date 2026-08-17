@@ -74,13 +74,15 @@ against a strong opponent rather than as a weak result.
 
 ## Finding 1: a repair-mode rule misfires in write mode
 
-Measured `-mektedir` density per 100 words:
+Measured `-mektedir` density per 100 words (corrected — see "Round three", the
+figures first published here were 2.8 / 2.1 / 1.9 from a counter that was
+missing half the suffix):
 
 | file | no skill | skill |
 |---|---|---|
-| `w-acad-1` | 0.0 | **2.8** |
-| `w-acad-2` | 0.0 | **2.1** |
-| `w-acad-3` | 0.0 | **1.9** |
+| `w-acad-1` | 0.0 | **4.5** |
+| `w-acad-2` | 0.0 | **3.7** |
+| `w-acad-3` | 0.0 | **2.9** |
 
 The judges penalised it in exactly those words: *"neredeyse her yüklem
 `-mektedir/-maktadır` kalıbında"*, *"paragrafların hepsi aynı uzunlukta"*.
@@ -188,13 +190,14 @@ the control was held fixed, and the outcome cleared significance.
 
 Not just the score — the two things diagnosed as causes both moved.
 
-`-mektedir` per 100 words on the academic tasks:
+`-mektedir` per 100 words on the academic tasks (corrected — see "Round three";
+first published as 2.8/2.1/1.9 → 0.3/0.3/0.6):
 
-| file | no skill | before | **after** |
-|---|---|---|---|
-| `w-acad-1` | 0.0 | 2.8 | **0.3** |
-| `w-acad-2` | 0.0 | 2.1 | **0.3** |
-| `w-acad-3` | 0.0 | 1.9 | **0.6** |
+| file | no skill | before | **after** | published Turkish |
+|---|---|---|---|---|
+| `w-acad-1` | 0.0 | 4.5 | **0.8** | 0.4 – 2.3 |
+| `w-acad-2` | 0.0 | 3.7 | **1.2** | 0.4 – 2.3 |
+| `w-acad-3` | 0.0 | 2.9 | **0.8** | 0.4 – 2.3 |
 
 Placeholders on the corporate tasks:
 
@@ -228,8 +231,122 @@ reachable by rule, and this file is a reminder of where that line sits.
   is correct or now *under*-using is untested. Published Turkish academic prose
   does use the form, and there is no academic text in
   `evals/human-reference/` to calibrate against. That gap is real and this
-  result does not close it.
+  result does not close it. — *Closed in Round three, and the premise was wrong
+  twice over: the rate was 0.8, not 0.3, and 0.8 is inside the published band.*
 - **The removal of the no-fabrication rule from write mode is part of this
   change**, so some of the gain may come from the skill no longer bracketing
   what it could simply write around, rather than from the mode split as such.
   The two were shipped together and this round does not separate them.
+
+---
+
+## Round three — the counter was blind to half of `-mektedir`
+
+Set out to close the calibration gap above by adding Turkish academic text to
+`evals/human-reference/`. Found a bug in the measuring instrument first.
+
+### The bug
+
+`count.sh` matched `-mektedir` with the regex `(mekte|makta)dır`. Turkish vowel
+harmony gives the suffix two forms, and that regex only matches one of them:
+
+```
+$ printf 'görülmektedir yapılmaktadır gerekmektedir kullanılmaktadır\n' \
+  | grep -oE '(mekte|makta)dır'
+maktadır
+maktadır
+```
+
+Two of four. The column is *named* `mektedir_p` and it could not see
+`-mektedir` — only the back-vowel `-maktadır`. After front-vowel stems, which
+is where the most common academic verbs live (`görül-`, `gerek-`, `edil-`,
+`bulun-`, `değerlendiril-`), every occurrence was invisible.
+
+Effect: every `mektedir_p` figure published in this file before 2026-08-17 is
+roughly **half** the real rate. `RESULTS.md` and the prose-language experiment
+never quoted the column, so nothing there moves — but `RESULTS.md`'s
+evidential-form table was hand-counted from the text rather than taken from
+`count.sh`, and re-checking it against the corrected regex leaves it standing
+(`academic-5`: 4 in the source, 4 after the fix). Re-measuring the whole
+corpus, **52 of 183 files change**: 36 of them academic register, and the other
+16 all inside `evals/output/turkce-humanizer/`, where the hits turn out to be the
+competitor's own commentary *about* the suffix (`"Kritik bir rol oynamaktadır"
+ailesinden hiçbiri`) rather than its Turkish output — those comparisons run on
+`turkce-humanizer-text/`, so they do not move.
+
+No blind-judgement result moves at all: the 11–1 tally is judge-based, not
+counter-based. What moves is the mechanism table, in both directions at once —
+the "before" was worse than reported and the "after" is higher than reported.
+
+This is the fifth counting bug in this instrument, and the fifth time the numbers
+and the reading disagreed with the numbers on the losing side. The fixture now
+carries both harmony forms (`artmaktadır`, `edilmektedir`), so the old regex
+fails `test-count.sh` instead of passing it.
+
+### The calibration
+
+Five Turkish journal articles, all on DergiPark, all published **2015–2019** —
+chosen with a pre-2022 cutoff so that none of them can be model output. Sociology,
+literature, education, political economy, information systems. Measured over the
+full article body, introduction through conclusion, references and English
+abstract stripped:
+
+| article | year | words | `mektedir_p` | `dir_p` |
+|---|---|---|---|---|
+| Tanzimat romanı (literature) | 2018 | 4988 | 0.4 | 2.8 |
+| Psikolojik danışmanlar (education) | 2019 | 3730 | 0.6 | 2.5 |
+| Risk toplumu (political economy) | 2018 | 4120 | 1.6 | 2.3 |
+| Yönetim bilgi sistemi (information systems) | 2019 | 6813 | 1.6 | 2.8 |
+| Toplumsal ekoloji (sociology) | 2015 | 4477 | 2.3 | 4.0 |
+
+**Band: 0.4 – 2.3, median 1.6.** `-DIr` copula: 2.3 – 4.0, median 2.8.
+
+The spread inside the band is a real stylistic choice, not noise. The two
+low-rate articles use the aorist where the others use `-mektedir`
+(*değerlendirilir*, *belirler*, *karşılaşırlar*, *savunur*). Both halves read as
+published academic Turkish, which is why the target is a band and not a number.
+
+### What it says about the skill
+
+| | `mektedir_p` | `dir_p` |
+|---|---|---|
+| unaided, asked for an academic text | 0.0 / 0.0 / 0.0 | 0.0 / 0.0 / 0.0 |
+| skill, round one | 4.5 / 3.7 / 2.9 | 5.0 / 4.3 / 4.8 |
+| **skill, round two (shipped)** | **0.8 / 1.2 / 0.8** | **3.3 / 2.1 / 3.7** |
+| published Turkish, 2015–2019 | 0.4 – 2.3 | 2.3 – 4.0 |
+
+Three things follow, and the middle one was not expected.
+
+1. **The shipped dose is inside the band**, on both signals. The worry recorded
+   in Round two — that 0.3 was now under-using — was an artefact of the bug. No
+   rule change is warranted, and making one on the strength of the wrong number
+   would have repeated the Round-one mistake in the opposite direction.
+2. **Unaided model Turkish does not use these forms at all.** Not sparingly:
+   0.0 on both, in all three academic tasks. Asked for a Turkish journal-style
+   text, the model writes prose with neither the register's characteristic
+   present tense nor its copula. That is a larger miss than the over-use it was
+   corrected into, and it is the clearest single measurement in this file of what
+   "LLM Turkish has no register" means concretely.
+3. **Round one was above the human ceiling on both signals**, which is what the
+   judges were reacting to when they wrote *"neredeyse her yüklem
+   `-mektedir/-maktadır` kalıbında"*. That reading is now quantified rather than
+   inferred.
+
+### Discounts
+
+- **Five articles.** Enough to bound the band, not to establish a distribution.
+  The band's ends are two articles each, so either end could move with a sixth.
+- **The committed files are excerpts**, roughly 400–580 words of the opening of
+  each article, while the band above is measured on full bodies. Running
+  `count.sh` on `evals/human-reference/dergipark-*.md` gives 0.2 – 2.3 — the same
+  ceiling, a lower floor, and per-article the excerpt runs denser in three of
+  five, thinner in one, level in one. So the two views agree on the band but not
+  file by file. The full-body figures are the calibration; the excerpts are what
+  the repo can carry.
+- **`dir_p` and `mektedir_p` overlap by construction** — `-maktadır.` satisfies
+  both regexes. They are separate columns measuring overlapping things, which is
+  fine for tracking movement and wrong for summing.
+- **The band is descriptive, not normative.** These five articles are published,
+  not good. `evals/human-reference/gezinomi-negative-control.md` exists to make
+  exactly that distinction, and nothing here promotes "matches the band" to
+  "reads well".

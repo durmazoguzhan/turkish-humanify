@@ -97,6 +97,26 @@ Measured on the eval corpus before the fix: evidential-distance forms
 from 4 to 1 on one academic text and 3 to 2 on another. No word was added, and
 the claims got stronger than their source. A reviewer would flag it.
 
+**How much is "stays".** "Stays" is not "as much as possible", and the band has
+two ends. Measured across five Turkish journal articles published between 2015
+and 2019 — early enough that none of them can be model output — `-mektedir` and
+`-maktadır` together run **0.4 to 2.3 per 100 words** (median 1.6) and the `-DIr`
+copula runs **2.3 to 4.0**. The articles are in `evals/human-reference/`.
+
+Both ends are live failures, not hypotheticals:
+
+| | `-mektedir` per 100 words |
+|---|---|
+| unaided model Turkish, asked for an academic text | **0.0** — not restrained, absent; `-DIr` is 0.0 too |
+| published Turkish journal articles, 2015–2019 | **0.4 – 2.3** |
+| an earlier version of this file | **2.9 – 4.5** — above the human ceiling, and a blind reader called the result monotonous |
+
+The two articles at the low end of the band reach for the aorist instead
+(*değerlendirilir*, *belirler*, *karşılaşırlar*); the two at the high end are
+`-mektedir` throughout. Both read as published. So the target is the band, not a
+number inside it — and a text that never uses the form at all has missed the
+register, which is the specific thing unaided output does.
+
 **The residual case.** Hedging is also carried by qualifier words, not only by
 suffixes — dropping *"başlıca"* from "başlıca nedenleri şunlardır" turns an open
 list of main causes into an exhaustive one. That is not a `-mektedir` problem and

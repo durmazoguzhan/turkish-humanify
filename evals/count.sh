@@ -76,7 +76,13 @@ for src in "$@"; do
   # this signal looks for — whether written tight (04.30–05.00, Nisan–haziran)
   # or spaced (MÖ 738 – MÖ 696).
   em_dash=$(count_re '[^0-9] [—–] ' "$f")
-  mektedir=$(count_re '(mekte|makta)dır' "$f")
+  # Vowel harmony gives two forms of this suffix and the count needs both.
+  # This regex read '(mekte|makta)dır' until 2026-08-17, which matched only the
+  # back-vowel -maktadır and silently missed every -mektedir — the form the
+  # column is named after, and the more common one after front-vowel stems
+  # (görülmektedir, gerekmektedir, edilmektedir). Every mektedir_p figure
+  # reported before that date is roughly half the real rate.
+  mektedir=$(count_re '(mekte|makta)d[iı]r' "$f")
   dir_copula=$(count_re '[a-zçğıöşü]{2,}(dır|dir|dur|dür|tır|tir|tur|tür)[[:space:]]*[.,;!?]' "$f")
   # Narrative -mIş: the evidential past that marks Turkish storytelling and
   # hearsay, and that LLM Turkish almost never reaches for. Participial uses
@@ -89,7 +95,7 @@ for src in "$@"; do
   # "kalırsın". Distinctive verbal endings plus pronouns; possessive -ım/-im is
   # deliberately excluded because it is not an address marker.
   p1=$(count_re '\b(ben|benim|bana|beni|bende|benden)\b|[a-zçğıöşü]{2,}(yorum|dım|dim|dum|düm|tım|tim|tum|tüm|acağım|eceğim|mışım|mişim|muşum|müşüm)\b' "$f")
-  p2=$(count_re '\b(sen|senin|sana|seni|sende|senden|siz|sizin|size|sizi|sizde|sizden)\b|[a-zçğıöşü]{2,}(yorsun|yorsunuz|sınız|siniz|sunuz|sünüz|dın|din|dun|dün|tın|tin|tun|tün|dınız|diniz|acaksın|eceksin|acaksınız|eceksiniz)\b|[a-zçğıöşü]{2,}(rsın|rsin|rsun|rsün)\b' "$f")
+  p2=$(count_re '\b(sen|senin|sana|seni|sende|senden|siz|sizin|size|sizi|sizde|sizden)\b|[a-zçğıöşü]{2,}(yorsun|yorsunuz|sınız|siniz|sunuz|sünüz|dın|din|dun|dün|tın|tin|tun|tün|dınız|diniz|dunuz|dünüz|tınız|tiniz|tunuz|tünüz|acaksın|eceksin|acaksınız|eceksiniz)\b|[a-zçğıöşü]{2,}(rsın|rsin|rsun|rsün)\b' "$f")
   ve_raw=$(count_re ' ve ' "$f")
   particles=$(count_words "$signals/particles.txt" "$f")
   calque=$(count_list "$signals/calques.txt" "$f")
