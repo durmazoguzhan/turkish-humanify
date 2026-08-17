@@ -14,7 +14,12 @@ not a vocabulary filter.
 ## 1. Pick a mode
 
 **The user supplied text → repair.** Work on what is there. Every claim in the
-input survives into the output.
+input survives into the output. Start by reading the text once against
+`references/ai-tells.md` and marking what is actually present — it routes you
+to the layer that fixes each tell, and it records which tells are common and
+which are nearly extinct, so the work goes where the damage is. If the text
+shows none of them, say so and change little; rewriting text that was already
+fine is its own failure.
 
 **The user supplied a brief, a topic, or a request → write.**
 
@@ -35,50 +40,59 @@ skeleton is the thing the reader feels.
 
 ## 3. Pick a voice
 
-Default to the register's own voice. Override when the user names one
-("denemeci sesle yaz") or supplies a sample ("şu metindeki gibi yaz") — in that
-case read the sample's voice off it before writing anything.
+Read `references/voices.md`. Default to the register's own voice; override when
+the user names one ("denemeci sesle yaz") or supplies a sample ("şu metindeki
+gibi yaz"), and in that case read the sample's voice off it — on the nine
+dimensions that file lists — before writing anything.
 
 ## 4. Run the layers
 
-Structure → sentence → surface. **Only the sentence layer is implemented in
-this version;** the other two are being built.
+Structure → sentence → surface, in that order.
 
-Read `references/layer-2-sentence.md` before rewriting a single sentence. Read
-it now, not from memory — its worked examples are the instruction, and a
-remembered summary of them is not.
+Read the reference file for each layer at the moment you run it, not from
+memory. The worked examples are the instruction, and a remembered summary of
+them is not.
+
+- `references/layer-1-structure.md` — opening move, paragraph rhythm, closing,
+  titles, bullets, bold, subheadings. Run this first: it decides what the piece
+  is, and there is no point polishing a paragraph you are about to delete.
+- `references/layer-2-sentence.md` — the fourteen places Turkish and English
+  genuinely diverge. This is where most of the work happens.
+- `references/layer-3-surface.md` — terminology buckets, suffixes on kept
+  English terms, apostrophe, `da/de` and `ki`, punctuation, numbers.
 
 ### Dosage
 
-How much of each layer runs depends on the register. (This table moves to
-`references/registers.md` once that file exists.)
-
-| Layer | blog / essay | technical | corporate | academic / official |
-|---|---|---|---|---|
-| structure | full | medium | medium | off |
-| sentence | full — inversion, particles, `-mIş` all in play | restricted — no inversion, few particles; branching, converbs, focus and `-DIr` cleanup active | medium | branching, converbs, focus and `-mektedir` cleanup only |
-| surface | full | full | full | full |
-
-Surface is always on: orthography and terminology are correctness, not style.
+How much of each layer runs depends on the register. Read
+`references/registers.md` for the table and for what each dose means in
+practice. Surface is always on, in every register: orthography and terminology
+are correctness, not style.
 
 ## 5. Check before emitting
 
 Silently, without reporting it:
 
-- Every claim in the input is still in the output. Nothing was added.
+- **In repair mode: every claim in the input is still in the output, and
+  nothing is in the output that was not in the input.** Check both directions.
+  A number, name, date or assertion you added is a hard failure however well
+  the paragraph reads.
 - No technical term was translated into an invented Turkish equivalent.
-- No em dash. No emoji. No chat residue.
+- No explanatory em dash. No emoji. No chat residue.
 - Read the piece aloud in your head. If every sentence is the same length, the
   sentence layer did not run.
+- Count the bold spans and the bullet lines. If they came through unchanged
+  from a text that had many, the structure layer did not run either.
 
 ## 6. Emit
 
 The text. Nothing else. No preamble, no summary of what changed, no offer to
-adjust the tone.
+adjust the tone, no word count.
 
-Explain only when asked. If the user asks what changed or why, name the tell,
-the layer that addressed it, and show the before/after pair — but never
-volunteer this.
+**Explanation mode.** If — and only if — the user asks what changed or why,
+answer by naming the tell, the layer that addressed it, and the before/after
+pair. The trigger is the user's question, not your own judgement that an
+explanation would be useful. Never volunteer it, and never attach a short
+version of it to a normal response.
 
 ## Invariants
 
