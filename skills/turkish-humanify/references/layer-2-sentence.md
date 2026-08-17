@@ -410,6 +410,18 @@ Every one of those is a device from this file, applied where it was not doing
 work. The reader does not experience them as voice; they experience them as
 retouching.
 
+**The clearest measured instance is sentence-final `ama`.** It is a real
+Turkish move — trailing the contrast marker is something people genuinely write.
+On `blog-1` the skill used it four times in one short post, and the judge
+counted them:
+
+> "cümle sonuna 'ama' koymak gerçekten sözlü Türkçeye ait bir özellik, ama B bunu bir tik haline getirmiş … Dört tekrardan sonra bu, insanın kendiliğinden konuşması gibi değil, 'doğallaştırma' düğmesine basılmış gibi duruyor"
+
+The number that matters: the source text carries **zero** of them and the
+competing output carries **zero**. Every one was introduced. A device the source
+never used, appearing four times in four hundred words, is not voice — it is a
+quota being met. Once per piece is a choice; four times is a signature.
+
 ### The bookend failure
 
 A machine draft opens with a personal note, goes impersonal for the middle

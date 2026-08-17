@@ -59,7 +59,7 @@ count_words() { { grep -oiE "\\b($(list_re "$1"))\\b" "$2" 2>/dev/null || true; 
 # ones (bold, bullets) stay raw, because there the count itself is the verdict.
 per100() { awk -v n="$1" -v w="$2" 'BEGIN { if (w == 0) { print "0.0"; exit } printf "%.1f", n * 100 / w }'; }
 
-printf 'file\twords\tsentences\tlen_mean\tlen_sd\tem_dash\tmektedir_p\tdir_p\tmis_p\tp1_p\tp2_p\tve_p\tpart_p\tcalque_p\tforced\ttilde\tpct_wrong\tbold\tbullets\n'
+printf 'file\twords\tsentences\tlen_mean\tlen_sd\tem_dash\tendash\tmektedir_p\tdir_p\tmis_p\tp1_p\tp2_p\tve_p\tpart_p\tcalque_p\tforced\ttilde\tpct_wrong\tbold\tbullets\n'
 
 tmp=$(mktemp -d)
 trap 'rm -rf "$tmp"' EXIT
@@ -94,6 +94,16 @@ for src in "$@"; do
   # one. The first version of this exclusion covered only the cases that had
   # been looked at, which is how the previous six counting bugs also happened.
   em_dash=$(count_re '[^0-9] [—–] [^0-9]' "$f")
+  # The en dash is not a Turkish mark at all. TDK lists kısa çizgi and uzun
+  # çizgi and gives ranges to the short hyphen, so every '–' is a surface error
+  # and the raw count is the verdict. Across the nine published texts in
+  # human-reference/, ranges use the plain hyphen 70 times and an en dash 3.
+  #
+  # This signal did not exist until 2026-08-18 because layer-3 had the rule
+  # backwards — it called range dashes correct — and em_dash was then built to
+  # exclude them, so the instrument was configured to look away from the thing
+  # the rule got wrong. A blind judge found it instead.
+  endash=$(count_re '–' "$f")
   # Vowel harmony gives two forms of this suffix and the count needs both.
   # This regex read '(mekte|makta)dır' until 2026-08-17, which matched only the
   # back-vowel -maktadır and silently missed every -mektedir — the form the
@@ -126,9 +136,9 @@ for src in "$@"; do
   bold=$(( $(count_re '\*\*' "$f") / 2 ))
   bullets=$(grep -cE '^[[:space:]]*[-*+•] ' "$f" || true)
 
-  printf '%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\n' \
+  printf '%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\n' \
     "$(basename "$src")" "$words" "$sentences" "$len_mean" "$len_sd" \
-    "$em_dash" "$(per100 "$mektedir" "$words")" "$(per100 "$dir_copula" "$words")" \
+    "$em_dash" "$endash" "$(per100 "$mektedir" "$words")" "$(per100 "$dir_copula" "$words")" \
     "$(per100 "$mis_past" "$words")" "$(per100 "$p1" "$words")" \
     "$(per100 "$p2" "$words")" "$(per100 "$ve_raw" "$words")" \
     "$(per100 "$particles" "$words")" "$(per100 "$calque" "$words")" \

@@ -15,10 +15,6 @@ Frequency columns are per 100 words. The **power** column records what the
 calibration below actually showed, so that a version is not called an
 improvement on the strength of a signal that separates nothing.
 
-Frequency columns are per 100 words. The **power** column records what the
-calibration below actually showed, so that a version is not called an
-improvement on the strength of a signal that separates nothing.
-
 | Signal | Target | Applies to | Power |
 |---|---|---|---|
 | `em_dash` | 0 | all | **separates** — 3 of 12 baselines, 0 of 3 human texts |
@@ -30,6 +26,7 @@ improvement on the strength of a signal that separates nothing.
 | `len_sd` | higher than the input's | blog, technical, corporate | **none** — both groups average about 5.6 |
 | `ve_p` | falling vs the input | all | none |
 | `part_p` | > 0 | blog only | none |
+| `endash` | 0 | all — TDK gives ranges to the short hyphen and does not recognise this mark | **separates cleanly** — 3 across nine published Turkish texts against 70 plain-hyphen ranges; the competitor emits 0, we emitted 9 |
 | `mektedir_p` | 0 outside academic; **0.4–2.3 in academic** | all | none outside academic; **two-sided inside it** — see below |
 | `calque_p` | 0 | all | none observed — kept as a guard |
 | `forced` | 0 | all — a hit is a hard failure | untested; hard rule regardless |
@@ -156,7 +153,7 @@ The general lesson is worth more than the three fixes: a signal that has never
 been checked against a text whose true value is known by hand is not evidence,
 it is a number.
 
-### Later: three more, found the same way
+### Later: five more, found the same way
 
 Numbered on from the three above. Each was found by checking what a regex
 actually matches before trusting a comparison built on it, which is now the
@@ -176,6 +173,17 @@ habit this section exists to enforce.
 6. **`ve_p` was space-bound.** ` ve ` requires a space on both sides, so every
    `ve` that a line break or a sentence start put next to something else went
    uncounted. Now `\b[Vv]e\b`; 16 files change.
+
+7. **`em_dash` counted date ranges** whose left side ends in a word, because
+   the exclusion only skipped a dash preceded by a digit. Fixed to require a
+   non-digit on both sides.
+8. **There was no `endash` signal at all**, and the omission was designed in:
+   `layer-3-surface.md` called range dashes correct, so `em_dash` was built to
+   exclude them. The rule was wrong against TDK and against every one of the
+   nine texts in `evals/human-reference/`, and the instrument had been
+   configured to agree with it. This is the worst of the eight: the other seven
+   were mistakes in the counter, while this one was the counter faithfully
+   implementing a mistake in the skill.
 
 Bugs 5 and 6 share a root — signals written as if every paragraph were one line
 — and neither moves a conclusion. The `len_sd` verdict below survives the fix

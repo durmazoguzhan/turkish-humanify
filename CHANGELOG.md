@@ -53,6 +53,18 @@
 - `evals/repair-protocol.md` and `evals/pair.sh` commit the procedure that four
   earlier rounds only described.
 
+### The en dash was a wrong rule, not a slip
+
+- `layer-3-surface.md` said range dashes were correct and to leave them alone.
+  TDK gives ranges to the short hyphen (`1914-1918`, `Ankara-İstanbul`) and does
+  not recognise an en dash at all; across the nine published Turkish texts in
+  `evals/human-reference/` ranges use the plain hyphen 70 times against 3.
+- The instrument had been configured to agree: `em_dash` was built to exclude
+  range dashes *because* the rule called them correct, so six rounds passed
+  without noticing. A blind judge found it. New `endash` signal, raw count.
+- Also names sentence-final `ama` in `layer-2-sentence.md` §16. On `blog-1` the
+  skill used it four times where the source and the competitor use it zero.
+
 ### Fixed
 
 - `count.sh` matched `-mektedir` with `(mekte|makta)dır`, which sees only the

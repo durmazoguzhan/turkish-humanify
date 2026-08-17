@@ -81,7 +81,7 @@ given ordinary short prompts, plus excerpts of published Turkish writing for
 calibration — including five Turkish journal articles published between 2015 and
 2019, early enough that none of them can be model output. `evals/count.sh`
 measures what can be measured; `evals/rubric.md` says what it cannot, and lists
-the seven counting bugs found so far, each of which had already produced a
+the eight counting bugs found so far, each of which had already produced a
 confident wrong finding.
 
 **Repair mode.** `evals/RESULTS.md` records a three-way comparison against
@@ -134,7 +134,7 @@ Layer 3 is entirely local.
 
 Two things are worth copying whatever the language. Build the measuring
 instrument before the corpus, and calibrate it against published writing in
-that language — in this project that check caught seven separate bugs, each of
+that language — in this project that check caught eight separate bugs, each of
 which had already produced a confident wrong finding. And decide in advance
 what beats what, in writing, before you see any results.
 

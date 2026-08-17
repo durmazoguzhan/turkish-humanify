@@ -137,7 +137,7 @@ the suffix `-ki` is attached (`benimki`, `yarınki`, `akşamki`).
 ## 5. Punctuation
 
 **The em dash is not a Turkish explanatory mark.** In Turkish typography the
-long dash belongs to dialogue lines and to ranges. Using it the English way —
+long dash belongs to dialogue lines. Using it the English way —
 to bracket an aside — is the single punctuation calque that survives into
 otherwise clean machine Turkish. Replace it with a semicolon, a connective
 (`böylece`, `bu sayede`, `ayrıca`, `çünkü`), or a sentence break.
@@ -150,8 +150,29 @@ closely related independent clauses and separates grouped list items. What
 grates is the English `; and` chain, not the mark itself. Removing every
 semicolon from Turkish prose is its own kind of damage.
 
-**Range dashes are correct** and are not the same thing: `04.30–05.00`,
-`Nisan–haziran`, `3–4 kilometre`, `MÖ 738 – MÖ 696`. Leave them alone.
+**A range takes the short hyphen, not a long dash.** This file said the
+opposite until it was checked. TDK lists two marks — `kısa çizgi` (`-`) and
+`uzun çizgi` (`—`, the dialogue dash) — and gives the range to the short one:
+
+> *"Arasında, ve, ile, ila, …-den …-e anlamlarını vermek için kelimeler veya
+> sayılar arasında kullanılır"* — `1914-1918 Birinci Dünya Savaşı`,
+> `Ankara-İstanbul`
+
+There is no en dash (`–`) in Turkish punctuation at all. Across the nine
+published Turkish texts in `evals/human-reference/`, ranges are written with the
+plain hyphen **seventy times** and with an en dash **three**.
+
+> AI: Balon turu `04.30–05.00` arası başlıyor, `Nisan–haziran` en iyi dönem, yürüyüş `3–4` kilometre.
+> İnsan: Balon turu `04.30-05.00` arası başlıyor, `Nisan-haziran` en iyi dönem, yürüyüş `3-4` kilometre.
+
+Normalise `–` to `-` wherever it stands between two numbers, dates or words.
+This is surface work, so it runs in every register.
+
+**Why this was missed for six rounds.** The old rule did not just permit the en
+dash, it named it correct, and `evals/count.sh` was then built to exclude range
+dashes from the `em_dash` signal — so the instrument was configured to look away
+from the exact thing the rule got wrong. A blind judge found it instead, calling
+it *"çeviri/dizgi kokusu veren bir detay"* while choosing the other text.
 
 ---
 
