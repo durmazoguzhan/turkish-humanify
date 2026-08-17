@@ -47,7 +47,7 @@ count_words() { { grep -oiE "\\b($(list_re "$1"))\\b" "$2" 2>/dev/null || true; 
 # ones (bold, bullets) stay raw, because there the count itself is the verdict.
 per100() { awk -v n="$1" -v w="$2" 'BEGIN { if (w == 0) { print "0.0"; exit } printf "%.1f", n * 100 / w }'; }
 
-printf 'file\twords\tsentences\tlen_mean\tlen_sd\tem_dash\tmektedir_p\tdir_p\tmis_p\tve_p\tpart_p\tcalque_p\tforced\ttilde\tpct_wrong\tbold\tbullets\n'
+printf 'file\twords\tsentences\tlen_mean\tlen_sd\tem_dash\tmektedir_p\tdir_p\tmis_p\tp1_p\tp2_p\tve_p\tpart_p\tcalque_p\tforced\ttilde\tpct_wrong\tbold\tbullets\n'
 
 tmp=$(mktemp -d)
 trap 'rm -rf "$tmp"' EXIT
@@ -83,6 +83,13 @@ for src in "$@"; do
   # ("geçmiş", "yapılmış") are counted too — this is a frequency proxy, not a
   # parse, and its job is to show whether the mood is present at all.
   mis_past=$(count_re '[a-zçğıöşü]{2,}(mış|miş|muş|müş)(ım|im|um|üm|sın|sin|sun|sün|ız|iz|uz|üz|sınız|siniz|sunuz|sünüz|lar|ler)?\b' "$f")
+  # Address. Voice profiles differ most visibly on who the text speaks as and
+  # to, and nothing else here measures that — two profiles can land on identical
+  # particle and length numbers while one says "kalıyorum" and the other says
+  # "kalırsın". Distinctive verbal endings plus pronouns; possessive -ım/-im is
+  # deliberately excluded because it is not an address marker.
+  p1=$(count_re '\b(ben|benim|bana|beni|bende|benden)\b|[a-zçğıöşü]{2,}(yorum|dım|dim|dum|düm|tım|tim|tum|tüm|acağım|eceğim|mışım|mişim|muşum|müşüm)\b' "$f")
+  p2=$(count_re '\b(sen|senin|sana|seni|sende|senden|siz|sizin|size|sizi|sizde|sizden)\b|[a-zçğıöşü]{2,}(yorsun|yorsunuz|sınız|siniz|sunuz|sünüz|dın|din|dun|dün|tın|tin|tun|tün|dınız|diniz|acaksın|eceksin|acaksınız|eceksiniz)\b|[a-zçğıöşü]{2,}(rsın|rsin|rsun|rsün)\b' "$f")
   ve_raw=$(count_re ' ve ' "$f")
   particles=$(count_words "$signals/particles.txt" "$f")
   calque=$(count_list "$signals/calques.txt" "$f")
@@ -92,10 +99,11 @@ for src in "$@"; do
   bold=$(( $(count_re '\*\*' "$f") / 2 ))
   bullets=$(grep -cE '^[[:space:]]*[-*+•] ' "$f" || true)
 
-  printf '%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\n' \
+  printf '%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\n' \
     "$(basename "$src")" "$words" "$sentences" "$len_mean" "$len_sd" \
     "$em_dash" "$(per100 "$mektedir" "$words")" "$(per100 "$dir_copula" "$words")" \
-    "$(per100 "$mis_past" "$words")" "$(per100 "$ve_raw" "$words")" \
+    "$(per100 "$mis_past" "$words")" "$(per100 "$p1" "$words")" \
+    "$(per100 "$p2" "$words")" "$(per100 "$ve_raw" "$words")" \
     "$(per100 "$particles" "$words")" "$(per100 "$calque" "$words")" \
     "$forced" "$tilde" "$pct_wrong" "$bold" "$bullets"
 done

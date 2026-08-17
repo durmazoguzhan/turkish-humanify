@@ -26,6 +26,7 @@ improvement on the strength of a signal that separates nothing.
 | `bold` | ≪ the input's; 0–2 for prose | blog, technical, academic | **separates where present** — up to 20 vs 0–1 |
 | `bullets` | ≤ the input's, and 0 where the content is not a list | blog, corporate | **separates where present** — up to 5 vs 0 |
 | `mis_p` | present where the content narrates | blog only | conditional — 3.2 in the one narrative human text, ≤1.5 in every baseline |
+| `p1_p` / `p2_p` | matches the chosen voice profile | all | **separates voices** — the same input written as `denemeci` scores p1 2.6 / p2 0.9, as `senli-benli anlatıcı` 0.0 / 3.2 |
 | `len_sd` | higher than the input's | blog, technical, corporate | **none** — both groups average about 5.6 |
 | `ve_p` | falling vs the input | all | none |
 | `part_p` | > 0 | blog only | none |
@@ -48,6 +49,24 @@ output side by side and listing every number, name, date, or assertion present i
 the output and absent from the input. Any hit is a hard failure regardless of how
 well the prose reads. A beautiful paragraph that invents a statistic is a worse
 outcome than a clumsy one that does not.
+
+### A third instrument failure, found the same way
+
+The voice profiles were checked by writing one input twice, as `denemeci` and
+as `senli-benli anlatıcı`, and comparing. On every column the counter then had,
+the two outputs were indistinguishable: identical particle density, sentence
+counts within one, `len_sd` 4.6 against 4.3. Read side by side they are
+obviously different texts — one says *"istiyorsam kalıyorum"* and *"Meğer ben
+de yapıyormuşum bunu"*, the other says *"istiyorsan kalırsın"* and *"seçersin,
+olur biter"*.
+
+They differ on **address**, the first of the nine voice dimensions, and nothing
+in the counter measured it. `p1_p` and `p2_p` were added for exactly this, and
+the same comparison now reads p1 2.6 / p2 0.9 against p1 0.0 / p2 3.2.
+
+Worth stating plainly, because it is the third time in this project: a
+disagreement between the numbers and the reading has meant the numbers were
+incomplete every time so far, never the reading.
 
 ### What this half deliberately cannot see
 
