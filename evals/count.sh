@@ -36,7 +36,12 @@ count_list() { { grep -oiE "$(list_re "$1")" "$2" 2>/dev/null || true; } | wc -l
 # find "ki" inside "ikinci" and report a speaking voice that is not there.
 count_words() { { grep -oiE "\\b($(list_re "$1"))\\b" "$2" 2>/dev/null || true; } | wc -l | tr -d ' '; }
 
-printf 'file\twords\tsentences\tlen_mean\tlen_sd\tem_dash\tmektedir\tdir_copula\tve_per100\tparticles\tcalque\tforced\ttilde\tpct_wrong\tbold\tbullets\n'
+# Frequency signals are reported per 100 words so texts of different lengths
+# compare; hard-zero signals (em_dash, forced, tilde, pct_wrong) and structural
+# ones (bold, bullets) stay raw, because there the count itself is the verdict.
+per100() { awk -v n="$1" -v w="$2" 'BEGIN { if (w == 0) { print "0.0"; exit } printf "%.1f", n * 100 / w }'; }
+
+printf 'file\twords\tsentences\tlen_mean\tlen_sd\tem_dash\tmektedir_p\tdir_p\tmis_p\tve_p\tpart_p\tcalque_p\tforced\ttilde\tpct_wrong\tbold\tbullets\n'
 
 for f in "$@"; do
   words=$(prose "$f" | wc -w | tr -d ' ')
@@ -57,6 +62,11 @@ for f in "$@"; do
   em_dash=$(count_re '—|–' "$f")
   mektedir=$(count_re '(mekte|makta)dır' "$f")
   dir_copula=$(count_re '[a-zçğıöşü]{2,}(dır|dir|dur|dür|tır|tir|tur|tür)[[:space:]]*[.,;!?]' "$f")
+  # Narrative -mIş: the evidential past that marks Turkish storytelling and
+  # hearsay, and that LLM Turkish almost never reaches for. Participial uses
+  # ("geçmiş", "yapılmış") are counted too — this is a frequency proxy, not a
+  # parse, and its job is to show whether the mood is present at all.
+  mis_past=$(count_re '[a-zçğıöşü]{2,}(mış|miş|muş|müş)(ım|im|um|üm|sın|sin|sun|sün|ız|iz|uz|üz|sınız|siniz|sunuz|sünüz|lar|ler)?\b' "$f")
   ve_raw=$(count_re ' ve ' "$f")
   particles=$(count_words "$signals/particles.txt" "$f")
   calque=$(count_list "$signals/calques.txt" "$f")
@@ -66,14 +76,10 @@ for f in "$@"; do
   bold=$(( $(count_re '\*\*' "$f") / 2 ))
   bullets=$(grep -cE '^[[:space:]]*[-*+•] ' "$f" || true)
 
-  if [ "$words" -gt 0 ]; then
-    ve_per100=$(awk -v v="$ve_raw" -v w="$words" 'BEGIN { printf "%.1f", v * 100 / w }')
-  else
-    ve_per100=0.0
-  fi
-
-  printf '%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\n' \
+  printf '%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\n' \
     "$(basename "$f")" "$words" "$sentences" "$len_mean" "$len_sd" \
-    "$em_dash" "$mektedir" "$dir_copula" "$ve_per100" "$particles" \
-    "$calque" "$forced" "$tilde" "$pct_wrong" "$bold" "$bullets"
+    "$em_dash" "$(per100 "$mektedir" "$words")" "$(per100 "$dir_copula" "$words")" \
+    "$(per100 "$mis_past" "$words")" "$(per100 "$ve_raw" "$words")" \
+    "$(per100 "$particles" "$words")" "$(per100 "$calque" "$words")" \
+    "$forced" "$tilde" "$pct_wrong" "$bold" "$bullets"
 done
