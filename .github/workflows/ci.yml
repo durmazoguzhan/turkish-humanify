@@ -61,3 +61,34 @@ jobs:
           fi
 
           echo "ok   version bumped $base -> $head"
+
+  # A merge to master is a release. The tag is the version, which is the commit
+  # count, so nothing here is decided by hand either.
+  release:
+    needs: check
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Tag and release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          version=$(python3 -c "import json;print(json.load(open('.claude-plugin/plugin.json'))['version'])")
+          tag="v$version"
+
+          if git rev-parse "$tag" >/dev/null 2>&1; then
+            echo "ok   $tag already exists, nothing to release"
+            exit 0
+          fi
+
+          git tag "$tag"
+          git push origin "$tag"
+          gh release create "$tag" --title "$tag" --generate-notes
+          echo "ok   released $tag"

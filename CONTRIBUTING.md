@@ -93,7 +93,18 @@ scripts/version.sh --write
 ```
 
 CI fails a pull request whose version was not bumped, and fails a push to
-`master` whose version does not match the commit count.
+`master` whose version does not match the commit count. Because `master` takes
+squash merges only, one pull request is one commit is one version.
+
+## How changes land
+
+`master` is protected: no direct pushes, pull request required, CI must pass,
+linear history, no force pushes. Squash is the only merge method enabled, which
+is what keeps the commit count meaningful as a version.
+
+Anyone can review and approve a pull request — approving needs only read access
+on a public repository. Merging needs write access, and write access is the
+maintainer only. Branches are deleted automatically once merged.
 
 ## Checks
 

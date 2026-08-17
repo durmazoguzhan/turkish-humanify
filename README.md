@@ -147,6 +147,12 @@ issue is a genuinely useful contribution and costs you nothing.
 
 Security policy: `SECURITY.md`. Code of conduct: `CODE_OF_CONDUCT.md`.
 
+## Releases
+
+Every merge to `master` is a release. CI tags it `v<version>` and publishes a
+GitHub release with generated notes, so the tag is the commit count too and no
+release step is done by hand.
+
 ## Versioning
 
 [WendtVer](https://wendtver.org): the version is the commit count, written one
