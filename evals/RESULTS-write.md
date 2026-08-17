@@ -152,3 +152,84 @@ the skill, and fixing it would mean teaching the skill to lie.
 **What this does not cover:** brief adherence was deliberately not scored, no
 competing skill was compared against because `turkce-humanizer` has no write
 mode, and every fidelity claim in this repository remains a repair-mode claim.
+
+---
+
+## Round two — the split, and the first clean single-variable result
+
+The skill was restructured into shared / `write-mode.md` / `rewrite-mode.md`, and
+the two defects above were addressed. Then the same twelve prompts were re-run.
+
+**Only one thing changed.** The no-skill arm's twelve files were not regenerated
+— they are byte-identical to round one. Same prompts, same judge protocol, same
+randomisation procedure. The only variable is the skill.
+
+### The tally
+
+| | skill | no skill |
+|---|---|---|
+| round one | 7 | 5 |
+| **round two** | **11** | **1** |
+
+p = 0.0032 for the new result. Round one was p = 0.387.
+
+| register | round one | round two |
+|---|---|---|
+| blog | 3–0 | **3–0** |
+| technical | 2–1 | **3–0** |
+| academic | 1–2 | **3–0** |
+| corporate | 1–2 | **2–1** |
+
+Academic went from a net loss to a sweep, and technical and corporate both
+gained. This is the first result in the project where a single variable moved,
+the control was held fixed, and the outcome cleared significance.
+
+### Both mechanisms measurably fixed
+
+Not just the score — the two things diagnosed as causes both moved.
+
+`-mektedir` per 100 words on the academic tasks:
+
+| file | no skill | before | **after** |
+|---|---|---|---|
+| `w-acad-1` | 0.0 | 2.8 | **0.3** |
+| `w-acad-2` | 0.0 | 2.1 | **0.3** |
+| `w-acad-3` | 0.0 | 1.9 | **0.6** |
+
+Placeholders on the corporate tasks:
+
+| file | no skill | before | **after** |
+|---|---|---|---|
+| `w-corp-1` | 3 | 18 | **4** |
+| `w-corp-2` | 1 | 22 | **1** |
+| `w-corp-3` | 0 | 5 | **3** |
+
+And the judges' reasoning tracks the fixes. On `w-acad-1` the deciding praise was
+*"`-mektedir` düzeninin tutarlı korunması"* — the same suffix that lost the
+previous round on monotony now wins on consistency. The register was never
+wrong about `-mektedir`; the dose was.
+
+### What still loses
+
+`w-corp-1`, the bakery post, and for a reason worth keeping. The judge preferred
+the unaided text for *"Bunları öve öve anlatmak istemiyoruz aslında, normal
+olması gereken şeyler. Ama artık normal olmadığı için söylüyoruz."* — a
+defensive, faintly sardonic shopkeeper's aside. That is not a rule the skill
+holds; it is a thing a person happened to say. Some share of good writing is not
+reachable by rule, and this file is a reminder of where that line sits.
+
+### Discounts
+
+- **Twelve files, and judges that are language models.** A four-file swing at
+  n=12 carries real variance. What raises confidence above the count is that the
+  design was within-subject — same prompts, same control texts — and that both
+  diagnosed mechanisms moved in the predicted direction.
+- **`-mektedir` at 0.3 is now near the unaided rate of 0.0**, and whether that
+  is correct or now *under*-using is untested. Published Turkish academic prose
+  does use the form, and there is no academic text in
+  `evals/human-reference/` to calibrate against. That gap is real and this
+  result does not close it.
+- **The removal of the no-fabrication rule from write mode is part of this
+  change**, so some of the gain may come from the skill no longer bracketing
+  what it could simply write around, rather than from the mode split as such.
+  The two were shipped together and this round does not separate them.
