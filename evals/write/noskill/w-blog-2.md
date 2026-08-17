@@ -1,0 +1,13 @@
+Bir dönem eve giren her saksı iki ay içinde balkonun köşesinde kuru bir çöp yığınına dönüşüyordu. Kendimi "eli uğursuz" ilan etmiştim, çünkü bu daha kolaydı: uğursuzluk senin hatan değil, bir tür kader. Sonra fark ettim ki mesele kader değil, fazla ilgi.
+
+Ev bitkilerinin büyük çoğunluğu susuzluktan değil, boğulmaktan ölüyor. Bunun sinsi tarafı şu: aşırı sulanan bir bitkiyle susuz kalan bitki neredeyse aynı görünüyor. Yapraklar sarkıyor, uçlar sararıyor, canlılık gidiyor. İnsanın ilk refleksi "demek ki susamış" oluyor ve bir bardak su daha döküyor. Kökler o sırada suyun içinde çürümüş, artık su emebilecek durumda değil. Yani bitkiyi kurtarmak için yaptığın şey, onu öldüren şeyin ta kendisi.
+
+Bunu çözdükten sonra tek bir alışkanlık değişti: sulamadan önce parmağımı toprağa sokuyorum. İki santim derinlik hâlâ nemliyse su yok. Saksıyı elimle kaldırmak da işe yarıyor, hafiflemişse zamanı gelmiştir. Takvim tutmayı bıraktım, çünkü "haftada bir salı günü" diye bir bitki ihtiyacı yok; kış ortasındaki bir bitkinin suyu, temmuzdakinin yarısı kadar. Bir de saksının altında delik olmasına dikkat ediyorum. Dekoratif, deliksiz o güzel seramik kapların içi küçük bir bataklık, orada hiçbir şey yaşamıyor.
+
+İkinci mesele ışık ve kimse bunu ciddiye almıyor. Etiketlerdeki "yarı gölgeyi sever" ifadesi çoğu zaman "ölmeden dayanır" demenin kibar hâli. Bitkiyi pencereden iki metre içeriye, koridorun şık köşesine koyduğunda ona verdiğin ışık, pencere kenarındakinin belki onda biri. Işık mesafeyle çok hızlı azalıyor. Bir bitki aylardır yeni yaprak vermiyorsa, gübre değil pencere lazım.
+
+Üçüncüsü, müdahaleyi kesmek. Yeni aldığın bitkiyi hemen saksı değiştirmeye kalkmıyorsun; serada alıştığı koşullardan senin salonuna geçmek zaten yeterince sarsıcı, üstüne bir de köklerini karıştırma. Hasta görünen bitkiye gübre vermiyorsun, çürümüş kök besini işleyemez, sadece toprakta tuz birikir. Yaprakları her hafta silmek, yerini değiştirip durmak, "acaba iyi mi" diye kurcalamak, hepsi bizim huzursuzluğumuzu yatıştırmak için, bitkinin bir faydası yok.
+
+Bir de doğru başlamak var. İlk bitkin orkide ya da kalatea olmasın. Paşa kılıcı, zamyokulkas, salon sarmaşığı gibi ihmali affeden, hatta biraz sevenlerle başla. Bunlarla üç ay geçirdikten sonra kendine bir şey öğretmiş oluyorsun: bu iş sürekli bir şey yapmak değil, doğru zamanı beklemek.
+
+Son olarak, birkaç bitkiyi öldürmek normal. Yaşayan bir şeyle uğraşıyorsun ve o bir hobinin maliyetiydi. Benim şu an sekiz saksım var ve hiçbiri Instagram'daki gibi görünmüyor. Ama hepsi hayatta ve ben artık onlara haftada bir kez, kısaca bakıyorum. Meğer bitkiler benden pek bir şey istemiyormuş; ben onlara fazla yükleniyormuşum.
