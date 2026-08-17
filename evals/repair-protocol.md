@@ -43,10 +43,14 @@ are recorded at the top of `RESULTS.md`.
 
 ## 3. Blind pairwise judging
 
-For each input, the two outputs are copied to a scratch directory as `A.md` and
-`B.md` with **the order decided by `shuf`**, and the key is written to a file
-the judge cannot see. Front matter, filenames and any other provenance are
-stripped.
+`evals/pair.sh ARM_ONE ARM_TWO OUT_DIR` builds the pairs. For each input the two
+outputs are written to `OUT_DIR/<item>/A.md` and `B.md` with **the order decided
+by `shuf`**, and the key goes to `OUT_DIR/key.tsv`, which the judge is never
+given. Front matter is stripped so source attribution cannot leak the arm.
+
+The script exists because the randomisation was previously done by hand, which
+is both unrepeatable and the one step where a mistake would silently invalidate
+the whole round.
 
 One clean-context judge subagent per item, told nothing about skills, tools,
 models or the existence of this project.
