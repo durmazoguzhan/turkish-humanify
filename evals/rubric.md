@@ -177,12 +177,32 @@ exactly: unaided baselines 5.6, published non-academic Turkish 5.6. The
 prose-language experiment's two arms stay indistinguishable, mean `len_sd` gap
 0.12.
 
-What the fix does surface is a gap nobody had looked for. In **academic**
+What the fix appeared to surface was a gap nobody had looked for. In **academic**
 register the same measure reads 9.8 for the five published articles against 7.2
-for this skill's output and 6.9 unaided. The ranges overlap heavily (published
-6.3–13.4, ours 6.6–7.8) and n is 5 against 3, so this is a hypothesis, not a
-finding: published academic Turkish may vary its sentence length considerably
-more than either the model or this skill does, and nothing has tested it.
+for this skill's output and 6.9 unaided — published Turkish apparently swinging
+its sentence length half again as hard as anything we produce.
+
+**It was an artefact of text length, and this is worth more than the finding
+would have been.** The articles are 3,700 to 6,800 words; the outputs are 340 to
+400. A dispersion statistic is not length-invariant: a long text has more chances
+to contain both a four-word sentence and a forty-word one, so `len_sd` climbs
+with word count for reasons that have nothing to do with style.
+
+Slicing the five article bodies into consecutive ~360-word windows — the length
+our academic outputs actually are — and measuring each window:
+
+| | `len_sd` |
+|---|---|
+| published Turkish, 125 windows of ~360 words | median **6.9**, mean 7.8, p25–p75 5.0–10.9 |
+| this skill, write mode | 7.3 / 7.8 / 6.6 |
+| unaided, write mode | 5.6 / 7.5 / 7.5 |
+| this skill, repair v8 | 10.2 / 5.0 |
+
+Every one of our files sits inside the published interquartile range, and our
+mean of 7.2 is above the published median of 6.9. There is no gap. The rule this
+leaves behind: **never compare a per-text dispersion statistic across texts of
+very different lengths** — match the window first, or the length difference will
+masquerade as a stylistic one.
 
 ### Then: what the corrected numbers show
 

@@ -505,6 +505,63 @@ countable signals show the mechanisms behaving as intended; whether that moves
 the corporate register's 2–3 record is untested, and claiming it would be exactly
 the error this document has already recorded twice.
 
+## Round five — pre-registered before running it
+
+Two things are outstanding here and they turn out to be one thing. The repair
+record (15–6) was measured before `references/rewrite-mode.md` became its own
+file, so it describes the skill one revision back. And the corporate register's
+2–3 predates the list-to-prose fix in the round above, so the only register this
+skill loses has an untested record. Neither can be settled by reading; both are
+settled by the same run.
+
+### Design, fixed before generating anything
+
+- The same twenty-one inputs in `evals/input/`.
+- Our arm regenerated with the current post-split skill into `evals/output/v9/`.
+- **The competitor arm is held byte-identical** — `turkce-humanizer-text/` is
+  already on disk and is not regenerated. One variable moves: our skill.
+- Twenty-one blind pairwise judgments, labels stripped, order re-randomised,
+  judges given no knowledge that a skill is involved.
+- Fidelity checked on all twenty-one of ours, same procedure as round three.
+- Fidelity outranks the ranking, as pre-registered from the start.
+
+### The corporate question, stated now so the round tests it
+
+Corporate is the one register lost in both modes. In write mode it recovered
+from 1–2 to 2–1 after the split, leaving one loss: `w-corp-1`, a bakery post.
+Reading that pair side by side suggests a mechanism, and it is written down here
+**before** the round rather than found in its results.
+
+The unaided text that won states its limits **as things tried and decided**, not
+as facts about the present:
+
+> "Ekşi mayalı somunumuz on iki saat bekliyor; bunu kısaltmanın bir yolunu bulamadık, denedik de olmadı."
+> "Bazı müşterilerimiz 'biraz fazla koyu olmuş' diyor, biz öyle seviyoruz, o yüzden değiştirmiyoruz."
+> "her şey her gün olmuyor, olsun diye de zorlamıyoruz"
+> "Bunları öve öve anlatmak istemiyoruz aslında, normal olması gereken şeyler. Ama artık normal olmadığı için söylüyoruz."
+
+Ours states limits too — *"her şey her zaman elimizde olmuyor"*, *"Cumartesi
+öğleden sonra tezgahın yarısı boş kalıyor"*, *"Oturacak yer sayılı"* — four of
+them, so the difference is not that we omit them. The difference is that ours
+are current-state facts and theirs carry a history and a refusal behind them.
+The last quote goes further: the writer steps outside the marketing frame to
+comment on it.
+
+**This is one file and one judge, which is not enough for a rule**, and the
+`voices.md` self-correction section already records what happens when a device
+that reads as human is applied without something real behind it: judges penalise
+it exactly as often as they reward it. So it is registered as a question, with
+the answer conditions fixed in advance:
+
+| outcome | reading |
+|---|---|
+| corporate ≥ 3–2 for us | the list-to-prose fix worked; the register is no longer a systematic loss |
+| the mechanism above appears in ≥ 2 corporate judgments | promote to a candidate rule in `registers.md` and test it in a later round |
+| it appears in ≤ 1 | it stays an observation about one bakery, and is not written into the skill |
+
+The failure mode being guarded against is the obvious one: finding the mechanism
+in the results because it was the thing being looked for.
+
 ## What this does not establish
 
 Twelve texts, one model, one afternoon, and judges that are themselves language
