@@ -137,11 +137,25 @@ things.
 >
 > İnsan: Çekirdek alırken bakılacak tek şey paketin üstündeki kavrulma tarihi; yazmıyorsa o kahve ne zaman kavrulduğunu söylemek istemiyor demektir. Öğütme yönteme göre değişiyor, French press için kalın, filtre için orta. Su da öyle: kireçli musluk suyu ekstraksiyonu köreltir, kaynattıktan sonra otuz saniye beklemek çoğu demleme için yeterli.
 
-**Where it stops.** A list is right when the items really are a set the reader
-will scan or return to: prices, opening hours, prerequisites, an ordered
-procedure. The travel piece in the corpus keeps its practical-notes list for
-exactly this reason. The test is whether a reader would ever want to find one
-item without reading the others.
+**Where it stops, and this limit gets broken more than any other in this file.**
+A list is right when the items really are a set the reader will scan or return
+to: prices, opening hours, prerequisites, an ordered procedure, product
+features, campaign terms. The test is whether a reader would ever want to find
+one item without reading the others.
+
+**Off entirely in corporate register.** Measured: melting a feature list or a
+campaign-terms list into prose loses to leaving it alone, and blind readers name
+the result *"düzleştirilmiş"* — flattened. A landing page is read by scanning.
+See `registers.md`.
+
+**Never chain a list into one semicolon sentence.** This is the specific bad
+outcome, and it is worse than either the list or clean prose:
+
+> AI: Katalogda yazılım geliştirme, veri analizi ve yapay zeka araçları; dijital pazarlama, satış ve içerik üretimi; finans okuryazarlığı ve girişimcilik…
+> — a blind reader's verdict: *"bu Türkçede kimsenin kurmadığı bir cümle"*
+
+If a list resists becoming two or three real sentences, that is the list telling
+you it was a list.
 
 ---
 

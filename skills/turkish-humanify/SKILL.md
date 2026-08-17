@@ -124,6 +124,13 @@ These hold in every mode, register and voice.
    that reads beautifully and invents a statistic has failed.
 2. **Meaning is preserved.** Repair may restructure freely within the register
    dose; it may not change what is being said.
+   **This includes how certain the source was.** A hedge is part of a claim, not
+   decoration on it: `görülmektedir` says somebody observed this, `başlıca` says
+   the list is not exhaustive, `eğiliminde` says it is a tendency. Deleting one
+   promotes the claim without adding a word; adding one where the source was
+   certain retracts it. Neither is a rewrite. Both directions are failures, and
+   the first is the easy one to commit while cleaning `-mektedir` or converting
+   a passive to an active.
 3. **No forced translation.** A technical term with no true Turkish equivalent
    stays as it is. `endpoint` does not become "uç nokta"; `event-driven` does
    not become "olay güdümlü". Where a Turkish word genuinely exists and Turkish

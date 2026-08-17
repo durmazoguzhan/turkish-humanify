@@ -17,7 +17,7 @@ collected into one decision.
 | Layer | blog / essay | technical | corporate | academic / official |
 |---|---|---|---|---|
 | **structure** | full | medium | medium | off |
-| **sentence** | full — inversion, particles and `-mIş` all in play | restricted — no inversion, few particles; branching, converbs, focus and `-DIr` cleanup active | medium | branching, converbs, focus and `-mektedir` cleanup only |
+| **sentence** | full — inversion, particles and `-mIş` all in play | restricted — no inversion, few particles; branching, converbs, focus and `-DIr` cleanup active | medium — branching, converbs, focus; **no list-to-prose conversion** | branching, converbs and focus only — **`-mektedir` stays** |
 | **surface** | full | full | full | full |
 
 **Surface is always on.** Orthography and terminology are correctness, not
@@ -51,9 +51,21 @@ their place in a procedure.
 A brand speaking, asking for a decision. The failure mode is not stiffness but
 inflation: bold everywhere, a superlative in every clause.
 
-*Dose:* medium across structure and sentence. The highest-value work here is
-usually layer 1 — deleting bold and emoji and converting outline back into
-prose.
+*Dose:* medium across structure and sentence, with one rule **off**:
+**do not convert lists to prose in this register.**
+
+The highest-value work here is still layer 1, but it is deleting bold and emoji,
+not dissolving structure. A feature list, a price table, a set of campaign terms
+and a benefits list are exactly the things a reader scans and returns to — which
+is the test `layer-1-structure.md` §5 already states, and which this register
+fails most often. Melting them into prose produces the one outcome blind readers
+named unprompted:
+
+> "maddeleri paragrafa eritmesi … insan elinden çıkmış gibi değil, düzleştirilmiş gibi okunuyor"
+> "tüm katalogu tek cümleye noktalı virgüllerle sıkıştırıyor … bu Türkçede kimsenin kurmadığı bir cümle"
+
+Both were losses in the blind comparison, and corporate is the only register this
+skill loses. Keep the list, fix what is inside it.
 
 ### academic / official
 Conventions are binding and deviation costs credibility. Journal articles,
@@ -61,8 +73,28 @@ theses, legal notices, official correspondence, policy documents.
 
 *Dose:* structure **off** — the opening is supposed to state the subject, the
 closing is supposed to state the contribution. Sentence layer limited to
-branching, converbs, focus and `-mektedir` cleanup. `-DIr` stays. The passive
+branching, converbs and focus. `-DIr` stays. `-mektedir` **stays**. The passive
 stays. `-mIş` stays out.
+
+**Why `-mektedir` stays, and what happened when it did not.** An earlier version
+of this table listed "`-mektedir` cleanup" in this row, contradicting
+`layer-2-sentence.md` §7, which says to keep it in academic register. The
+contradiction did measurable damage: `-mektedir` is the form that carries
+**evidential distance** in Turkish academic prose, so cleaning it here strips
+the marker that says whose claim this is.
+
+> Kaynak: "çalışmaların görece sınırlı kaldığı **görülmektedir**" — we observe this; the literature reports it
+> Çıktı: "çalışmalar görece sınırlı **kalmaktadır**" — this is the case; the author asserts it
+
+Measured on the eval corpus before the fix: evidential-distance forms
+(`görülmektedir`, `bulunmaktadır`, `düşünülmektedir`, `bildirilmektedir`) fell
+from 4 to 1 on one academic text and 3 to 2 on another. No word was added, and
+the claims got stronger than their source. A reviewer would flag it.
+
+**The residual case.** Hedging is also carried by qualifier words, not only by
+suffixes — dropping *"başlıca"* from "başlıca nedenleri şunlardır" turns an open
+list of main causes into an exhaustive one. That is not a `-mektedir` problem and
+this row does not cover it; see the invariant in `SKILL.md`.
 
 ---
 

@@ -423,6 +423,88 @@ file subset. On the six files measured after the move, the competitor uses it in
 one of five. The device is far less of a differentiator than the round-two
 write-up implied, and the hypothesis built on it was weaker than stated.
 
+## Round four — the two fixes, and what measuring them showed
+
+Two changes, in different registers so they do not interfere:
+
+**1. Corporate: list-to-prose conversion off.** The repository owner called
+melting list items into prose absurd, and the measurements agreed — both
+corporate losses cited it, in the judges' own words: *"maddeleri paragrafa
+eritmesi … düzleştirilmiş gibi okunuyor"*, *"tüm katalogu tek cümleye noktalı
+virgüllerle sıkıştırıyor … bu Türkçede kimsenin kurmadığı bir cümle"*.
+`registers.md` now turns the rule off for this register, and
+`layer-1-structure.md` §5 adds a specific prohibition on chaining a list into
+one semicolon sentence, which is worse than either the list or clean prose.
+
+**2. Academic: `-mektedir` stays — a contradiction, not a missing rule.**
+
+The de-hedging finding was first diagnosed here as a gap in the invariants. That
+diagnosis was wrong, and reading the files instead of reasoning from the symptom
+found the real cause: **the skill contradicted itself.**
+
+> `registers.md`, academic row: "branching, converbs, focus and `-mektedir` cleanup only"
+> `layer-2-sentence.md` §7: "Keep it in academic register; remove it everywhere else."
+
+The dosage table ordered the opposite of the rule it named. And `-mektedir` is
+precisely the form carrying evidential distance in Turkish academic prose, so the
+skill was stripping hedges **because it had been told to**.
+
+The fix is one line removing the contradiction, not a new rule layered on top of
+a rule that already disagreed with itself. Worth stating because the first
+instinct — add an invariant — would have left the contradiction in place and
+built on it.
+
+### Measured effect
+
+Evidential-distance forms (`görülmektedir`, `bulunmaktadır`, `ilerlemektedir`, …):
+
+| file | source | before fix | after fix |
+|---|---|---|---|
+| `academic-3` | 3 | 2 | **3** |
+| `academic-5` | 4 | 2 | **4** |
+
+Fully restored, both files. A one-line contradiction was doing all of the
+damage.
+
+Corporate structure:
+
+| file | bullets: source → before → after | bold: source → before → after |
+|---|---|---|
+| `corporate-1` | 5 → 3 → **8** | 20 → 3 → 3 |
+| `corporate-4` | 5 → 0 → **5** | 4 → 0 → 0 |
+| `corporate-5` | 5 → 0 → **5** | 11 → 1 → 2 |
+
+`corporate-4` and `corporate-5` now preserve their lists exactly, where before
+the skill destroyed all five.
+
+**`corporate-1` going from 5 to 8 looked like an overcorrection and is not.** The
+three extra bullets are the pricing tiers, which the source marked with bold and
+an em dash instead of a list marker:
+
+> Kaynak: `**Başlangıç** — [X] TL/ay · Tek kullanıcı, aylık [X] fatura`
+> Çıktı: `- Başlangıç: [X] TL/ay · Tek kullanıcı, aylık [X] fatura`
+
+Three parallel price tiers are a list. Marking them with bold instead is the
+bold-inflation tell, and converting them to a real list removed three em dashes
+in the same move. The first reading of that number was mine and it was wrong: I
+counted bullets without checking what had become one.
+
+### The residual, and where it went
+
+Hedging is also carried by words, not only suffixes — dropping *"başlıca"* from
+"başlıca nedenleri şunlardır" turns an open list of main causes into an
+exhaustive one, and no dosage row covers that. One sentence was added to
+invariant 2 in `SKILL.md`: a source's certainty is part of its claim, deleting a
+hedge promotes the claim, adding one where the source was certain retracts it,
+and both directions are failures.
+
+### Not yet done
+
+The blind reading comparison has **not** been re-run after these fixes. The
+countable signals show the mechanisms behaving as intended; whether that moves
+the corporate register's 2–3 record is untested, and claiming it would be exactly
+the error this document has already recorded twice.
+
 ## What this does not establish
 
 Twelve texts, one model, one afternoon, and judges that are themselves language
