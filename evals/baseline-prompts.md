@@ -61,7 +61,7 @@ file            words  sentences  len_mean  len_sd  em_dash  mektedir_p  dir_p  
 academic-1.md   356    25         14.2      6.6     0        0.0         0.0    0.6    1.1   1.1     0.0       0       0      0          0     0
 academic-2.md   358    23         15.6      6.0     0        0.6         4.5    0.3    2.8   0.3     0.3       0       0      0          1     0
 academic-3.md   377    15         25.1      10.6    0        1.1         3.4    0.5    4.5   0.5     0.0       0       0      0          1     0
-blog-1.md       252    21         12.0      5.1     4        0.0         0.4    1.2    4.0   0.4     0.0       0       0      0          16    4
+blog-1.md       252    21         12.0      5.1     0        0.0         0.4    1.2    4.0   0.4     0.0       0       0      0          16    4
 blog-2.md       344    36         9.5       5.4     5        0.0         2.3    0.9    0.9   0.9     0.0       0       0      0          0     0
 blog-3.md       334    30         11.1      3.9     0        0.0         2.1    0.6    0.3   0.3     0.0       0       0      0          0     0
 corporate-1.md  186    22         8.5       3.0     5        0.0         1.1    0.0    7.0   0.5     0.0       0       0      0          20    5
@@ -72,7 +72,6 @@ technical-2.md  208    18         11.6      5.8     0        0.0         7.7    
 technical-3.md  410    34         12.1      5.5     0        0.0         1.2    1.5    2.0   1.0     0.0       0       0      0          5     0
 ```
 
-These numbers are not what the plan predicted, and the discussion of why is in
-`evals/rubric.md` under "Calibration results". Short version: most of the AI
-tells this field talks about are already gone from this model's Turkish, and
-the ones that remain are structural rather than lexical.
+These numbers are not what the plan predicted, and the discussion of why — plus
+the three measurement bugs the calibration exposed on the way — is in
+`evals/rubric.md` under "Calibration results".

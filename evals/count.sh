@@ -12,6 +12,12 @@ set -euo pipefail
 here="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 signals="$here/signals"
 
+# Strip a leading YAML front matter block. Human-reference files carry source
+# attribution up top; counting it would measure our own annotations.
+body() {
+  awk 'NR==1 && $0=="---" { fm=1; next } fm && $0=="---" { fm=0; next } !fm' "$1"
+}
+
 # Prose view: drop headings, list items, blank lines; drop standalone dashes
 # so they are not counted as words.
 prose() {
@@ -43,7 +49,13 @@ per100() { awk -v n="$1" -v w="$2" 'BEGIN { if (w == 0) { print "0.0"; exit } pr
 
 printf 'file\twords\tsentences\tlen_mean\tlen_sd\tem_dash\tmektedir_p\tdir_p\tmis_p\tve_p\tpart_p\tcalque_p\tforced\ttilde\tpct_wrong\tbold\tbullets\n'
 
-for f in "$@"; do
+tmp=$(mktemp -d)
+trap 'rm -rf "$tmp"' EXIT
+
+for src in "$@"; do
+  f="$tmp/body.md"
+  body "$src" > "$f"
+
   words=$(prose "$f" | wc -w | tr -d ' ')
 
   read -r sentences len_mean len_sd < <(
@@ -59,7 +71,11 @@ for f in "$@"; do
               printf "%d %.1f %.1f\n", s, m, sqrt(d / s) }'
   )
 
-  em_dash=$(count_re '—|–' "$f")
+  # Only a space-flanked dash that does not follow a digit counts. A dash
+  # inside a range is correct Turkish and is not the calqued explanatory dash
+  # this signal looks for — whether written tight (04.30–05.00, Nisan–haziran)
+  # or spaced (MÖ 738 – MÖ 696).
+  em_dash=$(count_re '[^0-9] [—–] ' "$f")
   mektedir=$(count_re '(mekte|makta)dır' "$f")
   dir_copula=$(count_re '[a-zçğıöşü]{2,}(dır|dir|dur|dür|tır|tir|tur|tür)[[:space:]]*[.,;!?]' "$f")
   # Narrative -mIş: the evidential past that marks Turkish storytelling and
@@ -77,7 +93,7 @@ for f in "$@"; do
   bullets=$(grep -cE '^[[:space:]]*[-*+•] ' "$f" || true)
 
   printf '%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\n' \
-    "$(basename "$f")" "$words" "$sentences" "$len_mean" "$len_sd" \
+    "$(basename "$src")" "$words" "$sentences" "$len_mean" "$len_sd" \
     "$em_dash" "$(per100 "$mektedir" "$words")" "$(per100 "$dir_copula" "$words")" \
     "$(per100 "$mis_past" "$words")" "$(per100 "$ve_raw" "$words")" \
     "$(per100 "$particles" "$words")" "$(per100 "$calque" "$words")" \

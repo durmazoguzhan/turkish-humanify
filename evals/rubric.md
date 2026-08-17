@@ -15,29 +15,33 @@ Frequency columns are per 100 words. The **power** column records what the
 calibration below actually showed, so that a version is not called an
 improvement on the strength of a signal that separates nothing.
 
+Frequency columns are per 100 words. The **power** column records what the
+calibration below actually showed, so that a version is not called an
+improvement on the strength of a signal that separates nothing.
+
 | Signal | Target | Applies to | Power |
 |---|---|---|---|
-| `bold` | ≪ the input's; 0–2 for prose | blog, technical, academic | **high** |
-| `bullets` | ≤ the input's, and 0 where the content is not a list | blog, corporate | **high** |
-| `len_sd` | ≥ 6.0, and higher than the input's | blog, technical, corporate | **high at the low end** |
-| `dir_p` | falling vs the input, toward ≤ 1.5 | all but academic | **high in technical/academic** |
-| `mis_p` | present where the content narrates | blog only | conditional |
-| `ve_p` | falling vs the input | all | low |
-| `part_p` | > 0 | blog only | low |
-| `em_dash` | 0 | all | low, but still correct when it fires |
-| `mektedir_p` | 0 | all but academic | low outside academic |
+| `em_dash` | 0 | all | **separates** — 3 of 12 baselines, 0 of 3 human texts |
+| `dir_p` | falling vs the input, toward ≤ 1.5 | all but academic | **separates in technical/academic** — up to 7.7 vs 0.0–1.3 |
+| `bold` | ≪ the input's; 0–2 for prose | blog, technical, academic | **separates where present** — up to 20 vs 0–1 |
+| `bullets` | ≤ the input's, and 0 where the content is not a list | blog, corporate | **separates where present** — up to 5 vs 0 |
+| `mis_p` | present where the content narrates | blog only | conditional — 3.2 in the one narrative human text, ≤1.5 in every baseline |
+| `len_sd` | higher than the input's | blog, technical, corporate | **none** — both groups average about 5.6 |
+| `ve_p` | falling vs the input | all | none |
+| `part_p` | > 0 | blog only | none |
+| `mektedir_p` | 0 | all but academic | none outside academic |
 | `calque_p` | 0 | all | none observed — kept as a guard |
 | `forced` | 0 | all — a hit is a hard failure | untested; hard rule regardless |
-| `tilde`, `pct_wrong` | 0 | all | low |
+| `tilde`, `pct_wrong` | 0 | all | untested; both zero everywhere so far |
 | claims added vs input | 0 | repair mode | hard rule |
 
-`len_sd` measures what separates written-by-a-person from generated: a human
-writes a three-word sentence next to a thirty-five-word one, and Turkish
-agglutination makes the short end shorter than English can manage — `Olmadı.`
-is a complete sentence. The threshold is 6.0 because that is the floor of the
-three human reference texts, not because it is a round number. Note the
-asymmetry: a low `len_sd` reliably indicates machine rhythm, while a high one
-does not by itself indicate good writing.
+A signal with no power is not thereby wrong. `len_sd` still measures something
+real — a human writes a three-word sentence next to a thirty-five-word one, and
+Turkish agglutination makes the short end shorter than English manages, since
+`Olmadı.` is a complete sentence. What the calibration shows is only that this
+model's Turkish is already about as varied as published Turkish on this
+measure, so the number cannot be used as evidence of improvement. Report it,
+do not argue from it.
 
 The **claims added** count is not mechanical. It is checked by reading input and
 output side by side and listing every number, name, date, or assertion present in
@@ -92,55 +96,73 @@ Run on 2026-08-17 against `evals/human-reference/` and `evals/input/`.
 
 ```
 file                       words  sentences  len_mean  len_sd  em_dash  mektedir_p  dir_p  mis_p  ve_p  part_p  calque_p  forced  tilde  pct_wrong  bold  bullets
-bizevdeyokuz-acilislar.md  151    14         10.8      8.0     1        0.0         0.0    0.0    2.0   0.0     0.0       0       0      0          0     0
-midas-akademi-fk-orani.md  286    26         10.9      7.0     1        0.0         0.7    0.0    2.1   1.4     0.0       0       0      0          1     0
-midas-kral-midas.md        184    19         9.7       6.3     1        0.0         1.1    2.7    2.7   0.5     0.0       0       0      0          0     0
+bizevdeyokuz-acilislar.md  111    6          18.5      5.1     0        0.0         0.0    0.0    2.7   0.0     0.0       0       0      0          0     0
+midas-akademi-fk-orani.md  244    18         13.4      6.6     0        0.0         0.8    0.0    2.5   1.6     0.0       0       0      0          1     0
+midas-kral-midas.md        157    12         13.1      5.2     0        0.0         1.3    3.2    3.2   0.6     0.0       0       0      0          0     0
 ```
 
-The instrument did not fail the way the plan expected it to fail. It failed a
-different way, and the result is worth more than a pass would have been.
+### First: what the calibration caught in the instrument
 
-**The folklore tells are largely gone.** The plan predicted the twelve LLM
-baselines would show elevated `em_dash`, `mektedir_p` and `calque_p` against
-the human references. They do not. Em dashes appear in four baselines and in
-*all three* human excerpts. `mektedir` appears only in the two academic
-baselines, where it belongs. `calque_p` is 0.0 in eleven of twelve baselines
-and 0.0 in every human text — the entire calque list scores nothing on either
-side. Discourse particles do not separate the two groups either.
+Three measurement bugs, all of which had produced confident wrong readings
+before they were found. They are recorded because each one had already been
+reported as a finding.
 
-This is the single most useful thing the calibration produced. The five
-phenotypes that `turkce-humanizer` hunts — punctuation inflation, `-mektedir`
-inflation, template repetition, the "sadece X değil aynı zamanda Y" calque,
-hollow closings — are mostly absent from this model's Turkish before any
-intervention. A skill built to remove them would be fighting the previous war
-and would measure as a success while changing nothing a reader cares about.
+1. **Range dashes counted as explanatory dashes.** `04.30–05.00`,
+   `Nisan–haziran`, `MÖ 738 – MÖ 696` are correct Turkish. Counting them made
+   `em_dash` look like a dead signal — it is not.
+2. **YAML front matter counted as prose.** The human-reference files carry
+   source attribution up top, and the counter was measuring our own annotation
+   notes. This inflated their `len_sd` from roughly 5.6 to roughly 7.1 and
+   manufactured a difference that does not exist.
+3. **`baseline-prompts.md` counted as a baseline** because it sat inside
+   `input/`. It has been moved up one level.
+
+The general lesson is worth more than the three fixes: a signal that has never
+been checked against a text whose true value is known by hand is not evidence,
+it is a number.
+
+### Then: what the corrected numbers show
+
+**Some folklore tells survive; the headline ones do not.** `mektedir_p` fires
+only in the two academic baselines, where it belongs. `calque_p` is 0.0 across
+all fifteen texts — the entire eighteen-phrase list scores nothing on either
+side. Discourse particles do not separate the groups. `ve_p` does not either.
+
+The five phenotypes that `turkce-humanizer` hunts — punctuation inflation,
+`-mektedir` inflation, template repetition, the "sadece X değil aynı zamanda Y"
+calque, hollow closings — are, apart from punctuation, largely absent from this
+model's Turkish before any intervention. A skill built to remove them would
+measure as a success while changing nothing a reader cares about.
 
 **What does separate the two groups:**
 
-- **Bold and bullet inflation, by a wide margin.** `corporate-1` carries 20
-  bold spans and 5 bullet lines, `blog-1` 16 and 4. The human texts carry 0–1
-  bold and no bullets at all. This is a composition-layer tell, and it is the
-  clearest signal in the table.
-- **Sentence-length variance.** All three human texts sit at `len_sd` 6.3–8.0.
-  The baselines cluster lower, with `corporate-1` at 3.0 and `blog-3` at 3.9.
-  The overlap is real — `academic-3` reaches 10.6 — so this is evidence, not
-  proof, and it is strongest at the low end: a `len_sd` under 4.5 is a reliable
-  sign of machine rhythm.
+- **The explanatory dash.** Once range dashes are excluded, three baselines
+  carry it (5, 5, 4 occurrences) and no human text carries any.
 - **`-DIr` density in technical and academic prose.** `technical-2` 7.7,
-  `academic-2` 4.5, `technical-1` 3.7, against 0.0–1.1 in the human texts.
-- **Narrative `-mIş`, where the content is narrative.** The Midas folk-history
-  excerpt scores 2.7; every baseline is at or below 1.5. The other two human
-  texts score 0.0, because they are not narrating — so this signal is
-  register-conditional and must be read as such, never as a target to hit.
+  `academic-2` 4.5, `technical-1` 3.7, `academic-3` 3.4, against 0.0–1.3 in the
+  human texts.
+- **Bold and bullet inflation, where it appears.** `corporate-1` carries 20
+  bold spans and 5 bullet lines, `blog-1` 16 and 4, against 0–1 bold and no
+  bullets in the human texts. Six of twelve baselines are clean here, so this
+  is a strong signal with partial coverage rather than a universal one.
+- **Narrative `-mIş`, where the content narrates.** The folk-history excerpt
+  scores 3.2; every baseline is at or below 1.5. The other two human texts
+  score 0.0 because they are not narrating, so this is register-conditional and
+  must never be treated as a number to hit.
 
-**What this changes.** The surface layer keeps its rules, because a rule that
-fires rarely is still right when it fires: `blog-1` really does have four em
-dashes. But surface work is no longer where the value is, and no version of
-this skill should be called an improvement on the strength of surface counts
-alone. The composition and sentence layers carry the weight, and the reading
-questions carry the verdict.
+**What does not separate them, against expectation:** sentence-length variance.
+Both groups average about 5.6. This was reported as the strongest signal before
+the front-matter bug was found, and it is not a signal at all on this evidence.
+
+### The limits of this calibration
+
+The human reference set is three excerpts, one of them 111 words. That is
+enough to **falsify** — had the instrument called published Turkish
+machine-written, the instrument would be wrong and we would know it — but
+nowhere near enough to **establish** thresholds. No number in the table above
+should be turned into a pass mark. Read the power column as "this separated
+three human texts from twelve machine texts on one afternoon", not as a norm.
 
 **A caveat on the calque list.** It scored zero on every text in both groups,
-so nothing in this corpus validates it. It stays in the repository as a guard
-against phrases that would be wrong if they appeared, not as a diagnostic that
-has been shown to detect anything.
+so nothing here validates it. It stays as a guard against phrases that would be
+wrong if they appeared, not as a diagnostic shown to detect anything.
