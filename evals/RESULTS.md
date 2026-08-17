@@ -368,8 +368,17 @@ stripping a hedge **promotes** a claim without adding a word:
 > Ours: "çalışmalar görece sınırlı **kalmaktadır**"
 > — an observation becomes a statement of fact.
 
-Count on `academic-5`: the competitor does it three times, we do it once. Both
-are wrong, and ours is not excused by being rarer.
+Both academic files show it, which makes it a pattern rather than an incident:
+
+| file | ours | competitor |
+|---|---|---|
+| `academic-4` | 1 (drops *"başlıca"*, turning an open list of main causes into an exhaustive one) | 4, including a causal link the source does not make |
+| `academic-5` | 1 | 3 |
+
+Both are wrong, and ours is not excused by being rarer. The competitor's worst
+instance is the reverse of de-hedging — *adding* a connection: the source lists
+two facts with *"ve"*, the output joins them with *"seyrettiğinden"* and asserts
+that one causes the other.
 
 **Why the rules missed it.** `voices.md` regulates *adding* hedges — permitted
 "where the source's own claim is genuinely uncertain". It says nothing about
