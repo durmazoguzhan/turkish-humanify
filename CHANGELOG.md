@@ -2,6 +2,26 @@
 
 ## Unreleased
 
+### Versioning, distribution and project docs
+
+- **The documented install path could not work.** The README said
+  `/plugin install turkish-humanify@durmazoguzhan`, but the repository had no
+  `.claude-plugin/marketplace.json`, so there was no marketplace to install
+  from. Added, along with the missing `/plugin marketplace add` line.
+- **The version was pinned at `1.0.0` and never moved**, through the mode split,
+  the recalibration and seven counter fixes. Claude Code uses that field as the
+  update key and skips the update when it matches, so anyone who installed at
+  1.0.0 would have received none of it.
+- Switched to [WendtVer](https://wendtver.org), derived from the commit count by
+  `scripts/version.sh` and enforced by CI. SemVer is not used because a skill has
+  no contract to break. The one-time consequence is that the version goes
+  **backwards**, 1.0.0 to 0.3.6; the update check compares for equality, not
+  order, so installed users still get the change.
+- `.github/workflows/ci.yml` runs the layout check, the counter fixture test and
+  the version gate on every push and pull request.
+- Added `CONTRIBUTING.md`, `SECURITY.md`, `CODE_OF_CONDUCT.md` and a pull
+  request template.
+
 ### Mode split
 
 - `SKILL.md` now routes to `references/rewrite-mode.md` or

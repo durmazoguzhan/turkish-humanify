@@ -1,0 +1,63 @@
+name: ci
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Repository layout
+        run: ./scripts/check-structure.sh
+
+      - name: Counter agrees with the hand-verified fixture
+        run: ./evals/test-count.sh
+
+      # On master the version is fully determined: it is the commit count in
+      # WendtVer form, so it can be recomputed and compared exactly.
+      - name: Version matches the commit count
+        if: github.event_name == 'push'
+        run: ./scripts/version.sh --check
+
+      # On a pull request HEAD is a synthetic merge commit, so the count is not
+      # meaningful. What is checkable is that the contributor moved the version
+      # at all, and moved it forward.
+      - name: Version was bumped
+        if: github.event_name == 'pull_request'
+        env:
+          BASE: ${{ github.base_ref }}
+        run: |
+          set -euo pipefail
+          read_version() { python3 -c "import json,sys;print(json.load(sys.stdin).get('version',''))"; }
+
+          base=$(git show "origin/$BASE:.claude-plugin/plugin.json" | read_version)
+          head=$(read_version < .claude-plugin/plugin.json)
+
+          printf 'base %s -> head %s\n' "${base:-<unset>}" "${head:-<unset>}"
+
+          if ! printf '%s' "$head" | grep -qE '^[0-9]+\.[0-9]\.[0-9]$'; then
+            echo "FAIL version '$head' is not WendtVer (MAJOR.MINOR.PATCH, MINOR and PATCH single digits)" >&2
+            echo "     see scripts/version.sh and https://wendtver.org" >&2
+            exit 1
+          fi
+
+          if [ "$base" = "$head" ]; then
+            echo "FAIL version was not bumped; it is still $head" >&2
+            echo "     run: scripts/version.sh --write" >&2
+            exit 1
+          fi
+
+          to_int() { IFS=. read -r a b c <<<"$1"; echo $(( a * 100 + b * 10 + c )); }
+          if [ "$(to_int "$head")" -le "$(to_int "$base")" ]; then
+            echo "FAIL version went backwards or sideways: $base -> $head" >&2
+            exit 1
+          fi
+
+          echo "ok   version bumped $base -> $head"

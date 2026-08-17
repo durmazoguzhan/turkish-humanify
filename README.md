@@ -48,9 +48,8 @@ evaluation corpus, in every round it has been checked.
 /plugin install turkish-humanify@durmazoguzhan
 ```
 
-The first line was missing until now, and without it the second one cannot
-work: `@durmazoguzhan` names a marketplace, and a marketplace has to be added
-before anything can be installed from it.
+Both lines are needed: `@durmazoguzhan` names a marketplace, and a marketplace
+has to be added before anything can be installed from it.
 
 **Skills CLI**
 
@@ -138,6 +137,24 @@ instrument before the corpus, and calibrate it against published writing in
 that language — in this project that check caught seven separate bugs, each of
 which had already produced a confident wrong finding. And decide in advance
 what beats what, in writing, before you see any results.
+
+## Contributing
+
+`CONTRIBUTING.md` has the details. The short version: rules in this skill are
+measured before they are added, `evals/repair-protocol.md` is the procedure, and
+fidelity to the source outranks the score. Reporting a bad Turkish sentence in an
+issue is a genuinely useful contribution and costs you nothing.
+
+Security policy: `SECURITY.md`. Code of conduct: `CODE_OF_CONDUCT.md`.
+
+## Versioning
+
+[WendtVer](https://wendtver.org): the version is the commit count, written one
+digit at a time. A skill has no contract to break, so SemVer would be encoding a
+severity judgement that does not exist. `.claude-plugin/plugin.json` is the
+update key Claude Code compares against, so it is derived by `scripts/version.sh`
+and enforced in CI rather than maintained by hand — it had already drifted
+through a mode split and seven counter fixes while still claiming `1.0.0`.
 
 ## Licence
 
