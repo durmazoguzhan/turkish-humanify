@@ -36,6 +36,12 @@ improvement on the strength of a signal that separates nothing.
 | `tilde`, `pct_wrong` | 0 | all | untested; both zero everywhere so far |
 | claims added vs input | 0 | repair mode | hard rule |
 
+The column is called `mektedir_p` and the skill's reference files call the suffix
+`-mAktAdIr`, which is the accurate name: a capital vowel stands for the whole
+harmony set, so `-mAktAdIr` covers *-maktadır* and *-mektedir* alike. The column
+keeps the surface spelling only so that tables in earlier rounds stay readable.
+Naming a suffix by one surface form is what produced bug 4 below.
+
 **`mektedir_p` is the one two-sided target here, and the only one calibrated
 against dated published text.** Five Turkish journal articles from 2015–2019 in
 `evals/human-reference/` put the academic band at 0.4–2.3 per 100 words over full

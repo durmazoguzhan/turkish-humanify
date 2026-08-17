@@ -17,7 +17,7 @@ collected into one decision.
 | Layer | blog / essay | technical | corporate | academic / official |
 |---|---|---|---|---|
 | **structure** | full | medium | medium | off |
-| **sentence** | full — inversion, particles and `-mIş` all in play | restricted — no inversion, few particles; branching, converbs, focus and `-DIr` cleanup active | medium — branching, converbs, focus; **no list-to-prose conversion** | branching, converbs and focus only — **`-mektedir` stays** |
+| **sentence** | full — inversion, particles and `-mIş` all in play | restricted — no inversion, few particles; branching, converbs, focus and `-DIr` cleanup active | medium — branching, converbs, focus; **no list-to-prose conversion** | branching, converbs and focus only — **`-mAktAdIr` stays** |
 | **surface** | full | full | full | full |
 
 **Surface is always on.** Orthography and terminology are correctness, not
@@ -79,13 +79,13 @@ theses, legal notices, official correspondence, policy documents.
 
 *Dose:* structure **off** — the opening is supposed to state the subject, the
 closing is supposed to state the contribution. Sentence layer limited to
-branching, converbs and focus. `-DIr` stays. `-mektedir` **stays**. The passive
+branching, converbs and focus. `-DIr` stays. `-mAktAdIr` **stays**. The passive
 stays. `-mIş` stays out.
 
-**Why `-mektedir` stays, and what happened when it did not.** An earlier version
-of this table listed "`-mektedir` cleanup" in this row, contradicting
+**Why `-mAktAdIr` stays, and what happened when it did not.** An earlier version
+of this table listed "`-mAktAdIr` cleanup" in this row, contradicting
 `layer-2-sentence.md` §7, which says to keep it in academic register. The
-contradiction did measurable damage: `-mektedir` is the form that carries
+contradiction did measurable damage: `-mAktAdIr` is the form that carries
 **evidential distance** in Turkish academic prose, so cleaning it here strips
 the marker that says whose claim this is.
 
@@ -99,13 +99,13 @@ the claims got stronger than their source. A reviewer would flag it.
 
 **How much is "stays".** "Stays" is not "as much as possible", and the band has
 two ends. Measured across five Turkish journal articles published between 2015
-and 2019 — early enough that none of them can be model output — `-mektedir` and
-`-maktadır` together run **0.4 to 2.3 per 100 words** (median 1.6) and the `-DIr`
-copula runs **2.3 to 4.0**. The articles are in `evals/human-reference/`.
+and 2019 — early enough that none of them can be model output — `-mAktAdIr` runs
+**0.4 to 2.3 per 100 words** (median 1.6) and the `-DIr` copula runs **2.3 to
+4.0**. The articles are in `evals/human-reference/`.
 
 Both ends are live failures, not hypotheticals:
 
-| | `-mektedir` per 100 words |
+| | `-mAktAdIr` per 100 words |
 |---|---|
 | unaided model Turkish, asked for an academic text | **0.0** — not restrained, absent; `-DIr` is 0.0 too |
 | published Turkish journal articles, 2015–2019 | **0.4 – 2.3** |
@@ -113,13 +113,13 @@ Both ends are live failures, not hypotheticals:
 
 The two articles at the low end of the band reach for the aorist instead
 (*değerlendirilir*, *belirler*, *karşılaşırlar*); the two at the high end are
-`-mektedir` throughout. Both read as published. So the target is the band, not a
+`-mAktAdIr` throughout. Both read as published. So the target is the band, not a
 number inside it — and a text that never uses the form at all has missed the
 register, which is the specific thing unaided output does.
 
 **The residual case.** Hedging is also carried by qualifier words, not only by
 suffixes — dropping *"başlıca"* from "başlıca nedenleri şunlardır" turns an open
-list of main causes into an exhaustive one. That is not a `-mektedir` problem and
+list of main causes into an exhaustive one. That is not a `-mAktAdIr` problem and
 this row does not cover it; see the invariant in `SKILL.md`.
 
 ---

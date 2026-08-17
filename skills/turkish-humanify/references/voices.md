@@ -93,7 +93,7 @@ not personality, it is prose that does not fight its reader.
 *Who is speaking:* nobody, deliberately — but a nobody who has been edited by someone competent.
 
 address **impersonal** · length long, moderate swing · linkage semicolon and
-`-mektedir` chains · mood `-mektedir` and `-DIr` · particles none ·
+`-mAktAdIr` chains · mood `-mAktAdIr` and `-DIr` · particles none ·
 terminology established Turkish, English in parentheses on first use ·
 inversion never · paragraphs long and even · concreteness moderate — citations
 and defined terms

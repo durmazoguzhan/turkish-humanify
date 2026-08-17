@@ -24,7 +24,7 @@ there is no source to be faithful to.
    somebody observed this; `başlıca` says the list is not exhaustive;
    `eğiliminde` says it is a tendency. Deleting one promotes the claim without
    adding a word, and adding one where the source was certain retracts it. Both
-   are failures, and the first is easy to commit while cleaning `-mektedir` or
+   are failures, and the first is easy to commit while cleaning `-mAktAdIr` or
    converting a passive to an active.
 
 **Why this is the skill's business here and not in write mode.** Fabrication in
@@ -102,7 +102,7 @@ ones turn out to be rare.
 | **Explanatory em dash** | ` — ` bracketing an aside. Ranges like `04.30–05.00` are correct, leave them | **common** — three of twelve texts |
 | **Suffix guessed from spelling** | `cache'ı`, `SQL'ı`, `queue'yü` | common wherever English terms are inflected |
 | **Apostrophe on an organisation name** | `Türk Dil Kurumu'ndan` | occasional |
-| **`-mektedir` outside academic** | "artmaktadır" in a blog post | **rare** — appears only in academic texts, where it belongs |
+| **`-mAktAdIr` outside academic** | "artmaktadır" in a blog post | **rare** — appears only in academic texts, where it belongs |
 | **Forced term translation** | "uç nokta", "olay güdümlü" | **not observed** — but a hard failure if it appears |
 | **Calqued idioms** | "günün sonunda", "kritik öneme sahip" | **not observed** in current output |
 | **`~` or `41%`** | wrong-side percent sign, tilde for approximation | rare |
@@ -116,7 +116,7 @@ trailing modifiers, `ve` where a converb belongs, `-DIr`, and the complete
 absence of inversion and particles. Those five account for most of what makes
 current model Turkish feel unwritten.
 
-The famous lexical tells — calqued idioms, `-mektedir` everywhere, "sadece X
+The famous lexical tells — calqued idioms, `-mAktAdIr` everywhere, "sadece X
 değil aynı zamanda Y" — are largely gone from current output. Their rules stay
 in this skill because a rule that fires rarely is still right when it fires,
 but a repair pass that finds only those has not found the problem.
@@ -138,7 +138,7 @@ against it before starting.
 - **Semicolons.** The Turkish semicolon is legitimate. Only the English
   `; and` chain grates.
 - **`-DIr` in a definition, a specification, a standard, or a legal clause**,
-  and **`-mektedir` in academic register**. Both are the register working.
+  and **`-mAktAdIr` in academic register**. Both are the register working.
 - **The passive in a methods section.** A convention of the form.
 - **One short sentence.** Length variance means variance, and a short sentence
   is half of it.

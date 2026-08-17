@@ -14,6 +14,14 @@ would put there. The pairs read as before/after, which suits repair, but they ar
 the same target either way: writing, `İnsan:` is what to produce; repairing, it
 is what to produce instead.
 
+**Suffixes are written with capital vowels standing for the whole harmony set**,
+the usual Turkish convention. `-DIr` covers *-dır/-dir/-dur/-dür* and their
+*t-* forms; `-mIş` covers *-mış/-miş/-muş/-müş*; `-mAktAdIr` covers both
+*-maktadır* and *-mektedir*. Naming a suffix by one of its surface forms makes
+a rule look like it applies to half the language — and it is not a theoretical
+worry: `evals/count.sh` searched for the literal string `-maktadır` for four
+rounds and reported every `-mektedir` as absent.
+
 ---
 
 ## 1. Branching direction
@@ -175,9 +183,9 @@ Stripping it out of a specification makes the specification wrong.
 
 ---
 
-## 7. `-mektedir` inflation
+## 7. `-mAktAdIr` inflation
 
-The `-mektedir` form is bureaucratic present. It belongs to academic and
+The `-mAktAdIr` form is bureaucratic present. It belongs to academic and
 official registers and nowhere else, but LLM Turkish reaches for it whenever
 the topic sounds serious.
 

@@ -38,13 +38,13 @@ referent and get read as instructions to produce. Translate them:
 | the table says | in repair it means | in write it means |
 |---|---|---|
 | `-DIr` **cleanup** | strip it from the input | do not use it as a default sentence-ender |
-| `-mektedir` **cleanup** | strip it from the input | do not reach for it |
-| `-mektedir` **stays** | do not delete what is there | **neither avoid it nor reach for it** — write at the register's own natural rate |
+| `-mAktAdIr` **cleanup** | strip it from the input | do not reach for it |
+| `-mAktAdIr` **stays** | do not delete what is there | **neither avoid it nor reach for it** — write at the register's own natural rate |
 | structure **off** | do not restructure the input | follow the genre's own conventions |
 | **no list-to-prose conversion** | leave the input's lists alone | use a list only where the content is genuinely a set the reader scans |
 
 **The middle row is the one that has already gone wrong.** Measured on three
-academic write tasks, `-mektedir` per 100 words:
+academic write tasks, `-mAktAdIr` per 100 words:
 
 | | unaided | skill |
 |---|---|---|
@@ -54,7 +54,7 @@ academic write tasks, `-mektedir` per 100 words:
 
 Blind readers penalised it in those words: *"neredeyse her yüklem
 `-mektedir/-maktadır` kalıbında"*, *"paragrafların hepsi aynı uzunlukta"*.
-Academic Turkish does use `-mektedir` — raising it from zero is correct — but
+Academic Turkish does use `-mAktAdIr` — raising it from zero is correct — but
 "stays" is not a licence to end every sentence with it.
 
 ---
