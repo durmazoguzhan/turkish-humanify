@@ -236,6 +236,184 @@ fabricated sentences — *"Adı katedral, aslı manastır"*, *"Kışı da yazaca
 across three independent judgments. On that file the competitor's entire
 advantage is invention, and matching it means matching the invention.
 
+## Round three — twenty-one files, and the first result that is not noise
+
+The corpus was expanded from twelve baselines to twenty-one (three more blog,
+two technical, two corporate, two academic; blog is now six of twenty-one
+because that is where the comparison was being lost). Self-correction was moved
+from `voices.md` into `layer-2-sentence.md` as numbered section 15, with worked
+pairs and a fidelity-safe form. All 21 files were then run through both skills
+and judged blind, order randomised per file, key held separately.
+
+### The tally
+
+| | ours | competitor |
+|---|---|---|
+| **all 21 files** | **15** | 6 |
+
+Under a fair coin, the probability of 15 or more out of 21 in one direction is
+**0.039**. This is the first round in this project that clears conventional
+significance rather than landing in noise.
+
+By register:
+
+| register | ours | competitor |
+|---|---|---|
+| academic | **5** | 0 |
+| technical | **4** | 1 |
+| blog | **4** | 2 |
+| corporate | 2 | **3** |
+
+### The confound, stated before the conclusion
+
+Two variables changed in the same round: the corpus grew and the skill changed.
+Splitting the files separates them, and the split is uncomfortable.
+
+| subset | ours–competitor | p |
+|---|---|---|
+| the original 12 (where v5 scored 6–6) | **7–5** | 0.387 — noise |
+| the 9 new files | **8–1** | 0.020 |
+
+**On the same twelve files, the skill changes moved the score by one.** The
+overall signal comes almost entirely from the nine new files. So the honest
+reading is not "the skill improved and here is the proof" — it is "the skill
+improved by an amount this corpus cannot resolve, and a larger sample favours
+us."
+
+Two explanations, and both are probably partly true:
+
+1. **The old twelve have a built-in ceiling.** They contain the four files this
+   skill has never won: `blog-1`, `blog-2`, `corporate-1`, `corporate-2`. On
+   `blog-1` the competitor's advantage is fabrication, confirmed by four
+   independent judgments now citing the same invented sentences. That file
+   cannot be won honestly, so the old subset caps below 12–0 by construction.
+2. **I chose the new topics.** Not cherry-picked — same generation method, clean
+   context, ordinary prompts — but the selection was mine, including the
+   deliberate choice to make `blog-6` a narrative. That is a degree of freedom,
+   and it should be discounted accordingly.
+
+### Two further discounts
+
+**`blog-6` was aided by a competitor defect.** The competitor wrote a meta-line
+inside its own repaired-text section — *"Faz 1'de çıkarılacak sinyal, Faz 2'de
+yerleştirilecek boşluk bulunmadığı için metin değişmeden kalır."* — and the
+judge called it disqualifying on its own. This is not an artifact of our
+extraction: the line sits below the "Onarılmış Versiyon" heading in the
+competitor's file, so a user copying that section would get it. It is a real
+defect, and it is also not a fact about Turkish prose. Excluding `blog-6`:
+**14–6 of 20, p = 0.058** — just outside conventional significance.
+
+The same leak appears in `blog-5`, where **we lost anyway**. Two of 21
+competitor outputs leak; it is not systematic.
+
+**Corporate is our only losing register, 2–3.** The judges' reasons are
+consistent: our composition layer converts marketing bullet lists into prose,
+and on a landing page or a campaign announcement they read that as
+*"düzleştirilmiş"* rather than as human. This is the register dosage being
+wrong, not the layer being wrong — corporate is currently set to "medium"
+structure, and the evidence says the list-to-prose conversion should be off or
+much weaker there. **Not changed in this round**, because changing it and
+re-measuring in the same pass is the mistake that made round two
+uninterpretable.
+
+### Fidelity on the nine new files
+
+The pre-registered invariant: a text that reads beautifully and invents a fact
+has failed, and that outranks the blind ranking. Each new input was checked
+against both outputs by a subagent asked to list every number, name, date,
+claim or experience assertion present in the output and absent from the source.
+
+| | files with additions |
+|---|---|
+| ours | **0 of 9** |
+| competitor | 4 of 9 |
+
+Ours added nothing again — nine for nine, twenty-one for twenty-one across the
+whole project. On `blog-6`, a family story where invention would be easiest and
+would read best, the check found the body *word for word identical* to the
+source.
+
+The competitor's additions on the new files are milder than on `blog-1` — mostly
+restatements rather than invented facts — with two that assert more than the
+source does:
+
+> `blog-4`: "Kitap okumak insana bilgi de kazandırır, tamam." — the source says the opposite: *"Kitap okumanın gerçek getirisi bilgi değil, dikkatin geri kazanılmasıdır."*
+> `technical-4`: "Yani sorun index'te değil, tahminde." — the source says the gap *"istatistik sorununa işaret eder"*, which is weaker than asserting the index is fine.
+
+One asymmetry worth naming, because it cuts against a rule of ours. Both skills
+occasionally **weaken** a source claim rather than adding to it — ours wrote
+*"Her sabah demeyeyim, çoğu sabah."* where the source said *"her sabah"*, and
+*"Alıştı da denmez belki"* where the source said *"bacaklar alıştı"*. Those are
+hedges, not fabrications, and the direction is retraction rather than invention.
+But `voices.md` permits hedging only *"where the source's own claim is genuinely
+uncertain"*, and "her sabah" was not uncertain. This is a small, real violation
+of our own rule, found by the fidelity check rather than by reading, and it is
+recorded rather than fixed for the same reason as the corporate dosage.
+
+### A fidelity failure the rules do not cover: de-hedging
+
+The academic checks surfaced something neither skill's rules address, and ours
+commits it too.
+
+Academic Turkish hedges its claims — *"bulgular bulunurken"*, *"görülmektedir"*,
+*"olduğu düşünülmektedir"*. Those forms mark a claim as reported by the
+literature rather than asserted by the author. Both skills strip them, and
+stripping a hedge **promotes** a claim without adding a word:
+
+> Source: "sınırlı bir verim artışı sağlayabileceği yönünde **bulgular bulunurken**"
+> Competitor: "sınırlı bir verim artışı **sağlayabilir.**"
+> — what the literature reports becomes what this paper asserts.
+
+> Source: "çalışmaların görece sınırlı kaldığı **görülmektedir**"
+> Ours: "çalışmalar görece sınırlı **kalmaktadır**"
+> — an observation becomes a statement of fact.
+
+Count on `academic-5`: the competitor does it three times, we do it once. Both
+are wrong, and ours is not excused by being rarer.
+
+**Why the rules missed it.** `voices.md` regulates *adding* hedges — permitted
+"where the source's own claim is genuinely uncertain". It says nothing about
+*removing* the source's hedges, and the sentence layer actively pushes that way:
+`-mektedir` cleanup and passive-to-active conversion both tend to delete exactly
+the constructions that carry epistemic distance in Turkish academic prose.
+
+So two rules of ours, each defensible alone, combine into a fidelity failure the
+fidelity check was not looking for. It found it anyway, which is the argument for
+running the check on every register rather than only where fabrication seems
+likely.
+
+**Not fixed in this round.** The fix is a rule stating that a source's epistemic
+markers are part of its claims and survive rewriting — which belongs in the
+invariants, not in a layer. Writing it and re-measuring in the same pass is the
+error that made round two uninterpretable.
+
+### What the academic sweep shows
+
+5–0, and it is the clearest positive result in the project. The judges rejected
+the competitor's output for exactly the reason the register dosage predicts:
+it applies conversational moves where the genre forbids them.
+
+> "'Ya da şöyle demek daha doğru olur.' … bir akademik özette kimsenin
+> yazmayacağı bir kalıp"
+> "'Kaybolduğunu değil, soğrulduğunu söylüyoruz.' … bir özette yeri olmayan,
+> sonradan eklenmiş retorik bir vurgu"
+> "aynı paragrafta kip değiştirip kendini ele veriyor"
+
+Register-aware dosage — running less of the skill where less is correct — is
+the part of this design that measurably works.
+
+### Self-correction: added, and barely used
+
+The hypothesis from round two was that the device sat in the wrong file. It was
+moved to the sentence layer. Result: **1 use across 12 outputs**, against 0
+across 6 before. It fires now, and almost never.
+
+A correction to an earlier claim in this document: the competitor was reported
+as using the device in "five of six" files. That measurement was on a different
+file subset. On the six files measured after the move, the competitor uses it in
+one of five. The device is far less of a differentiator than the round-two
+write-up implied, and the hypothesis built on it was weaker than stated.
+
 ## What this does not establish
 
 Twelve texts, one model, one afternoon, and judges that are themselves language
