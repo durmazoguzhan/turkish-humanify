@@ -159,6 +159,83 @@ Explanatory em dashes in output: 0. Added claims: 0. No re-run was required.
 
 ---
 
+## Round two — the reference-review changes, and why they mostly did not work
+
+After the review in `docs/design/2026-08-17-reference-review.md`, the skill
+gained a sprinkling section, a middle-third rule, contrast-point paragraph
+breaks, fidelity-safe voice guidance, and self-correction as a device. The six
+files this skill lost in round one were re-run and re-judged blind against the
+**same** `turkce-humanizer` outputs.
+
+| file | round-one | round-two |
+|---|---|---|
+| academic-2 | lost | **won** |
+| blog-1 | lost | lost |
+| blog-2 | lost | lost |
+| corporate-1 | lost | lost |
+| corporate-2 | lost | lost |
+| technical-1 | lost | lost |
+
+**One of six.** The changes did not move reading quality where it was being
+lost, and saying otherwise would be dressing up a failed round.
+
+### What did work
+
+`academic-2` flipped, and for the reason the changes predicted. The judge
+rejected the competitor's self-correction as fake — *"hiçbir şeyi düzeltmeyen
+yapay bir 'kendini toparlama' hamlesi ve bir akademik özette kimsenin
+yazmayacağı bir kalıp"* — and rewarded register consistency. That is precisely
+the "where it stops" limit written into the self-correction rule and the
+academic dosage row. Boundaries on rules do work.
+
+### What did not, and the measured reason
+
+**Self-correction appears zero times in all six of our round-two outputs.**
+`turkce-humanizer` uses it in five of six. The judges named it as the deciding
+factor three times — *"Ya da değildi, bilmiyorum"*, *"Ya da daha dikkatli
+söyleyelim"*, *"Bilmiyoruz."* The device was added to `voices.md` and the skill
+did not reach for it once.
+
+Two plausible causes, neither yet tested:
+
+1. **It is filed where it is not seen.** The device lives in `voices.md`, which
+   the router reads for choosing a voice, not for generating sentences. It
+   probably belongs in `layer-2-sentence.md` as a numbered device with its own
+   worked pairs.
+2. **The same round made the skill more conservative.** Section 15 tells it to
+   delete devices that are not working; the check step adds a delete-test. Both
+   are correct, and together they may suppress adding anything at all. A rule
+   that says "remove what does not earn its place" and a rule that says "reach
+   for this device" pull against each other, and the first one is louder
+   because it is a check.
+
+### A third cause, and it is my error
+
+The quality bar added in the same round asks: *"Would a Turkish editor publish
+this without touching it?"*
+
+The judges reward the opposite. Their praise across both rounds is for text
+that sounds **unedited**: *"gerçek bir esnaf ağzına daha yakın"*, *"kendi
+kendine konuşma tonu"*, *"bir insanın klavyeden döktüğü cümleler"*. Their
+criticism of our output is *"cilalanmış"*, *"editoryal"*, *"fazla düzgün"*,
+*"ütülü"*. An editor-safe text is a tidy text, and tidy is the register they
+penalise.
+
+So the bar as written pulls toward the failure mode it was meant to prevent. It
+needs replacing with something closer to "would a Turkish reader believe nobody
+edited this", and that change is **not made here** — it would be another
+untested edit in a round that has just shown untested edits do not reliably
+help.
+
+### What this round is worth
+
+Not much for the skill, and a good deal for the record. It establishes that
+`blog-1` in particular cannot be won honestly: the judge cited the same three
+fabricated sentences — *"Adı katedral, aslı manastır"*, *"Kışı da yazacaktım"*,
+*"Turu neden ilk güne değil de ikinci güne koyduk?"* — for the third time
+across three independent judgments. On that file the competitor's entire
+advantage is invention, and matching it means matching the invention.
+
 ## What this does not establish
 
 Twelve texts, one model, one afternoon, and judges that are themselves language
