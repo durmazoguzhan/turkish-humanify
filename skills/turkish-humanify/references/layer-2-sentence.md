@@ -336,7 +336,50 @@ makes it read as an unpublishable draft.
 
 ---
 
-## 15. Sprinkling — how this layer fails
+## 15. Self-correction — `öz-düzeltme`
+
+English prose revises before it is published, and the revision is invisible.
+Turkish writing that reads as written by a person often shows the revision: the
+writer says something, then narrows it in the next breath. Machine Turkish
+never does this, because it writes as though it already knew.
+
+This is the device that blind readers reach for most often when they explain
+why one Turkish text feels human and another does not.
+
+Forms: `Daha doğrusu, …` · `Ya da şöyle söyleyeyim, …` · `Daha dikkatli
+söylemek gerekirse, …` · `Ya da değildi, bilmiyorum` · `Aslında tam öyle de
+değil`
+
+> AI: Silme işlemi idempotenttir, bu yüzden tercih edilir.
+> İnsan: Silme idempotent olduğu için tercih ediliyor. Daha doğrusu, güncellemek de çalışır; ama yanlış gittiğinde sessizce yanlış gider.
+
+> AI: Dün fazla keskindi, su çok sıcaktı belki.
+> İnsan: Dün fazla keskindi. Su çok sıcak olmuş olabilir. Ya da değildi, bilmiyorum.
+
+> AI: Bu yöntem her ölçekte çalışır.
+> İnsan: Bu yöntem çalışıyor. Daha doğrusu, çoğu durumda çalışıyor.
+
+Note what the third pair does: it **narrows a claim the source already made**.
+That is the fidelity-safe form of this device and the one to reach for. The
+correction qualifies, hedges, or admits uncertainty about something already in
+the text. It never introduces anything.
+
+**Where it stops.** Three limits, and the first is the one that gets broken.
+
+*The correction must correct something.* Blind readers penalise a hollow one as
+sharply as they reward a real one — *"hiçbir düzeltme getirmeyen ara cümle"*,
+*"araya sıkıştırılmış, akışı bozan yapay bir samimiyet eki"*. If the second
+clause restates the first, delete both halves of the move.
+
+*The corrected claim must still be the source's claim.* Narrowing what is there
+is a rewrite; widening it, or correcting toward something new, is fabrication
+wearing a rhetorical costume.
+
+*Register.* Wrong in academic and official writing entirely — an abstract that
+second-guesses itself has lost its authority, and a reader will say so. At most
+once or twice across a blog or technical piece.
+
+## 16. Sprinkling — how this layer fails
 
 The other fourteen sections tell you what to do. This one tells you how doing
 it goes wrong, and it is not hypothetical: in a blind comparison, judges who
