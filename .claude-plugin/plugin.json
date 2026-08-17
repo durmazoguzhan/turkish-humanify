@@ -1,0 +1,13 @@
+{
+  "name": "turkish-humanify",
+  "version": "0.1.0",
+  "description": "Writes and repairs Turkish that reads as human-written: native sentence architecture, register-aware intervention, and technical terms left intact",
+  "author": {
+    "name": "Oguzhan Durmaz",
+    "email": "durmazoguzhan@yahoo.com"
+  },
+  "homepage": "https://github.com/durmazoguzhan/turkish-humanify",
+  "repository": "https://github.com/durmazoguzhan/turkish-humanify",
+  "license": "MIT",
+  "keywords": ["turkish", "turkce", "writing", "humanizer", "localization", "skills"]
+}
