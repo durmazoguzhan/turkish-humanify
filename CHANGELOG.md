@@ -32,6 +32,16 @@
   harmony forms so the old regex fails `test-count.sh`.
 - `p2` was missing the `-dInIz` variants `dunuz/dünüz/tınız/tiniz/tunuz/tünüz`.
   Closing the gap moves no number on the current corpus.
+- `sentences`, `len_mean` and `len_sd` were line-bound: a hard-wrapped paragraph
+  counted one sentence per source line, so one file measured 45 sentences of 7.5
+  words where it has 19 of 17.8. 42 of 183 files affected. `prose()` now joins
+  each paragraph onto one line before splitting.
+- `ve_p` matched ` ve ` and so missed every `ve` sitting next to a line break or
+  a sentence start; now `\b[Vv]e\b`. 16 files change.
+- Neither moves a conclusion: `len_sd` still fails to separate unaided from
+  published non-academic Turkish (5.6 against 5.6), and the prose-language arms
+  stay indistinguishable. The fixture now carries a wrapped sentence and a
+  line-initial `ve`, so both bugs fail `test-count.sh`.
 
 ## 1.0.0 — 2026-08-17
 

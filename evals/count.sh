@@ -18,10 +18,22 @@ body() {
   awk 'NR==1 && $0=="---" { fm=1; next } fm && $0=="---" { fm=0; next } !fm' "$1"
 }
 
-# Prose view: drop headings, list items, blank lines; drop standalone dashes
-# so they are not counted as words.
+# Prose view: drop headings and list items, join each paragraph onto one line,
+# drop standalone dashes so they are not counted as words.
+#
+# The join matters. Sentence splitting downstream is line-based, so a
+# hard-wrapped paragraph used to be read as one sentence per source line: a
+# 78-column file with three-line sentences measured three times the sentences at
+# a third the length. 42 of 183 corpus files were affected, one of them by a
+# factor of two. Blank lines are kept until after the join so that paragraphs
+# stay separate; headings are removed first, and markdown leaves blank lines
+# around them, so removing a heading does not fuse its neighbours.
 prose() {
-  sed -E '/^[[:space:]]*#/d; /^[[:space:]]*[-*+•]/d; /^[[:space:]]*$/d' "$1" \
+  sed -E '/^[[:space:]]*#/d; /^[[:space:]]*[-*+•]/d' "$1" \
+  | awk '
+      /^[[:space:]]*$/ { if (buf != "") print buf; buf = ""; next }
+      { if (buf == "") buf = $0; else buf = buf " " $0 }
+      END { if (buf != "") print buf }' \
   | sed -E 's/(^| )[—–]+( |$)/ /g'
 }
 
@@ -96,7 +108,10 @@ for src in "$@"; do
   # deliberately excluded because it is not an address marker.
   p1=$(count_re '\b(ben|benim|bana|beni|bende|benden)\b|[a-zçğıöşü]{2,}(yorum|dım|dim|dum|düm|tım|tim|tum|tüm|acağım|eceğim|mışım|mişim|muşum|müşüm)\b' "$f")
   p2=$(count_re '\b(sen|senin|sana|seni|sende|senden|siz|sizin|size|sizi|sizde|sizden)\b|[a-zçğıöşü]{2,}(yorsun|yorsunuz|sınız|siniz|sunuz|sünüz|dın|din|dun|dün|tın|tin|tun|tün|dınız|diniz|dunuz|dünüz|tınız|tiniz|tunuz|tünüz|acaksın|eceksin|acaksınız|eceksiniz)\b|[a-zçğıöşü]{2,}(rsın|rsin|rsun|rsün)\b' "$f")
-  ve_raw=$(count_re ' ve ' "$f")
+  # Word-bounded, not space-bounded: ' ve ' missed every "ve" that a line break
+  # or a sentence start put next to something other than a space, which in a
+  # hard-wrapped file is a sizeable share of them.
+  ve_raw=$(count_re '\b[Vv]e\b' "$f")
   particles=$(count_words "$signals/particles.txt" "$f")
   calque=$(count_list "$signals/calques.txt" "$f")
   forced=$(count_list "$signals/forced-translations.txt" "$f")

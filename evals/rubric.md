@@ -150,6 +150,40 @@ The general lesson is worth more than the three fixes: a signal that has never
 been checked against a text whose true value is known by hand is not evidence,
 it is a number.
 
+### Later: three more, found the same way
+
+Numbered on from the three above. Each was found by checking what a regex
+actually matches before trusting a comparison built on it, which is now the
+habit this section exists to enforce.
+
+4. **`mektedir_p` was blind to `-mektedir`.** The regex read
+   `(mekte|makta)dır`, which vowel harmony makes half a signal: it catches the
+   back-vowel `-maktadır` and misses every front-vowel `-mektedir`, the form the
+   column is named after and the common one after stems like `görül-`,
+   `gerek-`, `edil-`. 52 of 183 files change; every figure published before
+   2026-08-17 is about half the real rate. See `RESULTS-write.md`, "Round three".
+5. **Sentence statistics were line-bound.** Splitting ran per source line, so a
+   hard-wrapped paragraph counted one sentence per line: `w-acad-2` measured 45
+   sentences of 7.5 words where it has 19 of 17.8. 42 of 183 files affected, the
+   worst by a factor of two. `prose()` now joins each paragraph onto one line
+   first.
+6. **`ve_p` was space-bound.** ` ve ` requires a space on both sides, so every
+   `ve` that a line break or a sentence start put next to something else went
+   uncounted. Now `\b[Vv]e\b`; 16 files change.
+
+Bugs 5 and 6 share a root — signals written as if every paragraph were one line
+— and neither moves a conclusion. The `len_sd` verdict below survives the fix
+exactly: unaided baselines 5.6, published non-academic Turkish 5.6. The
+prose-language experiment's two arms stay indistinguishable, mean `len_sd` gap
+0.12.
+
+What the fix does surface is a gap nobody had looked for. In **academic**
+register the same measure reads 9.8 for the five published articles against 7.2
+for this skill's output and 6.9 unaided. The ranges overlap heavily (published
+6.3–13.4, ours 6.6–7.8) and n is 5 against 3, so this is a hypothesis, not a
+finding: published academic Turkish may vary its sentence length considerably
+more than either the model or this skill does, and nothing has tested it.
+
 ### Then: what the corrected numbers show
 
 **Some folklore tells survive; the headline ones do not.** `mektedir_p` fires
