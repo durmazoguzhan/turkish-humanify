@@ -10,7 +10,9 @@ without its limit becomes a new tic, and a text full of inversions is no more
 human than a text with none.
 
 Labels: `AI:` is what comes out unaided. `İnsan:` is what a Turkish writer
-would put there.
+would put there. The pairs read as before/after, which suits repair, but they are
+the same target either way: writing, `İnsan:` is what to produce; repairing, it
+is what to produce instead.
 
 ---
 

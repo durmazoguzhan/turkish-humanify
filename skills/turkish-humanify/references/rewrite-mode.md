@@ -1,10 +1,62 @@
-# AI tells — the diagnostic pass
+# Rewrite mode
 
-Repair mode only. Read the text once and mark what is actually present before
-rewriting anything, so the work goes where the damage is.
+Everything specific to repairing a text that already exists. The grammar itself
+is in the shared layer files; this file holds what only applies when there is an
+input.
 
-This file is a router, not a sixth rulebook. Each row names the tell, how to
-spot it, and which layer file fixes it.
+Two parts: **fidelity**, which is the constraint that makes repair different
+from writing, and **the diagnostic pass**, which routes the work.
+
+---
+
+## Fidelity — the constraint that only exists here
+
+The input is somebody else's text and the claims in it are theirs. That single
+fact produces every rule below, and none of them transfer to write mode, where
+there is no source to be faithful to.
+
+1. **Nothing enters the output that was not in the input.** No number, name,
+   date, causal explanation, or first-person experience. Check both directions:
+   every claim in the input survives, and nothing new appears.
+2. **A voice is built from stance toward existing material**, never from new
+   material. See `voices.md`, "Where voice comes from".
+3. **How certain the source was is part of what it said.** `görülmektedir` says
+   somebody observed this; `başlıca` says the list is not exhaustive;
+   `eğiliminde` says it is a tendency. Deleting one promotes the claim without
+   adding a word, and adding one where the source was certain retracts it. Both
+   are failures, and the first is easy to commit while cleaning `-mektedir` or
+   converting a passive to an active.
+
+**Why this is the skill's business here and not in write mode.** Fabrication in
+general is not a Turkish problem and this skill has no standing to legislate it.
+But fidelity to a supplied text *is* a property of the transformation being
+performed, and it is the strongest measured result in this repository: zero
+additions across twenty-one repair inputs. Keep it here; do not carry it across.
+
+**A warning about how this gets measured.** A blind "which reads more human"
+test rewards fabrication, because inventing the writer's experience is the
+fastest route to sounding like a writer. Four independent judges preferred a
+competing text specifically for three invented sentences. Fidelity outranks that
+test; see `evals/RESULTS.md`.
+
+---
+
+## Reading the dosage table in repair mode
+
+`registers.md` is written in repair verbs, and here they mean what they say:
+
+- **cleanup** — remove this from the input where it appears
+- **stays** — leave what is there; do not delete it
+- **off** — do not touch this dimension at all
+
+---
+
+## The diagnostic pass
+
+Read the text once and mark what is actually present before rewriting anything,
+so the work goes where the damage is.
+
+Each row names the tell, how to spot it, and which layer file fixes it.
 
 The **frequency** column is not a guess. It records how often each tell
 appeared across a twelve-text corpus of unaided model Turkish, measured against

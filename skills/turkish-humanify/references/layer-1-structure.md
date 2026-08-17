@@ -126,9 +126,12 @@ for voice in a text whose job is to be found.
 ## 5. Bullet dependence
 
 English technical writing bullets by default. Turkish long-form prose does not,
-and a list where prose belonged reads as an outline somebody forgot to write
-up. Convert back whenever the items are not genuinely parallel, enumerable
-things.
+and a list where prose belonged reads as an outline somebody forgot to write up.
+
+The rule, stated so it means the same thing in both modes: **a list is only for
+content that is genuinely a set the reader scans or returns to.** Repairing a
+text, that means converting back what is not such a set; writing one, it means
+not reaching for a list in the first place.
 
 > AI:
 > - **Taze çekirdek:** Kavrulma tarihine bakın, birkaç haftayı geçmemiş olsun.

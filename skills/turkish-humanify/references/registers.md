@@ -24,6 +24,12 @@ collected into one decision.
 style. An academic paper with `cache'ı` instead of `cache'i` is simply
 misspelled.
 
+**This table is written in repair verbs** — *cleanup*, *stays*, *off* — and they
+presuppose an existing text. In write mode there is nothing to remove, so read
+them through the translation table in `write-mode.md` before applying any row.
+Taking "stays" literally where nothing is there turns it into "produce this",
+which has already been measured doing damage.
+
 ---
 
 ## Recognising each register

@@ -13,27 +13,18 @@ not a vocabulary filter.
 
 ## 1. Pick a mode
 
-**The user supplied text → repair.** Work on what is there. Every claim in the
-input survives into the output. Start by reading the text once against
-`references/ai-tells.md` and marking what is actually present — it routes you
-to the layer that fixes each tell, and it records which tells are common and
-which are nearly extinct, so the work goes where the damage is. If the text
-shows none of them, say so and change little; rewriting text that was already
-fine is its own failure.
+**The user supplied text → repair.** Read `references/rewrite-mode.md`.
 
-**The user supplied a brief, a topic, or a request → write.**
+**The user supplied a brief, a topic, or a request → write.** Read
+`references/write-mode.md`.
 
-Write mode is **not** draft-then-humanise. Decide the composition in Turkish
-before the first sentence: what the opening move is, how the piece turns, where
-it lands. Then write with the sentence rules already in force. A piece drafted
-in English shape and cleaned afterwards keeps its English skeleton, and the
-skeleton is the thing the reader feels.
+Read the one that applies before anything else. Each holds what is true only of
+its mode — fidelity and the diagnostic pass for repair; composition-first and
+the dosage translation for write — and each tells you how to read the shared
+files from where you are standing.
 
-**If the piece needs concrete detail you do not have — a number, a real
-example, a case — find it or ask the user for it.** Do not invent it. Specific
-detail is what makes prose read as written by a person, and that is exactly why
-inventing it is the tempting failure. Research is the honest route to the same
-effect.
+Everything else is shared: the grammar, the surface rules, the registers and the
+voices apply the same way in both modes.
 
 ## 2. Identify the register
 
@@ -53,7 +44,8 @@ dimensions that file lists — before writing anything.
 
 ## 4. Run the layers
 
-Structure → sentence → surface, in that order.
+Structure → sentence → surface, in that order. These three, plus `registers.md`
+and `voices.md`, are the **shared** set — identical in both modes.
 
 Read the reference file for each layer at the moment you run it, not from
 memory. The worked examples are the instruction, and a remembered summary of
@@ -78,10 +70,8 @@ are correctness, not style.
 
 Silently, without reporting it:
 
-- **In repair mode: every claim in the input is still in the output, and
-  nothing is in the output that was not in the input.** Check both directions.
-  A number, name, date or assertion you added is a hard failure however well
-  the paragraph reads.
+- **In repair mode only: run the fidelity check in `rewrite-mode.md`.** It
+  outranks every other item here.
 - No technical term was translated into an invented Turkish equivalent.
 - No explanatory em dash. No emoji. No chat residue.
 - Read the piece aloud in your head. If every sentence is the same length, the
@@ -97,12 +87,17 @@ Silently, without reporting it:
 
 ### The bar
 
-Would a Turkish editor publish this without touching it?
+Would a Turkish reader believe nobody edited this?
 
-Not "is it grammatical" and not "does it sound human" — the second question can
-be passed by inventing an experience the writer never had, which is forbidden
-and which a blind reader will reward anyway. The editor test is the useful one
-because an editor notices both the tics and the padding.
+Not "is it grammatical", and not "does it sound human" — that second question can
+be passed by inventing an experience the writer never had.
+
+An earlier version of this line asked whether an editor would publish it
+untouched. That was wrong, and measurably so: blind readers reward text that
+reads **unedited** — *"gerçek bir esnaf ağzı"*, *"klavyeden döktüğü cümleler"* —
+and their standing criticism of this skill's output is *"cilalanmış"*,
+*"editoryal"*, *"ütülü"*. An editor-safe text is a tidy text, and tidy is the
+thing being penalised.
 
 ## 6. Emit
 
@@ -119,26 +114,18 @@ version of it to a normal response.
 
 These hold in every mode, register and voice.
 
-1. **No fabrication.** Adding soul is not inventing detail. No number, name,
-   date or claim that is not in the source or supplied by the user. A paragraph
-   that reads beautifully and invents a statistic has failed.
-2. **Meaning is preserved.** Repair may restructure freely within the register
-   dose; it may not change what is being said.
-   **This includes how certain the source was.** A hedge is part of a claim, not
-   decoration on it: `görülmektedir` says somebody observed this, `başlıca` says
-   the list is not exhaustive, `eğiliminde` says it is a tendency. Deleting one
-   promotes the claim without adding a word; adding one where the source was
-   certain retracts it. Neither is a rewrite. Both directions are failures, and
-   the first is the easy one to commit while cleaning `-mektedir` or converting
-   a passive to an active.
-3. **No forced translation.** A technical term with no true Turkish equivalent
+1. **No forced translation.** A technical term with no true Turkish equivalent
    stays as it is. `endpoint` does not become "uç nokta"; `event-driven` does
    not become "olay güdümlü". Where a Turkish word genuinely exists and Turkish
    engineers actually say it, use it: geliştirici, pazaryeri, doğrulama.
-4. **No em dash in output.** It is not a Turkish explanatory mark. Use a
+2. **No em dash in output.** It is not a Turkish explanatory mark. Use a
    semicolon, a connective, or a sentence break.
-5. **No chat residue.** No emoji, no "Elbette!", no "Umarım yardımcı olmuştur",
+3. **No chat residue.** No emoji, no "Elbette!", no "Umarım yardımcı olmuştur",
    no word count at the end.
+
+Repair mode adds a fourth that does not apply to writing, because it has no
+referent there: **fidelity to the supplied text.** It lives in
+`references/rewrite-mode.md`, and it outranks everything else in this file.
 
 ## What this skill is not
 

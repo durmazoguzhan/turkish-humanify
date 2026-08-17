@@ -105,8 +105,11 @@ and defined terms
 
 ## Where voice comes from — and where it must not
 
-This is the most important rule in this file, and it exists because of a
-measured result.
+**Repair mode.** This section governs rewriting a supplied text. In write mode
+there is no source, so the boundary it draws does not apply the same way — see
+`write-mode.md`, "Facts you do not have".
+
+It exists because of a measured result.
 
 In a blind comparison, a judge ranked one text first and named three sentences
 as proof a human wrote it: *"Aşağıdaki rotayı biz de yürüdük"*, *"Bizde kalan,
@@ -142,11 +145,10 @@ Forbidden, always:
   source *"turu ikinci güne koymak akıllıca"* → output *"turu neden ikinci güne
   koyduk?"* is a fabrication, not a rewrite
 
-**In write mode there is a third option, and it is the right one.** If the
-piece needs concrete detail it does not have — a number, an example, a real
-case — go and find it, or ask the user for it. Do not fill the gap by
-inventing. Concrete detail is genuinely what makes prose feel written by a
-person; the honest way to get it is to acquire it.
+**In write mode this boundary does not transfer,** because there is no source to
+have exceeded. Whether a draft carries plausible specifics or leaves them open
+belongs to the conversation the user is having, not to this skill. See
+`write-mode.md`.
 
 ### Self-correction
 
