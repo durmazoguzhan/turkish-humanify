@@ -1,0 +1,15 @@
+
+Uzaktan Eğitimin Öğrenci Motivasyonuna Etkisi: Bir Literatür Taraması
+
+**Giriş**
+
+Bilgi ve iletişim teknolojilerindeki gelişmeler, öğrenmenin fiziksel sınıfla kurduğu geleneksel bağı dönüştürdü. Uzaktan eğitim bir zamanlar telafi edici bir seçenekti. Örgün eğitime erişemeyen sınırlı bir kitle için düşünülmüştü. Bugün ise yükseköğretimden mesleki gelişime uzanan geniş bir alanda temel öğretim biçimlerinden biri. COVID-19 salgını sırasında dünya genelinde milyonlarca öğrenci zorunlu olarak çevrim içi ortamlara geçti. Bu geçiş dönüşümü hızlandırdı. Uzun süredir tartışılan bir soruyu da alanyazının merkezine taşıdı: Öğrenme ortamının uzaktan olması, öğrencinin öğrenmeye yönelik motivasyonunu nasıl etkiler?
+
+Alanyazın motivasyonu, öğrenme çıktılarının en güçlü yordayıcılarından biri sayar. Deci ve Ryan'ın öz belirleme kuramı motivasyonu bir nicelik meselesi olarak değil, bir nitelik meselesi olarak ele alır. Özerklik, yeterlik ve ilişkili olma gereksinimlerinin karşılanma düzeyine göre içsel ve dışsal motivasyon biçimlerini ayırt eder. Çerçeve uzaktan eğitimde ikiye bölünür. Çevrim içi ortamlar öğrenciye zaman, mekân ve öğrenme hızı üzerinde geniş bir özerklik verir. Aynı ortam, akranlarla ve öğretim elemanıyla kurulan ilişkiyi zayıflatma riskini de taşır. Moore'un işlemsel uzaklık kuramı ise coğrafi ayrılığın kendisine değil, diyalog ile yapı arasındaki dengenin belirlediği psikolojik uzaklığa bakar. Bu bakış, motivasyondaki değişimi açıklamak için elverişli bir zemin sunar. Keller'ın ARCS modeli ile Garrison ve arkadaşlarının Araştırma Topluluğu modeli de çevrim içi öğretim tasarımının motivasyonel boyutlarını çözümlemede sık başvurulan araçlar arasında yer almaktadır.
+
+Ampirik alanyazın tek yönlü bir tablo sunmuyor. Bir grup çalışma, esnek öğrenme olanaklarının, öğrenme üzerinde artan denetimin ve çeşitlenmiş dijital içeriğin öğrenci motivasyonunu ve derse katılımı güçlendirdiğini bildirmektedir. Başka araştırmalar bunun tersini gösteriyor. Sosyal izolasyon, ekran yorgunluğu, teknik altyapı sorunları, geri bildirim gecikmeleri ve yüksek düzeyde öz düzenleme gerektiren yapı; motivasyon kaybına, erteleme davranışına ve kursu bırakma oranlarında artışa yol açıyor. Bu çelişkili bulguları tek bir sonuca bağlamak zor. Daha doğrusu, sorun bulguların kendisinde değil, karşılaştırılan ortamların birbirine benzememesinde. Etki doğrudan "uzaktan olma" durumundan doğmuyor. Belirleyici olan, aracı değişkenlerdir: eş zamanlı ya da eş zamansız tasarım tercihi, etkileşim yoğunluğu, öğrenci profili, öğrenim düzeyi, gönüllü katılım ile zorunlu geçiş arasındaki fark.
+
+Bu taramanın amacı, uzaktan eğitim ile öğrenci motivasyonu arasındaki ilişkiyi inceleyen çalışmaları kuramsal yaklaşımları, yöntemsel desenleri ve temel bulguları açısından sistematik biçimde derlemek. Sırasıyla motivasyonun kuramsal çerçevesini, uzaktan eğitim ortamlarının motivasyonel bileşenlerini, alanyazındaki uyumlu ve çelişkili bulguları ve yöntemsel sınırlılıkları ele alıyoruz. Sonuç bölümünde gelecekteki araştırmalar için öneriler sunuyoruz.
+
+---
+

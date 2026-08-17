@@ -1,0 +1,73 @@
+# [Ürün Adı]
+
+## Hero
+**Muhasebe, işinizin en zor kısmı olmasın.**
+
+Faturanızı 30 saniyede kesin, tahsilatlarınızı otomatik takip edin, nakit akışınızı anlık görün. [Ürün Adı] küçük işletmeler için tasarlandı; muhasebe bilgisi gerektirmez.
+
+**[14 gün ücretsiz deneyin]** · Kredi kartı gerekmez, kurulum yok.
+
+---
+
+## Sorun
+Ayın sonunda hangi faturanın ödendiğini Excel'de aramak, tahsilat için müşteriyi aramaya çekinmek, mali müşavire evrak yetiştirmek… Küçük işletmelerde muhasebe, asıl işten çalınan zaman. O zamanı size geri veriyoruz.
+
+---
+
+## Neler yapabilirsiniz
+
+### Saniyeler içinde fatura kesin
+Müşterinizi seçin, kalemleri girin, gönderin. Fatura, e-Fatura ve e-Arşiv entegrasyonuyla doğrudan GİB'e gidiyor. Tekrar eden faturaları bir kez tanımlayın, her ay kendisi çıksın.
+
+### Tahsilatı siz değil sistem takip etsin
+Vadesi yaklaşan faturalar için de vadesi geçenler için de otomatik hatırlatma e-postası gider. Hangi müşteri ne kadar borçlu, tek ekranda görürsünüz. Ortalama tahsilat sürenizin nasıl kısaldığını da raporlardan izleyin.
+
+### Nakit akışınızı önceden görün
+Gelir ve giderlerinizi kategorilere ayırıp banka hareketlerinizi eşleştirin. Önümüzdeki ay kasanızda ne kadar para olacağını tahmin edin. Sürprizlerle değil, verilerle karar verin.
+
+### Mali müşavirinizle aynı sayfada olun
+Müşavirinize ücretsiz erişim verirsiniz. Dönem sonunda klasör taşımak, WhatsApp'tan fiş fotoğrafı göndermek yok; kayıtlar zaten sistemde. Dışa aktarmak tek tık.
+
+### Cari, stok ve gider yönetimi
+Müşteri ve tedarikçi carilerinizi, stok hareketlerinizi ve masraflarınızı tek yerden yönetin. Fişin fotoğrafını çekmeniz yeterli; tutarı da tarihi de sistem kendisi okur.
+
+---
+
+## Neden [Ürün Adı]?
+
+Kayıt olun, işletme bilgilerinizi girin, ilk faturanızı kesin. Başlamak dakikalar sürer, eğitim de danışman da gerekmez. Web ve mobil uygulamayla her yerden girersiniz; verileriniz her cihazda güncel kalır.
+
+Verileriniz güvende: altyapı şifreli, yedekleme günlük, veri saklama KVKK uyumlu. KDV, tevkifat, e-belge süreçleri ve mevzuat güncellemeleri hazır gelir, çünkü [Ürün Adı] Türkiye'ye özel. Sorunuz olduğunda da robot değil, insan yanıtlar.
+
+---
+
+## Fiyatlandırma
+Şeffaf ve aylık. Sözleşme yok, istediğiniz an iptal edersiniz.
+
+- Başlangıç: [X] TL/ay · Tek kullanıcı, aylık [X] fatura
+- Profesyonel: [X] TL/ay · Çoklu kullanıcı, stok ve banka entegrasyonu
+- İşletme: [X] TL/ay · Sınırsız fatura, çoklu şube, öncelikli destek
+
+Mali müşavir erişimi tüm planlarda ücretsiz.
+
+---
+
+## Sık sorulanlar
+
+**Muhasebeden anlamıyorum, kullanabilir miyim?**
+Evet. [Ürün Adı] tam da bunun için tasarlandı; teknik terim yerine sade Türkçe kullanıyoruz.
+
+**Mevcut verilerimi taşıyabilir miyim?**
+Excel dosyanızı yükleyin, müşteri ve ürün listeniz otomatik aktarılsın. İsterseniz ekibimiz sizin için yapar.
+
+**Deneme sürümü sonunda ne oluyor?**
+Otomatik ücretlendirme yok. Devam etmek isterseniz plan seçersiniz, verileriniz olduğu gibi kalır.
+
+---
+
+## Son çağrı
+**Bu ayın kapanışını gece yarısı yapmayın.**
+
+Bugün başlayın, ilk faturanızı 5 dakika içinde kesin.
+
+**[Ücretsiz hesap oluştur]**
