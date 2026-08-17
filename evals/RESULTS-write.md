@@ -317,7 +317,10 @@ published academic Turkish, which is why the target is a band and not a number.
 
 Three things follow, and the middle one was not expected.
 
-1. **The shipped dose is inside the band**, on both signals. The worry recorded
+1. **The shipped dose is inside the band on `mektedir_p`, all three files**, and
+   inside it on `dir_p` for two of three — `w-acad-2` sits at 2.1 against a floor
+   of 2.3, marginally under, and the excerpt-level `dir_p` floor is 1.9, so that
+   one file is at the edge rather than outside. The worry recorded
    in Round two — that 0.3 was now under-using — was an artefact of the bug. No
    rule change is warranted, and making one on the strength of the wrong number
    would have repeated the Round-one mistake in the opposite direction.
