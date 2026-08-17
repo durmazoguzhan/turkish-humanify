@@ -9,3 +9,4 @@ Günün sonunda önemli olan şey buydu — yani hiçbir şey.
 
 - Madde bir
 - Madde iki
+- Madde üç: 15 Aralık – 2 Ocak

@@ -43,7 +43,7 @@ enforces:
 
 ## Touching `evals/count.sh`
 
-Seven counting bugs have been found in this file, and every one of them had
+Eight counting bugs have been found in this file, and every one of them had
 already produced a confident wrong finding that was reported as a result. If you
 change a regex:
 

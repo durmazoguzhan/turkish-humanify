@@ -789,6 +789,65 @@ The fix touches one register and, on this corpus, can only move one file.
 change, so the round can confirm a mechanism but cannot establish a size. The
 value is the check that the other four are not disturbed.
 
+---
+
+## `blog-1` — we were looking in the wrong place
+
+`blog-1` has lost five rounds and the explanation on file was fabrication: the
+competitor invents *"Aşağıdaki rotayı biz de yürüdük"* and two more sentences,
+judges reward them, and the file is therefore unwinnable honestly. That is true
+and it is not the whole account. Re-reading the judgement for what else it said
+turns up two defects that are ours, and neither needs a lie to fix.
+
+### The `ama` tic
+
+| | sentence-final `ama` |
+|---|---|
+| source | **0** |
+| competitor | **0** |
+| ours | 4 (judge's count), 2 by strict end-of-sentence match |
+
+Every one was introduced by us. `layer-2-sentence.md` §16 is about exactly this
+failure and did not name the device; it does now.
+
+### The en dash, which was a wrong rule rather than a slip
+
+| | en dashes |
+|---|---|
+| the nine published Turkish texts in `human-reference/` | **3** (against 70 plain-hyphen ranges) |
+| competitor output, 21 files | **0** — it normalises every one |
+| our input corpus | 7 |
+| **our output, 21 files** | **9** |
+
+We do not merely preserve the source's en dashes, we add two. The judge named
+it: *"Türkçe yazan biri bunları normalde düz tire ile yazar; bu, çeviri/dizgi
+kokusu veren bir detay"*, contrasting our `04.30–05.00` with the competitor's
+`04.30-05.00`.
+
+The cause is that `layer-3-surface.md` said range dashes were **correct** and to
+leave them alone. TDK says otherwise: it lists `kısa çizgi` and `uzun çizgi`,
+gives ranges to the short hyphen (`1914-1918`, `Ankara-İstanbul`), and does not
+recognise an en dash at all.
+
+**And the instrument was built around the wrong rule.** When `em_dash` was fixed
+in the first calibration, range dashes were excluded from it — because the rule
+said they were fine. So the counter was configured to look away from precisely
+the thing the rule had wrong, which is why six rounds passed without noticing. A
+blind judge found it instead. New signal: `endash`, raw count, any occurrence is
+an error.
+
+### What this changes about the fabrication story
+
+Nothing, and that is the point worth keeping. The three invented sentences are
+still invented and we still do not write them. What changes is the claim that
+they were the *only* reason we lost this file — that claim was never tested, it
+was inferred from the loudest part of one judgement, and two of the judge's
+other reasons turn out to be measurable defects on our side.
+
+Whether fixing them flips the file is unknown and probably not; the fabricated
+sentences are strong. The reason to fix them anyway is that both are wrong in
+every file, not just this one.
+
 ## What this does not establish
 
 Twelve texts, one model, one afternoon, and judges that are themselves language
