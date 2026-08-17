@@ -1,0 +1,21 @@
+# Calqued idioms and empty intensifiers that mark English-shaped Turkish.
+# Matched as case-insensitive substrings, so stems are given where the
+# suffix varies (hayati önem taşı- covers taşıyor/taşımaktadır/taşır).
+günün sonunda
+değer katmak
+kritik öneme sahip
+hayati önem taşı
+bir adım öteye taşı
+oyunun kurallarını değiştir
+ötesine geçen
+son derece
+oldukça önemli
+büyük ölçüde
+yadsınamaz
+göz ardı edilemez
+önemli bir rol oyn
+dikkat çekici bir şekilde
+sadece bir başlangıç
+bilmeniz gereken her şey
+kapsamlı bir rehber
+giderek önem kazan
