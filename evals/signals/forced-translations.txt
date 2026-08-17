@@ -1,0 +1,14 @@
+# Renderings that destroy meaning by translating a term that has no Turkish
+# equivalent. Any hit is a hard failure, not a style note.
+uç nokta
+olay güdümlü
+olay tabanlı mimari
+son nokta
+kap teknolojisi
+yığın taşması
+sıcak yeniden yükleme
+bulut yerlisi
+mikro hizmet
+kaynak kod deposu
+çekme isteği
+dal birleştirme

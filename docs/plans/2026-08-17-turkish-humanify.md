@@ -205,8 +205,8 @@ Hand-verified expectations, after headings, bullets, blank lines and standalone 
 | mektedir | 1 | "artmaktadır" |
 | dir_copula | 2 | "artmaktadır." and "etkilidir." |
 | ve_per100 | 3.1 | one ` ve `, 32 words |
-| particles | 1 | "yani" |
-| calque | 1 | "günün sonunda" |
+| particles | 1 | "yani" — matched on word boundaries, so the "ki" inside "ikinci" does not count |
+| calque | 2 | "günün sonunda" and "son derece" — both are on the calque list |
 | forced | 0 | none present |
 | tilde | 0 | none present |
 | pct_wrong | 0 | no `41%`-style number |

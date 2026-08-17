@@ -1,0 +1,11 @@
+# Discourse particles, matched on word boundaries. Their absence is the
+# signal; count.sh reports presence so the reader can see whether the text
+# has any speaking voice at all.
+ise
+işte
+zaten
+hani
+yani
+bir de
+ki
+canım
