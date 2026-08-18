@@ -1181,9 +1181,26 @@ compression the register asks for and the fix has to move into
 **Secondary:** no register's `semi_p` falls below 0.2 and none rises above its
 band — the dose landed this round and must not drift.
 
-**Not pre-registered, and deliberately so:** the tally. It goes in the report as
-it always has, and this round is the reason it stops being argued from against
-this competitor. Distinguishing a skill that wins 17 of 21 from one that wins 18
+**No judging at all this round, decided before generating anything.** The
+question round eight asks is countable, and `repair-protocol.md` §5 says a
+countable target is tested by measuring it with zero judges. Round seven is the
+evidence that this is not a shortcut: at 17–4 the tally could not resolve a
+one-file move, three of its four residual rationales failed on counting, and two
+of the four texts that beat us did it with invented material. A judge cannot
+answer "did the strengthenings go to zero", and the counters answer the
+regression question — `semi_p`, `len_sd`, `part_p`, `endash`, `em_dash`, `bold`
+and `bullets` all run for free. **The tally therefore does not appear in round
+eight's report, and its absence is not a result.**
+
+**The round runs in two phases, so a failed mechanism costs six subagents rather
+than twenty-five.** All four findings were in technical register, so technical is
+regenerated and checked first. If findings persist there, the mechanism is
+refuted, the other sixteen files are not generated, and the fix moves to
+`layer-2-sentence.md` — where the compression this register asks for actually
+lives. Only a clean technical probe buys the rest of the corpus.
+
+**The skill is frozen from here to the end of generation.** Round five was
+invalidated by an edit made mid-run. Distinguishing a skill that wins 17 of 21 from one that wins 18
 needs either a harder comparison arm or judges that are not drawn from one model
 family, and neither is a change to the skill.
 
