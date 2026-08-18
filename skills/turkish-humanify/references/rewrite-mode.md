@@ -76,7 +76,7 @@ paragraphs:
 >
 > **Böyle durumlarda** kısmi index (partial index) çok daha isabetlidir:
 
-Three of five generations joined them: *"neredeyse hep israf. **Neredeyse,
+Three of the five generations run under round eight's skill joined them: *"neredeyse hep israf. **Neredeyse,
 çünkü** böyle durumlarda kısmi index çok daha isabetli."* That asserts the
 partial index is what makes the waste only *almost* always — a claim the source
 does not make, and one that does not hold, because the example indexes

@@ -84,8 +84,8 @@ reaching for it by reflex, not to ban it.
 in the list above encodes one: `-ince` says *when*, `-dikçe` says *the more*,
 `-erek` says *by doing*. Choosing it is choosing a claim about how two things are
 connected. In write mode that is yours to choose. In repair mode it is the
-source's, and supplying one it did not state is an addition — measured three
-times in five generations of the same file, where two unconnected source
+source's, and supplying one it did not state is an addition — measured in three of the
+five round-eight generations of the same file, where two unconnected source
 paragraphs came back joined by `çünkü`. See `rewrite-mode.md`, fidelity rule 4.
 Two source sentences that merely sit next to each other are allowed to sit next
 to each other.

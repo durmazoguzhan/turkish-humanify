@@ -1483,6 +1483,40 @@ is not finished — the remaining sixteen files have not been generated — and 
 the pre-registration they do not get generated until a probe comes back clean
 under the new rate-based bar, which now means two generations rather than one.
 
+## Round eight — probe four: does fidelity rule 4 do anything
+
+Two generations of `evals/input/technical-4.md` against the skill as it now
+stands, plus one fidelity check. Written down before running.
+
+**Primary.** The added causal link — two unconnected source paragraphs joined so
+that the partial index becomes the reason the waste is only *almost* always — is
+absent from both.
+
+**What that can and cannot show, stated first so it is not overclaimed later.**
+The base rate is three of five, so two clean generations would happen by chance
+about sixteen percent of the time. **Two generations can refute this rule; they
+cannot confirm it.** A clean result means the rule is not refuted and the defect
+is worth re-checking when the corpus is next run in full. A single reappearance
+means it did not work.
+
+**The over-correction guard.** `rewrite-mode.md` rule 4 tells the skill not to
+assert relations the source did not state, and `layer-2-sentence.md` §2 tells it
+to fuse clauses with converbs — each of which encodes a relation. A rule that
+made the skill timid about converbs would be the `-mAktAdIr` episode again, in
+which a correct prohibition stripped a correct device. Converb counts across the
+six existing generations of this file run **5 to 7**, against **4** in the source:
+
+| | converbs |
+|---|---|
+| source | 4 |
+| the six generations so far | 5, 5, 6, 6, 6, 7 |
+
+**A count of 4 or below in either new generation is an over-correction and the
+rule comes back out**, whatever the primary result says. This is pre-registered
+because a fidelity rule that buys its cleanliness by flattening the prose has not
+improved anything, and this project has already shipped that trade once without
+noticing.
+
 ## What this does not establish
 
 Twelve texts, one model, one afternoon, and judges that are themselves language
