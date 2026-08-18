@@ -1341,6 +1341,25 @@ a second time in a different measure.
 Writing one would be indistinguishable from fitting the instrument's noise, and
 the repository has a section about exactly that mistake.
 
+### Probe three measures the noise instead of chasing it, pre-registered
+
+The same five files, generated again with the skill **byte-identical** to the
+state that produced `v13`. No change under test. The only question is how many
+findings a repeat generation produces when nothing has been fixed — the fidelity
+counterpart of what round six measured for the tally, and the number that decides
+whether a bar of zero means anything here.
+
+| outcome | reading |
+|---|---|
+| **0 findings** | the `1` in `v12` and `v13` is generation variance. A bar of zero is unmeasurable at five files generated once, and the bar itself has to change — either more generations per file, or a rate stated with its uncertainty. |
+| **1, at a new site** | a systematic residual of roughly one per five files, arriving somewhere different each time. A general rule about sharpening-as-assertion is then justified, and site-by-site rules are not. |
+| **1, at the same site** | the connective collision is systematic and specific. Write that rule. |
+| **2 or more** | the rate is higher than three probes suggested and probes one and two were lucky, which also means the four-to-one drop needs re-reading. |
+
+Whatever it returns, the number goes in `repair-protocol.md` next to the tally's
+noise floor, because a fidelity bar with no measured floor is the same mistake in
+a different column.
+
 ## What this does not establish
 
 Twelve texts, one model, one afternoon, and judges that are themselves language
