@@ -1272,6 +1272,75 @@ whether repair mode should rewrite titles at all — which is a real option, sin
 If probe two is clean, the remaining sixteen files are generated and checked,
 and the round is decided on all twenty-one.
 
+## Round eight — probe two: the title rule worked, and a new site appeared
+
+`evals/output/v13/technical-1..5`, frozen skill, five generation subagents and
+one fidelity subagent with a separate pass over every title and heading.
+
+### The title rule did what it was written to do
+
+All five titles changed this time — including `technical-4`, which probe one had
+left alone — and **all five are clean.** Each one is licensed by a sentence the
+body states flatly, which is the test the rule added:
+
+| | title | licensed by |
+|---|---|---|
+| `technical-2` | `… asıl soru hangi tutarsızlığı kabul ettiğiniz` | the source's own closing question |
+| `technical-3` | `merge geçmişe ekler, rebase geçmişi yeniden yazar` | body: "Merge geçmişe ekler, rebase geçmişi değiştirir", and the source's own heading "geçmişi yeniden yazmak" |
+| `technical-4` | `index: ekleme değil, seçim işi` | body: "index tasarımı ekleme değil, seçim işidir" |
+| `technical-5` | `önce ölçün, sonra daraltın` | body: "Sıralama basit: önce ölçün, sonra temel imajı daraltın" |
+
+`technical-2`, the file that failed probe one, took the rule's second option and
+turned the claim into the question the source asks. That is the mechanism
+working, not a lucky regeneration: the file it was written for is the file it
+fixed.
+
+### And the round failed again, at a site nobody had named
+
+One finding, in `technical-4`, and it is neither a deleted qualifier nor a
+title. The source states two things in two paragraphs:
+
+> …düşük kardinaliteli kolonlara tek başına index atmak **neredeyse hep
+> israftır.**
+>
+> **Böyle durumlarda** kısmi index (partial index) çok daha isabetlidir:
+
+The rewrite joins them: *"neredeyse hep israf. **Neredeyse, çünkü** böyle
+durumlarda kısmi index çok daha isabetli"* — which asserts that the partial
+index is *what makes the waste only almost-always*. The source never says that,
+and it does not follow: the partial index in the example indexes `created_at`,
+not the low-cardinality column the sentence is about.
+
+Nothing was invented and no hedge was deleted. A hedge was **explained**. This
+is the same shape as the title collision one level down: `layer-2-sentence.md`
+tells the skill to make logical relations explicit with connectives, an explicit
+relation is an assertion, and fidelity governs assertions. Third correct rule,
+third collision.
+
+### The pattern, and the measurement problem it exposes
+
+| | findings | where |
+|---|---|---|
+| `v11` (round seven) | 4 | three prose qualifiers, one title |
+| `v12` (probe one) | 1 | title |
+| `v13` (probe two) | 1 | an invented causal link |
+
+Each probe cleans the site it named and turns up one finding somewhere else. The
+drop from four to one is larger than any plausible generation variance. **The
+difference between one and zero is not.**
+
+Five files generated once each cannot distinguish "one finding is a systematic
+residual rate" from "one finding is what a single generation happens to
+produce". `v13`'s finding is absent from both `v11` and `v12` of the same file,
+which is what noise looks like — and is also what a low-rate systematic failure
+looks like. The pre-registered bar of zero sits below what this probe design can
+resolve, and this is the same lesson round six learned about the tally, arriving
+a second time in a different measure.
+
+**No third rule is being written against this finding until that is settled.**
+Writing one would be indistinguishable from fitting the instrument's noise, and
+the repository has a section about exactly that mistake.
+
 ## What this does not establish
 
 Twelve texts, one model, one afternoon, and judges that are themselves language
