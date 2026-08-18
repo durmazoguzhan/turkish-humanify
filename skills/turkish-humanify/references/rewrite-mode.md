@@ -53,7 +53,20 @@ constraint already satisfied does not get checked. The record is what it is;
 the four failures stay written here instead, because they are the four shapes
 this failure actually takes.
 
-**Technical register is where this happens, and it is worth knowing why.** Its
+**The title is a site of its own, and it survived the first fix.** Round eight
+cut the four findings above to one, and the one is a title:
+`Mikroservislerde Dağıtık Transaction Yönetimi` became `Mikroservislerde dağıtık
+transaction: rollback yok, telafi var`, where the body says *"**Yaygın** çözüm
+Saga desenidir"*. Nothing was invented; a hedge simply did not survive the trip
+from body to heading.
+
+This one is a collision between two correct rules rather than a lapse.
+`layer-1-structure.md` §4 says to turn a category label into a claim, and a
+claim is an assertion, so fidelity governs it. **Before rewriting any title or
+heading, check that its claim appears in the body at the same strength.** That
+section now carries the same rule from the other side.
+
+**Technical register is where the rest happens, and it is worth knowing why.** Its
 dosage line says correctness outranks voice, so the work there is compression —
 shorter predicates, tighter claims, hedges that read as padding. Every one of
 the four above is a hedge that looked like padding. In this register, before

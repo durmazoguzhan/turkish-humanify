@@ -1204,6 +1204,74 @@ invalidated by an edit made mid-run. Distinguishing a skill that wins 17 of 21 f
 needs either a harder comparison arm or judges that are not drawn from one model
 family, and neither is a change to the skill.
 
+## Round eight — probe one: four findings to one, and the round still failed
+
+The staged design paid for itself. Six subagents spent, nineteen not spent.
+
+### The probe
+
+`evals/output/v12/technical-1..5` regenerated against the frozen skill, one
+clean-context subagent each, then one fidelity subagent over all five. No
+judges, as pre-registered.
+
+| | round seven (`v11`) | round eight (`v12`) |
+|---|---|---|
+| strengthenings, technical | **4** | **1** |
+| `technical-1` — an added claim contradicting its source | ✗ | fixed |
+| `technical-3` — `Yaygın` → `En yaygın` | ✗ | fixed |
+| `technical-5` — hedged possibility as a flat title | ✗ | fixed |
+| `technical-2` — an uncounted `üç` in a heading | ✗ | fixed |
+| `technical-2` — **a new title finding** | — | ✗ |
+
+**The bar was zero and the result is one, so this round failed.** That is the
+pre-registered reading and it is not softened here: three of four failures went
+away, which is evidence the mechanism does something, and it is not evidence
+that the round succeeded. By the same pre-registration the remaining sixteen
+files were **not** generated — a probe that is not clean does not buy the
+corpus.
+
+### The one that survived, and why it is not the same failure
+
+Source title: `Mikroservislerde Dağıtık Transaction Yönetimi`. Output title:
+`Mikroservislerde dağıtık transaction: rollback yok, telafi var`. The body is
+faithful and says *"**Yaygın** çözüm Saga desenidir"* and *"**Çoğu iş senaryosu
+için** … çok daha sağlıklı bir tercihtir"*. The title drops both hedges.
+
+Nothing was invented and no qualifier was deleted from a sentence, so the fix
+made in round eight — the removed boast and the list of load-bearing qualifiers
+— had no purchase on it. **This is a collision between two correct rules.**
+`layer-1-structure.md` §4 instructs the skill to turn a category label into a
+claim, and gives as its worked example a title of exactly this shape; a claim is
+an assertion, so `rewrite-mode.md`'s fidelity rule governs it. Neither section
+said so.
+
+Both now do. §4 gained a repair-mode limit with the two-row table that
+distinguishes this case from the licensed one — `technical-1`'s title changed
+just as freely and is clean, because its body asserts the claim flatly.
+
+### What the counters said
+
+No drift from the other change under test, `layer-3` §5's restated band:
+
+| | `semi_p`, technical | en dash | em dash |
+|---|---|---|---|
+| `v11` | 0.28 | 0 | 0 |
+| `v12` | **0.34** | 0 | 0 |
+
+Inside the band, above the 0.2 floor, hard-zero signals still zero, `len_sd`
+unchanged within a fifth of a word. The secondary target held.
+
+### Probe two, pre-registered before running
+
+Same five technical files, same bar: **zero strengthenings.** The change being
+tested is the title rule now in `layer-1` §4 and `rewrite-mode.md`. If a title
+finding survives it, the rule is not the mechanism and the next place to look is
+whether repair mode should rewrite titles at all — which is a real option, since
+`technical-4`'s title was left untouched and lost nothing by it.
+
+If probe two is clean, the remaining sixteen files are generated and checked,
+and the round is decided on all twenty-one.
+
 ## What this does not establish
 
 Twelve texts, one model, one afternoon, and judges that are themselves language
