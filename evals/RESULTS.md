@@ -848,6 +848,13 @@ Whether fixing them flips the file is unknown and probably not; the fabricated
 sentences are strong. The reason to fix them anyway is that both are wrong in
 every file, not just this one.
 
+**Answered in rounds six and seven: it does not flip.** Both defects went to zero
+in `v10` and stayed there in `v11`, and `blog-1` lost both rounds. Examined a
+third time in round seven, the judge's remaining twelve objections did not
+survive counting, and the competitor's text was found to carry five additions
+rather than three. "Probably not" was right, and the fixes were still worth
+making for the reason given.
+
 ---
 
 ## Round six — the result
@@ -946,6 +953,239 @@ register, carried into all of them at one rate.
 The third row matters. `layer-3` §5 exists because removing every semicolon from
 Turkish prose is its own kind of damage, and the competitor's 0.19 is not a
 target.
+
+## Round seven — the semicolon dose landed, and the tally stopped being the useful instrument
+
+Run as pre-registered. Same twenty-one inputs, our arm regenerated into
+`evals/output/v11/` against the frozen skill, competitor arm byte-identical,
+order re-randomised by `pair.sh`.
+
+### Three changes to the instrument, recorded before any result
+
+**1. `count.sh` gained a `semi_p` column.** The semicolon acquired a numeric
+register dose in round six and the counter could not measure it, which is the
+same hole the en dash sat in for six rounds. It is the one signal scoped to the
+prose view rather than the whole body: `layer-3` §5 permits the mark for
+separating grouped list items, so counting list-item semicolons would score a
+permitted usage against the text, hardest in the list-heavy corporate register.
+Round six's semicolon figures were measured by hand; the committed column reads
+**1.39** where round six reported 1.33 on the same files. Nothing in round six's
+conclusion turns on the difference.
+
+**2. Majority of three judges**, per `repair-protocol.md` §3. The third judge is
+consulted only where the first two disagree, which is verdict-identical to
+running all three and costs only the 2–1 census. **This tally is not comparable
+to rounds one to six**, which used one judge each.
+
+**3. A prompt inconsistency, which is a defect and not a design.** Judge one got
+the long prompt used in rounds one to six, which asks for verbatim quotations;
+judges two and three got a terse two-line form asking the same question with no
+justification. Demanding quoted evidence plausibly changes the vote, so those
+votes should not have been pooled. `repair-protocol.md` §3 now standardises all
+three voting judges on the terse prompt and moves quotation to a diagnostic
+judge outside the tally.
+
+### Fidelity, read first
+
+Twenty-one outputs checked against their sources for additions and
+strengthenings. **Academic 5/5 clean. Blog 6/6 clean. Corporate 5/5 clean.
+Technical 4 findings across 5 files.**
+
+| file | source | ours | class |
+|---|---|---|---|
+| `technical-1` | "Genel kural, güncellemek yerine silmektir" + a warning that updating can leave a permanently wrong value | "Genel kural … silmek. **Daha doğrusu ikisi de çalışır, ama** …" | added evaluative claim, and it contradicts the source |
+| `technical-3` | "**Yaygın** yaklaşım ikisini birlikte kullanmaktır" | "**En yaygın** yaklaşım …" | superlative the source does not support |
+| `technical-5` | "tipik bir imajın boyutunu … üçte birine … indirmek **mümkündür**" | title: "Docker imajını **üçte birine indirmek**" | hedged possibility stated as flat outcome |
+| `technical-2` | three bolded items, uncounted | "Pratikte dikkat edilecek **üç** şey" | a count the source does not state, though it is true of the source's own list |
+
+**All four are in one register and none is in the other three.** That is the
+finding. The strengthening failure is not diffuse; it is localised in the
+register whose dosage line says correctness outranks voice, which is the
+register where a strengthened claim does the most damage. `technical-1` is the
+serious one — the source warns that updating the cache can leave it permanently
+wrong, and the rewrite says both approaches work.
+
+This is a recurrence. The round-seven architecture work traced the academic
+losses to one false sentence and one unmarked authority claim and enforced the
+rule mechanically; the same class came back four times in a register that work
+did not look at.
+
+### The countable prediction
+
+Pre-registered before the round: blog and technical semicolons fall to ≈0.3–0.5,
+and below 0.2 counts as over-correction. Measured by `semi_p`:
+
+| | blog + technical |
+|---|---|
+| published Turkish, including the negative control | 0.49 |
+| published Turkish, excluding the negative control | 0.20 |
+| competitor | 0.19 |
+| v10 | 1.39 |
+| **v11** | **0.32** |
+
+**Hit.** Per register: blog 0.36, technical 0.28, corporate 0.45. The academic
+control moved 1.14 → **0.85** and stayed inside the published academic band,
+which the committed column measures as 0.2–2.4 across the five journal articles.
+No register fell below the 0.2 floor.
+
+**The target it hit is weaker than it looks, and this is worth more than the
+hit.** The non-academic figure rests on **three semicolons in 613 words**, and
+two of the three are in `gezinomi-negative-control.md` — a file kept in the
+corpus as an example of formulaic human writing, not as a model. Drop it and
+published non-academic Turkish measures one semicolon in 512 words, 0.20, which
+is the competitor's rate and the same number this round's pre-registration
+called over-correction. So the corpus supports "1.39 was three to seven times
+too high" and does not support "0.32 is the human rate". `layer-3` §5 has been
+restated to say so. The academic side of that table was strengthened with five
+pre-2022 journal articles; this side still needs the same treatment.
+
+### The tally, which is the secondary check
+
+**17–4**, two-sided sign test p = 0.0072.
+
+| register | round six (1 judge) | round seven (majority of 3) |
+|---|---|---|
+| academic | 5–0 | 5–0 |
+| corporate | 4–1 | 4–1 |
+| blog | 4–2 | 4–2 |
+| technical | 3–2 | **4–1** |
+
+One file of movement, across a change of judging method that makes the two
+columns formally incomparable. The standing rule is that three files or fewer is
+noise, so **the pre-registered reading is the second row, not the first**: the
+rate fell as designed and the tallies did not move. The semicolon was not shown
+to be the cause of the round-six losses. It was a real defect — four times the
+published rate, named by three judges — and fixing it did not buy a file.
+
+**Judge disagreement: 4 of 21 pairwise, 19%.** That implies a per-judge minority
+rate of 10.7% and a majority-of-three error of 3.2% — 2.2 files and 0.7 files of
+twenty-one. `repair-protocol.md` had assumed 15% and 6%; the measured figures
+are better than assumed, with the two cautions now recorded there.
+
+### What still loses, and what happened when the reasons were checked
+
+Four losses: `blog-1`, `blog-4`, `corporate-2`, `technical-5`. Each got a
+diagnostic judge on the long prompt, outside the tally. **Three of the four
+rationales do not survive measurement, and two of those fail in the same
+direction.**
+
+**`blog-4` — the passive voice.** The judge chose the competitor and named
+*"edilgen çatıya fazla yüklenip ('liste yapılıyor', 'başlanıyor')"*. Counting
+passive predicates finds **the same two hits in both texts** — `yapılıyor` and
+`kurulur` — 0.58 per 100 words in ours against 0.53 in the competitor's. Across
+all six blog files the rate is 0.50 against 0.49. The named defect is not
+present.
+
+**`corporate-2` — the wrong word for a coffee shop.** The judge chose the
+competitor, calling our *"mağazada"* *"yerine oturmayan bir seçimle çeviri
+kokuyor"* against the competitor's `dükkan`. **`mağazada` is the source's own
+word, carried through unchanged**; the competitor replaced it. The judge
+preferred the text that departed from the source and penalised the one that kept
+it.
+
+**`blog-1` — twelve named machine signals.** The longest-standing loss, examined
+for the second time. The diagnostic judge produced a detailed bill of
+particulars against our text. Counting it:
+
+| the judge's claim | measured |
+|---|---|
+| "şablon düzenliliği … metnin en güçlü makine sinyali" — every section the same length | paragraph-length CV **0.28 ours vs 0.18** the competitor's; sentence-length SD **4.5 vs 3.4**. Ours is the more varied text on both proxies |
+| scare quotes as an English typographic habit | 4 in our blog files against 3 in the competitor's |
+| the contrastive semicolon | one occurrence, `semi_p` 0.4 — inside the dose this round set |
+| inanimate subject + `izin veriyor` as an "allows" calque | one occurrence, **and it is in the source**; published Turkish runs 0.03 per 100 words |
+
+What remains from that list is a handful of single-instance translated idioms
+(*"özünü kavramaya fazlasıyla yeter"*, *"akıldan çıkması uzun sürüyor"*, *"Ama
+değer, kesinlikle"*), none of which recurs anywhere else in the corpus. The same
+judge, unprompted, flagged the competitor's text for inventing first-hand
+experience: *"B insan sesini kısmen uydurarak kazanıyor: 'Aşağıdaki rotayı biz
+de yürüdük' … Kaynakta olmayan bir birinci tekil/çoğul deneyim iddiası bu."*
+
+**`technical-5`** is the one loss whose rationale nothing here contradicts: the
+judge preferred the competitor's spoken-register asides.
+
+### The four winning texts, put through our own fidelity check
+
+The obvious hypothesis, tested rather than assumed. The same check that was run
+on our twenty-one outputs was run on the competitor's four winners.
+
+| | additions found |
+|---|---|
+| `blog-1` | **5** |
+| `blog-4` | **1** |
+| `corporate-2` | clean |
+| `technical-5` | clean |
+
+`blog-1`, which this skill has now lost five rounds running, is won with
+invented material of exactly the kind `rewrite-mode.md` names:
+
+> Kaynak: "İşte **denenmiş**, yorulmadan uygulanabilir bir plan."
+> Rakip: "Aşağıdaki rotayı **biz de yürüdük**, yorulmadan uygulanıyor."
+
+> Kaynak: "Geri döndüğünüzde **aklınızda kalan, büyük ihtimalle** … **olacak**."
+> Rakip: "**Bizde kalan**, sabahın köründe vadiye çöken o sessizlik **oldu**."
+
+> Kaynak: "ardından Selime Katedrali'yle turu tamamlayın."
+> Rakip: "Turu Selime Katedrali'nde tamamlayın. **Adı katedral, aslı manastır.**"
+
+An agentless passive becomes a first-person claim, a second-person prediction
+becomes the writer's own completed memory, and a fact about a monument appears
+that the source does not contain. The judge that chose this text named the first
+two itself while choosing it.
+
+**So the four losses are three different things.** Two are to texts that invented
+material and one penalised us for keeping the source's own word. Only
+`technical-5` is a loss where the competing text is faithful and ours is not —
+and ours is not because of the title finding in the fidelity table above.
+
+### What this round actually establishes
+
+The instrument, not the score. At 17–4 the blind tally has stopped resolving
+anything about our text. A one-file move sits inside a measured 0.7-file
+majority-of-three error and a 3.2-file regeneration noise floor. Three of the
+four residual judge rationales fail on counting. And of the four texts that beat
+us, two did it while inventing material and a third did it by changing a word
+the source had chosen.
+
+That is the round's real result, and it was pre-registered before any of it:
+**fidelity outranks the ranking.** The ranking now disagrees with fidelity often
+enough that the two cannot both be optimised, and the order between them was
+settled in round one for exactly this situation.
+
+Meanwhile the one thing this round measured objectively — the fidelity check —
+found four strengthenings in a single register, and that is the defect worth a
+round.
+
+### Pre-registered for round eight
+
+**Primary, countable, and it outranks the tally:** the fidelity check returns
+**zero** additions or strengthenings across all twenty-one files, technical
+register included. Four findings in five technical files is the baseline to
+beat. Any non-zero result is a failed round regardless of what the judges say.
+
+The change being tested: `references/rewrite-mode.md` no longer opens its
+fidelity section by reporting a perfect record. A rule that states its own
+compliance reads as a constraint already met, and this one had reported six
+clean rounds while failing four times in the seventh. The boast is replaced by
+the four failures, by the observation that three of the four are a single
+deleted word, and by a named list of load-bearing qualifiers for the register
+where it happened — *yaygın*, *tipik*, *mümkün*, *çoğu*, *genellikle*,
+*olabilir*.
+
+**The prediction, stated so it can fail:** if the mechanism is the boast and the
+missing qualifier list, technical returns to zero findings and the other three
+registers stay at zero. If findings persist in technical, the cause is the
+compression the register asks for and the fix has to move into
+`layer-2-sentence.md`, not the fidelity section.
+
+**Secondary:** no register's `semi_p` falls below 0.2 and none rises above its
+band — the dose landed this round and must not drift.
+
+**Not pre-registered, and deliberately so:** the tally. It goes in the report as
+it always has, and this round is the reason it stops being argued from against
+this competitor. Distinguishing a skill that wins 17 of 21 from one that wins 18
+needs either a harder comparison arm or judges that are not drawn from one model
+family, and neither is a change to the skill.
 
 ## What this does not establish
 

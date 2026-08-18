@@ -30,8 +30,36 @@ there is no source to be faithful to.
 **Why this is the skill's business here and not in write mode.** Fabrication in
 general is not a Turkish problem and this skill has no standing to legislate it.
 But fidelity to a supplied text *is* a property of the transformation being
-performed, and it is the strongest measured result in this repository: zero
-additions across twenty-one repair inputs. Keep it here; do not carry it across.
+performed. Keep it here; do not carry it across.
+
+**This section used to end by saying the record was perfect — zero additions
+across twenty-one repair inputs — and that is no longer true.** Round seven
+found four, all four in technical register and none anywhere else:
+
+| source said | output said | which rule |
+|---|---|---|
+| "Genel kural, güncellemek yerine silmektir", then: updating on write can leave the cache permanently wrong | "Genel kural … silmek. **Daha doğrusu ikisi de çalışır, ama** …" | rule 1 — a claim that was not in the input, and it contradicts one that was |
+| "**Yaygın** yaklaşım ikisini birlikte kullanmaktır" | "**En yaygın** yaklaşım …" | rule 3 — a superlative the source did not reach for |
+| "tipik bir imajın boyutunu … üçte birine indirmek **mümkündür**" | title: "Docker imajını **üçte birine indirmek**" | rule 3 — a possibility restated as an outcome |
+| three items, uncounted | "Pratikte dikkat edilecek **üç** şey" | rule 1 — a number, even though the count is correct |
+
+Three of the four are one word. None of them needed a sentence to be invented;
+they happened while tightening prose, which is exactly what rule 3 warns about
+and exactly when nobody is thinking about fidelity.
+
+**Why the boast is removed rather than updated.** A rule that opens by reporting
+its own perfect compliance reads as a constraint already satisfied, and a
+constraint already satisfied does not get checked. The record is what it is;
+the four failures stay written here instead, because they are the four shapes
+this failure actually takes.
+
+**Technical register is where this happens, and it is worth knowing why.** Its
+dosage line says correctness outranks voice, so the work there is compression —
+shorter predicates, tighter claims, hedges that read as padding. Every one of
+the four above is a hedge that looked like padding. In this register, before
+deleting a qualifier, check whether it was carrying certainty: *yaygın*,
+*tipik*, *mümkün*, *çoğu*, *genellikle*, *olabilir* are load-bearing, and the
+sentence is shorter without them because it now says more than the source did.
 
 **A warning about how this gets measured.** A blind "which reads more human"
 test rewards fabrication, because inventing the writer's experience is the

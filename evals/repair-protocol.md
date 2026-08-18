@@ -56,6 +56,16 @@ the whole round.
 skills, tools, models or the existence of this project, and each unaware of the
 others. The item goes to whichever text two of the three chose.
 
+The third judge is consulted **only where the first two disagree.** This is not
+a shortcut with a cost: once two judges have chosen the same text, a third vote
+cannot change the majority, so sequential and simultaneous majority-of-three
+produce identical verdicts on every item. What it gives up is the census — the
+2–1 count becomes a lower bound, because an item where judges one and two agreed
+might still have drawn a dissenting third. The disagreement figure reported is
+therefore the **pairwise** rate between judges one and two, which is the
+better-behaved statistic anyway: it is a direct observation rather than a
+majority-vote residue.
+
 This changed after round six, which accidentally measured the noise floor. Two
 of the thirteen files that round's skill changes **could not have touched**
 flipped their verdict anyway — roughly 3.2 files per twenty-one from
@@ -63,25 +73,76 @@ regeneration and judging alone. Position bias was checked first and ruled out:
 across forty-two single-judge verdicts, A was chosen 24 times and B 18,
 two-sided p = 0.44.
 
-With one judge per item, a fifteen percent per-item error rate puts three files
-of movement inside noise, which is the size of every register-level effect this
-project has measured. Majority of three cuts that to roughly six percent — about
-1.3 files — and it also *measures* the judge-variance share for free: the count
-of 2–1 splits is the disagreement rate, and it goes in the round's report.
+**The per-judge error rate is now measured, not assumed.** Round seven ran the
+first two judges on all twenty-one items and they disagreed on **four — 19
+percent pairwise.** If an item has a right answer and judges err independently,
+a pairwise disagreement rate `d` implies a per-judge minority rate
+`p = (1 − √(1 − 2d)) / 2`, so:
+
+| | error rate | files of 21 |
+|---|---|---|
+| one judge | **10.7%** | 2.2 |
+| majority of three | **3.2%** | 0.7 |
+
+Both are better than the fifteen and six percent this section assumed before the
+measurement, so the case for three judges is slightly weaker than it was argued
+and the noise floor slightly lower. Neither figure rescues a one-file move.
+
+Two cautions on that arithmetic. It assumes every item *has* a right answer: an
+item where the two texts are genuinely indistinguishable produces disagreement
+without either judge being wrong, and inflates `p` with something that is not
+error. And it assumes independence, which judges drawn from one model family
+plainly violate in the direction that makes agreement cheap — so 10.7% is a
+floor on single-judge error, not an estimate of it.
+
+The 2–1 count still goes in each round's report, because it is the only
+judge-variance number the round produces at no extra cost.
 
 Rounds up to and including six used one judge. **Their tallies are not
 comparable to later ones** and no round should be read as beating an earlier one
 across that boundary.
 
-**Judge prompt, verbatim:**
+**Voting-judge prompt, verbatim:**
 
 > Aşağıda aynı konuda iki Türkçe metin var. Hangisi bir Türk tarafından
-> yazılmış gibi okunuyor? Tek bir metin seç ve neden seçtiğini yaz. Seçimini
-> gerekçelendirirken metinden birebir cümleler alıntıla.
+> yazılmış gibi okunuyor?
+>
+> Cevabın SADECE iki satır olsun:
+> SEÇİM: A   (veya B)
+> Gerekçe: \<tek cümle\>
+>
+> Başka hiçbir şey yazma.
 
 The judge is asked which reads as written by a Turkish person, not which is
 better, and not which is more human-*like* — the second phrasing is what
 `voices.md` records as winnable by fabrication.
+
+**All three voting judges get this prompt and no other.** Rounds one to six used
+a longer form that asked the judge to justify the choice with verbatim
+quotations, and round seven used the long form for its first judge and this one
+for the other two. That is an instrument inconsistency, recorded rather than
+hidden: demanding quoted evidence changes what a reader attends to, so it can
+change the vote, and votes from two different prompts should not be pooled. The
+terse form is the one kept because the tally only needs the vote.
+
+**Quotes come from a diagnostic judge, outside the tally.** The report has to say
+what still loses and why, in the judge's words, which the terse prompt does not
+produce. So each losing item gets one further clean-context judge on the long
+prompt:
+
+> Aşağıda aynı konuda iki Türkçe metin var. Hangisi bir Türk tarafından
+> yazılmış gibi okunuyor? Tek bir metin seç ve neden seçtiğini yaz. Seçimini
+> gerekçelendirirken metinden birebir cümleler alıntıla.
+>
+> Seçmediğin metinde Türkçe olmayan, çeviri kokan veya makine izi taşıyan ne
+> varsa tek tek göster ve her biri için metinden alıntı ver.
+
+**Its vote is not counted.** It is run only on items the majority has already
+decided, where a fourth opinion cannot move the verdict, and it is run only on
+losses — which is a biased selection and would corrupt a tally, and is harmless
+for diagnosis. Anything it says is a hypothesis to be counted, not a finding:
+round seven's diagnostic rationale for `blog-4` named the passive voice, and
+measurement found the same two passive predicates in both texts.
 
 ## 4. Fidelity, which outranks the ranking
 

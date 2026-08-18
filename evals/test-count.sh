@@ -11,19 +11,23 @@
 # count_re reads the whole body, so it exercises both the endash signal and the
 # em_dash range exclusion at once.
 #
+# The semicolon sits at a line break inside a wrapped sentence, so it also
+# checks that the paragraph join has happened before the count: the mark is
+# scoped to the prose view, and the sentence it ends spans two source lines.
+#
 # The fixture carries both vowel-harmony forms of -mektedir on purpose
 # (artmaktadır, edilmektedir). It used to carry only the back-vowel one, which
 # is why a counter blind to -mektedir passed this test for four rounds.
 set -euo pipefail
 cd "$(dirname "${BASH_SOURCE[0]}")"
 
-expected="words=38 sentences=6 len_mean=6.3 len_sd=3.2 em_dash=1 endash=1 mektedir_p=5.3 dir_p=7.9 mis_p=0.0 p1_p=0.0 p2_p=0.0 ve_p=2.6 part_p=2.6 calque_p=5.3 forced=0 tilde=0 pct_wrong=0 bold=0 bullets=3"
+expected="words=38 sentences=6 len_mean=6.3 len_sd=3.2 em_dash=1 endash=1 semi_p=2.6 mektedir_p=5.3 dir_p=7.9 mis_p=0.0 p1_p=0.0 p2_p=0.0 ve_p=2.6 part_p=2.6 calque_p=5.3 forced=0 tilde=0 pct_wrong=0 bold=0 bullets=3"
 
 row=$(./count.sh fixtures/known.md | tail -n 1)
-read -r _file words sentences len_mean len_sd em_dash endash mektedir_p dir_p mis_p p1_p p2_p \
+read -r _file words sentences len_mean len_sd em_dash endash semi_p mektedir_p dir_p mis_p p1_p p2_p \
         ve_p part_p calque_p forced tilde pct_wrong bold bullets <<<"$row"
 
-actual="words=$words sentences=$sentences len_mean=$len_mean len_sd=$len_sd em_dash=$em_dash endash=$endash mektedir_p=$mektedir_p dir_p=$dir_p mis_p=$mis_p p1_p=$p1_p p2_p=$p2_p ve_p=$ve_p part_p=$part_p calque_p=$calque_p forced=$forced tilde=$tilde pct_wrong=$pct_wrong bold=$bold bullets=$bullets"
+actual="words=$words sentences=$sentences len_mean=$len_mean len_sd=$len_sd em_dash=$em_dash endash=$endash semi_p=$semi_p mektedir_p=$mektedir_p dir_p=$dir_p mis_p=$mis_p p1_p=$p1_p p2_p=$p2_p ve_p=$ve_p part_p=$part_p calque_p=$calque_p forced=$forced tilde=$tilde pct_wrong=$pct_wrong bold=$bold bullets=$bullets"
 
 if [ "$actual" = "$expected" ]; then
   echo "ok   count.sh matches the hand-verified fixture"
