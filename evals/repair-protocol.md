@@ -194,6 +194,15 @@ finding to write a rule against. Five files generated once each — the shape of
 every round up to eight — resolves "four findings" from "one" and does not
 resolve "one" from "zero".
 
+**When the check is asked about deletions, it has to be told what is
+prescribed.** Testing a fidelity rule for over-correction means asking whether
+the output dropped a relation the source stated — and that question, asked plain,
+reports every discourse marker the skill removes on purpose. Round eight's probe
+four flagged a deleted `Kısacası` in both runs as a lost relation; it is deleted
+in eight generations of eight, and `layer-1-structure.md` §3 names that marker
+family and requires its removal. Ask the question, and give it the list of
+prescribed deletions, or the answer is a list of the rules working.
+
 **Why this is different from the tally's floor.** The tally flips whole verdicts
 on files the skill did not touch, so its noise is unattributable. Fidelity noise
 is attributable: the finding either is or is not in the text, quotably, and a

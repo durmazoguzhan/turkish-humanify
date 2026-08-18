@@ -1517,6 +1517,50 @@ because a fidelity rule that buys its cleanliness by flattening the prose has no
 improved anything, and this project has already shipped that trade once without
 noticing.
 
+### The result
+
+| | added causal link | converbs |
+|---|---|---|
+| source | — | 4 |
+| the five round-eight generations before the rule | 3 of 5 | 5, 6, 6, 6, 7 |
+| **rule 4, run a** | **—** | **6** |
+| **rule 4, run b** | **—** | **6** |
+
+**Both clean, and the guard passed with room.** Six converbs each, the middle of
+the prior range, so the rule did not buy its result by making the skill afraid of
+the device `layer-2` §2 asks for. The fidelity check returned `ADDED: CLEAN` for
+both, and every joiner it examined turned out to be a substitution for
+coordination the source already had rather than a new relation.
+
+**What this is worth, at the size stated in advance:** the rule is *not refuted*.
+Two clean generations against a three-in-five base rate happen by chance about
+sixteen percent of the time, so this is not confirmation and the round-eight
+record should not be read as though it were.
+
+### The one finding, and why it is not a finding
+
+The check was also asked the opposite question — did the rule make the skill drop
+relations the source *did* state — and it returned one, in both runs: the
+source's closing marker `Kısacası` is gone.
+
+It is gone in **eight generations of eight**, `v11` included, which predates rule
+4 by two rounds. And `layer-1-structure.md` §3 asks for exactly this: it names
+`Sonuç olarak`, `Özetle` and `Görüldüğü üzere` as the restating-close tell and
+bans "the closing that adds nothing — the one you could delete without losing
+information". The marker is deleted; the three imperatives it introduced are
+kept. That is the rule working.
+
+**So the finding is an artefact of the check, not a defect in the text**, and the
+lesson is about the instrument: a fidelity pass asked for *lost* relations will
+report every discourse marker `layer-1` §3 deliberately removes. The question is
+still worth asking — it is the only way to see a fidelity rule over-correcting —
+but it has to be told which deletions are prescribed.
+
+`evals/repair-protocol.md` §4 now carries that. The other item, run a narrowing
+the scope of a `Böylece`, appears in one generation of six and is not pursued
+under the rate-based bar this round introduced.
+
+
 ## What this does not establish
 
 Twelve texts, one model, one afternoon, and judges that are themselves language
