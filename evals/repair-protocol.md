@@ -154,6 +154,43 @@ assertion present in the output and absent from the source.
 and invents a fact has failed, and failing this check outranks winning the blind
 ranking. This is not a tiebreaker. It is the first thing read.
 
+### This check has a noise floor too, and it is now measured
+
+Round eight set a bar of zero findings and hit one, twice, then went looking for
+whether "one" meant anything. `evals/input/technical-4.md` was generated five
+times across two skill states:
+
+| skill state | generations | findings |
+|---|---|---|
+| before the title rule | 3 | **1** |
+| after the title rule | 2 | **2** |
+
+Two conclusions, and they pull in opposite directions.
+
+**The site is real.** Three of five generations produced the same addition — two
+unconnected source paragraphs joined by `çünkü` — which is far too often to be an
+accident and is why `rewrite-mode.md` gained fidelity rule 4. Nothing else
+appeared in any of the five.
+
+**And a single generation cannot be trusted to reveal it.** Two runs under
+byte-identical conditions disagreed: one clean, one not. So **a count of zero on
+one generation is not evidence of zero**, and the round-eight bar as written was
+unmeasurable. What is measurable is a rate.
+
+**The bar is therefore a rate, not a count.** A site that appears in *k* of *n*
+generations of the same input is a defect worth a rule when *k ≥ 2*; a single
+appearance across a single generation of each file is a lead to be re-run, not a
+finding to write a rule against. Five files generated once each — the shape of
+every round up to eight — resolves "four findings" from "one" and does not
+resolve "one" from "zero".
+
+**Why this is different from the tally's floor.** The tally flips whole verdicts
+on files the skill did not touch, so its noise is unattributable. Fidelity noise
+is attributable: the finding either is or is not in the text, quotably, and a
+re-run tells you which. It costs one generation to resolve instead of three
+judges, which is the cheaper instrument and the reason §5 prefers countable
+targets in the first place.
+
 ## 5. The countable target is the evidence, when there is one
 
 The blind tally is the noisiest instrument in this repository and it is not the

@@ -141,12 +141,20 @@ one.
 
 | source title | body says | title may say |
 |---|---|---|
-| `Mikroservislerde Dağıtık Transaction Yönetimi` | "**Yaygın** çözüm Saga desenidir" | `Mikroservislerde dağıtık transaction: telafi neden rollback'in yerini alıyor` — the question, or the claim with its hedge |
-| `Redis'te Cache Invalidation` | "Cache'leme kolaydır. Zor olan …" | `Redis'te veriyi cache'e koymak kolay, çıkarmak zor` — the body asserts this flatly, so the title may too |
+| `Kredi Kartı Borcu Yapılandırma` | "Yapılandırma **çoğu durumda** faizi düşürür" | `Kredi kartı borcunu yapılandırmak faizi neden düşürüyor` — the question, or the claim carrying its `çoğu durumda` |
+| `İş Sözleşmesinin Feshi` | "Bildirim süresine uymamak tazminat doğurur" | `İş sözleşmesini bildirimsiz feshetmek tazminat doğurur` — the body asserts this flatly, so the title may too |
 
 The test is one question: **is the title's claim made in the body, and at the
 same strength?** If the body hedged it, the title hedges it or asks it instead.
 A sharper title is not worth a claim the writer did not make.
+
+**These two examples are deliberately about credit-card debt and employment
+law, subjects that appear nowhere in `evals/`.** The first version of this table
+used the evaluation text that had just failed, and the next generation of that
+text returned the example's title **verbatim** — so the file could no longer
+test whether the rule had been understood or merely copied. A worked example
+drawn from the corpus it is measured on stops being a test. Keep the examples
+here off the corpus.
 
 ---
 

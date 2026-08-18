@@ -1360,6 +1360,119 @@ Whatever it returns, the number goes in `repair-protocol.md` next to the tally's
 noise floor, because a fidelity bar with no measured floor is the same mistake in
 a different column.
 
+## Round eight — probe three: the bar was unmeasurable, and the defect is real anyway
+
+Probe three changed nothing and generated the same five files again, to find out
+what "one finding" is worth. It answered that, and then a two-subagent control
+answered a question I had to ask about my own fix.
+
+### The repeat run
+
+`evals/output/v14/`, skill byte-identical to the state that produced `v13`,
+verified by `git diff`. **One finding, the same one** — `technical-4`'s added
+`çünkü` — and all five titles clean for the second time, which is the title
+rule's second independent confirmation.
+
+### Then the fix itself came under suspicion
+
+`technical-4`'s finding is absent from `v11` and `v12` and present in `v13` and
+`v14`. The only thing that changed between `v12` and `v13` was **my title rule.**
+A fix that introduces a defect needs revising, not supplementing, so the third
+rule was not written until this was tested: `technical-4` generated twice more
+from a git worktree at the pre-title-rule commit.
+
+| generation | skill state | `Neredeyse, çünkü` |
+|---|---|---|
+| `v11` | round seven | — |
+| `v12` | round eight, qualifier list | — |
+| control B | same as `v12` | — |
+| **control A** | **same as `v12`** | **yes** |
+| `v13` | + title rule | yes |
+| `v14` | + title rule | yes |
+
+**One of three before, two of two after, Fisher exact p = 0.4.** No evidence the
+title rule caused anything. The construction occurs in both states, in three
+generations of five, and the fix is exonerated.
+
+### What the control also destroyed
+
+Earlier in this round I wrote that the fidelity check is stable under
+regeneration, on the strength of `v13` and `v14` returning identical findings.
+**Control A and control B refute that.** Byte-identical conditions, same file,
+one clean and one not. `v13` and `v14` agreeing was luck, and the inference drawn
+from it was wrong.
+
+So the pre-registration's four outcomes do not resolve to one row. Two of them
+are true at once:
+
+- **Row three — the site is systematic.** Three of five, always the same
+  sentence. `rewrite-mode.md` gained fidelity rule 4 and `layer-2-sentence.md`
+  §2 gained the matching limit.
+- **Row one — a bar of zero was unmeasurable.** One generation per file cannot
+  separate one finding from none. The bar in `repair-protocol.md` §4 is now a
+  **rate**: a site appearing in *k* of *n* generations is a defect when *k ≥ 2*,
+  and a lone appearance is a lead to re-run rather than a finding to legislate.
+
+Five files generated once each resolves four findings from one. It does not
+resolve one from zero, and every round up to this one had that shape.
+
+### The defect, and the third collision
+
+The source states two things in two paragraphs:
+
+> …düşük kardinaliteli kolonlara tek başına index atmak **neredeyse hep
+> israftır.**
+>
+> **Böyle durumlarda** kısmi index (partial index) çok daha isabetlidir:
+
+The output joins them: *"neredeyse hep israf. **Neredeyse, çünkü** böyle
+durumlarda kısmi index çok daha isabetli."* The partial index becomes the reason
+the waste is only *almost* always — which the source never says, and which is not
+true of the source's own example, an index on `created_at` rather than on the
+low-cardinality column.
+
+Nothing invented, no hedge deleted. A hedge **explained**. And it is the third
+correct rule colliding with fidelity: `layer-2` §2 says two predicates joined by
+`ve` are usually a missed converb, and every converb in its list encodes a
+relation — `-ince` says *when*, `-dikçe` says *the more*. Choosing one is
+choosing a claim about how two things connect. In write mode that is the writer's
+to choose; in repair mode it is the source's.
+
+Fidelity rule 4 now says so in one line: **the relations between the source's
+statements are content too.** Two source sentences that merely sit next to each
+other are allowed to sit next to each other.
+
+### A defect in the instrument, found by reading my own output
+
+`v14`'s `technical-2` came back titled `Mikroservislerde dağıtık transaction:
+telafi neden rollback'in yerini alıyor` — **verbatim the worked example I had put
+in `layer-1` §4 two commits earlier.** I had written the round's fix using the
+failing evaluation text as its illustration, so the next generation of that text
+could return the answer instead of deriving it, and the file stopped being able
+to test whether the rule was understood.
+
+Both examples in that table are now drawn from credit-card debt and employment
+law, subjects that appear nowhere in `evals/`, with the reason written beside
+them. **A worked example drawn from the corpus it is measured on is not a test.**
+This one is mine, it was avoidable, and it would have silently inflated every
+future round that touched `technical-2`.
+
+### Where round eight stands
+
+| | findings, technical | |
+|---|---|---|
+| round seven, `v11` | 4 | qualifier deletions and a title |
+| probe one, `v12` | 1 | a title |
+| probe two, `v13` | 1 | a connective |
+| probe three, `v14` | 1 | the same connective |
+| controls, pre-title-rule ×2 | 1 | the same connective |
+
+Three rules written, three sites closed or explained, and the bar it was all
+measured against turned out to be below the instrument's resolution. The round
+is not finished — the remaining sixteen files have not been generated — and by
+the pre-registration they do not get generated until a probe comes back clean
+under the new rate-based bar, which now means two generations rather than one.
+
 ## What this does not establish
 
 Twelve texts, one model, one afternoon, and judges that are themselves language

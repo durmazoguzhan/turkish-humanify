@@ -26,6 +26,14 @@ there is no source to be faithful to.
    adding a word, and adding one where the source was certain retracts it. Both
    are failures, and the first is easy to commit while cleaning `-mAktAdIr` or
    converting a passive to an active.
+4. **The relations between the source's statements are content too.** Two
+   sentences side by side assert two things. Joined with `çünkü`, `bu yüzden`,
+   `yani`, `dolayısıyla` or a converb, they assert a third — that one causes,
+   explains or follows from the other. If the source did not state the relation,
+   putting it in is an addition, even when both halves are word-for-word
+   faithful. `layer-2-sentence.md` §2 tells you to fuse clauses with converbs
+   and it is right; in repair mode the relation the converb encodes has to be
+   the source's, not yours.
 
 **Why this is the skill's business here and not in write mode.** Fabrication in
 general is not a Turkish problem and this skill has no standing to legislate it.
@@ -52,6 +60,24 @@ its own perfect compliance reads as a constraint already satisfied, and a
 constraint already satisfied does not get checked. The record is what it is;
 the four failures stay written here instead, because they are the four shapes
 this failure actually takes.
+
+**The measured case for rule 4, because it is the least obvious of the four.**
+The source of `evals/input/technical-4.md` puts two statements in two
+paragraphs:
+
+> …düşük kardinaliteli kolonlara tek başına index atmak **neredeyse hep
+> israftır.**
+>
+> **Böyle durumlarda** kısmi index (partial index) çok daha isabetlidir:
+
+Three of five generations joined them: *"neredeyse hep israf. **Neredeyse,
+çünkü** böyle durumlarda kısmi index çok daha isabetli."* That asserts the
+partial index is what makes the waste only *almost* always — a claim the source
+does not make, and one that does not hold, because the example indexes
+`created_at` and not the low-cardinality column the sentence is about.
+
+Nothing was invented and no hedge was deleted. A hedge was **explained**, which
+is a thing this file had not named until it was measured three times.
 
 **The title is a site of its own, and it survived the first fix.** Round eight
 cut the four findings above to one, and the one is a title:
