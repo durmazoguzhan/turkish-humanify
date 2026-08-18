@@ -20,9 +20,20 @@ collected into one decision.
 | **sentence** | full — inversion, particles and `-mIş` all in play | restricted — no inversion, few particles; branching, converbs, focus and `-DIr` cleanup active | medium — branching, converbs, focus; **no list-to-prose conversion** | branching, converbs and focus only — **`-mAktAdIr` stays** |
 | **surface** | full | full | full | full |
 
-**Surface is always on.** Orthography and terminology are correctness, not
-style. An academic paper with `cache'ı` instead of `cache'i` is simply
-misspelled.
+**Surface is always on**, but "on" is not the same as "at one rate".
+Orthography and terminology are correctness, not style: an academic paper with
+`cache'ı` instead of `cache'i` is simply misspelled, in every register.
+Punctuation *frequency* is a different matter — published Turkish uses the
+semicolon about four times more freely in academic prose than in a blog, and
+`layer-3-surface.md` §5 carries that dose. Correctness is invariant; rate is not.
+
+**This table is a summary, not the specification.** The authority for any dose is
+the rule's own section in `layer-1-structure.md`, `layer-2-sentence.md` or
+`layer-3-surface.md`. If this table and a rule disagree, **the rule wins and the
+disagreement is a bug** — the one time they disagreed, this table said
+"`-mAktAdIr` cleanup" while `layer-2-sentence.md` §7 said to keep it in academic
+register, and the contradiction stripped evidential markers out of academic
+sources until it was found. That episode is recorded a few sections down.
 
 **This table is written in repair verbs** — *cleanup*, *stays*, *off* — and they
 presuppose an existing text. In write mode there is nothing to remove, so read
@@ -73,8 +84,10 @@ named unprompted:
 Both were losses in the blind comparison. Keep the list, fix what is inside it.
 
 **This worked, and the number is worth carrying.** Corporate was 2–3 with the
-conversion on and is **4–1** with it off, against an unchanged competitor. It is
-no longer the register this skill loses; academic is, at 3–2.
+conversion on and is **4–1** with it off, against an unchanged competitor, and it
+held at 4–1 in the round after that. It is no longer the register this skill
+loses — and as of round six there is no register it loses, the weakest being
+blog and technical at 4–2 and 3–2.
 
 ### academic / official
 Conventions are binding and deviation costs credibility. Journal articles,

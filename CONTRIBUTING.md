@@ -111,8 +111,17 @@ maintainer only. Branches are deleted automatically once merged.
 ```
 ./scripts/check-structure.sh   # repo layout the three distribution channels expect
 ./evals/test-count.sh          # counter against the hand-verified fixture
+./scripts/check-doses.sh       # every register-dependent rule states its own dose
 ./scripts/version.sh --check   # version against the commit count
 ```
+
+`check-doses.sh` deserves a note, because it encodes a failure this project made
+three times. A rule that varies by register has to say so **where the rule is
+read**. `registers.md` is a summary; the rule's own section is the specification.
+Three rules forgot: the paragraph rule fired in academic register, the semicolon
+carried academic rates into blogs for six rounds, and `-mIş` relied on the table
+alone. The first two were caught by blind judges. The third was caught by this
+script, which is the point of having it.
 
 All three run in CI.
 
