@@ -1,6 +1,6 @@
 {
   "name": "turkish-humanify",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "Writes and repairs Turkish that reads as human-written: native sentence architecture, register-aware intervention, and technical terms left intact",
   "author": {
     "name": "Oguzhan Durmaz",

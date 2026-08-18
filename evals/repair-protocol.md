@@ -52,8 +52,26 @@ The script exists because the randomisation was previously done by hand, which
 is both unrepeatable and the one step where a mistake would silently invalidate
 the whole round.
 
-One clean-context judge subagent per item, told nothing about skills, tools,
-models or the existence of this project.
+**Three** clean-context judge subagents per item, each told nothing about
+skills, tools, models or the existence of this project, and each unaware of the
+others. The item goes to whichever text two of the three chose.
+
+This changed after round six, which accidentally measured the noise floor. Two
+of the thirteen files that round's skill changes **could not have touched**
+flipped their verdict anyway — roughly 3.2 files per twenty-one from
+regeneration and judging alone. Position bias was checked first and ruled out:
+across forty-two single-judge verdicts, A was chosen 24 times and B 18,
+two-sided p = 0.44.
+
+With one judge per item, a fifteen percent per-item error rate puts three files
+of movement inside noise, which is the size of every register-level effect this
+project has measured. Majority of three cuts that to roughly six percent — about
+1.3 files — and it also *measures* the judge-variance share for free: the count
+of 2–1 splits is the disagreement rate, and it goes in the round's report.
+
+Rounds up to and including six used one judge. **Their tallies are not
+comparable to later ones** and no round should be read as beating an earlier one
+across that boundary.
 
 **Judge prompt, verbatim:**
 
@@ -75,9 +93,29 @@ assertion present in the output and absent from the source.
 and invents a fact has failed, and failing this check outranks winning the blind
 ranking. This is not a tiebreaker. It is the first thing read.
 
-## 5. What gets reported
+## 5. The countable target is the evidence, when there is one
 
-The tally, by register and overall, with a two-sided sign test. Then the
+The blind tally is the noisiest instrument in this repository and it is not the
+right one for most changes. A fix with a countable target — a suffix rate, a
+punctuation rate, a bullet count — is tested by measuring that target, which
+needs generations and **zero judges**, and which resolves effects far smaller
+than three files.
+
+So each round states, before running:
+
+- the **countable prediction**, with the published Turkish figure it is aiming
+  at and the value that would count as over-correction; and
+- the tally as a **secondary** check, with the standing rule that movement of
+  three files or fewer is noise and is not to be argued from.
+
+The temptation this guards against is real and this file exists partly because
+of it: six rounds were read as a sequence of improvements — 15–6, 16–5, 16–5 —
+that are statistically indistinguishable from each other.
+
+## 6. What gets reported
+
+The countable prediction against its outcome. Then the tally, by register and
+overall, with a two-sided sign test and the count of 2–1 judge splits. Then the
 discounts, before any conclusion. Then what still loses and why, quoting the
 judge rather than paraphrasing.
 
