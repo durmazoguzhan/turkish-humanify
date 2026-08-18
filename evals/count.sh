@@ -59,7 +59,7 @@ count_words() { { grep -oiE "\\b($(list_re "$1"))\\b" "$2" 2>/dev/null || true; 
 # ones (bold, bullets) stay raw, because there the count itself is the verdict.
 per100() { awk -v n="$1" -v w="$2" 'BEGIN { if (w == 0) { print "0.0"; exit } printf "%.1f", n * 100 / w }'; }
 
-printf 'file\twords\tsentences\tlen_mean\tlen_sd\tem_dash\tendash\tmektedir_p\tdir_p\tmis_p\tp1_p\tp2_p\tve_p\tpart_p\tcalque_p\tforced\ttilde\tpct_wrong\tbold\tbullets\n'
+printf 'file\twords\tsentences\tlen_mean\tlen_sd\tem_dash\tendash\tsemi_p\tmektedir_p\tdir_p\tmis_p\tp1_p\tp2_p\tve_p\tpart_p\tcalque_p\tforced\ttilde\tpct_wrong\tbold\tbullets\n'
 
 tmp=$(mktemp -d)
 trap 'rm -rf "$tmp"' EXIT
@@ -68,11 +68,16 @@ for src in "$@"; do
   f="$tmp/body.md"
   body "$src" > "$f"
 
-  words=$(prose "$f" | wc -w | tr -d ' ')
+  # The prose view is written out, not just piped, because one signal is scoped
+  # to it. See the semicolon comment below for why that signal and not the
+  # others, and for the asymmetry this leaves behind.
+  p="$tmp/prose.md"
+  prose "$f" > "$p"
+
+  words=$(wc -w < "$p" | tr -d ' ')
 
   read -r sentences len_mean len_sd < <(
-    prose "$f" \
-    | sed -E 's/([.!?…]+)([[:space:]]|$)/\1\n/g' \
+    sed -E 's/([.!?…]+)([[:space:]]|$)/\1\n/g' "$p" \
     | awk '
         { n = split($0, w, " "); c = 0
           for (i = 1; i <= n; i++) if (w[i] ~ /[^[:punct:]]/) c++
@@ -104,6 +109,20 @@ for src in "$@"; do
   # exclude them, so the instrument was configured to look away from the thing
   # the rule got wrong. A blind judge found it instead.
   endash=$(count_re '–' "$f")
+  # Semicolon frequency, the one signal counted on the prose view rather than
+  # the whole body. The rule it measures (layer-3 §5) permits the mark for
+  # separating grouped list items and objects only to its use as a default
+  # connective between independent clauses — so counting list-item semicolons
+  # would score an allowed usage against the text, and would do it hardest on
+  # the list-heavy corporate register. Numerator and denominator are therefore
+  # both prose.
+  #
+  # This leaves the instrument asymmetric: every other count_re signal reads
+  # the body, including headings and list items, while `words` has always been
+  # prose-only. A -maktadır inside a bullet is counted but its words are not.
+  # Migrating the rest is a separate change, because it moves every per-100
+  # figure recorded in RESULTS.md.
+  semi=$(count_re ';' "$p")
   # Vowel harmony gives two forms of this suffix and the count needs both.
   # This regex read '(mekte|makta)dır' until 2026-08-17, which matched only the
   # back-vowel -maktadır and silently missed every -mektedir — the form the
@@ -136,9 +155,9 @@ for src in "$@"; do
   bold=$(( $(count_re '\*\*' "$f") / 2 ))
   bullets=$(grep -cE '^[[:space:]]*[-*+•] ' "$f" || true)
 
-  printf '%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\n' \
+  printf '%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\n' \
     "$(basename "$src")" "$words" "$sentences" "$len_mean" "$len_sd" \
-    "$em_dash" "$endash" "$(per100 "$mektedir" "$words")" "$(per100 "$dir_copula" "$words")" \
+    "$em_dash" "$endash" "$(per100 "$semi" "$words")" "$(per100 "$mektedir" "$words")" "$(per100 "$dir_copula" "$words")" \
     "$(per100 "$mis_past" "$words")" "$(per100 "$p1" "$words")" \
     "$(per100 "$p2" "$words")" "$(per100 "$ve_raw" "$words")" \
     "$(per100 "$particles" "$words")" "$(per100 "$calque" "$words")" \

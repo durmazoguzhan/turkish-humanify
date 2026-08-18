@@ -162,14 +162,15 @@ grates is the English `; and` chain, not the mark itself. Removing every
 semicolon from Turkish prose is its own kind of damage.
 
 **But it carries a register dose, and that dose is not flat.** Measured per 100
-words across the published Turkish in `evals/human-reference/`:
+words by the `semi_p` column of `evals/count.sh` across the published Turkish in
+`evals/human-reference/`:
 
-| register | published rate |
-|---|---|
-| academic / official | 0.34 – 2.42 |
-| blog, technical | **about 0.32** |
+| register | published rate | what it rests on |
+|---|---|---|
+| academic / official | **0.2 – 2.4** | 29 semicolons in 2 647 words, five journal articles |
+| blog, technical | **0.2 – 0.5** | 3 semicolons in 613 words, four texts |
 
-Roughly a quarter as often outside academic prose. This skill wrote **1.33** in
+Roughly a quarter as often outside academic prose. This skill wrote **1.39** in
 blog and technical for six rounds — academic rates everywhere — and blind judges
 named it three times while choosing the other text:
 
@@ -181,11 +182,22 @@ usually a sentence break waiting to happen. Ask whether the second clause could
 stand alone with a full stop; outside academic prose it nearly always can, and
 nearly always should.
 
-**Where this stops.** Not at zero. The competitor in the evaluation writes 0.19
-and published Turkish writes 0.32, so a text with no semicolons at all has
-overshot in the direction this section opened by warning about. The mark is
-right for a genuinely tight pair of clauses and for separating grouped list
-items; it is wrong as a default connective.
+**Where this stops.** Not at zero. The mark is right for a genuinely tight pair
+of clauses and for separating grouped list items; it is wrong as a default
+connective. A text with no semicolons at all has overshot in the direction this
+section opened by warning about.
+
+**How weak that floor is, stated plainly.** The non-academic figure above is
+three semicolons, and **two of the three are in
+`gezinomi-negative-control.md`** — a file kept in the corpus precisely as an
+example of formulaic human writing, not as a model. Drop it and published
+non-academic Turkish measures one semicolon in 512 words, **0.20**, which is
+indistinguishable from the 0.19 this section cites as the competitor's
+overshoot. So the honest reading of the band is *0.2 to 0.5*, and the claim that
+0.32 is the human rate is more than this corpus can carry. What the corpus does
+establish is the size of the old error: 1.39 was three to seven times too high.
+The academic side of the table was strengthened with five pre-2022 journal
+articles; this side was not, and until it is, treat the lower bound as soft.
 
 **A range takes the short hyphen, not a long dash.** This file said the
 opposite until it was checked. TDK lists two marks — `kısa çizgi` (`-`) and

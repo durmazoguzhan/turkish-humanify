@@ -26,12 +26,85 @@ there is no source to be faithful to.
    adding a word, and adding one where the source was certain retracts it. Both
    are failures, and the first is easy to commit while cleaning `-mAktAdIr` or
    converting a passive to an active.
+4. **The relations between the source's statements are content too.** Two
+   sentences side by side assert two things. Joined with `çünkü`, `bu yüzden`,
+   `yani`, `dolayısıyla` or a converb, they assert a third — that one causes,
+   explains or follows from the other. If the source did not state the relation,
+   putting it in is an addition, even when both halves are word-for-word
+   faithful. `layer-2-sentence.md` §2 tells you to fuse clauses with converbs
+   and it is right; in repair mode the relation the converb encodes has to be
+   the source's, not yours.
 
 **Why this is the skill's business here and not in write mode.** Fabrication in
 general is not a Turkish problem and this skill has no standing to legislate it.
 But fidelity to a supplied text *is* a property of the transformation being
-performed, and it is the strongest measured result in this repository: zero
-additions across twenty-one repair inputs. Keep it here; do not carry it across.
+performed. Keep it here; do not carry it across.
+
+**This section used to end by saying the record was perfect — zero additions
+across twenty-one repair inputs — and that is no longer true.** Round seven
+found four, all four in technical register and none anywhere else.
+
+The claim it replaces was also weaker than it sounded: the check that produced
+those six clean rounds asked only for material **absent** from the source, and
+round seven's also asked for source material **strengthened**. Two of the four
+below would have been caught before and two would not. The record was never as
+clean as "zero" implied, which is the second reason not to keep a boast here.
+
+| source said | output said | which rule |
+|---|---|---|
+| "Genel kural, güncellemek yerine silmektir", then: updating on write can leave the cache permanently wrong | "Genel kural … silmek. **Daha doğrusu ikisi de çalışır, ama** …" | rule 1 — a claim that was not in the input, and it contradicts one that was |
+| "**Yaygın** yaklaşım ikisini birlikte kullanmaktır" | "**En yaygın** yaklaşım …" | rule 3 — a superlative the source did not reach for |
+| "tipik bir imajın boyutunu … üçte birine indirmek **mümkündür**" | title: "Docker imajını **üçte birine indirmek**" | rule 3 — a possibility restated as an outcome |
+| three items, uncounted | "Pratikte dikkat edilecek **üç** şey" | rule 1 — a number, even though the count is correct |
+
+Three of the four are one word. None of them needed a sentence to be invented;
+they happened while tightening prose, which is exactly what rule 3 warns about
+and exactly when nobody is thinking about fidelity.
+
+**Why the boast is removed rather than updated.** A rule that opens by reporting
+its own perfect compliance reads as a constraint already satisfied, and a
+constraint already satisfied does not get checked. The record is what it is;
+the four failures stay written here instead, because they are the four shapes
+this failure actually takes.
+
+**The measured case for rule 4, because it is the least obvious of the four.**
+The source of `evals/input/technical-4.md` puts two statements in two
+paragraphs:
+
+> …düşük kardinaliteli kolonlara tek başına index atmak **neredeyse hep
+> israftır.**
+>
+> **Böyle durumlarda** kısmi index (partial index) çok daha isabetlidir:
+
+Three of the five generations run under round eight's skill joined them: *"neredeyse hep israf. **Neredeyse,
+çünkü** böyle durumlarda kısmi index çok daha isabetli."* That asserts the
+partial index is what makes the waste only *almost* always — a claim the source
+does not make, and one that does not hold, because the example indexes
+`created_at` and not the low-cardinality column the sentence is about.
+
+Nothing was invented and no hedge was deleted. A hedge was **explained**, which
+is a thing this file had not named until it was measured three times.
+
+**The title is a site of its own, and it survived the first fix.** Round eight
+cut the four findings above to one, and the one is a title:
+`Mikroservislerde Dağıtık Transaction Yönetimi` became `Mikroservislerde dağıtık
+transaction: rollback yok, telafi var`, where the body says *"**Yaygın** çözüm
+Saga desenidir"*. Nothing was invented; a hedge simply did not survive the trip
+from body to heading.
+
+This one is a collision between two correct rules rather than a lapse.
+`layer-1-structure.md` §4 says to turn a category label into a claim, and a
+claim is an assertion, so fidelity governs it. **Before rewriting any title or
+heading, check that its claim appears in the body at the same strength.** That
+section now carries the same rule from the other side.
+
+**Technical register is where the rest happens, and it is worth knowing why.** Its
+dosage line says correctness outranks voice, so the work there is compression —
+shorter predicates, tighter claims, hedges that read as padding. Every one of
+the four above is a hedge that looked like padding. In this register, before
+deleting a qualifier, check whether it was carrying certainty: *yaygın*,
+*tipik*, *mümkün*, *çoğu*, *genellikle*, *olabilir* are load-bearing, and the
+sentence is shorter without them because it now says more than the source did.
 
 **A warning about how this gets measured.** A blind "which reads more human"
 test rewards fabrication, because inventing the writer's experience is the

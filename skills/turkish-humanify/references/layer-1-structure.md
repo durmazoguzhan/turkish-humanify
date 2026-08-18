@@ -130,6 +130,32 @@ are findable, not memorable. `Fiyat-Kazanç Oranı (F/K) Nedir?` is the correct
 title for an explainer somebody will search for. Do not trade discoverability
 for voice in a text whose job is to be found.
 
+**And in repair mode it stops at the source's certainty.** This section tells
+you to turn a category label into a claim, which is right — and a claim is an
+assertion, which means the fidelity rule in `rewrite-mode.md` applies to it. A
+body that says *"**Yaygın** çözüm Saga desenidir"* and *"**Çoğu iş senaryosu
+için** … çok daha sağlıklı bir tercihtir"* does not license a title that says
+`rollback yok, telafi var`. That title is true of Saga; the article is about
+distributed transactions, of which Saga is the common answer and not the only
+one.
+
+| source title | body says | title may say |
+|---|---|---|
+| `Kredi Kartı Borcu Yapılandırma` | "Yapılandırma **çoğu durumda** faizi düşürür" | `Kredi kartı borcunu yapılandırmak faizi neden düşürüyor` — the question, or the claim carrying its `çoğu durumda` |
+| `İş Sözleşmesinin Feshi` | "Bildirim süresine uymamak tazminat doğurur" | `İş sözleşmesini bildirimsiz feshetmek tazminat doğurur` — the body asserts this flatly, so the title may too |
+
+The test is one question: **is the title's claim made in the body, and at the
+same strength?** If the body hedged it, the title hedges it or asks it instead.
+A sharper title is not worth a claim the writer did not make.
+
+**These two examples are deliberately about credit-card debt and employment
+law, subjects that appear nowhere in `evals/`.** The first version of this table
+used the evaluation text that had just failed, and the next generation of that
+text returned the example's title **verbatim** — so the file could no longer
+test whether the rule had been understood or merely copied. A worked example
+drawn from the corpus it is measured on stops being a test. Keep the examples
+here off the corpus.
+
 ---
 
 ## 5. Bullet dependence
