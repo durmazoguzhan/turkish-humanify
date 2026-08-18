@@ -82,6 +82,33 @@ Worth stating plainly, because it is the third time in this project: a
 disagreement between the numbers and the reading has meant the numbers were
 incomplete every time so far, never the reading.
 
+### The noise floor, and why this half matters more than it looks
+
+Round six measured something six rounds had assumed away. Its three skill changes
+could only reach eight of the twenty-one files; the other thirteen were untouched
+by construction. **Two of those thirteen flipped their blind verdict anyway** —
+about 3.2 files per twenty-one from regeneration and judging alone.
+
+Position bias was the first suspect and was ruled out: across forty-two verdicts
+A was chosen 24 times against B's 18, two-sided p = 0.44.
+
+What follows from a 3.2-file floor is uncomfortable and worth stating flatly:
+
+- **15–6, 16–5, 16–5** across rounds three, five and six are statistically
+  indistinguishable from each other.
+- Every register-level movement this project has reported is one to two files,
+  which is inside the floor. Corporate's 2–3 to 4–1 included.
+- What survives is not the tallies but the cases where a **mechanism was
+  predicted in advance and measured**: `academic-1`'s paragraph count going 7 to
+  5, `-mAktAdIr` moving into the published band, en dashes going 9 to 0. Those are
+  counts, not votes, and a count of 9 to 0 is not three files of noise.
+
+This is the argument for the countable half of this rubric. Not that it is more
+interesting than reading — it is not — but that it resolves effects the blind
+tally cannot, at a fraction of the cost. From round seven the protocol makes the
+countable target the primary evidence whenever a fix has one, and puts three
+judges on each item so the tally at least measures its own disagreement rate.
+
 ### What this half deliberately cannot see
 
 `count.sh` omits every signal that needs Turkish morphology to measure: participle
