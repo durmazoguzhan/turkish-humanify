@@ -150,6 +150,32 @@ closely related independent clauses and separates grouped list items. What
 grates is the English `; and` chain, not the mark itself. Removing every
 semicolon from Turkish prose is its own kind of damage.
 
+**But it carries a register dose, and that dose is not flat.** Measured per 100
+words across the published Turkish in `evals/human-reference/`:
+
+| register | published rate |
+|---|---|
+| academic / official | 0.34 – 2.42 |
+| blog, technical | **about 0.32** |
+
+Roughly a quarter as often outside academic prose. This skill wrote **1.33** in
+blog and technical for six rounds — academic rates everywhere — and blind judges
+named it three times while choosing the other text:
+
+> "A kısa bir metinde beş kez noktalı virgülle iki bağımsız cümleyi birleştiriyor … İngilizcedeki '; moreover / while' kalıbının Türkçeye taşınmış hali"
+> "Türkçe blog yazısında bu yoğunlukta noktalı virgül neredeyse hiç görülmez; bu, çeviri/düzenleme kokan bir noktalama alışkanlığı"
+
+In blog and technical register, a semicolon joining two independent clauses is
+usually a sentence break waiting to happen. Ask whether the second clause could
+stand alone with a full stop; outside academic prose it nearly always can, and
+nearly always should.
+
+**Where this stops.** Not at zero. The competitor in the evaluation writes 0.19
+and published Turkish writes 0.32, so a text with no semicolons at all has
+overshot in the direction this section opened by warning about. The mark is
+right for a genuinely tight pair of clauses and for separating grouped list
+items; it is wrong as a default connective.
+
 **A range takes the short hyphen, not a long dash.** This file said the
 opposite until it was checked. TDK lists two marks — `kısa çizgi` (`-`) and
 `uzun çizgi` (`—`, the dialogue dash) — and gives the range to the short one:

@@ -28,6 +28,7 @@ improvement on the strength of a signal that separates nothing.
 | `part_p` | > 0 | blog only | none |
 | `endash` | 0 | all — TDK gives ranges to the short hyphen and does not recognise this mark | **separates cleanly** — 3 across nine published Turkish texts against 70 plain-hyphen ranges; the competitor emits 0, we emitted 9 |
 | `mektedir_p` | 0 outside academic; **0.4–2.3 in academic** | all | none outside academic; **two-sided inside it** — see below |
+| `semicolon` (not counted by `count.sh`) | 0.3 in blog/technical; 0.3–2.4 in academic | all | **separates** — published Turkish 0.32 outside academic, this skill wrote 1.33 for six rounds |
 | `calque_p` | 0 | all | none observed — kept as a guard |
 | `forced` | 0 | all — a hit is a hard failure | untested; hard rule regardless |
 | `tilde`, `pct_wrong` | 0 | all | untested; both zero everywhere so far |
