@@ -150,6 +150,16 @@ Independently of the judging, every output of ours is checked against its input
 by a subagent asked to list every number, name, date, claim or experience
 assertion present in the output and absent from the source.
 
+**The check has widened twice, and rounds either side of a widening are not
+comparable.** Rounds one to six asked only the question above. Round seven added
+*strengthening*: a hedge deleted, a plain adjective made superlative, a body's
+qualified claim stated flatly in a title — material that is in the source but
+said harder. Round eight's third probe added *relations*: two source statements
+joined by a connective that asserts a link the source did not. Each widening
+found something the previous phrasing could not have, so **a rise in the count
+across a widening is not evidence of a worse text**, and the round it appears in
+has to say which.
+
 **Pre-registered from round one and unchanged:** a text that reads beautifully
 and invents a fact has failed, and failing this check outranks winning the blind
 ranking. This is not a tiebreaker. It is the first thing read.

@@ -42,7 +42,13 @@ performed. Keep it here; do not carry it across.
 
 **This section used to end by saying the record was perfect — zero additions
 across twenty-one repair inputs — and that is no longer true.** Round seven
-found four, all four in technical register and none anywhere else:
+found four, all four in technical register and none anywhere else.
+
+The claim it replaces was also weaker than it sounded: the check that produced
+those six clean rounds asked only for material **absent** from the source, and
+round seven's also asked for source material **strengthened**. Two of the four
+below would have been caught before and two would not. The record was never as
+clean as "zero" implied, which is the second reason not to keep a boast here.
 
 | source said | output said | which rule |
 |---|---|---|

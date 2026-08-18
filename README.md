@@ -38,10 +38,16 @@ English term still inflects from its **pronunciation**, not its spelling —
 **It is not supposed to add anything** — no number, name, date or claim that is
 not in the source — and fidelity is the one property that outranks every other
 result here. Measured: clean across all twenty-one texts of the evaluation
-corpus for six rounds, then **four strengthenings in round seven**, all four in
-technical register and each one a single word: a hedge dropped while tightening
-a sentence. They are written up in `references/rewrite-mode.md` rather than
-smoothed over, because that is the shape the failure takes.
+corpus for six rounds, then **four findings in round seven**, all four in
+technical register.
+
+Read that pair of numbers carefully, because the check itself widened between
+them. Rounds one to six looked for material *absent from the source*; round
+seven also looked for source material *strengthened* — a hedge dropped, a
+superlative added. Two of the four would have been caught by the older check and
+two would not, so this is partly a worse text and partly a sharper instrument,
+and it is not the four-against-zero it looks like. The findings are written up in
+`references/rewrite-mode.md` rather than smoothed over.
 
 ## Install
 

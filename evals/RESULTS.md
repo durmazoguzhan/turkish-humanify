@@ -1010,6 +1010,16 @@ losses to one false sentence and one unmarked authority claim and enforced the
 rule mechanically; the same class came back four times in a register that work
 did not look at.
 
+**One qualification, and it cuts against the headline.** This round's fidelity
+check asked for more than the six before it: they looked for material absent
+from the source, this one also looked for source material strengthened. Of the
+four above, `technical-1`'s added claim and `technical-2`'s uncounted `üç` would
+have been caught by the older phrasing; `technical-3`'s superlative and
+`technical-5`'s title would not. So "clean for six rounds, then four" overstates
+the regression — part of the rise is a sharper instrument, and the honest reading
+is two findings of a previously-checked class plus two of a class nobody had
+looked for.
+
 ### The countable prediction
 
 Pre-registered before the round: blog and technical semicolons fall to ≈0.3–0.5,
