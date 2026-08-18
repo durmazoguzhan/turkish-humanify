@@ -848,6 +848,105 @@ Whether fixing them flips the file is unknown and probably not; the fabricated
 sentences are strong. The reason to fix them anyway is that both are wrong in
 every file, not just this one.
 
+---
+
+## Round six — the result
+
+Run as pre-registered. Same twenty-one inputs, our arm regenerated into
+`evals/output/v10/` against the frozen skill, competitor arm byte-identical,
+order re-randomised, twenty-one clean-context judges.
+
+### The mechanisms, checked before the judging
+
+| | input | v9 | **v10** |
+|---|---|---|---|
+| en dashes, 21 files | 7 | 9 | **0** |
+| sentence-final `ama` | 0 | 2 | **0** |
+| `academic-1` paragraphs | 5 | 7 | **5** |
+
+All three did exactly what they were meant to, and the other four academic files
+came back with their paragraph counts untouched.
+
+### The tally
+
+**16–5**, two-sided sign test p = 0.027 — the same total as round five, and a
+different distribution.
+
+| register | round five | round six |
+|---|---|---|
+| academic | 3–2 | **5–0** |
+| corporate | 4–1 | 4–1 |
+| blog | 5–1 | **4–2** |
+| technical | 4–1 | **3–2** |
+
+### The pre-registered academic question
+
+**Confirmed.** The threshold was academic ≥ 4–1 with `academic-1` flipping. It
+came in at **5–0**, and `academic-1` flipped. `academic-2` flipped as well,
+which the pre-registration did not predict and which is therefore the weaker
+half of the result.
+
+The judge that had chosen against us on `academic-1` for splitting paragraphs
+now chose us, and named the register discipline: *"A baştan sona bu türün
+Türkçedeki yerleşik kaydında duruyor"*.
+
+### Two files went the other way, and the first explanation was wrong
+
+`blog-3` and `technical-5` moved from wins to losses. My first hypothesis was
+that naming the `ama` tic had made the skill timid with conversational devices.
+
+**The data refuted it.** Discourse-particle density across blog and technical
+went *up*, not down:
+
+| | `part_p`, blog + technical |
+|---|---|
+| v9 | 0.73 |
+| **v10** | **0.89** |
+| competitor | 0.85 |
+
+So the losses are not timidity. Both judges named something else, and it is
+measurable.
+
+### The semicolon, and why the academic answer did not transfer
+
+Semicolons per 100 words, blog and technical only:
+
+| | rate |
+|---|---|
+| published Turkish (Midas, Biz Evde Yokuz) | **0.32** |
+| competitor | 0.19 |
+| v9 | 1.33 |
+| **v10** | **1.33** |
+
+**Four times the published rate**, unchanged by this round, and named by the
+judges on `technical-5` (*"A kısa bir metinde beş kez noktalı virgülle iki
+bağımsız cümleyi birleştiriyor … İngilizcedeki '; moreover / while' kalıbının
+Türkçeye taşınmış hali"*), `technical-1` and `blog-1`.
+
+Round five refuted the same objection **in academic register** — there our
+0.79–1.97 sits inside the published 0.34–2.42. That refutation was correct and
+it does not generalise. Published Turkish uses the semicolon at academic rates
+in academic prose and at roughly a quarter of that in blogs and technical
+writing; the skill uses academic rates everywhere, because
+`layer-3-surface.md` §5 defends the mark without giving it a register dose.
+
+This is the same shape as the `-mAktAdIr` episode: a mark that is correct in one
+register, carried into all of them at one rate.
+
+### Pre-registered for round seven
+
+`layer-3-surface.md` §5 now carries the register split. Before running anything:
+
+| outcome | reading |
+|---|---|
+| blog + technical semicolons fall to ≈0.3–0.5 **and** the register tallies recover | the dose was the cause |
+| the rate falls but the tallies do not move | the semicolon was a symptom, not the cause; look again |
+| the rate falls below 0.2 | over-corrected — published Turkish does use the mark, and purging it is the failure `layer-3` §5 already warns about |
+
+The third row matters. `layer-3` §5 exists because removing every semicolon from
+Turkish prose is its own kind of damage, and the competitor's 0.19 is not a
+target.
+
 ## What this does not establish
 
 Twelve texts, one model, one afternoon, and judges that are themselves language
