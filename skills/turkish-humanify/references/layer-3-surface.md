@@ -2,10 +2,21 @@
 
 Terminology, orthography, punctuation, numbers.
 
-This layer is always on, in every register, because none of it is style. A
-misplaced apostrophe is not a voice choice, and neither is translating a term
-that has no Turkish equivalent. The two other layers can be dialled down for
-an academic paper; this one cannot.
+This layer is always on, in every register, because almost none of it is style.
+A misplaced apostrophe is not a voice choice, and neither is translating a term
+that has no Turkish equivalent. The two other layers can be dialled down for an
+academic paper; those parts of this one cannot.
+
+**One exception, and it was found the hard way.** Whether a mark is *correct* is
+register-invariant. How *often* it appears is not. The semicolon is right in
+every register and published Turkish uses it four times more freely in academic
+prose than in a blog — see §5. This file previously opened by declaring that
+"none of it is style", which is why §5 carried no register dose for six rounds
+and why blind judges kept naming our semicolon rate. A frequency is a dose, and
+a dose belongs to a register.
+
+Every section below states its own register dose where it has one. That
+statement is the specification; the table in `registers.md` is a summary of it.
 
 ---
 

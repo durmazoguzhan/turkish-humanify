@@ -20,6 +20,9 @@ jobs:
       - name: Counter agrees with the hand-verified fixture
         run: ./evals/test-count.sh
 
+      - name: Every register-dependent rule states its own dose
+        run: ./scripts/check-doses.sh
+
       # On master the version is fully determined: it is the commit count in
       # WendtVer form, so it can be recomputed and compared exactly.
       - name: Version matches the commit count

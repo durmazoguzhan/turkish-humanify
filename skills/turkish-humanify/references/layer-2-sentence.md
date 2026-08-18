@@ -127,8 +127,15 @@ comes out reading like a police report.
 
 **Where it stops.** If the writer was there, `-DI` is correct and `-mIş` is a
 lie about the source of the knowledge. Writing about your own work takes `-DI`:
-*Servisi .NET 8'e taşıdım*, never *taşımışım*. Legal and official texts do not
-narrate events of record in `-mIş`.
+*Servisi .NET 8'e taşıdım*, never *taşımışım*.
+
+**Dose by register.** Narrative `-mIş` is a **blog** move and routinely correct
+there. In **technical** register it is right only where the writer genuinely did
+not witness the thing — reading a state off a log rather than remembering it. In
+**corporate** it is rare; a brand narrating its own history in `-mIş` distances
+itself from its own claims. In **academic and official** register it stays out
+entirely: legal and official texts do not narrate events of record in `-mIş`,
+and a `-mIş` in a methods section is a lie about who witnessed what.
 
 ---
 
