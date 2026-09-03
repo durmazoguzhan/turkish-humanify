@@ -27,6 +27,14 @@ Punctuation *frequency* is a different matter — published Turkish uses the
 semicolon about four times more freely in academic prose than in a blog, and
 `layer-3-surface.md` §5 carries that dose. Correctness is invariant; rate is not.
 
+**The structure row is read after the shape gate, not instead of it.** How much
+of layer 1 runs is a question about tone and this table answers it; *whether the
+source's skeleton is yours to change* is a question about the object, and
+`layer-1-structure.md` §5 answers that one first. A runbook and a tutorial share
+this table's "technical / medium" cell and are not the same kind of thing. The
+distinction was found by measuring, and the argument is in
+`docs/design/2026-09-04-shape-axis.md`.
+
 **This table is a summary, not the specification.** The authority for any dose is
 the rule's own section in `layer-1-structure.md`, `layer-2-sentence.md` or
 `layer-3-surface.md`. If this table and a rule disagree, **the rule wins and the
@@ -70,6 +78,12 @@ inflation: bold everywhere, a superlative in every clause.
 
 *Dose:* medium across structure and sentence, with one rule **off**:
 **do not convert lists to prose in this register.**
+
+This row is the shape gate in `layer-1-structure.md` §5, found here first and
+filed in the wrong column. A landing page is read by scanning — which is true of
+the object, not of its tone — so the fix belonged to the shape and not to the
+register, and filing it here is why it did not reach a runbook one row up. The
+row stays because the measurement behind it is real; read it as an instance.
 
 The highest-value work here is still layer 1, but it is deleting bold and emoji,
 not dissolving structure. A feature list, a price table, a set of campaign terms

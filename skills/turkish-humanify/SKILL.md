@@ -54,6 +54,12 @@ them is not.
 - `references/layer-1-structure.md` — opening move, paragraph rhythm, closing,
   titles, bullets, bold, subheadings. Run this first: it decides what the piece
   is, and there is no point polishing a paragraph you are about to delete.
+  **In repair mode, read the source's shape before any of it.** If the lines
+  carrying the content are list items, table rows and headings rather than
+  sentences, the document is its structure and this layer works inside the
+  units. §5 and §6 of that file say which parts of this are measured and which
+  are diagnosis; round nine tested both and neither cleared its threshold, so
+  read them as orientation and not as new instructions.
 - `references/layer-2-sentence.md` — the fourteen places Turkish and English
   genuinely diverge. This is where most of the work happens.
 - `references/layer-3-surface.md` — terminology buckets, suffixes on kept
@@ -77,7 +83,9 @@ Silently, without reporting it:
 - Read the piece aloud in your head. If every sentence is the same length, the
   sentence layer did not run.
 - Count the bold spans and the bullet lines. If they came through unchanged
-  from a text that had many, the structure layer did not run either.
+  from a text that had many, the structure layer did not run either — and in
+  repair mode ask it the other way round too: if the input had a list or a table
+  and the output has none, layer 1 ran on the skeleton instead of inside it.
 - **Read the middle third alone.** If it is indistinguishable from the input's
   middle third, the work landed only on the opening and closing — which is the
   shape of a machine draft, not a repair of one.

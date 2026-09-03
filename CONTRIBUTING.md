@@ -41,13 +41,33 @@ enforces:
    reads more human" test can be won by lying, and one file in the corpus has
    now lost five times to exactly that.
 
+## How much testing is enough
+
+Three cases per class. Not seven, not "one more to be safe".
+
+This is a deliberate loosening, written down on 2026-09-04 because the repository
+was drifting the other way. A fixture is a **tripwire**, not a corpus: its job is
+that a broken counter cannot pass, and the fourth example of a shape the first
+three already cover buys nothing except a file nobody rereads. When a real
+failure turns up that the three do not catch, *that* one gets added, with a note
+saying what it caught. The file then grows for a reason instead of by
+accumulation.
+
+**The distinction that keeps this honest.** Deterministic checks are cheap and
+nearly noiseless — a bullet either survived the rewrite or it did not — so three
+of them settle the question. Judge tallies are neither, and nothing here relaxes
+that: the noise floor in `evals/repair-protocol.md` was measured, three files of
+movement is still noise, and a fidelity site still needs two appearances before
+it justifies a rule. Loosen the cheap instrument, not the expensive one.
+
 ## Touching `evals/count.sh`
 
 Eight counting bugs have been found in this file, and every one of them had
 already produced a confident wrong finding that was reported as a result. If you
 change a regex:
 
-- Add a case to `evals/fixtures/known.md` that the old version fails.
+- Add a case to `evals/fixtures/known.md` that the old version fails. One case
+  is the requirement; see "How much testing is enough" above.
 - Hand-compute the expected numbers and put them in `evals/test-count.sh`.
 - Say in the commit message how many corpus files change, and whether any
   published conclusion moves.
