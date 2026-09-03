@@ -9,13 +9,25 @@
   is the generic mechanism, then right/wrong pairs, then where it stops. Never a
   lookup entry. The test is whether it helps with a case that is not in its
   examples.
-- **`layer-3-surface.md` §8's comparative entry was the instance, not the class.**
-  It went in titled *"`daha sonra` becoming `sonra`"* — one word pair. Rewritten
-  as the mechanism: English marks comparison inside the word, Turkish with a
-  separate `daha`, so dropping it lands on whatever the bare stem means alone.
-  That reaches `önce`, `az` and `ileri`, none of which the first version did, and
-  it now carries the one test that decides every case — **is a comparison being
-  made?**
+- **`layer-3-surface.md` §8's entry was rewritten twice, and the second time is
+  the one that matters.** It went in titled *"`daha sonra` becoming `sonra`"* —
+  one word pair. Generalising it to "English marks comparison inside the word"
+  was still wrong, and wrong in the way worth recording: **the test it produced
+  answered *no* for the example it was written from.** Nothing is compared in
+  `Daha sonra izle`, or in *"Daha önce hiç gitmedim"*. `daha sonra` and `daha
+  önce` are fixed two-word adverbs, not comparatives.
+- **The mechanism is anaphora, and the class is much larger.** `sonra` borrows
+  its meaning from a neighbour — it means *after that* and needs the text to have
+  said what *that* was. Prose always has, which is why the bare word is correct
+  and ordinary there. A button has nothing in front of it. The same is true of
+  `önce`, `orada`, `bunu`, `o zaman`, `tekrar` and a bare `de/da`, so the question
+  to ask of any string that will stand alone is *what does the reader have to
+  already know for this to mean anything, and does anything on the screen tell
+  them.* Genuine comparatives — `less`, `longer`, `further` — are kept as a
+  separate note, because only the first half is about isolation.
+- This is an `atomic`-column rule reached without an `atomic` register, recorded
+  in `docs/design/2026-09-04-shape-axis.md` as the case for the shape axis rather
+  than against it.
 - **`layer-3-surface.md` §9 is new: collocation, the verb the noun actually
   takes.** *"Sarımsaklı yoğurdu ezdim"* had been filed as an anecdote about what
   the counters missed. It is an instance of a category with no coverage at all,

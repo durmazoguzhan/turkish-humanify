@@ -267,58 +267,66 @@ bir şekilde` · `bilmeniz gereken her şey` · `kapsamlı bir rehber` · `gider
 This list is mirrored in `evals/signals/calques.txt` so the skill and the
 measurement agree on what a calque is.
 
-**The comparative English keeps inside the word.** English marks comparison
-morphologically — *lat-er*, *earli-er*, *long-er* — and Turkish marks it with a
-separate word, `daha`. The two are not the same operation, and translating the
-English word by the Turkish stem alone does not produce a milder version of it.
+**A word that borrows its meaning from its neighbour, put somewhere it has no
+neighbours.** `sonra` is anaphoric: it means *after that*, and it needs the text
+to have said what *that* was. In prose it always has — *"Önce yemek yedik, sonra
+çıktık"* — which is why the bare word is correct and ordinary there, and why
+`layer-2-sentence.md` §8 can use *"Konuşuruz bunu sonra."* as a worked example
+without trouble. That sentence has a conversation in front of it.
 
-It produces **a different word**, and that is the whole of the rule. The Turkish
-stems these map onto are mostly words in their own right with their own
-meanings, so dropping `daha` lands on one of those instead of failing visibly:
+Put the same word on a button and there is nothing in front of it. `Sonra izle`
+points back at a moment the interface never established. The reader decodes it,
+but decoding is the cost.
 
-| English | correct | what the bare stem actually means |
-|---|---|---|
-| later | `daha sonra` | `sonra` — *after*, *then* |
-| earlier | `daha önce` | `önce` — *before*, *first* |
-| less | `daha az` | `az` — *little*, *not much* |
-| further | `daha ileri` | `ileri` — *forward*, *advanced* |
+`daha sonra` does not have that problem, and **not because it is a comparative.**
+Nothing is being compared in *"Daha önce hiç gitmedim"*. `daha sonra` and `daha
+önce` are fixed two-word adverbs meaning *later on* and *previously*; the `daha`
+is part of the word rather than a marker attached to it, and what the pair buys
+is that it stands on its own.
 
-> AI: Sonra izle · Sonra hatırlat · Önce gönderilenleri göster · Az veri kullan
-> İnsan: Daha sonra izle · Daha sonra hatırlat · Daha önce gönderilenleri göster · Daha az veri kullan
+> AI: Sonra izle · Sonra hatırlat · Önce gönderilenleri göster · Buradan devam et
+> İnsan: Daha sonra izle · Daha sonra hatırlat · Daha önce gönderilenleri göster · Kaldığın yerden devam et
+
+**The class this belongs to, which is larger than one word.** Anything that
+borrows meaning from a neighbour breaks when it is given no neighbour: `sonra`,
+`önce`, `orada`, `bunu`, `o zaman`, `tekrar`, a bare `de/da`. Prose supplies the
+antecedent for free and hides the whole problem. A label, a chip, a tooltip, a
+column heading and a push notification supply nothing, and each one is read
+beside strangers rather than after its own first half.
+
+So the question to ask of a string that will stand alone is not whether it is
+grammatical. It is: **what does the reader have to already know for this to mean
+anything, and does anything on the screen tell them?**
+
+**A separate thing that produces the same surface error.** Where English's *-er*
+really is a comparison — *less*, *longer*, *further* — `daha` is the comparative
+marker and is required for the ordinary reason, and dropping it leaves an
+absolute where a relative was meant: `az veri` is *little data*, `daha az veri`
+is *less data*. Same missing word, different mechanism, and worth keeping apart
+because only the first half is about isolation.
 
 **Where the failure comes from, because it says where to look for it.** Measured
-2026-09-04, and the control is what makes it readable. Given the English
-strings, two independent generations both wrote `Sonra izle`, `Sonra oku`,
-`Sonra hatırlat`. Given the same tasks described in Turkish, with no English in
-front of it, the same model wrote **`Daha Sonra İzle`**. Its Turkish is not the
-problem; the mapping is. And the trigger is the morphology and not the meaning —
-where English spends a separate word on the comparison, `older posts` and `see
-more`, `daha` survives every time: `Daha eski gönderileri yükle`, `Daha fazlasını
-gör`.
+2026-09-04, and the control is what makes it readable. Given the English strings,
+two independent generations both wrote `Sonra izle`, `Sonra oku`, `Sonra
+hatırlat`. Given the same tasks described in Turkish, with no English in front of
+it, the same model wrote **`Daha Sonra İzle`**. Its Turkish is not the problem;
+the mapping is — an English single word is answered with a Turkish single word,
+and the count of words wins over what the word needs. Where English spends two
+words on it already, `older posts` and `see more`, `daha` survives every time.
 
-So the place to look is any Turkish written with an English string in view: an
-interface, a spec, a translated heading. Prose composed in Turkish rarely does
-it.
+**Where it stops.** None of these words is being banned and most of their uses
+are right. `sonra` as a postposition — *işlem bittikten sonra* — and as a
+sequencer in running prose; `önce` the same; `orada` and `bunu` wherever the
+sentence before them did their work. The rule has one precondition and it is not
+about the word: **the string has to be one that stands alone.** Inside a
+paragraph, leave it.
 
-**Where it stops, and the limit is most of the uses.** Every one of those bare
-stems is a correct and ordinary Turkish word, and none of them is being banned.
-`sonra` as a postposition — *işlem bittikten sonra* — and as a sequencer inside
-running prose, where the sentence before it supplies what comes *after* what;
-`önce` the same; `az` wherever the quantity is small rather than smaller.
-`layer-2-sentence.md` §8 has *"Konuşuruz bunu sonra."* as a worked example and it
-is right, because that sentence has a conversation in front of it.
-
-The test is one question: **is a comparison being made?** If something is later
-*than* something, less *than* something, `daha` is not optional. If nothing is
-being compared, the bare word was never the wrong one. Context answers this in
-prose and cannot answer it in a string standing on its own, which is why the
-failure lives there.
-
-**This one is deliberately not in `evals/signals/calques.txt`.** Every other
-entry in this section is a fixed phrase a substring match can find. This is a
-word that is correct in most of its occurrences, so a counter for it would
-report the postposition and the sequencer as defects — and a count that cannot
-tell a right use from a wrong one reports direction, never correctness. See
+**These are deliberately not in `evals/signals/calques.txt`.** Every other entry
+in this section is a fixed phrase a substring match can find. These are words
+that are correct in most of their occurrences, and what makes an occurrence wrong
+is not in the word — it is whether anything around it supplies what the word
+points at. A counter would report every postposition and every sequencer as a
+defect, which is a count reporting direction and never correctness. See
 `CONTRIBUTING.md`.
 
 **An honest note on this section.** Across the twelve-text baseline corpus and
