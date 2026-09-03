@@ -2,6 +2,52 @@
 
 ## Unreleased
 
+### Not countable is not the same as not measurable
+
+- **A defect was declared unactionable because `grep` could not find it, and a
+  reader settled it in one question.** `evals/fixtures/devrik.md` said resolving
+  the post-verbal-tail shape "needs a parse". It needed three clean-context
+  readers and one open question: *what reads wrong here*.
+- **`layer-2-sentence.md` §8 gains the shape, with the distinction the readers
+  drew.** One named the verbless tail and its mechanism unprompted — *"bağlanacağı
+  yüklem yok, cümle yarıda kesilmiş gibi duruyor"* — and a second found the same
+  shape in an unrelated procedure. A third, given the blog paragraph this had all
+  been argued about, produced **four other complaints and never mentioned the
+  tail**. So the rule is not "nothing after the verb": a short adverbial trailing
+  a narrative is invisible, a verbless proposition trailing a document somebody
+  is reading to find something is named on sight.
+- **`evals/repair-protocol.md` §4b makes the reading pass a named instrument**
+  with a protocol: do not lead the witness, clean context, one quotation per
+  finding, run a control, and negative results count. The fidelity check and the
+  diagnostic judge were already reading passes; this writes down what keeps one
+  honest.
+- **`CONTRIBUTING.md` gains a third rule.** Deterministic tools bound
+  correctness — orthography, vowel harmony, the apostrophe, a banned mark.
+  Reading passes bound quality. A count of a judgement is not a measurement of
+  it, and the error rates measured on readers still apply to readers.
+- **The control was not clean and it is recorded as not clean:** the runbook
+  chosen as one turned out to contain the shape, and the reader found it there
+  too.
+- **Something no counter had found, found by accident.** *"Sarımsaklı yoğurdu
+  ezdim"* — you crush the garlic, not the yoghurt. It has been in
+  `evals/input/blog-6.md` through nine rounds, both skills' outputs and every
+  counting pass, unremarked.
+
+### `daha sonra` is not `sonra`, and the control says why
+
+- **`layer-3-surface.md` §8 gains its first entry measured actually firing.**
+  English builds the comparative inside the word, Turkish with a separate `daha`,
+  and dropping it does not weaken the word — `sonra` is *after* and *then*, `daha
+  sonra` is *later*.
+- Given the English strings, two independent generations both wrote `Sonra izle`,
+  `Sonra oku`, `Sonra hatırlat`. **Given the same tasks described in Turkish with
+  no English in front of it, the same model wrote `Daha Sonra İzle`.** The
+  Turkish is not the problem; the mapping is. And where English spends a separate
+  word on the comparison — `older posts`, `see more` — `daha` survives every time.
+- **Deliberately not added to `evals/signals/calques.txt`.** Bare `sonra` is
+  correct in most of its occurrences, so a counter for it would report the
+  postposition and the sequencer as defects.
+
 ### A claim that was too strong, and the gap correcting it exposed
 
 - **`evals/fixtures/devrik.md` claimed a corpus sentence was "correct" and used

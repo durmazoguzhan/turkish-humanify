@@ -203,9 +203,60 @@ belongs when it is not the focus. Searching that file for `diye`, `adverbial` or
 `v7`, `v9`, `v10`, `v11` and the competitor's output, which is what a rule
 nobody has written looks like from the outside.
 
-So Class C stays labelled and unmeasured. What would actually resolve it is a
-parse — a real POS tagger giving verb position — not a better regex, and that is
-a different-sized undertaking than this file was preparing for.
+So Class C cannot be **counted**. That is not the same as unmeasurable, and this
+paragraph used to say it was — "what would actually resolve it is a parse". It
+was answered by a reader in one question.
+
+## Class C measured by reading, 2026-09-04
+
+Three clean-context readers, one text each, told nothing about this project or
+about any shape being looked for. The question was deliberately open: *"kulağını
+tırmalayan, doğal durmayan, Türkçe konuşan birinin öyle kurmayacağı cümle varsa
+göster"* — quote it, say what bothers you, and if there is none say `yok`.
+
+**Reader A**, given a five-line evidence fragment, named the Class C sentence
+unprompted and named its mechanism:
+
+> *"…o da aktarım onaylandıktan sonra işaretlemek için."* — "işaretlemek için" hem
+> nesnesiz hem de **bağlanacağı yüklem yok**, cümle yarıda kesilmiş gibi duruyor
+
+That is the diagnosis this file spent a probe failing to reach with a regex.
+
+**Reader C**, given a runbook meant as a control, named a second instance —
+which makes the control a failed one and the finding a stronger one:
+
+> *"…teker teker sonlandır, toplu değil."* — Sondaki "toplu değil" İngilizcedeki
+> "not in bulk" kuyruğunun birebir çevirisi gibi duruyor
+
+Two unrelated texts, two readers, neither asked about tails, both landing on one.
+The control was not clean and that is recorded rather than repaired, because a
+clean control is what the next pass needs and pretending this one was clean is
+worse than admitting it was not.
+
+**Reader B is the result that matters most, because it is negative.** Given the
+kitchen paragraph — the one this file has been arguing about — the reader found
+**four** things wrong with it and walked straight past *"…yanmasın diye."*:
+
+> "Sarımsaklı yoğurdu ezdim." — ezilen şey sarımsaktır, yoğurt değil
+> "bazıları açıldı, içindeki kıyma…" — çoğulun ardından tekil "içindeki" tökezletiyor
+> "Tabağa koyduğumda rengi doğruydu" — "the color was right" çevirisi kokuyor
+> "Mantılar suya girdiğinde yüzeye çıkmalarını izledim" — "I watched them rise" kalıbı
+
+A reader actively hunting for unnatural sentences, finding four, and not seeing
+the trailing tail, has settled what four rounds of argument here could not: **A
+is fine.** The forms B, C and E are refinements of a sentence that was not
+broken.
+
+**So the distinction is not "post-verbal material is bad".** It is length and
+what the tail is. A short adverbial trailing a first-person narrative is
+invisible. A verbless proposition trailing a reference document — a whole clause
+that lost its predicate — is named on sight, by a stranger, in the first thing
+they say. That is the shape issue #9 objected to, and it now has evidence.
+
+**One thing the counters have never found, found here by accident.** Reader B's
+first item is a semantic error in `evals/input/blog-6.md`: you crush the garlic,
+not the yoghurt. It has been in the corpus through nine rounds, both skills'
+outputs and every counting pass, unremarked.
 
 ## What would count as a working counter
 

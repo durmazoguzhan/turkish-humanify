@@ -257,6 +257,43 @@ re-run tells you which. It costs one generation to resolve instead of three
 judges, which is the cheaper instrument and the reason §5 prefers countable
 targets in the first place.
 
+## 4b. The reading pass, which is an instrument and not an opinion
+
+Three instruments exist here, not two. The blind tally ranks; the fidelity check
+audits; and a **reading pass** answers the questions `count.sh` was built not to
+ask — the ones in the second half of `rubric.md`, about whether a text reads as
+written by a person and whether a device earns its place.
+
+It had been treated as a last resort, and one file went as far as declaring a
+defect unactionable because `grep` could not find it. That is backwards: the
+fidelity check is a reading pass, the diagnostic judge is a reading pass, and
+`count.sh`'s own header says the morphology-dependent signals *live in the
+reading half of `rubric.md`*. Not countable has never meant not measurable.
+
+**The protocol, which is what separates it from asking somebody's opinion.**
+
+1. **Do not lead the witness.** The question is *what reads wrong here*, never
+   *does this read wrong*. An unprompted identification is evidence; a yes to a
+   shape you named is not.
+2. **Clean context.** Nothing about this project, no skill, no comparison, no
+   mention of what is being tested.
+3. **One quotation per finding**, plus what is wrong with it. A verdict without
+   a quotation is not usable and is not counted.
+4. **Run a control** — a text without the shape. If findings come back from it
+   too, the pass is reading noise. When the control turns out to contain the
+   shape after all, say so; a failed control is a fact about the round.
+5. **Negative results count and are the cheapest thing here.** A reader who
+   hunts through a paragraph, produces four findings and walks past your shape
+   has established that your shape is fine in that setting.
+
+The worked instance is in `evals/fixtures/devrik.md` — three readers, one open
+question, a defect and its mechanism named unprompted, and the same shape cleared
+in the register where it belongs.
+
+**What this does not buy.** The error rates in §3 still apply, because they were
+measured on readers. A single reader on a single text is one observation, and the
+rate bar in §4 does not relax for prose.
+
 ## 5. The countable target is the evidence, when there is one
 
 The blind tally is the noisiest instrument in this repository and it is not the

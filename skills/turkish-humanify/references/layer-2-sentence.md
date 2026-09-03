@@ -245,6 +245,39 @@ and academic prose, where it reads as carelessness rather than voice. Even in
 blog register it is a spice: two or three across a whole piece. An inverted
 sentence that is not carrying emphasis is just a word-order error.
 
+### The thing next to inversion that is not inversion
+
+Nothing is fronted here. The predicate lands in the middle and what follows it is
+apposition, a colon-introduced expansion, or a verbless `-mAk için` tail — a whole
+clause that lost its verb.
+
+> AI: Tüm workspace'i taradığımda çağıran tek yer çıktı: ErpService'in `OrderServiceClient.cs:41`'i, o da push aktarımı tuttuktan sonra siparişi işaretlemek için.
+> İnsan: Tüm workspace'i taradığımda çağıran tek yer ErpService'in `OrderServiceClient.cs:41`'i çıktı. Push aktarımı tuttuktan sonra siparişi işaretlemek için çağırıyor.
+
+Readers call this *devrik* and the rule above does not cover it, because the verb
+never moved. It was reported as too much inversion in a text that is
+three-quarters verb-final.
+
+**What decides it is the length of the tail and what the tail is**, and that came
+from readers rather than from a count. Given a five-line piece of evidence
+documentation containing the sentence above, a reader who was asked only what
+sounded wrong picked it out first and said why: *"'işaretlemek için' hem nesnesiz
+hem de bağlanacağı yüklem yok, cümle yarıda kesilmiş gibi duruyor."* A second
+reader found the same shape in an unrelated procedure. A third, given a blog
+paragraph with *"…pul biberi son anda attım, yanmasın diye."* in it, listed four
+other complaints and never mentioned the tail.
+
+So: **a short adverbial trailing a first-person narrative is invisible and fine.**
+A verbless proposition trailing a document somebody is reading to find something
+is named on sight. The second is what to repair, and the repair is to give the
+tail its verb back or to fold it in front of one — not to delete it.
+
+**Where this stops.** It is not a ban on anything after the verb. `layer-1`'s
+list rules matter more here than this one does: a tail usually appears because
+something that was a list entry is being carried in prose, and the cheaper fix is
+upstream. And in blog register the trailing afterthought is a real move that the
+reading above found nobody objecting to.
+
 ---
 
 ## 9. Discourse particles

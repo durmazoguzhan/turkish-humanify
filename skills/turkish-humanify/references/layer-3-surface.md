@@ -267,8 +267,44 @@ bir şekilde` · `bilmeniz gereken her şey` · `kapsamlı bir rehber` · `gider
 This list is mirrored in `evals/signals/calques.txt` so the skill and the
 measurement agree on what a calque is.
 
+**The comparative that gets eaten: `daha sonra` becoming `sonra`.** English
+builds a comparative inside the word — *lat-er*, *earli-er* — and Turkish builds
+it with a separate one, `daha` + adverb. Rendering the English word by the
+Turkish stem alone does not produce a weaker version of it; it produces **a
+different word.** `sonra` on its own is a sequencer and a postposition, *after*
+and *then*. `daha sonra` is *later*. So `Watch later` rendered as `Sonra izle`
+says something nearer to *watch then* — and *then* wants an antecedent that a
+label standing by itself does not have.
+
+Measured 2026-09-04, and the control is what makes it readable. Given the English
+strings, two independent generations both wrote `Sonra izle`, `Sonra oku`,
+`Sonra hatırlat` and `şimdi al, sonra öde`. Given the same tasks described in
+Turkish, with no English in front of it, the same model wrote **`Daha Sonra
+İzle`**. Its Turkish is not the problem; the mapping is. And the trigger is the
+morphology rather than the meaning — where English spends a separate word on the
+comparison, `older posts` and `see more`, `daha` survives every time:
+`Daha eski gönderileri yükle`, `Daha fazlasını gör`.
+
+> AI: Sonra izle · Sonra oku · Sonra hatırlat
+> İnsan: Daha sonra izle · Daha sonra oku · Daha sonra hatırlat
+
+**Where it stops, and the limit is most of the uses.** Bare `sonra` is correct
+and ordinary as a postposition — *işlem bittikten sonra* — and as a sequencer
+inside running prose, where the sentence before it supplies what comes *after*
+what. `layer-2-sentence.md` §8 has *"Konuşuruz bunu sonra."* as a worked example
+and it is right: that sentence has a conversation in front of it. The failure
+needs an isolated string, where nothing does.
+
+**This one is deliberately not in `evals/signals/calques.txt`.** Every other
+entry in this section is a fixed phrase a substring match can find. This is a
+word that is correct in most of its occurrences, so a counter for it would
+report the postposition and the sequencer as defects — and a count that cannot
+tell a right use from a wrong one reports direction, never correctness. See
+`CONTRIBUTING.md`.
+
 **An honest note on this section.** Across the twelve-text baseline corpus and
-the human reference texts, this list scored zero hits on both sides. Nothing
-here has been shown to detect anything in current model output. It is kept as a
-guard against phrases that would be wrong if they appeared, not as evidence
-that they do.
+the human reference texts, the fixed-phrase list above scored zero hits on both
+sides. Nothing in it has been shown to detect anything in current model output;
+it is kept as a guard against phrases that would be wrong if they appeared, not
+as evidence that they do. The comparative entry is the exception and the first
+thing in this section measured actually firing.

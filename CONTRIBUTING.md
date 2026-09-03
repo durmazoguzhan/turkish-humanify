@@ -81,6 +81,50 @@ enforces:
    reads more human" test can be won by lying, and one file in the corpus has
    now lost five times to exactly that.
 
+## The third rule: not countable is not the same as not measurable
+
+**Deterministic tools bound correctness. Reading passes bound quality. Both are
+instruments and both need a protocol.**
+
+This is written down because the repository had started to conflate them, and
+the conflation is visible in its own files: `evals/fixtures/devrik.md` concluded
+that a defect could not be acted on because `grep` could not find it, and said
+resolving it "needs a parse". That was wrong twice over. It is not what
+`count.sh` says — its header says *those signals live in the reading half of
+`rubric.md`* — and it is not what this project does, since the fidelity check,
+the blind tally and the diagnostic judge are all reading passes already.
+
+What is genuinely deterministic is a short list, and it is the list a machine
+can be right about: orthography, vowel harmony on a suffix, the apostrophe, a
+banned mark, a phrase that appears verbatim or does not. Everything the skill
+actually exists for — whether a text reads as written by a person, whether a
+device earns its place, whether a sentence is fluent — is a judgement, and a
+count of a judgement is not a measurement of it.
+
+**But a reading pass is not "an agent had an opinion".** Reading judgements have
+a measured error rate here: round six found that judges flip verdicts on files
+the skill did not touch, and round seven's diagnostic judge blamed the passive
+voice on a text that had the same passives as its competitor. So a reading pass
+is run like an instrument:
+
+1. **Do not lead the witness.** Ask what reads wrong, not whether *this* reads
+   wrong. Unprompted identification is evidence; confirmation of a shape you
+   named is not.
+2. **Clean context, and nothing about the project.** No mention of a skill, a
+   comparison, or what is being tested.
+3. **Per instance, with the quotation.** "It feels AI-ish" is unusable. The
+   sentence, quoted, plus what is wrong with it.
+4. **Run a control** — a text without the shape you are chasing. If the reader
+   names something there too, you are reading noise.
+5. **A negative result counts.** A reader who hunts through a paragraph, finds
+   four other things and walks past your shape has told you your shape is fine
+   there.
+
+The worked instance is in `evals/fixtures/devrik.md`: three readers, one
+non-leading question, one of them naming a verbless tail and its mechanism
+without being asked, and one walking past the same shape in a register where it
+belongs.
+
 ## How much testing is enough
 
 Three cases per class. Not seven, not "one more to be safe".
