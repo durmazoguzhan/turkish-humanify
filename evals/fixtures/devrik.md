@@ -145,24 +145,47 @@ prescribe, and it is arguably the worst of them:
 | **B** — canonical placement | Tereyağını kızdırdım, pul biberi yanmasın diye son anda attım. |
 | **C** — the reader's second | Tereyağını kızdırdım **ve** pul biberi yanmasın diye son anda attım. |
 | **D** — what `layer-2` §2 asks for | Tereyağını kızdır**ıp** pul biberi yanmasın diye son anda attım. |
+| **E** — §2 and §9 together | Tereyağını kızdır**ıp** pul biberi **de** yanmasın diye son anda attım. |
 
 Read them inside the paragraph they belong to, because that is where the answer
 is: *"Sarımsaklı yoğurdu ezdim. […] Tabağa koyduğumda rengi doğruydu."* The
 passage is a run of closed, completed steps.
 
-**B is the tightest** — the comma keeps that clipped step-by-step beat and the
-sentence closes on its verb. **C is slower and more written**, and §2's own limit
-covers it exactly: *"`ve` is right when the two clauses are genuinely parallel and
-you want the beat between them"*. Two pan actions are genuinely parallel. **A**
-reads as speech and leaves the paragraph's last clause dangling. **D is what the
-rule prescribes and is probably the weakest here**: `kızdırıp attım` fuses two
-separate steps into one motion, and the passage is about the steps.
+**B is the tightest of the first three** — the comma keeps that clipped
+step-by-step beat and the sentence closes on its verb. **C is slower and more
+written**, and §2's own limit covers it exactly: *"`ve` is right when the two
+clauses are genuinely parallel and you want the beat between them"*. Two pan
+actions are genuinely parallel. **A** reads as speech and leaves the paragraph's
+last clause dangling. **D** fuses two separate steps into one motion, and the
+passage is about the steps.
 
-So a rule applied by the book would make this sentence worse, and the thing that
-stops it is §2's "where it stops" clause. Which is worth noticing, because that
-clause has **no worked example**: the `-ip` same-subject limit has one (*Ben
-geldim ve o gitti*), the three-converb warning has none, and the "`ve` is
-sometimes right" limit has none either. This is one.
+That was as far as the analysis got before **E arrived and corrected it.** The
+objection to D was that the converb fuses two steps into one motion. It does —
+and a single `de` on the second element undoes it. `pul biberi de` marks the
+pepper as a second thing alongside the butter, which is exactly the separation
+`-ip` had collapsed.
+
+And `de` is not an outside repair. It is the first item in §9's own list of
+discourse particles, under the sentence *"machine Turkish has none of them"*. So
+E satisfies three of this file's rules at once: §2's converb, the preverbal
+purpose clause, and §9's particle.
+
+**The finding is therefore not the one written above.** It is not that a rule
+applied by the book degrades the sentence. It is that **§2 applied alone degrades
+it and §2 applied with §9 improves it**, and nothing in this file says the
+sections repair each other's side effects. "Reading the layer as a whole" says
+two sections account for most of the work; it does not say a converb can flatten
+a sequence and that a particle is what puts the sequence back.
+
+That is a claim about how the layer is *read*, not about Turkish, and it is worth
+more than the placement question that produced it. It is also unmeasured: five
+readings of one sentence by one reader.
+
+The "where it stops" observation survives at reduced strength. §2's `ve` limit
+still has **no worked example** — the `-ip` same-subject limit has one (*Ben
+geldim ve o gitti*), the three-converb warning has none, and "`ve` is sometimes
+right" has none — and this sentence is still a candidate for it. It is a weaker
+candidate now that the converb turns out to work here with one particle added.
 
 **It cannot go into `layer-2-sentence.md`, and that is not a technicality.**
 `blog-6` is in the evaluation corpus, and round eight established that a worked

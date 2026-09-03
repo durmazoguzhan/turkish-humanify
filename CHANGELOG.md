@@ -26,15 +26,22 @@
 - The A/B pair is recorded as the first concrete repair for the class: **move the
   tail into the preverbal zone, not delete it.** No rule is written from it; one
   reader's judgement on one sentence is a lead.
-- **Then a third reading arrived and became the actual finding.** The sentence now
-  has four defensible forms, and the one `layer-2-sentence.md` §2 prescribes —
-  the `-ip` converb — is arguably the worst of them here: it fuses two separate
-  kitchen steps into one motion, in a passage that is about the steps. A rule
-  applied by the book would degrade the sentence, and what stops it is §2's
-  "where it stops" clause. That clause has **no worked example**; this is one, and
-  it cannot be used as one, because `blog-6` is in the evaluation corpus and round
-  eight established that an example drawn from the corpus it is measured on stops
-  being a test. It stays in the fixture, where it is data.
+- **Two further readings arrived and the second one corrected the first.** The
+  sentence now has five defensible forms. The fourth is what §2 prescribes — the
+  `-ip` converb — and it fuses two separate kitchen steps into one motion, which
+  looked like a rule degrading a sentence. The fifth adds one particle,
+  `pul biberi **de**`, and undoes exactly that: it marks the pepper as a second
+  thing alongside the butter. `de` is the first item in §9's own list.
+- **So the finding is not "a rule applied by the book makes this worse".** It is
+  that **§2 applied alone makes it worse and §2 applied with §9 makes it better**,
+  and nothing in `layer-2-sentence.md` says the sections repair each other's side
+  effects. "Reading the layer as a whole" says two sections carry most of the
+  work; it does not say a converb can flatten a sequence and that a particle is
+  what puts the sequence back. That is a claim about how the layer is read, and
+  it is unmeasured — five readings of one sentence by one reader.
+- None of it can go into the reference file: `blog-6` is in the evaluation corpus
+  and round eight established that an example drawn from the corpus it is measured
+  on stops being a test. It stays in the fixture, where it is data.
 
 ### Round nine — issue #9: both changes rejected, and one fidelity site found
 
