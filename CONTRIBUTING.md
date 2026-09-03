@@ -18,12 +18,52 @@ If you are not set up to run an evaluation round, open an issue describing what
 you think is wrong and quote the Turkish. That is genuinely useful and costs you
 nothing.
 
+## The second rule, learned the expensive way
+
+**A count tells you something moved. It does not tell you whether moving it was
+right.**
+
+Measuring is not enough, and this is not a refinement of the rule above — it is a
+separate failure that the rule above does not catch. Round nine measured `bold`
+source-to-output across eight repair runs, found it fell in four, and wrote a
+rule into `layer-1-structure.md` §6 against a threshold **set before the data
+existed.** The rule was wrong. Reading *which* spans had gone reversed it: what
+got deleted was a word bolded in both entries of a two-entry list, which
+distinguishes nothing, while the finding the document existed to state survived
+every single run. Three of the four "losses" were the rule working correctly. A
+reviewer found it in one sentence; the instrument never would have.
+
+**The tell is a signal that can legitimately move either way.** Bold is the clear
+case — too much of it is a defect, too little is a defect, and leaving it alone
+is often right — but `bullets`, `rows`, `heads`, sentence length, hedge counts and
+every per-100 rate in `count.sh` have the same property. For all of them the
+direction of a change is not its correctness.
+
+So, before an aggregate becomes a rule:
+
+- **List the individual instances and judge each one.** If most of the movement
+  was the skill behaving correctly, there is no finding, however clean the rate
+  looked.
+- **State the finding per instance until per-instance evidence exists.** "Four of
+  eight runs deleted bold" is not a finding. "Four of eight deleted the span
+  carrying the document's claim" would be one, and it is not what happened.
+- **Pre-registration does not cover this.** It protects against reading noise as
+  signal. It does not protect against measuring the wrong quantity, and round
+  nine is the proof: the bar was written first and cleared honestly, and the
+  conclusion was still false.
+
 ## Running an evaluation round
 
 `evals/repair-protocol.md` is the procedure, verbatim: the generation wrapper,
 the judge prompt, the randomisation, the fidelity check. Follow it rather than
 improvising, because rounds are only comparable to each other if the instrument
 did not move.
+
+**A round is seven files generated twice, not twenty-one generated once.** That
+is smaller *and* stronger: the bar a finding has to clear is two appearances in
+two generations of the same input, and twenty-one-by-one cannot produce one. The
+standing sample, the reserve, and the confirmation run that guards against
+fitting rules to seven files are all in §0 of that file.
 
 Three things that this project learned the hard way and that the protocol now
 enforces:
@@ -41,13 +81,33 @@ enforces:
    reads more human" test can be won by lying, and one file in the corpus has
    now lost five times to exactly that.
 
+## How much testing is enough
+
+Three cases per class. Not seven, not "one more to be safe".
+
+This is a deliberate loosening, written down on 2026-09-04 because the repository
+was drifting the other way. A fixture is a **tripwire**, not a corpus: its job is
+that a broken counter cannot pass, and the fourth example of a shape the first
+three already cover buys nothing except a file nobody rereads. When a real
+failure turns up that the three do not catch, *that* one gets added, with a note
+saying what it caught. The file then grows for a reason instead of by
+accumulation.
+
+**The distinction that keeps this honest.** Deterministic checks are cheap and
+nearly noiseless — a bullet either survived the rewrite or it did not — so three
+of them settle the question. Judge tallies are neither, and nothing here relaxes
+that: the noise floor in `evals/repair-protocol.md` was measured, three files of
+movement is still noise, and a fidelity site still needs two appearances before
+it justifies a rule. Loosen the cheap instrument, not the expensive one.
+
 ## Touching `evals/count.sh`
 
 Eight counting bugs have been found in this file, and every one of them had
 already produced a confident wrong finding that was reported as a result. If you
 change a regex:
 
-- Add a case to `evals/fixtures/known.md` that the old version fails.
+- Add a case to `evals/fixtures/known.md` that the old version fails. One case
+  is the requirement; see "How much testing is enough" above.
 - Hand-compute the expected numbers and put them in `evals/test-count.sh`.
 - Say in the commit message how many corpus files change, and whether any
   published conclusion moves.
@@ -66,6 +126,49 @@ what "normal" looks like. If you add to it:
 - Keep excerpts short and attribute the source.
 - Note that the set includes a deliberate **negative** control
   (`gezinomi-negative-control.md`). Human-written is not the target; good is.
+
+## How a change lands
+
+**Squash is the only merge method, and merging is the maintainer's alone.**
+Reviewing is not: anyone can review a pull request here and anyone can approve
+one. The repository is public and needs no collaborator access for that. What is
+restricted is the button, and only that.
+
+The settings that hold this up, so that a future disagreement is with a
+configuration rather than with a paragraph:
+
+| setting | state |
+|---|---|
+| merge commit / rebase merge | **disabled** on the repository |
+| squash merge | the only option |
+| `master` | protected: pull request required, linear history, no force push, no deletion |
+| required status check | `check`, strict |
+| required approving reviews | **0**, deliberately — requiring one would block the sole maintainer from merging their own work, since GitHub does not allow self-approval |
+| `enforce_admins` | on; the maintainer goes through a pull request too |
+| write access | the maintainer only. On a personal repository GitHub offers no "restrict who can push" list, so this is a matter of not granting `write` rather than a switch |
+
+### One pull request is one commit is one PATCH
+
+This follows from squash-only and it is not a convention — it is arithmetic.
+[WendtVer](https://wendtver.org) makes the version the commit count, a squash
+merge adds exactly one commit to `master` however many the branch carries, so
+**a pull request bumps PATCH by exactly one no matter how much work is in it.**
+
+`scripts/version.sh --write` computes it from the base branch rather than from
+your own HEAD, and CI checks for equality rather than for "moved forward".
+
+Both of those were wrong until 2026-09-04 and the failure is worth keeping,
+because it is silent in the direction that costs most. A four-commit branch
+whose version was computed from its own HEAD carried a bump of four. The
+pull-request gate asked only whether the version had moved forward, so it
+**passed**. The push gate on `master` compares for equality, so it would have
+failed *after* the merge — with the branch gone, the release job skipped, and
+nothing cheap left to fix. The gate now fails on the pull request, where the fix
+is one command.
+
+If you are changing the merge method, this is the paragraph to change with it.
+The version depends on it, and nothing about that dependency is obvious from
+reading `plugin.json`.
 
 ## Versioning
 

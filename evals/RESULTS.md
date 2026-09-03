@@ -1561,6 +1561,235 @@ the scope of a `Böylece`, appears in one generation of six and is not pursued
 under the rate-based bar this round introduced.
 
 
+## Round nine — pre-registered, 2026-09-04: does the skill dissolve a document's structure
+
+Written before anything was generated, per `CONTRIBUTING.md`.
+
+**Where this came from.** Issue #9 reports a repair of a technical evidence
+section: a heading, a lead-in label and two bullets, one per endpoint, came back
+as one running paragraph. The report names the symptom as *devrik cümle* and too
+little fluency. Reading the output, three of its four sentences are strictly
+verb-final and `layer-2-sentence.md` §8 already turns inversion **off** in
+technical register — so the dose table would call that output compliant while
+its reader calls it the opposite. The dose is on the wrong variable. What the
+sentences actually do is carry material *after* the predicate: a colon, an
+apposition, and a verbless `-mAk için` tail. That shape is what packing a
+two-item list into flowing prose forces, which puts the cause one layer up.
+
+**The variable under test, and it is one.** `layer-1-structure.md` gains a shape
+gate: where the source document is structured, its skeleton survives the repair
+and §5 and §6 work inside the units rather than on them. Nothing in layer 2 or
+layer 3 moves this round. The layer-2 entry that would name post-verbal trailing
+material is **not** being written yet, because it has no instrument — see
+`evals/fixtures/devrik.md`.
+
+**Corpus.** `evals/input/reference-1..4`, generated this round and held
+byte-identical across both arms. Round two is uninterpretable because the corpus
+and the skill moved together; here the corpus is new but constant *within* the
+round, and no figure below is compared to any earlier round.
+
+| file | shape | bullets | rows | heads | fences | bold | `prose_pct` |
+|---|---|---|---|---|---|---|---|
+| `reference-1` | prose (control) | 0 | 0 | 1 | 0 | 0 | 99.4 |
+| `reference-2` | API reference | 0 | 25 | 9 | 2 | 0 | 20.9 |
+| `reference-3` | runbook | 10 | 0 | 5 | 0 | 5 | 18.7 |
+| `reference-4` | incident report | 0 | 17 | 6 | 0 | 4 | 41.0 |
+
+**Amended mid-round, and recorded rather than quietly folded in.** The four files
+above all preserved their structure under the control arm, so the round was about
+to reject on its first result. Before accepting that, the text from issue #9
+itself was run — it is a five-line *fragment*, not a whole document, and the
+corpus had nothing that shape. It reproduced the failure. `reference-5` was then
+built as a neutral twin of it and added to the corpus, and the fragment pair
+carries four of this round's eleven generations. Adding an input mid-round is a
+change to the instrument; it is why the numbers below are reported per file and
+not pooled into a rate.
+
+**Arms.** `v15` is the skill exactly as it stands, snapshotted before any edit.
+`v16` is the same skill plus the shape gate. One generation per file per arm,
+eight in total.
+
+**One generation, and why that is enough here.** §5 of the protocol says a fix
+with a countable target is tested by measuring that target and needs zero
+judges. This target is a structural count — a table row either survived or it
+did not — which is close to deterministic and nothing like the tally's noise
+floor or fidelity's. `CONTRIBUTING.md` now states the norm this follows.
+
+### The countable prediction, and what would reject it
+
+- **Confirm.** On `reference-2`, `-3` and `-4`, every `v16` output has `bullets`,
+  `rows` and `fences` at least equal to its source, `heads` no lower than
+  source − 1 and `bold` no lower than source − 1. One heading merged is a repair;
+  a table deleted is not.
+- **Reject, and this is the one to watch.** If `v15` also preserves all of it,
+  **the change has no effect and does not go in.** The issue is then a single
+  anecdote the corpus cannot reproduce, and the right response is to say so.
+- **Over-correction.** `reference-1` is prose. If `v16` gives it `bullets > 0` or
+  `rows > 0`, the gate is written too strongly and is manufacturing structure,
+  which is the mirror of the defect and no better.
+- **Fidelity outranks both**, unchanged: every output is checked against its
+  source, and a finding beats a clean structural result.
+
+**One reading note that applies to every row below.** `prose_pct` is in the table
+for a reason discovered while diagnosing this issue: when a list becomes prose,
+the prose word count is a different denominator, so `len_mean`, `semi_p`, `ve_p`
+and every other per-100 figure in the two rows are not comparable. On the issue's
+own before/after the source measured **3 prose words** and the output **52**.
+Structural counts are the only signals that survive the transformation intact,
+which is why the prediction is written on them.
+
+### What the corpus could not be made to test
+
+`layer-1-structure.md` §5 converts lists to prose, and this round tests only
+where it should **stop**. It does not test where it should fire, because no such
+case exists: five blog baselines carry no list, two prompts run specifically to
+produce one came back with none, and `blog-1`'s list is an itinerary the rule
+correctly leaves alone. Recorded in `evals/baseline-prompts.md`. The conversion
+in blog register is unmeasured in both directions and should be cited that way.
+
+
+## Round nine — results: the hypothesis was half wrong, and the half that held was the other one
+
+Eleven generations, five reference-shaped inputs plus the text from issue #9
+itself. `v15` is the skill as it stood; `v16` is the skill with the layer-1
+change. Counts are source → output.
+
+| arm / file | bullets | rows | heads | fences | bold | `prose_pct` |
+|---|---|---|---|---|---|---|
+| `v15` `reference-1` (prose control) | 0 → 0 | 0 → 0 | 1 → 1 | 0 → 0 | 0 → 0 | 99.4 → 99.4 |
+| `v15` `reference-2` (API reference) | 0 → 0 | 25 → 25 | 9 → 9 | 2 → 2 | 0 → 0 | 20.9 → 21.1 |
+| `v15` `reference-3` (runbook) | 10 → 10 | 0 → 0 | 5 → 5 | 0 → 0 | 5 → 5 | 18.7 → 18.8 |
+| `v15` `reference-4` (incident report) | 0 → 0 | 17 → 17 | 6 → 6 | 0 → 0 | **4 → 3** | 41.0 → 40.6 |
+| `v15` `reference-5` (fragment) gen 1 | 2 → 2 | 0 → 0 | 1 → 1 | 0 → 0 | 3 → 3 | 5.8 → 5.5 |
+| `v15` `reference-5` gen 2 | 2 → 2 | 0 → 0 | 1 → 1 | 0 → 0 | **3 → 1** | 5.8 → 5.1 |
+| `v15` issue-#9 text gen 1 | **2 → 0** | 0 → 0 | 1 → 1 | 0 → 0 | **3 → 1** | **5.6 → 87.5** |
+| `v15` issue-#9 text gen 2 | 2 → 2 | 0 → 0 | 1 → 1 | 0 → 0 | **3 → 1** | 5.6 → 5.0 |
+| `v16` `reference-1` | 0 → 0 | 0 → 0 | 1 → 1 | 0 → 0 | 0 → 0 | 99.4 → 99.4 |
+| `v16` `reference-4` | 0 → 0 | 17 → 17 | 6 → 6 | 0 → 0 | 4 → 4 | 41.0 → 40.6 |
+| `v16` `reference-5` | 2 → 2 | 0 → 0 | 1 → 1 | 0 → 0 | 3 → 3 | 5.8 → 7.4 |
+
+The issue's own text is not in `evals/`. It names a client's systems, so it was
+run from `.scratch/` and stayed there; `reference-5` is a structurally identical
+neutral twin, built to the same counts (3 bold, 2 bullets, 1 heading,
+`prose_pct` 5.8 against 5.6) so that the reported case has a public stand-in.
+
+### The list hypothesis is rejected, under the condition written before running
+
+The pre-registration said: *if `v15` also preserves all of it, the change has no
+effect and does not go in.* It preserves it in **ten of eleven**. Every table row
+of a 25-row API reference, every bullet of a runbook, and both bullets of the
+fragment in three of its four runs.
+
+The dissolution issue #9 reports is real — it is reproduced above, `2 → 0` with
+`prose_pct` going 5.6 to 87.5, which is the whole document turning into prose.
+It appeared **once in two generations of that text**, and **zero times in two
+generations of its neutral twin**. `repair-protocol.md` §4 sets the bar at two
+appearances in *n* generations of the same input, for exactly the reason round
+eight found: two runs under byte-identical conditions disagreed, one clean and
+one not, so a single appearance is a lead and not a defect.
+
+So the prose that went into `layer-1-structure.md` §5 has been **pulled back to a
+diagnosis**. It explains what the corporate list rule is really about — a
+landing page is scanned, which is a property of the object rather than its tone —
+and it no longer claims the skill needs telling. `registers.md` and
+`docs/design/2026-09-04-shape-axis.md` carry the argument; neither asserts a
+measurement that was not made.
+
+**This is the second time a change that looked obviously right did not survive
+its own threshold, and it is the reason the threshold is written first.** Reading
+the issue, the list conversion was the obvious culprit and the fix was drafted
+against it before a single generation existed. Eleven generations later the skill
+was already doing what the fix would have told it to.
+
+### The emphasis finding looked like it cleared the bar, and it was a counting artefact
+
+`bold` fell in **four of the eight `v15` runs** whose source carried any, and on
+one five-line input generated twice it fell in **both** generations — three spans
+in, one out, each time. On a rate bar that is a defect, and it was written into
+`layer-1-structure.md` §6 as one.
+
+**It was wrong, and the challenge that broke it was a sentence long:** sometimes
+deleting bold is right. Reducing it where there is too much is right; pulling it
+onto what actually matters is right; leaving it alone is often right. A count
+cannot tell those apart from the failure, and this round's number was a count.
+
+Reading *which* spans went reverses the finding:
+
+| source | deleted | was the deletion right |
+|---|---|---|
+| `**Kapsam:** **Sızıntı:** **Yavaşlama:** **Trafik artışı:** **Escalation:**` (runbook) | none | yes — label bold, all five kept |
+| `**publish** · **publish** · **hiçbir iç üreticisi yok**` | both `**publish**` | **yes** — a word bolded in *both* entries of a two-entry list distinguishes nothing, which is §6's own test |
+| `**GET** · **POST** · **hiçbir iç çağıranı yok**` | `**GET**`, `**POST**` | **yes**, same reason |
+| `**Durum:** **Şiddet:** **Süre:** **8.400 ödeme denemesi**` (incident report) | the impact figure | **arguable** — the "one warning" limit already covers it |
+
+The finding itself survived every single run. Three of the four losses were §6
+working. The fourth is one appearance in eight, below the rate bar, and is
+recorded rather than ruled on.
+
+So **both halves of round nine's change are rejected** and §6 now carries the
+episode instead of a rule. The lesson generalises past bold: `bullets`, `rows`
+and `heads` have the same weakness. A structural count says something moved; it
+does not say whether moving it was right, and every one of this round's
+predictions was written on counts.
+
+**A note on the order this happened in.** The list half was rejected by a
+threshold written before generating, which is the process working. The emphasis
+half cleared that same kind of threshold and was still wrong, because the
+threshold was on the wrong quantity — and it took a reviewer's objection, not the
+instrument, to find that. Pre-registration protects against reading noise as
+signal. It does not protect against measuring the wrong thing.
+
+### The one site that did clear the bar, and it is a fidelity site
+
+The fidelity pass over the three `v16` outputs returned three findings its author
+would defend without qualification, and one of them is the shape flagged when
+issue #9 was first read:
+
+| source | output | rule |
+|---|---|---|
+| `Tüm repo taraması:` — an agentless nominal label | `Repoyu baştan sona taradım:` | 1, a first-person experience |
+| `hata oranı %2 **seviyesinde**` | `hata oranı %2` | 3, an approximator deleted |
+| `...doğrudan stok servisine gidiyor, aradaki HTTP hop'unu atlıyor.` | `...gid**ip** aradaki HTTP hop'unu atlıyor.` | 4, a converb asserting a manner link two comma-joined clauses did not |
+
+The first is the interesting one. The same move appears in the `v15` output of
+the issue's own text — `Tüm workspace taraması:` becoming *"Tüm workspace'i
+taradığımda ... çıktı"* — so it is two independent texts across two arms, which is
+the bar met. A scan label is a heading for a result; turning it into an account
+of the scan being performed adds an agent the source did not have, and in a
+document whose whole point is what the evidence shows, that is not decoration.
+
+`rewrite-mode.md` rule 1 already forbids it in words. No rule is being added this
+round: the round has rejected two changes already, and adding a third on its way
+out is how a round stops being one variable. It is pre-registered for round ten.
+
+### What the instrument contributed, and what it cost
+
+`prose_pct` is new this round and it is the only column that made the reported
+failure legible. On the one run that flattened, the source's prose view is **3
+words** and the output's is **49** — so `len_mean`, `semi_p`, `ve_p` and every
+other per-100 figure in that row are computed on a different denominator and
+cannot be compared with the source's. Nothing in the previous instrument said so;
+`bullets: 2 → 0` was the only visible trace.
+
+Two counting bugs were fixed to get here, both the same shape as the eight
+before: the prose view was reading **fenced code** and **table rows** as Turkish.
+Three corpus files move (`technical-1`, `-4`, `-5`, all of which contain code
+blocks) and one published table row in `baseline-prompts.md` was stale and is
+corrected there. No conclusion moves: the semicolon and `-mAktAdIr` bands are
+calibrated on `human-reference/`, which contains no code and did not change.
+
+### What issue #9 still has open
+
+The layer-2 half. Three of the four sentences in the reported output are strictly
+verb-final and §8 already turns inversion off in technical register, so the
+report's own diagnosis — too much `devrik cümle` — does not describe what the
+text does. What it does is carry material after the predicate. That is a real
+shape with no rule and no counter; `evals/fixtures/devrik.md` holds hand-labelled
+examples in three separated classes so that whoever builds the counter has
+something to validate against. No rule is being written against it in the
+meantime.
+
+
 ## What this does not establish
 
 Twelve texts, one model, one afternoon, and judges that are themselves language

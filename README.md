@@ -85,13 +85,13 @@ explains what it changed only when asked.
 
 ## Evidence
 
-Every claim above is checkable in this repository. `evals/` holds twenty-one
+Every claim above is checkable in this repository. `evals/` holds twenty-six
 baseline texts of unaided model Turkish, produced by clean-context subagents
 given ordinary short prompts, plus excerpts of published Turkish writing for
 calibration — including five Turkish journal articles published between 2015 and
 2019, early enough that none of them can be model output. `evals/count.sh`
 measures what can be measured; `evals/rubric.md` says what it cannot, and lists
-the eight counting bugs found so far, each of which had already produced a
+the counting bugs found so far — ten, each of which had already produced a
 confident wrong finding.
 
 **Repair mode.** `evals/RESULTS.md` records a three-way comparison against
@@ -103,14 +103,23 @@ before believing anything here. The short version:
 - Against `turkce-humanizer` on reading quality: **16–5 across twenty-one
   files**, two-sided sign test p=0.027, with the competitor's outputs held
   byte-identical so that the only thing that moved was this skill.
-- On fidelity it is not close: **zero added claims across twenty-one files**
-  here, against twenty-three across nine there, including one misstatement of
-  what a cited theory says.
+- On fidelity the gap is large but it is not zero, and the "zero" this line used
+  to claim was removed from `references/rewrite-mode.md` for a reason: a rule
+  that opens by reporting its own perfect compliance does not get checked. Round
+  seven found four additions here and round eight one, against twenty-three
+  across nine files there, including one misstatement of what a cited theory
+  says. Read `rewrite-mode.md` for the four; they are written up rather than
+  smoothed over.
 - One file, `blog-1`, has now lost five times to the same three invented
   sentences. It is not winnable without fabricating, so it stays lost.
-- `turkce-humanizer` preserves document structure exactly, by design. If you
-  are repairing a document whose skeleton must survive — a form, a
-  specification, a template — that behaviour is better than this one's.
+- `turkce-humanizer` preserves document structure exactly, by design, and this
+  line used to concede the case outright. Round nine measured it: across eleven
+  generations over reference-shaped inputs this skill preserved the skeleton in
+  ten — every row of a 25-row API reference, every bullet of a runbook. The one
+  failure was a five-line fragment, and it did not reproduce on a second
+  generation or on a structurally identical twin. So the gap is smaller than it
+  was stated to be; the other skill's guarantee is still a guarantee and this
+  one's is a measurement.
 
 **Write mode.** `evals/RESULTS-write.md` records the same twelve prompts run with
 and without the skill, the no-skill arm held byte-identical between rounds:

@@ -181,10 +181,38 @@ to: prices, opening hours, prerequisites, an ordered procedure, product
 features, campaign terms. The test is whether a reader would ever want to find
 one item without reading the others.
 
-**Off entirely in corporate register.** Measured: melting a feature list or a
-campaign-terms list into prose loses to leaving it alone, and blind readers name
-the result *"düzleştirilmiş"* — flattened. A landing page is read by scanning.
-See `registers.md`.
+**And before that test, one about the document.** Read what share of the source
+is structure. If the lines carrying its content are list items, table rows and
+headings rather than sentences, the document *is* its structure and there is
+nothing to convert it into — the item test above still governs each entry, but
+the skeleton is not yours. `evals/count.sh` reports this as `prose_pct`, and the
+figure separates the two cases cleanly: a runbook measures 19, an incident
+report 41, a blog post 99.
+
+**What was measured, stated at the strength it was measured.** Round nine ran
+this against five reference-shaped inputs and one real reported failure, eleven
+generations in all. The skill preserved the skeleton in **ten of eleven** —
+every bullet of a runbook, all 25 table rows of an API reference, all 17 of an
+incident report, and both bullets of the two five-line fragments in three of
+their four runs. The dissolution issue #9 reported appeared **once**, in one of two
+generations of the same text, and the neutral twin of that text did not
+reproduce it in either of its two.
+
+One appearance in two generations is below the rate bar in
+`evals/repair-protocol.md` §4 and is recorded as a lead, not a defect. **So the
+paragraph above is a diagnosis, not a new prescription**: it says what the rule
+already turned off for corporate register is really about, and it does not claim
+the skill needs telling. What round nine did establish is on the emphasis side —
+see §6, where the rate bar was met.
+
+**Corporate register is the same rule, found earlier from the other side.** The
+conversion was turned off there on measured grounds — melting a feature list or
+a campaign-terms list into prose loses to leaving it alone, and blind readers
+name the result *"düzleştirilmiş"*, flattened. That was filed as a property of
+the register, and it is not: a landing page is read by scanning, which is a fact
+about the object and not about its tone. Reading it as a register rule is why it
+did not reach the runbook. See `registers.md` and
+`docs/design/2026-09-04-shape-axis.md`.
 
 **Never chain a list into one semicolon sentence.** This is the specific bad
 outcome, and it is worse than either the list or clean prose:
@@ -213,6 +241,30 @@ single fastest way to make Turkish marketing copy read as generated.
 **Where it stops.** A landing page's primary call to action is genuinely
 allowed to be bold, and a documentation page may bold the one warning that
 prevents data loss. Emphasis is not banned; inflation is.
+
+**The mirror, and why it is not a rule.** Deleting bold edits emphasis too, so
+this section was nearly given a symmetric half: where a source bolds the line
+carrying its finding, removing it costs what inflation costs. Round nine
+measured it and the finding did not survive its own data.
+
+`bold` fell in four of eight repair runs — and reading *which* spans went
+reverses the reading. A runbook's five label spans all survived. What was
+deleted on the two five-line fragments was `**GET**`/`**POST**` and
+`**publish**`: a word bolded in **both** entries of a two-entry list, which by
+this section's own test is distinguishing nothing. The finding itself,
+`**hiçbir iç çağıranı yok**`, survived every run. Three of the four losses were
+this section working, not failing.
+
+The fourth is arguable — an incident report's `**8.400 ödeme denemesi**`, its
+impact figure, which the "one warning" limit above would have kept. One
+appearance in eight runs is below the rate bar in `evals/repair-protocol.md` §4,
+so it is recorded and not ruled on.
+
+**The lesson is about the instrument, not about bold.** A count of bold spans
+cannot answer this question: it does not say which span went or whether going
+was right, and a rule written from the count would have told the skill to
+preserve emphasis it was correctly removing. Anything written here later needs
+per-span evidence.
 
 ---
 

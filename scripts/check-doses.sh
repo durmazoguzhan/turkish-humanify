@@ -18,6 +18,14 @@
 # list. A section that leaves the invariant list has become register-dependent
 # and must say so. A section that joins it must genuinely be correctness rather
 # than style.
+#
+# There is a third category this script cannot see, and it is deliberate that it
+# stays invisible for now: a rule can depend on the document's *shape* — prose,
+# structured, atomic — rather than on its register. layer-1 is that kind of
+# layer; docs/design/2026-09-04-shape-axis.md has the argument. No check is
+# written for it because round nine measured the shape rule and rejected it, so
+# there is nothing yet to enforce. If a shape-dependent rule ever ships, this
+# script needs a third list, not a looser grep.
 set -euo pipefail
 cd "$(dirname "${BASH_SOURCE[0]}")/.."
 

@@ -6,6 +6,12 @@
 # absent: grep cannot separate "zaman" from an -an participle, and a noisy
 # number is worse than no number. Those live in the reading half of rubric.md.
 #
+# What it does report about structure is deliberately raw. `heads`, `bullets`,
+# `rows`, `fences` and `bold` are counts, not rates, because for structural
+# furniture the count is the verdict: a source with two bullets and an output
+# with none has lost the two, and dividing that by a word total says nothing.
+# `prose_pct` exists to say how much of the document those counts are hiding.
+#
 # Usage: evals/count.sh FILE...
 set -euo pipefail
 
@@ -18,8 +24,9 @@ body() {
   awk 'NR==1 && $0=="---" { fm=1; next } fm && $0=="---" { fm=0; next } !fm' "$1"
 }
 
-# Prose view: drop headings and list items, join each paragraph onto one line,
-# drop standalone dashes so they are not counted as words.
+# Prose view: drop headings, list items, fenced code and table rows, join each
+# paragraph onto one line, drop standalone dashes so they are not counted as
+# words.
 #
 # The join matters. Sentence splitting downstream is line-based, so a
 # hard-wrapped paragraph used to be read as one sentence per source line: a
@@ -28,8 +35,19 @@ body() {
 # factor of two. Blank lines are kept until after the join so that paragraphs
 # stay separate; headings are removed first, and markdown leaves blank lines
 # around them, so removing a heading does not fuse its neighbours.
+#
+# Fenced code and table rows were added to the strip list on 2026-09-04, and
+# both were counting bugs of the same shape as the eight before them: the view
+# is called "prose" and it was reading things that are not prose. `SET
+# user:1042 "{...}" EX 300` was contributing five Turkish words and one
+# sentence to `technical-1`, and 38 of `technical-5`'s word total was Redis
+# commands — an eleven percent error in the denominator of every per-100 figure
+# for that file. Table rows had never fired because the corpus contained no
+# tables, which is exactly the coverage gap issue #9 is about; the fix landed
+# with the reference-shaped corpus that first exercises it.
 prose() {
-  sed -E '/^[[:space:]]*#/d; /^[[:space:]]*[-*+•]/d' "$1" \
+  sed -E '/^[[:space:]]*#/d; /^[[:space:]]*[-*+•]/d; /^[[:space:]]*\|/d' "$1" \
+  | awk '/^[[:space:]]*```/ { fence = !fence; next } !fence' \
   | awk '
       /^[[:space:]]*$/ { if (buf != "") print buf; buf = ""; next }
       { if (buf == "") buf = $0; else buf = buf " " $0 }
@@ -59,7 +77,7 @@ count_words() { { grep -oiE "\\b($(list_re "$1"))\\b" "$2" 2>/dev/null || true; 
 # ones (bold, bullets) stay raw, because there the count itself is the verdict.
 per100() { awk -v n="$1" -v w="$2" 'BEGIN { if (w == 0) { print "0.0"; exit } printf "%.1f", n * 100 / w }'; }
 
-printf 'file\twords\tsentences\tlen_mean\tlen_sd\tem_dash\tendash\tsemi_p\tmektedir_p\tdir_p\tmis_p\tp1_p\tp2_p\tve_p\tpart_p\tcalque_p\tforced\ttilde\tpct_wrong\tbold\tbullets\n'
+printf 'file\twords\tsentences\tlen_mean\tlen_sd\tem_dash\tendash\tsemi_p\tmektedir_p\tdir_p\tmis_p\tp1_p\tp2_p\tve_p\tpart_p\tcalque_p\tforced\ttilde\tpct_wrong\tbold\tbullets\theads\trows\tfences\tprose_pct\n'
 
 tmp=$(mktemp -d)
 trap 'rm -rf "$tmp"' EXIT
@@ -154,12 +172,31 @@ for src in "$@"; do
   pct_wrong=$(count_re '[0-9]+%' "$f")
   bold=$(( $(count_re '\*\*' "$f") / 2 ))
   bullets=$(grep -cE '^[[:space:]]*[-*+•] ' "$f" || true)
+  # Structural furniture, counted on the body. These four exist because the
+  # only thing the instrument could previously see of a list-to-prose
+  # conversion was `bullets` falling to zero — and a document can be
+  # flattened by dissolving its headings or its table instead, which nothing
+  # here reported. See registers.md and layer-1-structure.md §5.
+  heads=$(grep -cE '^[[:space:]]*#{1,6} ' "$f" || true)
+  # Table body rows only: the |---|---| separator is not content, and counting
+  # it would make a two-row table read as three.
+  rows=$(grep -cE '^[[:space:]]*\|' "$f" | tr -d " " || true)
+  rows=$(( rows - $(grep -cE '^[[:space:]]*\|[[:space:]:|-]+\|[[:space:]]*$' "$f" || true) ))
+  fences=$(( $(grep -cE '^[[:space:]]*```' "$f" || true) / 2 ))
+  # How much of the document the four counts above are hiding. A source that is
+  # 30 percent prose and an output that is 100 percent prose have not been
+  # measured on the same denominator, and every per-100 column in the two rows
+  # is therefore incomparable. This number is the warning that says so; it is
+  # not itself a quality signal.
+  body_words=$(wc -w < "$f" | tr -d " ")
+  prose_pct=$(awk -v a="$words" -v b="$body_words" 'BEGIN { if (b == 0) { print "0.0"; exit } printf "%.1f", a * 100 / b }')
 
-  printf '%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\n' \
+  printf '%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\n' \
     "$(basename "$src")" "$words" "$sentences" "$len_mean" "$len_sd" \
     "$em_dash" "$endash" "$(per100 "$semi" "$words")" "$(per100 "$mektedir" "$words")" "$(per100 "$dir_copula" "$words")" \
     "$(per100 "$mis_past" "$words")" "$(per100 "$p1" "$words")" \
     "$(per100 "$p2" "$words")" "$(per100 "$ve_raw" "$words")" \
     "$(per100 "$particles" "$words")" "$(per100 "$calque" "$words")" \
-    "$forced" "$tilde" "$pct_wrong" "$bold" "$bullets"
+    "$forced" "$tilde" "$pct_wrong" "$bold" "$bullets" \
+    "$heads" "$rows" "$fences" "$prose_pct"
 done

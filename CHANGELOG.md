@@ -2,6 +2,151 @@
 
 ## Unreleased
 
+### Round nine — issue #9: both changes rejected, and one fidelity site found
+
+- **No rule was added to the skill this round.** Both halves of the change under
+  test failed, and `evals/RESULTS.md` carries why at length.
+- **The list half** — a two-bullet evidence section coming back as one paragraph —
+  reproduces, but once in two generations of the text and not at all in two
+  generations of a structurally identical neutral twin. Across eleven generations
+  the skill preserved the skeleton in ten: every row of a 25-row API reference,
+  every bullet of a runbook. Below the rate bar in `repair-protocol.md`.
+- **The emphasis half cleared its threshold and was still wrong**, which is the
+  more useful failure. `bold` fell in four of eight runs; reading *which* spans
+  went reverses it. A word bolded in both entries of a two-entry list
+  distinguishes nothing, and that is what was deleted. The finding itself
+  survived every run. A structural count says something moved and not whether
+  moving it was right — and `bullets`, `rows` and `heads` share the weakness.
+- **`layer-1-structure.md` §5 and §6 carry the episodes**, stated as diagnosis
+  with the measurement's actual strength, not as new instructions.
+- **`registers.md`: the corporate list rule is re-read as an instance rather than
+  an exception.** A landing page is scanned, which is true of the object and not
+  of its tone — which is why the rule, filed under a register, never reached a
+  runbook one row up. `docs/design/2026-09-04-shape-axis.md` carries the argument
+  and the case that issues #8 and #9 are one gap seen from two ends.
+- **Pre-registered for round ten:** a scan label becoming a first-person account
+  of the scan. `Tüm repo taraması:` → `Repoyu baştan sona taradım:`, in two
+  independent texts across two arms.
+
+### Governance, and the version bug it was hiding
+
+- **Squash is the only merge method and one pull request is one PATCH.** Written
+  into `CONTRIBUTING.md` with the settings that hold it up, so a future
+  disagreement is with a configuration rather than with a paragraph.
+- **`scripts/version.sh` computed the version from the branch's own HEAD**, which
+  is the rebase-merge answer. Under squash-only a branch of four commits still
+  adds one to `master`, so the version is the **base branch's** count plus one.
+  `--write` now computes that, and `--check` no longer reports a failure on a
+  feature branch for a version that is correct.
+- **CI's pull-request gate asked only whether the version had moved forward.**
+  That is silent in the expensive direction: a bump of four passes it and then
+  fails the equality check on `master` *after* the merge, with the branch gone,
+  the release job skipped and nothing cheap left to fix. It now checks for
+  exactly one.
+
+### A round is seven files generated twice, not twenty-one generated once
+
+- **`evals/repair-protocol.md` §0 defines a standing sample.** This is smaller
+  *and* stronger, which is why it is not filed as an economy: round eight's bar
+  is two appearances in *n* generations of the **same** input, and twenty-one
+  files generated once cannot satisfy it at all — every result such a round
+  produces is a lead by construction. Fourteen generations is fewer than
+  twenty-one and all of them are bar-eligible.
+- Seven files covering four registers and three document shapes; the rest of the
+  corpus is reserve. **A change that clears the sample gets one confirmation
+  generation on three reserve files before it ships**, because seven files is few
+  enough to fit rules to.
+- The blind tally is the one thing the default round can no longer do — at seven
+  files a sign test needs 7–0 — and `rubric.md` §5 already called it the wrong
+  instrument for most changes.
+
+### Issue #8 — declined, on its own evidence
+
+- **No microcopy register.** #8 is a transcript of the tool assessing itself, so
+  it was read sceptically; its two checkable claims hold and its recommendation
+  does not follow from them. Layer 1 really is inert for atomic strings — seven
+  of its eight sections name a unit a three-word chip does not have — and the
+  reading cost is real: the repair path is **1,876 lines** whether the input is a
+  journal article or fifteen button labels. But #8's own best observation is that
+  the defect it found was subject clarity, *"Türkçe-mimarisi problemi değil"*, and
+  a Turkish-architecture skill acquiring a register for a non-Turkish problem
+  gains only somewhere to put a rule it has no standing to write.
+- Written up in `docs/design/2026-09-04-shape-axis.md`, which keeps the `atomic`
+  row recorded and unbuilt.
+
+### Layer 2 — a counter was attempted and is not being built
+
+- The narrowest greppable surface of the shape issue #9 actually objects to — a
+  sentence ending in a verbless purpose tail — returns **0 hits in 206 sentences
+  of published Turkish**, which separates rare from absent not at all. Most of
+  what it finds sits in list items the prose view already drops, and it cannot
+  tell *"yanmasın diye."*, which is correct, from the defect. Numbers in
+  `evals/fixtures/devrik.md` so nobody spends the effort twice; resolving it
+  needs a parse, not a better regex.
+
+### Contributing — a second rule
+
+- **"A count tells you something moved, not whether moving it was right."**
+  Written into `CONTRIBUTING.md` as a rule of its own rather than a footnote to
+  round nine, and into `evals/repair-protocol.md` §5 where countable targets are
+  chosen. Measuring is not enough: round nine cleared a threshold set before the
+  data existed and its conclusion was still false, because three of the four
+  movements it counted were the rule under test behaving correctly. Any signal
+  that can legitimately move either way — bold, bullets, rows, headings, sentence
+  length, hedge counts — needs its individual instances read before the rate
+  means anything.
+
+### Instrument
+
+- **Two counting bugs, both the shape of the eight before them: the prose view
+  was reading fenced code and table rows as Turkish.** `technical-5` carried 38
+  words of Redis commands in its own denominator, an eleven percent error in
+  every per-100 figure for that file. Three corpus files move; one stale row in
+  `baseline-prompts.md` is corrected. No published conclusion moves — the
+  semicolon and `-mAktAdIr` bands are calibrated on `human-reference/`, which has
+  no code.
+- **Four columns added: `heads`, `rows`, `fences` and `prose_pct`.** The last is
+  the one that mattered: when a list becomes prose the word total is a different
+  denominator, so no per-100 figure survives the comparison. On the reported
+  failure the source's prose view is 3 words and the output's is 49, and the only
+  previously visible trace was `bullets` falling to zero.
+- `evals/fixtures/known.md` gained a code block and a table; `evals/test-count.sh`
+  carries the hand-computed expectations. The old counter reports `words=64` on
+  that fixture against a true 38.
+
+### Documentation that had gone stale
+
+- `README.md` still claimed **"zero added claims across twenty-one files"**, a
+  boast `references/rewrite-mode.md` deleted two rounds ago on the grounds that a
+  rule reporting its own perfect compliance does not get checked. Replaced with
+  the actual record: four findings in round seven, one in round eight.
+- `README.md` also conceded document-structure preservation to `turkce-humanizer`
+  outright; round nine measured this skill at ten of eleven, so the concession is
+  now stated at its measured size — their guarantee against our measurement.
+- Corpus count 21 → 26, counting bugs 8 → 10, both in `README.md` and
+  `evals/rubric.md`.
+
+### Corpus
+
+- **Four reference-shaped baselines**, `evals/input/reference-1..4`: an evidence
+  section, an API reference, a runbook and an incident report. The corpus had no
+  tables at all and one technical file with a real bullet list, so a rule about
+  what happens to a document's structure had nothing to be measured on.
+  `reference-5` is a five-line fragment, the public stand-in for the text in
+  issue #9.
+- **Recorded rather than filed away: unaided model Turkish does not bullet a blog
+  post.** Two prompts were run specifically to produce a list a rule should
+  dissolve and both came back with none, as did five of the six blog baselines
+  already in the corpus. §5's conversion therefore has no positive test case in
+  blog register and is unmeasured in both directions.
+
+### Contributing
+
+- **Three cases per class, written down as the norm.** A fixture is a tripwire,
+  not a corpus. The loosening applies to deterministic checks only; the noise
+  floors for the blind tally and the fidelity check are unchanged.
+
+
 ### Versioning, distribution and project docs
 
 - **The documented install path could not work.** The README said
