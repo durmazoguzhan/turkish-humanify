@@ -110,13 +110,39 @@ whole method `registers.md` uses for `-mAktAdIr` and the semicolon.
 inside list items, which `count.sh`'s prose view already drops. The signal was
 mostly rediscovering bullets.
 
-**It cannot separate the defect from correct Turkish.** *"Tereyağını kızdırdım,
-pul biberi son anda attım, yanmasın diye."* is in the unaided corpus and is
-exactly right — a natural spoken tail. *"…o da push aktarımı tuttuktan sonra
-siparişi işaretlemek için."* is the shape issue #9 objects to. The regex sees one
-thing. And a signal that can legitimately move either way is the trap
-`CONTRIBUTING.md` now names as its second rule: the count would report direction,
-never correctness.
+**It cannot decide the cases it finds, which is not the same as finding the wrong
+ones.** This paragraph used to say the regex confuses the defect with *correct*
+Turkish, and gave *"Tereyağını kızdırdım, pul biberi son anda attım, yanmasın
+diye."* as the clean positive. A reader disagreed, and the disagreement is the
+useful part:
+
+> A (in the corpus): Tereyağını kızdırdım, pul biberi son anda attım, **yanmasın diye.**
+> B (a reader's version): Tereyağını kızdırdım, pul biberi **yanmasın diye** son anda attım.
+
+B is the canonical placement — the purpose clause sits in the preverbal zone
+modifying `attım`, and the sentence closes on its verb. A trails it. A is not
+*wrong*: appending the reason as an afterthought is something people genuinely
+say, and in a first-person kitchen story it reads as speech rather than as a
+slip. But it is not obviously better than B either, and calling it "correct" was
+overstating what anybody had established.
+
+So the honest statement is narrower and it still holds. The regex finds A and it
+finds *"…o da push aktarımı tuttuktan sonra siparişi işaretlemek için."*, and
+**nothing in the match tells them apart** — not because one is right and the
+other wrong, but because whether a trailing tail earns its place is a judgement
+about register, about length, and about whether the tail is an afterthought or
+the sentence's whole content. A count reports the shape and never the judgement,
+which is `CONTRIBUTING.md`'s second rule arriving from a third direction.
+
+**Two things worth keeping from that pair.** It is the first concrete repair
+anybody has written for Class C — *move the tail into the preverbal zone*, not
+delete it — and it exposes a gap wider than Class C: **no section of
+`layer-2-sentence.md` covers adverbial placement at all.** §3 decides which
+single element takes the preverbal slot; nothing says where a purpose clause
+belongs when it is not the focus. Searching that file for `diye`, `adverbial` or
+`purpose clause` returns nothing. A is untouched in the unaided baseline and in
+`v7`, `v9`, `v10`, `v11` and the competitor's output, which is what a rule
+nobody has written looks like from the outside.
 
 So Class C stays labelled and unmeasured. What would actually resolve it is a
 parse — a real POS tagger giving verb position — not a better regex, and that is

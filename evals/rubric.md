@@ -122,8 +122,9 @@ reports too much of it, so the narrowest greppable surface — a sentence ending
 a verbless purpose tail — was measured before any counter was written. It returns
 0 hits in 206 sentences of published Turkish, which distinguishes rare from
 absent not at all; most of what it does find sits in list items the prose view
-already drops; and it cannot tell *"yanmasın diye."*, which is correct, from the
-shape #9 objects to. `evals/fixtures/devrik.md` carries the numbers and the
+already drops; and of the rest it cannot tell an afterthought a writer chose from
+the shape #9 objects to — a distinction that turns on register and on whether the
+tail is the sentence's whole content, neither of which a match carries. `evals/fixtures/devrik.md` carries the numbers and the
 hand-labelled sentences, split into three classes, so that whoever tries again
 starts from data rather than from an intuition.
 

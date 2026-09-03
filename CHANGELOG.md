@@ -2,6 +2,31 @@
 
 ## Unreleased
 
+### A claim that was too strong, and the gap correcting it exposed
+
+- **`evals/fixtures/devrik.md` claimed a corpus sentence was "correct" and used
+  it to argue the counter cannot be built.** A reader disagreed with the
+  sentence. *"…pul biberi son anda attım, yanmasın diye."* against *"…pul biberi
+  yanmasın diye son anda attım."*: the second is the canonical placement, the
+  purpose clause in the preverbal zone and the sentence closing on its verb.
+  The first is not wrong — appending the reason is something people say — but
+  calling it correct asserted a judgement nobody had made.
+- The argument survives in a narrower form and is better for it: the regex finds
+  both shapes and **nothing in the match tells them apart**, not because one is
+  right, but because whether a trailing tail earns its place turns on register,
+  on length, and on whether the tail is an afterthought or the sentence's whole
+  content. A count reports the shape, never the judgement.
+- **The gap it exposed is wider than the one it was about: no section of
+  `layer-2-sentence.md` covers adverbial placement.** §3 decides which single
+  element takes the preverbal slot; nothing says where a purpose clause belongs
+  when it is not the focus. Searching that file for `diye`, `adverbial` or
+  `purpose clause` returns nothing, and the sentence is untouched in the unaided
+  baseline and in `v7`, `v9`, `v10`, `v11` and the competitor's output — which is
+  what a rule nobody has written looks like from outside.
+- The A/B pair is recorded as the first concrete repair for the class: **move the
+  tail into the preverbal zone, not delete it.** No rule is written from it; one
+  reader's judgement on one sentence is a lead.
+
 ### Round nine — issue #9: both changes rejected, and one fidelity site found
 
 - **No rule was added to the skill this round.** Both halves of the change under
