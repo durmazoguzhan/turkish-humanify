@@ -127,6 +127,49 @@ what "normal" looks like. If you add to it:
 - Note that the set includes a deliberate **negative** control
   (`gezinomi-negative-control.md`). Human-written is not the target; good is.
 
+## How a change lands
+
+**Squash is the only merge method, and merging is the maintainer's alone.**
+Reviewing is not: anyone can review a pull request here and anyone can approve
+one. The repository is public and needs no collaborator access for that. What is
+restricted is the button, and only that.
+
+The settings that hold this up, so that a future disagreement is with a
+configuration rather than with a paragraph:
+
+| setting | state |
+|---|---|
+| merge commit / rebase merge | **disabled** on the repository |
+| squash merge | the only option |
+| `master` | protected: pull request required, linear history, no force push, no deletion |
+| required status check | `check`, strict |
+| required approving reviews | **0**, deliberately — requiring one would block the sole maintainer from merging their own work, since GitHub does not allow self-approval |
+| `enforce_admins` | on; the maintainer goes through a pull request too |
+| write access | the maintainer only. On a personal repository GitHub offers no "restrict who can push" list, so this is a matter of not granting `write` rather than a switch |
+
+### One pull request is one commit is one PATCH
+
+This follows from squash-only and it is not a convention — it is arithmetic.
+[WendtVer](https://wendtver.org) makes the version the commit count, a squash
+merge adds exactly one commit to `master` however many the branch carries, so
+**a pull request bumps PATCH by exactly one no matter how much work is in it.**
+
+`scripts/version.sh --write` computes it from the base branch rather than from
+your own HEAD, and CI checks for equality rather than for "moved forward".
+
+Both of those were wrong until 2026-09-04 and the failure is worth keeping,
+because it is silent in the direction that costs most. A four-commit branch
+whose version was computed from its own HEAD carried a bump of four. The
+pull-request gate asked only whether the version had moved forward, so it
+**passed**. The push gate on `master` compares for equality, so it would have
+failed *after* the merge — with the branch gone, the release job skipped, and
+nothing cheap left to fix. The gate now fails on the pull request, where the fix
+is one command.
+
+If you are changing the merge method, this is the paragraph to change with it.
+The version depends on it, and nothing about that dependency is obvious from
+reading `plugin.json`.
+
 ## Versioning
 
 This repository uses [WendtVer](https://wendtver.org): start at 0.0.0, every

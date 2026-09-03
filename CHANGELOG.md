@@ -28,6 +28,22 @@
   of the scan. `Tüm repo taraması:` → `Repoyu baştan sona taradım:`, in two
   independent texts across two arms.
 
+### Governance, and the version bug it was hiding
+
+- **Squash is the only merge method and one pull request is one PATCH.** Written
+  into `CONTRIBUTING.md` with the settings that hold it up, so a future
+  disagreement is with a configuration rather than with a paragraph.
+- **`scripts/version.sh` computed the version from the branch's own HEAD**, which
+  is the rebase-merge answer. Under squash-only a branch of four commits still
+  adds one to `master`, so the version is the **base branch's** count plus one.
+  `--write` now computes that, and `--check` no longer reports a failure on a
+  feature branch for a version that is correct.
+- **CI's pull-request gate asked only whether the version had moved forward.**
+  That is silent in the expensive direction: a bump of four passes it and then
+  fails the equality check on `master` *after* the merge, with the branch gone,
+  the release job skipped and nothing cheap left to fix. It now checks for
+  exactly one.
+
 ### A round is seven files generated twice, not twenty-one generated once
 
 - **`evals/repair-protocol.md` §0 defines a standing sample.** This is smaller

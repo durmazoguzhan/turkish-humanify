@@ -29,21 +29,35 @@ jobs:
         if: github.event_name == 'push'
         run: ./scripts/version.sh --check
 
-      # On a pull request HEAD is a synthetic merge commit, so the count is not
-      # meaningful. What is checkable is that the contributor moved the version
-      # at all, and moved it forward.
-      - name: Version was bumped
+      # On a pull request HEAD is a synthetic merge commit, so HEAD's own count
+      # is not meaningful. What *is* determined is the landing count: squash is
+      # the only merge method this repository allows, so every pull request adds
+      # exactly one commit to the base branch no matter how many it carries.
+      #
+      # This check used to ask only whether the version had moved forward, which
+      # is not enough. A branch of four commits whose author computed the version
+      # from its own HEAD passes that test with a bump of four, and then fails
+      # the push gate on master, after the merge, when there is nothing left to
+      # fix cheaply. One pull request is one commit is one PATCH.
+      - name: Version bumped by exactly one
         if: github.event_name == 'pull_request'
         env:
           BASE: ${{ github.base_ref }}
         run: |
           set -euo pipefail
           read_version() { python3 -c "import json,sys;print(json.load(sys.stdin).get('version',''))"; }
+          encode() { printf '%d.%d.%d' "$(( $1 / 100 ))" "$(( ($1 / 10) % 10 ))" "$(( $1 % 10 ))"; }
 
-          base=$(git show "origin/$BASE:.claude-plugin/plugin.json" | read_version)
+          git fetch --no-tags --quiet origin "$BASE"
+
+          base_count=$(git rev-list --count FETCH_HEAD)
+          want=$(encode "$(( base_count + 1 ))")
+
+          base=$(git show "FETCH_HEAD:.claude-plugin/plugin.json" | read_version)
           head=$(read_version < .claude-plugin/plugin.json)
 
-          printf 'base %s -> head %s\n' "${base:-<unset>}" "${head:-<unset>}"
+          printf 'base %s (%s commits) -> head %s; squashed landing count %s\n' \
+            "${base:-<unset>}" "$base_count" "${head:-<unset>}" "$(( base_count + 1 ))"
 
           if ! printf '%s' "$head" | grep -qE '^[0-9]+\.[0-9]\.[0-9]$'; then
             echo "FAIL version '$head' is not WendtVer (MAJOR.MINOR.PATCH, MINOR and PATCH single digits)" >&2
@@ -51,19 +65,14 @@ jobs:
             exit 1
           fi
 
-          if [ "$base" = "$head" ]; then
-            echo "FAIL version was not bumped; it is still $head" >&2
+          if [ "$head" != "$want" ]; then
+            echo "FAIL version is $head; a squash merge onto $BASE makes $base_count + 1 commits, which is $want" >&2
             echo "     run: scripts/version.sh --write" >&2
+            echo "     one pull request lands as one commit, so it carries exactly one PATCH" >&2
             exit 1
           fi
 
-          to_int() { IFS=. read -r a b c <<<"$1"; echo $(( a * 100 + b * 10 + c )); }
-          if [ "$(to_int "$head")" -le "$(to_int "$base")" ]; then
-            echo "FAIL version went backwards or sideways: $base -> $head" >&2
-            exit 1
-          fi
-
-          echo "ok   version bumped $base -> $head"
+          echo "ok   version $head is $BASE + 1 squashed commit"
 
   # A merge to master is a release. The tag is the version, which is the commit
   # count, so nothing here is decided by hand either.
