@@ -267,33 +267,52 @@ bir şekilde` · `bilmeniz gereken her şey` · `kapsamlı bir rehber` · `gider
 This list is mirrored in `evals/signals/calques.txt` so the skill and the
 measurement agree on what a calque is.
 
-**The comparative that gets eaten: `daha sonra` becoming `sonra`.** English
-builds a comparative inside the word — *lat-er*, *earli-er* — and Turkish builds
-it with a separate one, `daha` + adverb. Rendering the English word by the
-Turkish stem alone does not produce a weaker version of it; it produces **a
-different word.** `sonra` on its own is a sequencer and a postposition, *after*
-and *then*. `daha sonra` is *later*. So `Watch later` rendered as `Sonra izle`
-says something nearer to *watch then* — and *then* wants an antecedent that a
-label standing by itself does not have.
+**The comparative English keeps inside the word.** English marks comparison
+morphologically — *lat-er*, *earli-er*, *long-er* — and Turkish marks it with a
+separate word, `daha`. The two are not the same operation, and translating the
+English word by the Turkish stem alone does not produce a milder version of it.
 
-Measured 2026-09-04, and the control is what makes it readable. Given the English
+It produces **a different word**, and that is the whole of the rule. The Turkish
+stems these map onto are mostly words in their own right with their own
+meanings, so dropping `daha` lands on one of those instead of failing visibly:
+
+| English | correct | what the bare stem actually means |
+|---|---|---|
+| later | `daha sonra` | `sonra` — *after*, *then* |
+| earlier | `daha önce` | `önce` — *before*, *first* |
+| less | `daha az` | `az` — *little*, *not much* |
+| further | `daha ileri` | `ileri` — *forward*, *advanced* |
+
+> AI: Sonra izle · Sonra hatırlat · Önce gönderilenleri göster · Az veri kullan
+> İnsan: Daha sonra izle · Daha sonra hatırlat · Daha önce gönderilenleri göster · Daha az veri kullan
+
+**Where the failure comes from, because it says where to look for it.** Measured
+2026-09-04, and the control is what makes it readable. Given the English
 strings, two independent generations both wrote `Sonra izle`, `Sonra oku`,
-`Sonra hatırlat` and `şimdi al, sonra öde`. Given the same tasks described in
-Turkish, with no English in front of it, the same model wrote **`Daha Sonra
-İzle`**. Its Turkish is not the problem; the mapping is. And the trigger is the
-morphology rather than the meaning — where English spends a separate word on the
-comparison, `older posts` and `see more`, `daha` survives every time:
-`Daha eski gönderileri yükle`, `Daha fazlasını gör`.
+`Sonra hatırlat`. Given the same tasks described in Turkish, with no English in
+front of it, the same model wrote **`Daha Sonra İzle`**. Its Turkish is not the
+problem; the mapping is. And the trigger is the morphology and not the meaning —
+where English spends a separate word on the comparison, `older posts` and `see
+more`, `daha` survives every time: `Daha eski gönderileri yükle`, `Daha fazlasını
+gör`.
 
-> AI: Sonra izle · Sonra oku · Sonra hatırlat
-> İnsan: Daha sonra izle · Daha sonra oku · Daha sonra hatırlat
+So the place to look is any Turkish written with an English string in view: an
+interface, a spec, a translated heading. Prose composed in Turkish rarely does
+it.
 
-**Where it stops, and the limit is most of the uses.** Bare `sonra` is correct
-and ordinary as a postposition — *işlem bittikten sonra* — and as a sequencer
-inside running prose, where the sentence before it supplies what comes *after*
-what. `layer-2-sentence.md` §8 has *"Konuşuruz bunu sonra."* as a worked example
-and it is right: that sentence has a conversation in front of it. The failure
-needs an isolated string, where nothing does.
+**Where it stops, and the limit is most of the uses.** Every one of those bare
+stems is a correct and ordinary Turkish word, and none of them is being banned.
+`sonra` as a postposition — *işlem bittikten sonra* — and as a sequencer inside
+running prose, where the sentence before it supplies what comes *after* what;
+`önce` the same; `az` wherever the quantity is small rather than smaller.
+`layer-2-sentence.md` §8 has *"Konuşuruz bunu sonra."* as a worked example and it
+is right, because that sentence has a conversation in front of it.
+
+The test is one question: **is a comparison being made?** If something is later
+*than* something, less *than* something, `daha` is not optional. If nothing is
+being compared, the bare word was never the wrong one. Context answers this in
+prose and cannot answer it in a string standing on its own, which is why the
+failure lives there.
 
 **This one is deliberately not in `evals/signals/calques.txt`.** Every other
 entry in this section is a fixed phrase a substring match can find. This is a
@@ -308,3 +327,52 @@ sides. Nothing in it has been shown to detect anything in current model output;
 it is kept as a guard against phrases that would be wrong if they appeared, not
 as evidence that they do. The comparative entry is the exception and the first
 thing in this section measured actually firing.
+
+---
+
+## 9. Collocation — the verb the noun actually takes
+
+Turkish pairs particular verbs with particular nouns, and the pairing is not
+derivable from the meanings. `sarımsak ezilir`, `hamur açılır`, `çay demlenir`,
+`karar verilir`, `göz atılır`. Swap in a verb that means the same thing and the
+sentence stays grammatical and stops being Turkish.
+
+This is the failure that survives every other layer. Structure, syntax and
+orthography can all be right while the sentence describes something nobody does,
+and it is the one a reader trips on first, because it is the one they hear as
+somebody who does not cook, or does not use the thing being described.
+
+> AI: Sarımsaklı yoğurdu ezdim.
+> İnsan: Yoğurda sarımsak ezdim.
+
+> AI: Tabağa koyduğumda rengi doğruydu.
+> İnsan: Tabağa koyduğumda rengi tam olmuştu.
+
+> AI: Mantılar suya girdiğinde yüzeye çıkmalarını izledim.
+> İnsan: Mantıları suya attığımda yüzeye çıkmalarını izledim.
+
+Three shapes, and they are worth telling apart because the repair differs.
+The first is a **wrong pairing**: crushing is what happens to the garlic, not to
+the yoghurt. The second is a **calque of an English pairing** — *the colour was
+right* — where Turkish reaches for a different predicate entirely. The third is
+**agency**: dumplings do not enter water, somebody puts them in, and the middle
+voice quietly removes the cook from her own kitchen.
+
+**How to find them, since no count will.** Ask, sentence by sentence, whether
+somebody who has actually done this would describe it this way. That question
+needs the world and not the grammar, which is why it belongs to the reading half
+of `evals/rubric.md` and not to `count.sh`.
+
+**Where it stops.** Do not rewrite a pairing that is merely unusual — Turkish
+tolerates a fresh combination, and hunting for stock phrasing is how prose gets
+flattened into cliché. The target is the pairing that is *wrong*, the one that
+makes a reader stop and reconstruct what was meant. And an established term is
+never a collocation error, however odd it looks from outside: *dava açmak*,
+*hesap kesmek*, *sözleşme feshetmek* are what they are.
+
+**What this rests on.** One paragraph, one reader, three findings — thinner than
+most of this file. It is here on strength of a different kind: every one of the
+three is checkable by anybody who has crushed garlic, so the evidence does not
+depend on trusting the reader's ear. The paragraph had been through nine
+evaluation rounds, both skills' outputs and every counting pass with none of
+them noticed.

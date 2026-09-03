@@ -50,6 +50,7 @@ layer-3-surface.md|3. Apostrophe (`kesme işareti`)
 layer-3-surface.md|4. `da/de` and `ki`
 layer-3-surface.md|7. Circumflex
 layer-3-surface.md|8. Calqued idioms and empty intensifiers
+layer-3-surface.md|9. Collocation — the verb the noun actually takes
 EOF
 )
 

@@ -81,6 +81,37 @@ enforces:
    reads more human" test can be won by lying, and one file in the corpus has
    now lost five times to exactly that.
 
+## How a rule is written: the principle, not the instance
+
+**Every entry in `skills/turkish-humanify/references/` is a generic explanation
+of a mechanism, followed by right and wrong pairs that pin it down, followed by
+where it stops.** Never a lookup entry. `layer-2-sentence.md` has said this about
+itself since it was written — *"Each entry states the contrast, shows worked
+pairs, and — this part matters as much as the rule — says where the rule stops"* —
+and it is a repository-wide convention that was never written down anywhere a
+contributor would find it.
+
+The test is one question: **does this entry help with a case that is not in its
+examples?** If it only fires on the exact string that prompted it, it is a lookup
+table with prose around it, and it will be wrong the first time the same
+mechanism shows up wearing different words.
+
+Both failure modes were committed on 2026-09-04 and both were caught by a
+reviewer rather than by any check here:
+
+**Writing the instance instead of the class.** The comparative entry in
+`layer-3-surface.md` §8 went in titled *"`daha sonra` becoming `sonra`"* — one
+word pair, and the section named after it. The mechanism is that English marks
+comparison inside the word and Turkish marks it with a separate `daha`, so
+dropping it lands on whatever the bare stem means on its own. That covers `önce`,
+`az` and `ileri` too, and the first version covered none of them.
+
+**Recording a finding as an anecdote and extracting nothing.** *"Sarımsaklı
+yoğurdu ezdim"* — you crush the garlic, not the yoghurt — was filed as a curiosity
+about what the counters had missed. It is an instance of a category the skill had
+no section for at all, and it is now `layer-3-surface.md` §9. A finding that goes
+into `RESULTS.md` and nowhere else has been observed, not learned.
+
 ## The third rule: not countable is not the same as not measurable
 
 **Deterministic tools bound correctness. Reading passes bound quality. Both are

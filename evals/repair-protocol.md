@@ -290,9 +290,24 @@ The worked instance is in `evals/fixtures/devrik.md` — three readers, one open
 question, a defect and its mechanism named unprompted, and the same shape cleared
 in the register where it belongs.
 
-**What this does not buy.** The error rates in §3 still apply, because they were
-measured on readers. A single reader on a single text is one observation, and the
-rate bar in §4 does not relax for prose.
+**The error rates in §3 do not transfer to this, and saying they did was the same
+mistake in a third place.** They were measured on the tally's question — *which
+of these two whole texts reads more human* — which is a global preference with
+nothing to check it against. This asks something else: *quote the sentence that
+reads wrong.* A quoted finding can be read and verified by whoever receives it,
+which is why the fidelity check, asking the same shape of question, is the
+instrument this repository calls objective while calling the tally its noisiest.
+
+Carrying a number measured on one question over to a different one is exactly the
+error `CONTRIBUTING.md`'s second rule names. An old measurement is not owed
+deference because it was expensive.
+
+**What it does still owe.** Evidence, per finding, that somebody else can check —
+the quotation, and a reason that does not reduce to the reader's ear. Reader B's
+strongest finding in the worked instance is that you crush the garlic and not the
+yoghurt, and anybody who has cooked can confirm it without trusting the reader at
+all. A finding that cannot be checked that way is a preference, and preferences
+go back under §3.
 
 ## 5. The countable target is the evidence, when there is one
 

@@ -2,6 +2,36 @@
 
 ## Unreleased
 
+### Rules are mechanisms, and two entries were not
+
+- **`CONTRIBUTING.md` gains the convention `layer-2-sentence.md` has stated about
+  itself since it was written**, in a place a contributor would find it: an entry
+  is the generic mechanism, then right/wrong pairs, then where it stops. Never a
+  lookup entry. The test is whether it helps with a case that is not in its
+  examples.
+- **`layer-3-surface.md` §8's comparative entry was the instance, not the class.**
+  It went in titled *"`daha sonra` becoming `sonra`"* — one word pair. Rewritten
+  as the mechanism: English marks comparison inside the word, Turkish with a
+  separate `daha`, so dropping it lands on whatever the bare stem means alone.
+  That reaches `önce`, `az` and `ileri`, none of which the first version did, and
+  it now carries the one test that decides every case — **is a comparison being
+  made?**
+- **`layer-3-surface.md` §9 is new: collocation, the verb the noun actually
+  takes.** *"Sarımsaklı yoğurdu ezdim"* had been filed as an anecdote about what
+  the counters missed. It is an instance of a category with no coverage at all,
+  and the three findings from that one paragraph turn out to be three different
+  shapes with three different repairs — a wrong pairing, a calqued pairing, and
+  an agency error that removes the cook from her own kitchen. Thin evidence, one
+  reader, and it says so; what carries it is that every instance is checkable by
+  anybody who has crushed garlic.
+- **The judge error rate was being quoted as a caveat on the wrong question.** It
+  was measured on "which of these two whole texts reads more human", a global
+  preference with nothing to check it against. A reading pass asks for a quoted
+  sentence, which the recipient can verify — which is why the fidelity check,
+  asking that shape of question, is the instrument this repository calls
+  objective. `repair-protocol.md` §4b now says what the pass does owe instead:
+  evidence per finding that does not reduce to the reader's ear.
+
 ### Not countable is not the same as not measurable
 
 - **A defect was declared unactionable because `grep` could not find it, and a
