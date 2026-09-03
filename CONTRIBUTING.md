@@ -18,6 +18,40 @@ If you are not set up to run an evaluation round, open an issue describing what
 you think is wrong and quote the Turkish. That is genuinely useful and costs you
 nothing.
 
+## The second rule, learned the expensive way
+
+**A count tells you something moved. It does not tell you whether moving it was
+right.**
+
+Measuring is not enough, and this is not a refinement of the rule above — it is a
+separate failure that the rule above does not catch. Round nine measured `bold`
+source-to-output across eight repair runs, found it fell in four, and wrote a
+rule into `layer-1-structure.md` §6 against a threshold **set before the data
+existed.** The rule was wrong. Reading *which* spans had gone reversed it: what
+got deleted was a word bolded in both entries of a two-entry list, which
+distinguishes nothing, while the finding the document existed to state survived
+every single run. Three of the four "losses" were the rule working correctly. A
+reviewer found it in one sentence; the instrument never would have.
+
+**The tell is a signal that can legitimately move either way.** Bold is the clear
+case — too much of it is a defect, too little is a defect, and leaving it alone
+is often right — but `bullets`, `rows`, `heads`, sentence length, hedge counts and
+every per-100 rate in `count.sh` have the same property. For all of them the
+direction of a change is not its correctness.
+
+So, before an aggregate becomes a rule:
+
+- **List the individual instances and judge each one.** If most of the movement
+  was the skill behaving correctly, there is no finding, however clean the rate
+  looked.
+- **State the finding per instance until per-instance evidence exists.** "Four of
+  eight runs deleted bold" is not a finding. "Four of eight deleted the span
+  carrying the document's claim" would be one, and it is not what happened.
+- **Pre-registration does not cover this.** It protects against reading noise as
+  signal. It does not protect against measuring the wrong quantity, and round
+  nine is the proof: the bar was written first and cleared honestly, and the
+  conclusion was still false.
+
 ## Running an evaluation round
 
 `evals/repair-protocol.md` is the procedure, verbatim: the generation wrapper,

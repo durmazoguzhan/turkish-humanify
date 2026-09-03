@@ -218,6 +218,15 @@ punctuation rate, a bullet count — is tested by measuring that target, which
 needs generations and **zero judges**, and which resolves effects far smaller
 than three files.
 
+**And a countable target has a failure mode of its own, which is not noise.** A
+count reports that something moved; whether moving it was right is a separate
+question and the number does not answer it. Round nine cleared a pre-registered
+bar on `bold` and the conclusion was still false, because three of the four
+movements it counted were the rule under test behaving correctly. Any signal that
+can legitimately move in either direction — bold, bullets, rows, headings,
+sentence length, hedge counts — needs the individual instances read before the
+rate means anything. `CONTRIBUTING.md` carries the episode.
+
 So each round states, before running:
 
 - the **countable prediction**, with the published Turkish figure it is aiming

@@ -28,6 +28,18 @@
   of the scan. `Tüm repo taraması:` → `Repoyu baştan sona taradım:`, in two
   independent texts across two arms.
 
+### Contributing — a second rule
+
+- **"A count tells you something moved, not whether moving it was right."**
+  Written into `CONTRIBUTING.md` as a rule of its own rather than a footnote to
+  round nine, and into `evals/repair-protocol.md` §5 where countable targets are
+  chosen. Measuring is not enough: round nine cleared a threshold set before the
+  data existed and its conclusion was still false, because three of the four
+  movements it counted were the rule under test behaving correctly. Any signal
+  that can legitimately move either way — bold, bullets, rows, headings, sentence
+  length, hedge counts — needs its individual instances read before the rate
+  means anything.
+
 ### Instrument
 
 - **Two counting bugs, both the shape of the eight before them: the prose view
