@@ -134,6 +134,42 @@ about register, about length, and about whether the tail is an afterthought or
 the sentence's whole content. A count reports the shape and never the judgement,
 which is `CONTRIBUTING.md`'s second rule arriving from a third direction.
 
+**And then a third reading arrived, which is the actual finding.** Asked again,
+the same reader preferred a version with `ve` in it, and the sentence now has
+four defensible forms — one of which is the one this repository's own rules
+prescribe, and it is arguably the worst of them:
+
+| | |
+|---|---|
+| **A** — in the corpus | Tereyağını kızdırdım, pul biberi son anda attım, yanmasın diye. |
+| **B** — canonical placement | Tereyağını kızdırdım, pul biberi yanmasın diye son anda attım. |
+| **C** — the reader's second | Tereyağını kızdırdım **ve** pul biberi yanmasın diye son anda attım. |
+| **D** — what `layer-2` §2 asks for | Tereyağını kızdır**ıp** pul biberi yanmasın diye son anda attım. |
+
+Read them inside the paragraph they belong to, because that is where the answer
+is: *"Sarımsaklı yoğurdu ezdim. […] Tabağa koyduğumda rengi doğruydu."* The
+passage is a run of closed, completed steps.
+
+**B is the tightest** — the comma keeps that clipped step-by-step beat and the
+sentence closes on its verb. **C is slower and more written**, and §2's own limit
+covers it exactly: *"`ve` is right when the two clauses are genuinely parallel and
+you want the beat between them"*. Two pan actions are genuinely parallel. **A**
+reads as speech and leaves the paragraph's last clause dangling. **D is what the
+rule prescribes and is probably the weakest here**: `kızdırıp attım` fuses two
+separate steps into one motion, and the passage is about the steps.
+
+So a rule applied by the book would make this sentence worse, and the thing that
+stops it is §2's "where it stops" clause. Which is worth noticing, because that
+clause has **no worked example**: the `-ip` same-subject limit has one (*Ben
+geldim ve o gitti*), the three-converb warning has none, and the "`ve` is
+sometimes right" limit has none either. This is one.
+
+**It cannot go into `layer-2-sentence.md`, and that is not a technicality.**
+`blog-6` is in the evaluation corpus, and round eight established that a worked
+example drawn from the corpus it is measured on stops being a test — the
+generation after that fix returned the example's title verbatim. So the pair
+lives here, where it is data, and not there, where it would become an answer key.
+
 **Two things worth keeping from that pair.** It is the first concrete repair
 anybody has written for Class C — *move the tail into the preverbal zone*, not
 delete it — and it exposes a gap wider than Class C: **no section of

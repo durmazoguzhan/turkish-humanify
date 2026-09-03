@@ -26,6 +26,15 @@
 - The A/B pair is recorded as the first concrete repair for the class: **move the
   tail into the preverbal zone, not delete it.** No rule is written from it; one
   reader's judgement on one sentence is a lead.
+- **Then a third reading arrived and became the actual finding.** The sentence now
+  has four defensible forms, and the one `layer-2-sentence.md` §2 prescribes —
+  the `-ip` converb — is arguably the worst of them here: it fuses two separate
+  kitchen steps into one motion, in a passage that is about the steps. A rule
+  applied by the book would degrade the sentence, and what stops it is §2's
+  "where it stops" clause. That clause has **no worked example**; this is one, and
+  it cannot be used as one, because `blog-6` is in the evaluation corpus and round
+  eight established that an example drawn from the corpus it is measured on stops
+  being a test. It stays in the fixture, where it is data.
 
 ### Round nine — issue #9: both changes rejected, and one fidelity site found
 
