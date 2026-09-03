@@ -73,6 +73,40 @@ evidence — a microcopy corpus this repository does not have, and two checks
 covers. Writing it now on the strength of one report would be the thing
 `CONTRIBUTING.md` exists to prevent.
 
+### Issue #8 read sceptically, because of what it is
+
+#8 is a pasted transcript of the tool assessing its own usefulness on a round of
+UI strings. That provenance matters: it is not a reader reporting bad Turkish, it
+is the model reporting on itself, and most of what it asserts is about a private
+repository nobody here can check. Two of its claims are checkable in this one,
+and both hold.
+
+**"Layer 1 tamamen ölü" is very nearly literally true.** The layer has eight
+sections and seven of them name a unit a three-word chip label does not have:
+the opening move, the paragraph skeleton, the closing, the title, the bullet
+list, the subheading, and "the writer must be present in the middle". Only §6,
+bold and emoji, has any referent at all. This is checkable by reading the file
+rather than by trusting the report.
+
+**The reading cost is real and it is not specific to microcopy.** The repair path
+is `SKILL.md` plus `rewrite-mode.md`, `registers.md`, `voices.md` and the three
+layers — **1,876 lines**, and `SKILL.md` asks for the layer files to be read at
+the moment each layer runs rather than from memory. That is the same 1,876 lines
+whether the input is a journal article or fifteen button labels. The skill has no
+cheap path, and nothing about that observation depends on believing #8.
+
+**Its own best observation contradicts its recommendation.** #8 proposes adding a
+microcopy register, and then says the round's most valuable fix was subject
+clarity across three adjacent chips — *"özne netliği Türkçe-mimarisi problemi
+değil, UX-copy problemi"*. If the defect is not a Turkish-architecture problem,
+a Turkish-architecture skill acquiring a register for it does not address it; it
+just gives the skill a place to hold a rule it has no standing to write.
+`SKILL.md` already ends by saying what this skill is not.
+
+So the atomic row stays recorded and unbuilt, and the specific proposal in #8 is
+**declined on the strength of #8's own evidence** rather than deferred for want
+of a corpus.
+
 **Deliberately not built: a fifth register.** "Reference" and "microcopy" both
 read like registers and are not. Adding them would give every future rule two
 plausible homes and would put the tone axis and the shape axis in the same

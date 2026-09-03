@@ -59,6 +59,12 @@ the judge prompt, the randomisation, the fidelity check. Follow it rather than
 improvising, because rounds are only comparable to each other if the instrument
 did not move.
 
+**A round is seven files generated twice, not twenty-one generated once.** That
+is smaller *and* stronger: the bar a finding has to clear is two appearances in
+two generations of the same input, and twenty-one-by-one cannot produce one. The
+standing sample, the reserve, and the confirmation run that guards against
+fitting rules to seven files are all in §0 of that file.
+
 Three things that this project learned the hard way and that the protocol now
 enforces:
 

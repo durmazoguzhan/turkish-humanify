@@ -28,6 +28,46 @@
   of the scan. `Tüm repo taraması:` → `Repoyu baştan sona taradım:`, in two
   independent texts across two arms.
 
+### A round is seven files generated twice, not twenty-one generated once
+
+- **`evals/repair-protocol.md` §0 defines a standing sample.** This is smaller
+  *and* stronger, which is why it is not filed as an economy: round eight's bar
+  is two appearances in *n* generations of the **same** input, and twenty-one
+  files generated once cannot satisfy it at all — every result such a round
+  produces is a lead by construction. Fourteen generations is fewer than
+  twenty-one and all of them are bar-eligible.
+- Seven files covering four registers and three document shapes; the rest of the
+  corpus is reserve. **A change that clears the sample gets one confirmation
+  generation on three reserve files before it ships**, because seven files is few
+  enough to fit rules to.
+- The blind tally is the one thing the default round can no longer do — at seven
+  files a sign test needs 7–0 — and `rubric.md` §5 already called it the wrong
+  instrument for most changes.
+
+### Issue #8 — declined, on its own evidence
+
+- **No microcopy register.** #8 is a transcript of the tool assessing itself, so
+  it was read sceptically; its two checkable claims hold and its recommendation
+  does not follow from them. Layer 1 really is inert for atomic strings — seven
+  of its eight sections name a unit a three-word chip does not have — and the
+  reading cost is real: the repair path is **1,876 lines** whether the input is a
+  journal article or fifteen button labels. But #8's own best observation is that
+  the defect it found was subject clarity, *"Türkçe-mimarisi problemi değil"*, and
+  a Turkish-architecture skill acquiring a register for a non-Turkish problem
+  gains only somewhere to put a rule it has no standing to write.
+- Written up in `docs/design/2026-09-04-shape-axis.md`, which keeps the `atomic`
+  row recorded and unbuilt.
+
+### Layer 2 — a counter was attempted and is not being built
+
+- The narrowest greppable surface of the shape issue #9 actually objects to — a
+  sentence ending in a verbless purpose tail — returns **0 hits in 206 sentences
+  of published Turkish**, which separates rare from absent not at all. Most of
+  what it finds sits in list items the prose view already drops, and it cannot
+  tell *"yanmasın diye."*, which is correct, from the defect. Numbers in
+  `evals/fixtures/devrik.md` so nobody spends the effort twice; resolving it
+  needs a parse, not a better regex.
+
 ### Contributing — a second rule
 
 - **"A count tells you something moved, not whether moving it was right."**
@@ -57,6 +97,18 @@
 - `evals/fixtures/known.md` gained a code block and a table; `evals/test-count.sh`
   carries the hand-computed expectations. The old counter reports `words=64` on
   that fixture against a true 38.
+
+### Documentation that had gone stale
+
+- `README.md` still claimed **"zero added claims across twenty-one files"**, a
+  boast `references/rewrite-mode.md` deleted two rounds ago on the grounds that a
+  rule reporting its own perfect compliance does not get checked. Replaced with
+  the actual record: four findings in round seven, one in round eight.
+- `README.md` also conceded document-structure preservation to `turkce-humanizer`
+  outright; round nine measured this skill at ten of eleven, so the concession is
+  now stated at its measured size — their guarantee against our measurement.
+- Corpus count 21 → 26, counting bugs 8 → 10, both in `README.md` and
+  `evals/rubric.md`.
 
 ### Corpus
 

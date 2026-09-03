@@ -11,6 +11,53 @@ Anything that changes here is a change to the instrument, and gets recorded in
 
 ---
 
+## 0. What a round runs on
+
+**Seven files, generated twice each. Not twenty-one generated once.**
+
+This changed on 2026-09-04 and it is a correction, not an economy. Round eight
+established the bar a finding has to clear: a site counts when it appears in
+**two of *n* generations of the same input**, because two runs under
+byte-identical conditions were observed to disagree, one clean and one not. A
+round of twenty-one files generated once **cannot satisfy that bar at all** — it
+has no second generation of anything, so every result it produces is a lead by
+construction. Twenty-one generations were being spent to buy answers the bar
+then rejected.
+
+Fourteen generations is fewer than twenty-one and every one of them is
+bar-eligible. That is the whole argument.
+
+### The standing sample
+
+| file | why it is in |
+|---|---|
+| `blog-1` | has lost five times to the same three invented sentences; the standing fabrication control |
+| `technical-4` | fidelity rule 4's site, the most-generated file in the repository |
+| `corporate-4` | list-heavy marketing, the register whose list rule was measured off |
+| `academic-3` | hedges, `-mAktAdIr`, the evidential band |
+| `reference-2` | tables and code fences, the lowest `prose_pct` in the corpus |
+| `reference-3` | bullets and label bold |
+| `reference-5` | the five-line fragment shape from issue #9 |
+
+Four registers and three document shapes. The rest of the corpus is **reserve**,
+not retired.
+
+### The overfitting guard, because seven files is few
+
+Running the same seven every round fits rules to those seven. So: **a change that
+clears the sample gets one confirmation generation on three reserve files before
+it ships**, chosen to be unlike the sample files it was tested on. Three
+generations is cheap and it is the difference between "works" and "works here".
+
+### When the full corpus still runs
+
+A **tally** round — the blind pairwise ranking — needs the whole corpus and says
+so. At seven files a sign test needs 7–0 to reach p=0.016 and 6–1 is p=0.125, so
+the sample cannot rank anything; the measured noise floor alone moves about one
+file in seven. §5 already says the tally is the wrong instrument for most
+changes. Now it is also the only thing the default round cannot do, which is the
+right way round.
+
 ## 1. Generation
 
 One clean-context subagent per input file. No shared context between them, and

@@ -117,6 +117,20 @@ density (the branching proxy), inversion rate, focus placement, and the aorist /
 number that is wrong a third of the time is worse than no number, because it gets
 quoted. Those live in part two.
 
+**Inversion was attempted anyway and the attempt is written down.** Issue #9
+reports too much of it, so the narrowest greppable surface — a sentence ending in
+a verbless purpose tail — was measured before any counter was written. It returns
+0 hits in 206 sentences of published Turkish, which distinguishes rare from
+absent not at all; most of what it does find sits in list items the prose view
+already drops; and it cannot tell *"yanmasın diye."*, which is correct, from the
+shape #9 objects to. `evals/fixtures/devrik.md` carries the numbers and the
+hand-labelled sentences, split into three classes, so that whoever tries again
+starts from data rather than from an intuition.
+
+**One thing this half now has that the counted half does not**, and it applies to
+both: a count reports that something moved, not whether moving it was right.
+`CONTRIBUTING.md` carries the episode that established it.
+
 ## Part two — reading questions
 
 Answered by a person, or by a judge that has not been told what produced the text.
@@ -209,9 +223,18 @@ habit this section exists to enforce.
    `layer-3-surface.md` called range dashes correct, so `em_dash` was built to
    exclude them. The rule was wrong against TDK and against every one of the
    nine texts in `evals/human-reference/`, and the instrument had been
-   configured to agree with it. This is the worst of the eight: the other seven
+   configured to agree with it. This is the worst of the ten: the other nine
    were mistakes in the counter, while this one was the counter faithfully
    implementing a mistake in the skill.
+9. **The prose view read fenced code as Turkish.** `SET user:1042 "{...}" EX 300`
+   contributed five words and one sentence to `technical-1`; 38 of
+   `technical-5`'s word total were Redis commands, an eleven percent error in
+   every per-100 figure for that file. Three files change, all of them the
+   technical inputs that carry code blocks.
+10. **The prose view read table rows as Turkish**, and had done since the view
+   existed. It never fired because the corpus contained no tables at all — which
+   is itself the coverage gap issue #9 turned out to be about, so the bug and the
+   corpus that would have caught it were fixed in the same change.
 
 Bugs 5 and 6 share a root — signals written as if every paragraph were one line
 — and neither moves a conclusion. The `len_sd` verdict below survives the fix

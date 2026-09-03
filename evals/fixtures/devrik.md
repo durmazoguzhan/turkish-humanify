@@ -84,6 +84,44 @@ Plainly verb-final. A counter that fires on any of these is over-reporting.
 > Cache dolunca istekler yavaşladı.
 > Her gece verileri tarayıp raporlayan bir sistem kurduk.
 
+## A counter was attempted for Class C and is not being built
+
+Recorded so nobody spends the effort twice. Class C's narrowest surface — a
+sentence **ending** in a verbless purpose or manner tail, `-mAk için.`,
+`üzere.`, `diye.`, `kaydıyla.` — is trivially greppable, so it was measured
+before it was written:
+
+| corpus | hits / sentences |
+|---|---|
+| published Turkish, `human-reference/` | **0 / 206** |
+| unaided model Turkish, `input/` | 3 / 700 |
+| this skill's repair output | 2 / 98 |
+| `turkce-humanizer` output | 5 / 2157 |
+
+Three reasons it stops there, and the third is the one that settles it.
+
+**The base rate is too low to be a rate.** Zero observations in 206 published
+sentences does not establish that the form is absent — the upper bound on a
+0/206 rate is around 1.8 percent — it establishes that this corpus cannot tell
+rare from absent. There is no band to compare an output against, which is the
+whole method `registers.md` uses for `-mAktAdIr` and the semicolon.
+
+**Most hits are not prose.** Of the five hits in the two model corpora, three sit
+inside list items, which `count.sh`'s prose view already drops. The signal was
+mostly rediscovering bullets.
+
+**It cannot separate the defect from correct Turkish.** *"Tereyağını kızdırdım,
+pul biberi son anda attım, yanmasın diye."* is in the unaided corpus and is
+exactly right — a natural spoken tail. *"…o da push aktarımı tuttuktan sonra
+siparişi işaretlemek için."* is the shape issue #9 objects to. The regex sees one
+thing. And a signal that can legitimately move either way is the trap
+`CONTRIBUTING.md` now names as its second rule: the count would report direction,
+never correctness.
+
+So Class C stays labelled and unmeasured. What would actually resolve it is a
+parse — a real POS tagger giving verb position — not a better regex, and that is
+a different-sized undertaking than this file was preparing for.
+
 ## What would count as a working counter
 
 Not a percentage. The thing `layer-2-sentence.md` §8 and `registers.md` actually
