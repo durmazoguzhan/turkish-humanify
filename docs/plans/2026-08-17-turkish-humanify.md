@@ -893,11 +893,11 @@ git commit -m "feat: repair-mode diagnostics and complete router"
 
 ### Task 11: Full corpus run and three-way comparison
 
-Implements spec §11.3. This is where the claim "better than turkce-humanizer" is either earned or dropped.
+Implements spec §11.3. This is where the claim "better than competitor" is either earned or dropped.
 
 **Files:**
 - Create: `evals/output/v5/*.md` (twelve files)
-- Create: `evals/output/turkce-humanizer/*.md` (twelve files)
+- Create: `evals/output/competitor/*.md` (twelve files)
 - Create: `evals/RESULTS.md`
 
 **Interfaces:**
@@ -908,20 +908,20 @@ Implements spec §11.3. This is where the claim "better than turkce-humanizer" i
 
 ```bash
 mkdir -p .scratch
-git clone https://github.com/bushrabeg/turkce-humanizer .scratch/turkce-humanizer
+git clone <the competing skill's repository> .scratch/competitor
 ```
 
 It is a comparison target, not a dependency — it must not be committed into this repository.
 
 - [ ] **Step 2: Run both skills over all twelve inputs**
 
-Twenty-four clean-context subagents. Ours writes to `evals/output/v5/`, `turkce-humanizer` to `evals/output/turkce-humanizer/`. Each subagent is pointed at one skill directory and one input file and told nothing else.
+Twenty-four clean-context subagents. Ours writes to `evals/output/v5/`, `competitor` to `evals/output/competitor/`. Each subagent is pointed at one skill directory and one input file and told nothing else.
 
 - [ ] **Step 3: Score all three columns**
 
 ```bash
 ./evals/count.sh evals/input/*.md                   > .scratch/c-base.tsv
-./evals/count.sh evals/output/turkce-humanizer/*.md > .scratch/c-th.tsv
+./evals/count.sh evals/output/competitor/*.md > .scratch/c-th.tsv
 ./evals/count.sh evals/output/v5/*.md               > .scratch/c-ours.tsv
 ```
 
@@ -935,7 +935,7 @@ For each of the twelve pairs, read input and `v5` output side by side and list e
 
 - [ ] **Step 6: Write RESULTS.md**
 
-Three signal tables, the blind ranking tally with cited sentences, the fidelity check, and an honest verdict. If we did not beat `turkce-humanizer` on a given register, say so and name what to fix. A results file that only records wins is not evidence.
+Three signal tables, the blind ranking tally with cited sentences, the fidelity check, and an honest verdict. If we did not beat `competitor` on a given register, say so and name what to fix. A results file that only records wins is not evidence.
 
 - [ ] **Step 7: Fix what the rubric exposed, then re-run**
 
@@ -981,7 +981,7 @@ npx skills add durmazoguzhan/turkish-humanify --skill turkish-humanify
 Copy skills/turkish-humanify/ into ~/.claude/skills/
 ```
 
-Every quality claim must cite `evals/RESULTS.md`. Do not write "better than turkce-humanizer" unless the results file says so for the register in question. Include a short section on adapting the repo for another language — the layer split is the reusable part, and that reuse was the reason the scaffolding is in English.
+Every quality claim must cite `evals/RESULTS.md`. Do not write "better than competitor" unless the results file says so for the register in question. Include a short section on adapting the repo for another language — the layer split is the reusable part, and that reuse was the reason the scaffolding is in English.
 
 - [ ] **Step 2: Write CHANGELOG.md**
 

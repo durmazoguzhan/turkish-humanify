@@ -1,4 +1,4 @@
-# Türkçe Humanizer — corporate-3.md
+# Competitor output — corporate-3.md
 
 **Register teşhisi:** Akademik-kurumsal (kurum içi politika duyurusu / şirket e-postası).
 Metin bir e-posta olduğu için tonu analitik registerin sınırına yaklaşıyor, ama insanların üzerine iş kurup uygulayacağı bir politika metni olması nedeniyle muhafazakâr tarafta kaldım. Faz 2'de yalnızca **Sinyal 15 (cümle uzunluğu varyansı)** ve **Sinyal 18 (öz-düzeltme)** devrede. Konuşma bağlaçları, retorik soru, duyusal detay uygulanmadı.

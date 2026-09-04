@@ -78,7 +78,7 @@ question, and because it matches how the skill is actually invoked.
 
 ## 2. The competitor arm is not regenerated
 
-`evals/output/turkce-humanizer-text/` is on disk and stays byte-identical
+`evals/output/competitor-text/` is on disk and stays byte-identical
 between rounds. Regenerating both arms in the same round is what made round two
 uninterpretable. One variable moves per round, and it is ours.
 
@@ -87,6 +87,11 @@ not repeated per round: only the section under *"Onarılmış Versiyon"* is
 compared, because that skill's contract is report-then-text; and it was told to
 pick the register itself rather than ask, because a batch run has no user. Both
 are recorded at the top of `RESULTS.md`.
+
+**The directory was renamed once**, on 2026-09-04, from the other skill's name to
+`competitor`. Only the path changed; no file inside `competitor-text/` was
+touched, so the byte-identical guarantee above still covers every round that
+cites it. The comparison arm is described rather than named from here on.
 
 ## 3. Blind pairwise judging
 

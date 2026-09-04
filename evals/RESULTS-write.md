@@ -152,7 +152,7 @@ defect and should be fixed. The second is a defect in the measurement, not in
 the skill, and fixing it would mean teaching the skill to lie.
 
 **What this does not cover:** brief adherence was deliberately not scored, no
-competing skill was compared against because `turkce-humanizer` has no write
+competing skill was compared against because `competitor` has no write
 mode, and every fidelity claim in this repository remains a repair-mode claim.
 
 ---
@@ -269,10 +269,10 @@ evidential-form table was hand-counted from the text rather than taken from
 `count.sh`, and re-checking it against the corrected regex leaves it standing
 (`academic-5`: 4 in the source, 4 after the fix). Re-measuring the whole
 corpus, **52 of 183 files change**: 36 of them academic register, and the other
-16 all inside `evals/output/turkce-humanizer/`, where the hits turn out to be the
+16 all inside `evals/output/competitor/`, where the hits turn out to be the
 competitor's own commentary *about* the suffix (`"Kritik bir rol oynamaktadır"
 ailesinden hiçbiri`) rather than its Turkish output — those comparisons run on
-`turkce-humanizer-text/`, so they do not move.
+`competitor-text/`, so they do not move.
 
 No blind-judgement result moves at all: the 11–1 tally is judge-based, not
 counter-based. What moves is the mechanism table, in both directions at once —

@@ -1,4 +1,4 @@
-# Türkçe Humanizer — Çıktı
+# Competitor output
 
 **Register teşhisi:** Akademik-kurumsal (literatür taraması, giriş bölümü).
 Kullanıcı onayı istenmediği için karar doğrudan uygulandı. Faz 1 tam, Faz 2 kısıtlı: yalnızca **Sinyal 15** (cümle uzunluğu patlamaları), **Sinyal 18** (öz-düzeltme/yeniden ifade) ve ölçülü bir **Sinyal 22** (birinci çoğul). Konuşma bağlaçları (16), retorik soru (17), duyusal detay (19), diyalog izi (21) bu register'da uygulanmadı.

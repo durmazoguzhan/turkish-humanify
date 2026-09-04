@@ -1,4 +1,4 @@
-# Türkçe Humanizer Çıktısı — technical-4
+# Competitor output — technical-4
 
 **Register teşhisi:** Analitik-gazetecilik (teknik açıklama/blog sınırında). Metin ikinci tekil-çoğul emir kipiyle okura seslenen, kod örnekli bir teknik anlatım. Kullanıcı onayı istenmediği için seçimi kendim yaptım: Faz 1 tam uygulandı, Faz 2 kısıtlı uygulandı (Sinyal 15 cümle patlaması, Sinyal 18 hafif yeniden ifade, Sinyal 8 tek bir doğal devrik). Konuşma bağlaçlarının argo ucu ("valla, yani, he") ve retorik soru (Sinyal 17) bu register'da uygulanmadı.
 

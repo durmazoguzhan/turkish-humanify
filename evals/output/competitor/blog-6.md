@@ -1,4 +1,4 @@
-# Türkçe Humanizer — Çıktı
+# Competitor output
 
 **Register teşhisi:** Edebi-yaratıcı (kişisel anlatı / anı-deneme). Kullanıcı doğrulaması istenmeden, metin türü açıkça anlatı olduğu için doğrudan uygulandı. Bu register'da Faz 2'nin tamamı artı duyusal detay (S19) ve zaman kipi çeşitliliği (S20) devrededir; Sinyal 22 (birinci çoğul) bu register'da hariç tutulur.
 

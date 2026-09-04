@@ -1,4 +1,4 @@
-# Türkçe Humanizer Çıktısı — academic-5
+# Competitor output — academic-5
 
 ## 1. Tespit Raporu
 

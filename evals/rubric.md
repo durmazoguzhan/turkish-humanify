@@ -291,7 +291,7 @@ files carry them.) `calque_p` is 0.0 across
 all fifteen texts — the entire eighteen-phrase list scores nothing on either
 side. Discourse particles do not separate the groups. `ve_p` does not either.
 
-The five phenotypes that `turkce-humanizer` hunts — punctuation inflation,
+The five phenotypes that `competitor` hunts — punctuation inflation,
 `-mektedir` inflation, template repetition, the "sadece X değil aynı zamanda Y"
 calque, hollow closings — are, apart from punctuation, largely absent from this
 model's Turkish before any intervention. A skill built to remove them would

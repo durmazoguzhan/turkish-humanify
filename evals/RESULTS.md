@@ -1,10 +1,12 @@
 # Results
 
 Three-way comparison over the twelve-text corpus: raw model Turkish,
-`turkce-humanizer`, and `turkish-humanify`.
+`competitor`, and `turkish-humanify`.
 
 **Date.** 2026-08-17
-**Comparison target.** `github.com/bushrabeg/turkce-humanizer`, cloned at HEAD.
+**Comparison target.** A published Turkish humanising skill, cloned at HEAD and
+referred to throughout as `competitor`. It is not named, because the point of
+this file is the measurement and not the other project.
 
 ---
 
@@ -13,14 +15,14 @@ Three-way comparison over the twelve-text corpus: raw model Turkish,
 Two adjustments were needed, and both are recorded because either one would
 have produced a misleading result.
 
-**1. `turkce-humanizer` emits three sections, not a text.** Its designed output
+**1. `competitor` emits three sections, not a text.** Its designed output
 is a detection report, then the repaired text, then notes. Measuring the whole
 file scored the report: em dashes 10–20 per file, bold spans up to 59, word
 counts double the input. Only the section under "Onarılmış Versiyon" was
 extracted for comparison. This is a difference in output contract, not a defect
 — but comparing a report against a text measures nothing.
 
-**2. `turkce-humanizer` asks the user to confirm the register before
+**2. `competitor` asks the user to confirm the register before
 proceeding.** In a batch run there is no user, so each run was told to make the
 choice itself and continue. This removes an interaction step its design
 intends; noted so the comparison is not read as covering that part of its
@@ -47,7 +49,7 @@ the two skills diverge.
 | academic-2 | 1 → 1 → 1 | 0 → 0 → 0 | 0 → 0 → 0 | 4.5 → 3.4 → 3.9 |
 | academic-3 | 1 → 1 → 1 | 0 → 0 → 0 | 0 → 0 → 0 | 3.4 → **0.5** → 3.5 |
 
-**Structural furniture.** `turkce-humanizer` preserves bold and bullets exactly,
+**Structural furniture.** `competitor` preserves bold and bullets exactly,
 by an explicit design rule: *"Madde listeleri liste olarak kalır. Paragrafa
 çevirme… Belge iskeletine dokunma."* That is a defensible choice — it protects
 document skeletons. But calibration found this furniture to be the clearest
@@ -58,7 +60,7 @@ choice costs it the signal that matters most.
 (`technical-2`: 7.7 → 6.0 → 0.3).
 
 **Academic `-DIr` is a deliberate loss for us.** On `academic-3`,
-`turkce-humanizer` drops `dir_p` to 0.5 while we hold at 3.5. That is our
+`competitor` drops `dir_p` to 0.5 while we hold at 3.5. That is our
 register dosage working as designed: `-DIr` is correct in academic Turkish and
 stripping it makes the paper read like a blog. We are "worse" on that number on
 purpose, and we would make the same choice again.
@@ -72,7 +74,7 @@ which reads as written by a Turkish person and to quote the deciding sentences.
 | | 1st | 2nd | 3rd | mean rank |
 |---|---|---|---|---|
 | `turkish-humanify` | 6 | 6 | 0 | **1.50** |
-| `turkce-humanizer` | 6 | 3 | 3 | 1.75 |
+| `competitor` | 6 | 3 | 3 | 1.75 |
 | raw model output | 0 | 3 | 9 | 2.75 |
 
 **Both skills beat the raw output decisively.** Unaided model Turkish never
@@ -80,7 +82,7 @@ took first place and came last nine times out of twelve. Whatever else this
 corpus shows, it shows that the problem is real and that intervention helps.
 
 **Between the two skills, the ranking is a tie.** Six firsts each. We never
-came last; `turkce-humanizer` came last three times, all in registers where its
+came last; `competitor` came last three times, all in registers where its
 structural preservation left the input's furniture intact. A mean-rank gap of
 0.25 across twelve items is not a result to claim anything from.
 
@@ -95,7 +97,7 @@ present in the output and absent from the source.
 | | files with additions | total additions |
 |---|---|---|
 | `turkish-humanify` | **0 of 12** | **0** |
-| `turkce-humanizer` | 9 of 12 | 23 |
+| `competitor` | 9 of 12 | 23 |
 
 Ours added nothing, anywhere, in any register.
 
@@ -139,10 +141,10 @@ thing this comparison produced.
 **Against raw model output:** both skills are a clear improvement, ours by a
 mean rank of 1.50 against 2.75.
 
-**Against `turkce-humanizer` on reading quality:** a tie. Six firsts each. We
+**Against `competitor` on reading quality:** a tie. Six firsts each. We
 do not claim to beat it here, and the README will not say we do.
 
-**Against `turkce-humanizer` on fidelity:** we do not add anything; it adds 23
+**Against `competitor` on fidelity:** we do not add anything; it adds 23
 claims across 9 of 12 files, including one misstatement of a cited theory. For
 repair work — where the input is somebody's text and the claims in it are
 theirs — this is the difference that matters.
@@ -165,7 +167,7 @@ After the review in `docs/design/2026-08-17-reference-review.md`, the skill
 gained a sprinkling section, a middle-third rule, contrast-point paragraph
 breaks, fidelity-safe voice guidance, and self-correction as a device. The six
 files this skill lost in round one were re-run and re-judged blind against the
-**same** `turkce-humanizer` outputs.
+**same** `competitor` outputs.
 
 | file | round-one | round-two |
 |---|---|---|
@@ -191,7 +193,7 @@ academic dosage row. Boundaries on rules do work.
 ### What did not, and the measured reason
 
 **Self-correction appears zero times in all six of our round-two outputs.**
-`turkce-humanizer` uses it in five of six. The judges named it as the deciding
+`competitor` uses it in five of six. The judges named it as the deciding
 factor three times — *"Ya da değildi, bilmiyorum"*, *"Ya da daha dikkatli
 söyleyelim"*, *"Bilmiyoruz."* The device was added to `voices.md` and the skill
 did not reach for it once.
@@ -526,7 +528,7 @@ settled by the same run.
 
 - The same twenty-one inputs in `evals/input/`.
 - Our arm regenerated with the current post-split skill into `evals/output/v9/`.
-- **The competitor arm is held byte-identical** — `turkce-humanizer-text/` is
+- **The competitor arm is held byte-identical** — `competitor-text/` is
   already on disk and is not regenerated. One variable moves: our skill.
 - Twenty-one blind pairwise judgments, labels stripped, order re-randomised,
   judges given no knowledge that a skill is involved.

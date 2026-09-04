@@ -18,8 +18,8 @@ builds the counter needs labelled data to validate it against, and building the
 labels *after* building the counter is how a counter gets validated against its
 own mistakes. So the labels are here first.
 
-**Where they come from.** The competing skill `turkce-humanizer` reports its own
-work: every file in `evals/output/turkce-humanizer/` names the sentence it
+**Where they come from.** The competing skill reports its own
+work: every file in `evals/output/competitor/` names the sentence it
 inverted, verbatim, in its analysis notes. That is an independent hand
 annotation by a different author for a different purpose, which makes it better
 evidence than anything this repository would produce by labelling its own
@@ -96,7 +96,7 @@ before it was written:
 | published Turkish, `human-reference/` | **0 / 206** |
 | unaided model Turkish, `input/` | 3 / 700 |
 | this skill's repair output | 2 / 98 |
-| `turkce-humanizer` output | 5 / 2157 |
+| `competitor` output | 5 / 2157 |
 
 Three reasons it stops there, and the third is the one that settles it.
 

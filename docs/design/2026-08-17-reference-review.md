@@ -12,7 +12,7 @@ published page otherwise. Turkish sources read for verbatim prose, not summary.
 
 ## 1. The reference skills
 
-### `blader/humanizer` — 35 rules, English
+### An English humanising skill — 35 rules
 
 Closest relative. Four categories (content, language, style, chatbot
 artifacts), every rule with a before/after pair, sourced from Wikipedia's
@@ -204,8 +204,8 @@ Stated plainly, because the review found real gaps and the balance matters.
 - **A grammar of the target language, not a list of tics.** Fourteen places
   Turkish and English structurally diverge — branching direction, the converb
   system, focus position, evidentiality — each with the conditions under which
-  the rule stops applying. `turkce-humanizer` has five surface phenotypes;
-  `humanizer` has thirty-five English-specific rules. Neither reaches the level
+  the rule stops applying. `competitor` has five surface phenotypes;
+  the English humanising skill has thirty-five English-specific rules. Neither reaches the level
   at which English structure survives translation.
 - **A register dosage matrix**, so a rule that is right in a blog post and
   wrong in a contract is not applied to both.

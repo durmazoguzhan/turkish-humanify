@@ -1,4 +1,4 @@
-# Türkçe Humanizer Çıktısı — blog-2.md
+# Competitor output — blog-2.md
 
 **Register teşhisi:** Deneme-blog. (Birinci tekil anlatıcı, okura "siz" hitabı, kişisel deneyimden yola çıkan açılış, gündelik konu.) Bu register'da Faz 2'nin tamamı uygulanır: cümle uzunluğu patlamaları, konuşma bağlaçları, retorik soru, öz-düzeltme.
 

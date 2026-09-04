@@ -1,4 +1,4 @@
-# Türkçe Humanizer Çıktısı — academic-2
+# Competitor output — academic-2
 
 **Register teşhisi:** Akademik-kurumsal (akademik makale özeti / sosyal bilimler metni).
 Kullanıcı onayı beklenmeden karar verildi: Faz 1 tam uygulandı, Faz 2 bu register'ın izin verdiği iki sinyalle sınırlandı — Sinyal 15 (cümle uzunluğu patlaması) ve Sinyal 18 (öz-düzeltme). Konuşma bağlaçları, retorik soru, duyusal detay ve diyalog izi uygulanmadı.
