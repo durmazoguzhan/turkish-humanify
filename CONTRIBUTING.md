@@ -81,6 +81,94 @@ enforces:
    reads more human" test can be won by lying, and one file in the corpus has
    now lost five times to exactly that.
 
+## How a rule is written: the principle, not the instance
+
+**Every entry in `skills/turkish-humanify/references/` is a generic explanation
+of a mechanism, followed by right and wrong pairs that pin it down, followed by
+where it stops.** Never a lookup entry. `layer-2-sentence.md` has said this about
+itself since it was written — *"Each entry states the contrast, shows worked
+pairs, and — this part matters as much as the rule — says where the rule stops"* —
+and it is a repository-wide convention that was never written down anywhere a
+contributor would find it.
+
+**A worked pair changes only the thing the section is about.** If the `İnsan:`
+line also tightens a converb, swaps a synonym and fixes the punctuation, the
+reader cannot tell which of the four changes is the rule, and the example teaches
+over-editing on top of whatever it was for. Repair the one thing; leave the rest
+visibly unrepaired.
+
+**And check the `İnsan:` line before shipping it.** Three worked examples written
+on 2026-09-04 violated rules in this same repository — one used a verb pairing
+`layer-3-surface.md` §9 forbids, one hung a possessive on a file reference, one
+put a subject where §10 says the reader cannot recover it. A reading pass on the
+`İnsan:` side costs one subagent and catches this; see
+`evals/repair-protocol.md` §4b, including its floor.
+
+The test is one question: **does this entry help with a case that is not in its
+examples?** If it only fires on the exact string that prompted it, it is a lookup
+table with prose around it, and it will be wrong the first time the same
+mechanism shows up wearing different words.
+
+Both failure modes were committed on 2026-09-04 and both were caught by a
+reviewer rather than by any check here:
+
+**Writing the instance instead of the class.** The comparative entry in
+`layer-3-surface.md` §8 went in titled *"`daha sonra` becoming `sonra`"* — one
+word pair, and the section named after it. The mechanism is that English marks
+comparison inside the word and Turkish marks it with a separate `daha`, so
+dropping it lands on whatever the bare stem means on its own. That covers `önce`,
+`az` and `ileri` too, and the first version covered none of them.
+
+**Recording a finding as an anecdote and extracting nothing.** *"Sarımsaklı
+yoğurdu ezdim"* — you crush the garlic, not the yoghurt — was filed as a curiosity
+about what the counters had missed. It is an instance of a category the skill had
+no section for at all, and it is now `layer-3-surface.md` §9. A finding that goes
+into `RESULTS.md` and nowhere else has been observed, not learned.
+
+## The third rule: not countable is not the same as not measurable
+
+**Deterministic tools bound correctness. Reading passes bound quality. Both are
+instruments and both need a protocol.**
+
+This is written down because the repository had started to conflate them, and
+the conflation is visible in its own files: `evals/fixtures/devrik.md` concluded
+that a defect could not be acted on because `grep` could not find it, and said
+resolving it "needs a parse". That was wrong twice over. It is not what
+`count.sh` says — its header says *those signals live in the reading half of
+`rubric.md`* — and it is not what this project does, since the fidelity check,
+the blind tally and the diagnostic judge are all reading passes already.
+
+What is genuinely deterministic is a short list, and it is the list a machine
+can be right about: orthography, vowel harmony on a suffix, the apostrophe, a
+banned mark, a phrase that appears verbatim or does not. Everything the skill
+actually exists for — whether a text reads as written by a person, whether a
+device earns its place, whether a sentence is fluent — is a judgement, and a
+count of a judgement is not a measurement of it.
+
+**But a reading pass is not "an agent had an opinion".** Reading judgements have
+a measured error rate here: round six found that judges flip verdicts on files
+the skill did not touch, and round seven's diagnostic judge blamed the passive
+voice on a text that had the same passives as its competitor. So a reading pass
+is run like an instrument:
+
+1. **Do not lead the witness.** Ask what reads wrong, not whether *this* reads
+   wrong. Unprompted identification is evidence; confirmation of a shape you
+   named is not.
+2. **Clean context, and nothing about the project.** No mention of a skill, a
+   comparison, or what is being tested.
+3. **Per instance, with the quotation.** "It feels AI-ish" is unusable. The
+   sentence, quoted, plus what is wrong with it.
+4. **Run a control** — a text without the shape you are chasing. If the reader
+   names something there too, you are reading noise.
+5. **A negative result counts.** A reader who hunts through a paragraph, finds
+   four other things and walks past your shape has told you your shape is fine
+   there.
+
+The worked instance is in `evals/fixtures/devrik.md`: three readers, one
+non-leading question, one of them naming a verbless tail and its mechanism
+without being asked, and one walking past the same shape in a register where it
+belongs.
+
 ## How much testing is enough
 
 Three cases per class. Not seven, not "one more to be safe".

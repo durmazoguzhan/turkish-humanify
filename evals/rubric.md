@@ -122,8 +122,20 @@ reports too much of it, so the narrowest greppable surface — a sentence ending
 a verbless purpose tail — was measured before any counter was written. It returns
 0 hits in 206 sentences of published Turkish, which distinguishes rare from
 absent not at all; most of what it does find sits in list items the prose view
-already drops; and it cannot tell *"yanmasın diye."*, which is correct, from the
-shape #9 objects to. `evals/fixtures/devrik.md` carries the numbers and the
+already drops; and of the rest it cannot tell an afterthought a writer chose from
+the shape #9 objects to — a distinction that turns on register and on whether the
+tail is the sentence's whole content, neither of which a match carries.
+
+**And then it was measured by reading, which is what this half is for.** The
+sentence above stood for a while as "so it cannot be measured", which is the
+mistake this file exists to prevent: `count.sh` not seeing something has never
+meant nobody can. Three clean-context readers, one open question each, settled in
+one pass what the regex could not — one named the defect and its mechanism
+unprompted, one found it in a second unrelated text, and one hunted through the
+paragraph everybody had been arguing about, found four *other* things and walked
+past the tail entirely. `evals/fixtures/devrik.md` has the quotations. The
+protocol that keeps such a pass honest — do not lead the witness, run a control,
+quote per instance — is in `CONTRIBUTING.md`. `evals/fixtures/devrik.md` carries the numbers and the
 hand-labelled sentences, split into three classes, so that whoever tries again
 starts from data rather than from an intuition.
 

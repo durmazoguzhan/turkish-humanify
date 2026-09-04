@@ -50,6 +50,7 @@ layer-3-surface.md|3. Apostrophe (`kesme işareti`)
 layer-3-surface.md|4. `da/de` and `ki`
 layer-3-surface.md|7. Circumflex
 layer-3-surface.md|8. Calqued idioms and empty intensifiers
+layer-3-surface.md|9. Collocation — the verb the noun actually takes
 EOF
 )
 
@@ -71,7 +72,11 @@ for f in layer-1-structure.md layer-2-sentence.md layer-3-surface.md; do
     fi
   done < <(awk '
       /^## / { if (sec != "") printf "%s\t%d\n", sec, n; sec = $0; sub(/^## /, "", sec); n = 0; next }
-      { if (sec != "" && $0 ~ /academic|blog|technical|corporate|register|official|legal/) n++ }
+      # Inline code spans are stripped first. Without that the scan cannot tell a
+      # register from a file name, and `evals/input/blog-6.md` cited inside a
+      # rule about verb-noun pairings was read as the rule naming blog register.
+      { line = $0; gsub(/`[^`]*`/, "", line)
+        if (sec != "" && line ~ /academic|blog|technical|corporate|register|official|legal/) n++ }
       END { if (sec != "") printf "%s\t%d\n", sec, n }' "$refs/$f")
 done
 

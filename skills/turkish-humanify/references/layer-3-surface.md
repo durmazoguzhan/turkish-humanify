@@ -267,8 +267,138 @@ bir şekilde` · `bilmeniz gereken her şey` · `kapsamlı bir rehber` · `gider
 This list is mirrored in `evals/signals/calques.txt` so the skill and the
 measurement agree on what a calque is.
 
+**A word that borrows its meaning from its neighbour, put somewhere it has no
+neighbours.** `sonra` is anaphoric: it means *after that*, and it needs the text
+to have said what *that* was. In prose it always has — *"Önce yemek yedik, sonra
+çıktık"* — which is why the bare word is correct and ordinary there, and why
+`layer-2-sentence.md` §8 can use *"Konuşuruz bunu sonra."* as a worked example
+without trouble. That sentence has a conversation in front of it.
+
+Put the same word on a button and there is nothing in front of it. `Sonra izle`
+points back at a moment the interface never established. The reader decodes it,
+but decoding is the cost.
+
+`daha sonra` does not have that problem, and **not because it is a comparative.**
+Nothing is being compared in *"Daha önce hiç gitmedim"*. `daha sonra` and `daha
+önce` are fixed two-word adverbs meaning *later on* and *previously*; the `daha`
+is part of the word rather than a marker attached to it, and what the pair buys
+is that it stands on its own.
+
+> AI: Sonra izle · Sonra hatırlat · Önce gönderilenleri göster · Buradan devam et
+> İnsan: Daha sonra izle · Daha sonra hatırlat · Daha önce gönderilenleri göster · Kaldığın yerden devam et
+
+**The class this belongs to, which is larger than one word.** Anything that
+borrows meaning from a neighbour breaks when it is given no neighbour: `sonra`,
+`önce`, `orada`, `bunu`, `o zaman`, `tekrar`, a bare `de/da`. Prose supplies the
+antecedent for free and hides the whole problem. A label, a chip, a tooltip, a
+column heading and a push notification supply nothing, and each one is read
+beside strangers rather than after its own first half.
+
+So the question to ask of a string that will stand alone is not whether it is
+grammatical. It is: **what does the reader have to already know for this to mean
+anything, and does anything on the screen tell them?**
+
+**A separate thing that produces the same surface error.** Where English's *-er*
+really is a comparison — *less*, *longer*, *further* — `daha` is the comparative
+marker and is required for the ordinary reason, and dropping it leaves an
+absolute where a relative was meant: `az veri` is *little data*, `daha az veri`
+is *less data*. Same missing word, different mechanism, and worth keeping apart
+because only the first half is about isolation.
+
+**Where the failure comes from, because it says where to look for it.** Measured
+2026-09-04, and the control is what makes it readable. Given the English strings,
+two independent generations both wrote `Sonra izle`, `Sonra oku`, `Sonra
+hatırlat`. Given the same tasks described in Turkish, with no English in front of
+it, the same model wrote **`Daha Sonra İzle`**. Its Turkish is not the problem;
+the mapping is — an English single word is answered with a Turkish single word,
+and the count of words wins over what the word needs. Where English spends two
+words on it already, `older posts` and `see more`, `daha` survives every time.
+
+**Where it stops.** None of these words is being banned and most of their uses
+are right. `sonra` as a postposition — *işlem bittikten sonra* — and as a
+sequencer in running prose; `önce` the same; `orada` and `bunu` wherever the
+sentence before them did their work. The rule has one precondition and it is not
+about the word: **the string has to be one that stands alone.** Inside a
+paragraph, leave it.
+
+**These are deliberately not in `evals/signals/calques.txt`.** Every other entry
+in this section is a fixed phrase a substring match can find. These are words
+that are correct in most of their occurrences, and what makes an occurrence wrong
+is not in the word — it is whether anything around it supplies what the word
+points at. A counter would report every postposition and every sequencer as a
+defect, which is a count reporting direction and never correctness. See
+`CONTRIBUTING.md`.
+
 **An honest note on this section.** Across the twelve-text baseline corpus and
-the human reference texts, this list scored zero hits on both sides. Nothing
-here has been shown to detect anything in current model output. It is kept as a
-guard against phrases that would be wrong if they appeared, not as evidence
-that they do.
+the human reference texts, the fixed-phrase list above scored zero hits on both
+sides. Nothing in it has been shown to detect anything in current model output;
+it is kept as a guard against phrases that would be wrong if they appeared, not
+as evidence that they do. The comparative entry is the exception and the first
+thing in this section measured actually firing.
+
+---
+
+## 9. Collocation — the verb the noun actually takes
+
+Turkish pairs particular verbs with particular nouns, and the pairing is not
+derivable from the meanings. `sarımsak ezilir`, `hamur açılır`, `çay demlenir`,
+`karar verilir`, `göz atılır`. Swap in a verb that means the same thing and the
+sentence stays grammatical and stops being Turkish.
+
+This is the failure that survives every other layer. Structure, syntax and
+orthography can all be right while the sentence describes something nobody does,
+and it is the one a reader trips on first, because it is the one they hear as
+somebody who does not cook, or does not use the thing being described.
+
+> AI: Sarımsaklı yoğurdu ezdim.
+> İnsan: Yoğurda sarımsak ezdim.
+
+> AI: Tabağa koyduğumda rengi doğruydu.
+> İnsan: Tabağa koyduğumda rengi tam olmuştu.
+
+> AI: Mantılar suya girdiğinde yüzeye çıkmalarını izledim.
+> İnsan: Mantıları suya attığımda yüzeye çıkmalarını izledim.
+
+> AI: Tepsiyi tek başıma doldurdum.
+> İnsan: Mantıları tepsiye tek başıma dizdim.
+
+> AI: Bazıları açıldı, içlerindeki kıyma suya karıştı.
+> İnsan: Bazıları patladı, içlerindeki harç suya dağıldı.
+
+**Each pair changes only the pairing**, and that is how a worked example has to
+be built. `attığımda` is left where it is even though a converb would tighten it,
+because tightening it would teach two rules at once and the reader could not tell
+which one this section is. Repair the collocation; leave the rest visibly
+unrepaired for the section that owns it.
+
+Three shapes, and they are worth telling apart because the repair differs.
+The first is a **wrong pairing**: crushing is what happens to the garlic, not to
+the yoghurt. The second is a **calque of an English pairing** — *the colour was
+right* — where Turkish reaches for a different predicate entirely. The third is
+**agency**: dumplings do not enter water, somebody puts them in, and the middle
+voice quietly removes the cook from her own kitchen.
+
+**How to find them, since no count will.** Ask, sentence by sentence, whether
+somebody who has actually done this would describe it this way. That question
+needs the world and not the grammar, which is why it belongs to the reading half
+of `evals/rubric.md` and not to `count.sh`.
+
+**Where it stops.** Do not rewrite a pairing that is merely unusual — Turkish
+tolerates a fresh combination, and hunting for stock phrasing is how prose gets
+flattened into cliché. The target is the pairing that is *wrong*, the one that
+makes a reader stop and reconstruct what was meant. And an established term is
+never a collocation error, however odd it looks from outside: *dava açmak*,
+*hesap kesmek*, *sözleşme feshetmek* are what they are.
+
+**What this rests on, and it grew while being written.** One paragraph, read by
+three people who were told nothing about it, and the findings did not stop: the
+garlic, the tray that is filled rather than laid out, the dumplings that *open*
+rather than burst, the filling that *mixes* rather than spreads. Every one is a
+different verb-noun pairing, and every one is checkable by anybody who has
+cooked — which is a different kind of strength from a rate, because the evidence
+does not depend on trusting anyone's ear.
+
+The paragraph is `evals/input/blog-6.md`. It went through nine evaluation rounds,
+both skills' outputs and every counting pass with none of this noticed, which is
+what a category with no section looks like from inside a project that has one for
+everything else.

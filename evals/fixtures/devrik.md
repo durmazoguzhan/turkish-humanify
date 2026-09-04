@@ -110,17 +110,162 @@ whole method `registers.md` uses for `-mAktAdIr` and the semicolon.
 inside list items, which `count.sh`'s prose view already drops. The signal was
 mostly rediscovering bullets.
 
-**It cannot separate the defect from correct Turkish.** *"Tereyağını kızdırdım,
-pul biberi son anda attım, yanmasın diye."* is in the unaided corpus and is
-exactly right — a natural spoken tail. *"…o da push aktarımı tuttuktan sonra
-siparişi işaretlemek için."* is the shape issue #9 objects to. The regex sees one
-thing. And a signal that can legitimately move either way is the trap
-`CONTRIBUTING.md` now names as its second rule: the count would report direction,
-never correctness.
+**It cannot decide the cases it finds, which is not the same as finding the wrong
+ones.** This paragraph used to say the regex confuses the defect with *correct*
+Turkish, and gave *"Tereyağını kızdırdım, pul biberi son anda attım, yanmasın
+diye."* as the clean positive. A reader disagreed, and the disagreement is the
+useful part:
 
-So Class C stays labelled and unmeasured. What would actually resolve it is a
-parse — a real POS tagger giving verb position — not a better regex, and that is
-a different-sized undertaking than this file was preparing for.
+> A (in the corpus): Tereyağını kızdırdım, pul biberi son anda attım, **yanmasın diye.**
+> B (a reader's version): Tereyağını kızdırdım, pul biberi **yanmasın diye** son anda attım.
+
+B is the canonical placement — the purpose clause sits in the preverbal zone
+modifying `attım`, and the sentence closes on its verb. A trails it. A is not
+*wrong*: appending the reason as an afterthought is something people genuinely
+say, and in a first-person kitchen story it reads as speech rather than as a
+slip. But it is not obviously better than B either, and calling it "correct" was
+overstating what anybody had established.
+
+So the honest statement is narrower and it still holds. The regex finds A and it
+finds *"…o da push aktarımı tuttuktan sonra siparişi işaretlemek için."*, and
+**nothing in the match tells them apart** — not because one is right and the
+other wrong, but because whether a trailing tail earns its place is a judgement
+about register, about length, and about whether the tail is an afterthought or
+the sentence's whole content. A count reports the shape and never the judgement,
+which is `CONTRIBUTING.md`'s second rule arriving from a third direction.
+
+**And then a third reading arrived, which is the actual finding.** Asked again,
+the same reader preferred a version with `ve` in it, and the sentence now has
+four defensible forms — one of which is the one this repository's own rules
+prescribe, and it is arguably the worst of them:
+
+| | |
+|---|---|
+| **A** — in the corpus | Tereyağını kızdırdım, pul biberi son anda attım, yanmasın diye. |
+| **B** — canonical placement | Tereyağını kızdırdım, pul biberi yanmasın diye son anda attım. |
+| **C** — the reader's second | Tereyağını kızdırdım **ve** pul biberi yanmasın diye son anda attım. |
+| **D** — what `layer-2` §2 asks for | Tereyağını kızdır**ıp** pul biberi yanmasın diye son anda attım. |
+| **E** — §2 and §9 together | Tereyağını kızdır**ıp** pul biberi **de** yanmasın diye son anda attım. |
+
+Read them inside the paragraph they belong to, because that is where the answer
+is: *"Sarımsaklı yoğurdu ezdim. […] Tabağa koyduğumda rengi doğruydu."* The
+passage is a run of closed, completed steps.
+
+**B is the tightest of the first three** — the comma keeps that clipped
+step-by-step beat and the sentence closes on its verb. **C is slower and more
+written**, and §2's own limit covers it exactly: *"`ve` is right when the two
+clauses are genuinely parallel and you want the beat between them"*. Two pan
+actions are genuinely parallel. **A** reads as speech and leaves the paragraph's
+last clause dangling. **D** fuses two separate steps into one motion, and the
+passage is about the steps.
+
+That was as far as the analysis got before **E arrived and corrected it.** The
+objection to D was that the converb fuses two steps into one motion. It does —
+and a single `de` on the second element undoes it. `pul biberi de` marks the
+pepper as a second thing alongside the butter, which is exactly the separation
+`-ip` had collapsed.
+
+And `de` is not an outside repair. It is the first item in §9's own list of
+discourse particles, under the sentence *"machine Turkish has none of them"*. So
+E satisfies three of this file's rules at once: §2's converb, the preverbal
+purpose clause, and §9's particle.
+
+**The finding is therefore not the one written above.** It is not that a rule
+applied by the book degrades the sentence. It is that **§2 applied alone degrades
+it and §2 applied with §9 improves it**, and nothing in this file says the
+sections repair each other's side effects. "Reading the layer as a whole" says
+two sections account for most of the work; it does not say a converb can flatten
+a sequence and that a particle is what puts the sequence back.
+
+That is a claim about how the layer is *read*, not about Turkish, and it is worth
+more than the placement question that produced it. It is also unmeasured: five
+readings of one sentence by one reader.
+
+The "where it stops" observation survives at reduced strength. §2's `ve` limit
+still has **no worked example** — the `-ip` same-subject limit has one (*Ben
+geldim ve o gitti*), the three-converb warning has none, and "`ve` is sometimes
+right" has none — and this sentence is still a candidate for it. It is a weaker
+candidate now that the converb turns out to work here with one particle added.
+
+**It cannot go into `layer-2-sentence.md`, and that is not a technicality.**
+`blog-6` is in the evaluation corpus, and round eight established that a worked
+example drawn from the corpus it is measured on stops being a test — the
+generation after that fix returned the example's title verbatim. So the pair
+lives here, where it is data, and not there, where it would become an answer key.
+
+**A reader disagreed with the converb too, which is recorded and not acted on.**
+Given the same paragraph with `atıp` in it — *"Mantıları suya atıp yüzeye
+çıkmalarını izledim"* — one reader objected that *"-ıp ile iki eylemin
+sıkıştırılması, mutfakta anlatan birinin değil çeviri metnin ritmi"*. That is the
+D objection arriving from outside, which makes it two independent instances of
+the same intuition. It is still not a rule: Probe A found the skill does not
+perform this fusion, so there is nothing to write a limit against, and one reader
+on one text is a lead.
+
+**Two things worth keeping from that pair.** It is the first concrete repair
+anybody has written for Class C — *move the tail into the preverbal zone*, not
+delete it — and it exposes a gap wider than Class C: **no section of
+`layer-2-sentence.md` covers adverbial placement at all.** §3 decides which
+single element takes the preverbal slot; nothing says where a purpose clause
+belongs when it is not the focus. Searching that file for `diye`, `adverbial` or
+`purpose clause` returns nothing. A is untouched in the unaided baseline and in
+`v7`, `v9`, `v10`, `v11` and the competitor's output, which is what a rule
+nobody has written looks like from the outside.
+
+So Class C cannot be **counted**. That is not the same as unmeasurable, and this
+paragraph used to say it was — "what would actually resolve it is a parse". It
+was answered by a reader in one question.
+
+## Class C measured by reading, 2026-09-04
+
+Three clean-context readers, one text each, told nothing about this project or
+about any shape being looked for. The question was deliberately open: *"kulağını
+tırmalayan, doğal durmayan, Türkçe konuşan birinin öyle kurmayacağı cümle varsa
+göster"* — quote it, say what bothers you, and if there is none say `yok`.
+
+**Reader A**, given a five-line evidence fragment, named the Class C sentence
+unprompted and named its mechanism:
+
+> *"…o da aktarım onaylandıktan sonra işaretlemek için."* — "işaretlemek için" hem
+> nesnesiz hem de **bağlanacağı yüklem yok**, cümle yarıda kesilmiş gibi duruyor
+
+That is the diagnosis this file spent a probe failing to reach with a regex.
+
+**Reader C**, given a runbook meant as a control, named a second instance —
+which makes the control a failed one and the finding a stronger one:
+
+> *"…teker teker sonlandır, toplu değil."* — Sondaki "toplu değil" İngilizcedeki
+> "not in bulk" kuyruğunun birebir çevirisi gibi duruyor
+
+Two unrelated texts, two readers, neither asked about tails, both landing on one.
+The control was not clean and that is recorded rather than repaired, because a
+clean control is what the next pass needs and pretending this one was clean is
+worse than admitting it was not.
+
+**Reader B is the result that matters most, because it is negative.** Given the
+kitchen paragraph — the one this file has been arguing about — the reader found
+**four** things wrong with it and walked straight past *"…yanmasın diye."*:
+
+> "Sarımsaklı yoğurdu ezdim." — ezilen şey sarımsaktır, yoğurt değil
+> "bazıları açıldı, içindeki kıyma…" — çoğulun ardından tekil "içindeki" tökezletiyor
+> "Tabağa koyduğumda rengi doğruydu" — "the color was right" çevirisi kokuyor
+> "Mantılar suya girdiğinde yüzeye çıkmalarını izledim" — "I watched them rise" kalıbı
+
+A reader actively hunting for unnatural sentences, finding four, and not seeing
+the trailing tail, has settled what four rounds of argument here could not: **A
+is fine.** The forms B, C and E are refinements of a sentence that was not
+broken.
+
+**So the distinction is not "post-verbal material is bad".** It is length and
+what the tail is. A short adverbial trailing a first-person narrative is
+invisible. A verbless proposition trailing a reference document — a whole clause
+that lost its predicate — is named on sight, by a stranger, in the first thing
+they say. That is the shape issue #9 objected to, and it now has evidence.
+
+**One thing the counters have never found, found here by accident.** Reader B's
+first item is a semantic error in `evals/input/blog-6.md`: you crush the garlic,
+not the yoghurt. It has been in the corpus through nine rounds, both skills'
+outputs and every counting pass, unremarked.
 
 ## What would count as a working counter
 

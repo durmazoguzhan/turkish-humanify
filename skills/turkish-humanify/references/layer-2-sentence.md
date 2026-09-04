@@ -245,6 +245,52 @@ and academic prose, where it reads as carelessness rather than voice. Even in
 blog register it is a spice: two or three across a whole piece. An inverted
 sentence that is not carrying emphasis is just a word-order error.
 
+### The thing next to inversion that is not inversion
+
+Nothing is fronted here. The predicate lands in the middle and what follows it is
+apposition, a colon-introduced expansion, or a verbless `-mAk için` tail — a whole
+clause that lost its verb.
+
+> AI: Tüm workspace'i taradığımda çağıran tek yer çıktı: ErpService'in `OrderServiceClient.cs:41`'i, o da push aktarımı tuttuktan sonra siparişi işaretlemek için.
+> İnsan: Tüm workspace'i taradım. İçeriden çağıran tek servis ErpService; çağrı `OrderServiceClient.cs:41`'de. Bu çağrı, push aktarımı başarılı olunca siparişi işaretlemek için yapılıyor.
+
+**That `İnsan:` line is the third attempt and the first two are worth knowing
+about**, because they failed in ways this file has rules for. Readers given the
+first — *"…çağıran tek yer ErpService'in `OrderServiceClient.cs:41`'i çıktı"* —
+objected that a possessive cannot be hung on a file reference. Given a version
+that spelled the reference out, *"ErpService'deki OrderServiceClient.cs
+dosyasının 41. satırı"*, they objected to the possessive chain, which is §11.
+Given one that attached it with a comma, they said it read as a translated note
+line rather than a Turkish sentence.
+
+The reference itself was the problem in all three, and §11 now carries what came
+out of that. It is also the argument the source was making by using a list: this
+content resists being prose, and the cheapest repair is upstream in `layer-1`.
+
+Readers call this *devrik* and the rule above does not cover it, because the verb
+never moved. It was reported as too much inversion in a text that is
+three-quarters verb-final.
+
+**What decides it is the length of the tail and what the tail is**, and that came
+from readers rather than from a count. Given a five-line piece of evidence
+documentation containing the sentence above, a reader who was asked only what
+sounded wrong picked it out first and said why: *"'işaretlemek için' hem nesnesiz
+hem de bağlanacağı yüklem yok, cümle yarıda kesilmiş gibi duruyor."* A second
+reader found the same shape in an unrelated procedure. A third, given a blog
+paragraph with *"…pul biberi son anda attım, yanmasın diye."* in it, listed four
+other complaints and never mentioned the tail.
+
+So: **a short adverbial trailing a first-person narrative is invisible and fine.**
+A verbless proposition trailing a document somebody is reading to find something
+is named on sight. The second is what to repair, and the repair is to give the
+tail its verb back or to fold it in front of one — not to delete it.
+
+**Where this stops.** It is not a ban on anything after the verb. `layer-1`'s
+list rules matter more here than this one does: a tail usually appears because
+something that was a list entry is being carried in prose, and the cheaper fix is
+upstream. And in blog register the trailing afterthought is a real move that the
+reading above found nobody objecting to.
+
 ---
 
 ## 9. Discourse particles
@@ -287,6 +333,19 @@ leaks through.
 **Where it stops.** The pronoun stays when it contrasts — *Ben gittim, o kaldı*
 — and when it is the focus, which is the case in §3: *İzmir'e dün ben gittim.*
 
+**And it stays when the antecedent is not recoverable**, which is a limit this
+section had not stated. Dropping a subject asks the reader to find it, and they
+look backwards to the nearest thing that could be one. When the nearest thing is
+a file path, an identifier or a number, there is nothing there to find:
+
+> AI: … çağrı `OrderServiceClient.cs:41`'de. Push aktarımı başarılı olunca siparişi işaretlemek için çağırıyor.
+> İnsan: … çağrı `OrderServiceClient.cs:41`'de. **Bu çağrı**, push aktarımı başarılı olunca siparişi işaretlemek için yapılıyor.
+
+Two readers put it the same way without being asked: *"öznesi düşürülmüş ama bir
+önceki cümlenin sonunda duran şey dosya yolu olduğu için 'çağırıyor' havada
+kalıyor."* The test is mechanical — read the sentence before, and ask what the
+reader would land on.
+
 ---
 
 ## 11. Noun-compound chains
@@ -308,6 +367,34 @@ Three linked nouns is the practical ceiling. Break longer chains with `-de` /
 be taken apart: *bilgi işlem daire başkanlığı*, *gelir vergisi beyannamesi*,
 *kurumlar vergisi oranı*. Breaking those does not simplify anything; it just
 produces a phrase that names nothing.
+
+### A machine reference is not a noun, and will not behave as one
+
+`OrderServiceClient.cs:41`, `orders.export.batch`, `#4821`, a UUID, a route. They
+name something, so the pull is to use them where a noun goes — take a possessive,
+head a compound, sit in apposition. All three fail, and they fail differently:
+
+| | | why |
+|---|---|---|
+| inflected | `ErpService'in OrderServiceClient.cs:41'i` | a possessive does not attach to a file reference |
+| spelled out | `ErpService'deki OrderServiceClient.cs dosyasının 41. satırı` | the possessive chain this section is about |
+| in apposition | `…tek servis ErpService, OrderServiceClient.cs:41.` | reads as a translated note line, not a sentence |
+
+> İnsan: İçeriden çağıran tek servis ErpService; çağrı `OrderServiceClient.cs:41`**'de**.
+
+**Give it a place rather than a role.** A locative — `-de`, `-deki`, `içinde`,
+`satırında` — lets the reference say where without asking it to be a thing the
+sentence is about. The predicate stays with a real noun.
+
+Measured 2026-09-04 by reading: six readers over three prose versions of the same
+finding, none of them told what was being tested, and every one of them landed on
+the reference. That convergence is the evidence — not the number of findings, for
+which see `evals/repair-protocol.md` §4b.
+
+**Where this stops.** Inside a list entry, a table cell or a heading, the bare
+reference is exactly right and none of this applies: it is not being asked to be
+a sentence constituent there. If a reference resists every prose form you try,
+that is the content telling you it was a list entry.
 
 ---
 

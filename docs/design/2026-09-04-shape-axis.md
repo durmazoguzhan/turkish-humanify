@@ -107,6 +107,24 @@ So the atomic row stays recorded and unbuilt, and the specific proposal in #8 is
 **declined on the strength of #8's own evidence** rather than deferred for want
 of a corpus.
 
+**One thing did land in that column, and it arrived from somewhere else.** A
+reader noticed that YouTube renders *Watch later* as `Daha sonra izle` and not
+`Sonra izle`, which turned out to be measurable: given the English string two
+generations produced the bare form, and given the same task described in Turkish
+the same model produced the full one. The rule that came out of it is in
+`layer-3-surface.md` §8 and it is not about that phrase. It is that **a word
+which borrows its meaning from a neighbour breaks when it is given no
+neighbour** — `sonra`, `önce`, `orada`, `bunu`, `tekrar`. Prose supplies the
+antecedent for free and hides the entire problem; a chip, a tooltip, a column
+heading and a push notification supply nothing.
+
+That is an `atomic`-column rule reached without an `atomic` register, which is
+the case for the axis rather than against it: the failure is a property of the
+object being read alone, it is invariant across every register, and it needed no
+new tone bucket to be written down. It is also #8's own blind spot arriving from
+the other side — subject clarity across three adjacent chips is the same problem
+with a different anaphor.
+
 **Deliberately not built: a fifth register.** "Reference" and "microcopy" both
 read like registers and are not. Adding them would give every future rule two
 plausible homes and would put the tone axis and the shape axis in the same

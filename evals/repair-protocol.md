@@ -257,6 +257,78 @@ re-run tells you which. It costs one generation to resolve instead of three
 judges, which is the cheaper instrument and the reason §5 prefers countable
 targets in the first place.
 
+## 4b. The reading pass, which is an instrument and not an opinion
+
+Three instruments exist here, not two. The blind tally ranks; the fidelity check
+audits; and a **reading pass** answers the questions `count.sh` was built not to
+ask — the ones in the second half of `rubric.md`, about whether a text reads as
+written by a person and whether a device earns its place.
+
+It had been treated as a last resort, and one file went as far as declaring a
+defect unactionable because `grep` could not find it. That is backwards: the
+fidelity check is a reading pass, the diagnostic judge is a reading pass, and
+`count.sh`'s own header says the morphology-dependent signals *live in the
+reading half of `rubric.md`*. Not countable has never meant not measurable.
+
+**The protocol, which is what separates it from asking somebody's opinion.**
+
+1. **Do not lead the witness.** The question is *what reads wrong here*, never
+   *does this read wrong*. An unprompted identification is evidence; a yes to a
+   shape you named is not.
+2. **Clean context.** Nothing about this project, no skill, no comparison, no
+   mention of what is being tested.
+3. **One quotation per finding**, plus what is wrong with it. A verdict without
+   a quotation is not usable and is not counted.
+4. **Run a control** — a text without the shape. If findings come back from it
+   too, the pass is reading noise. When the control turns out to contain the
+   shape after all, say so; a failed control is a fact about the round.
+5. **Negative results count and are the cheapest thing here.** A reader who
+   hunts through a paragraph, produces four findings and walks past your shape
+   has established that your shape is fine in that setting.
+
+The worked instance is in `evals/fixtures/devrik.md` — three readers, one open
+question, a defect and its mechanism named unprompted, and the same shape cleared
+in the register where it belongs.
+
+**The error rates in §3 do not transfer to this, and saying they did was the same
+mistake in a third place.** They were measured on the tally's question — *which
+of these two whole texts reads more human* — which is a global preference with
+nothing to check it against. This asks something else: *quote the sentence that
+reads wrong.* A quoted finding can be read and verified by whoever receives it,
+which is why the fidelity check, asking the same shape of question, is the
+instrument this repository calls objective while calling the tally its noisiest.
+
+Carrying a number measured on one question over to a different one is exactly the
+error `CONTRIBUTING.md`'s second rule names. An old measurement is not owed
+deference because it was expensive.
+
+**The floor, measured 2026-09-04, and it decides how the pass may be used.**
+Twelve readers over five texts, every one asked the same open question. **Not one
+text came back clean.** Three successive rewrites of the same two sentences, each
+repairing what the previous round's readers had named, each drawing fresh
+findings from the next pair of readers.
+
+Two things follow, and the second is the one that costs.
+
+**Counting findings is not a comparison.** Asked for faults, a reader produces
+faults, so "version B drew fewer" measures nothing. What is evidence is
+**convergence**: the same fault named independently by readers looking at
+different variants of the text. Six readers over three rewrites of one finding
+all landed on the file reference, and that is why `layer-2-sentence.md` §11 now
+has a rule about it.
+
+**Iterating until the text comes back clean does not terminate.** Clean never
+arrives, so a pass run that way stops when patience runs out and calls that a
+result. Decide before running what would settle the question, take the answer,
+and stop.
+
+**What it does still owe.** Evidence, per finding, that somebody else can check —
+the quotation, and a reason that does not reduce to the reader's ear. Reader B's
+strongest finding in the worked instance is that you crush the garlic and not the
+yoghurt, and anybody who has cooked can confirm it without trusting the reader at
+all. A finding that cannot be checked that way is a preference, and preferences
+go back under §3.
+
 ## 5. The countable target is the evidence, when there is one
 
 The blind tally is the noisiest instrument in this repository and it is not the

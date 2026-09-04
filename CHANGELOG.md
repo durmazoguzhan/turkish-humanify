@@ -2,6 +2,173 @@
 
 ## Unreleased
 
+### The reading pass has a floor, and it is twelve readers deep
+
+- **Not one text came back clean.** Twelve readers, five texts, the same open
+  question. Three successive rewrites of the same two sentences, each repairing
+  what the previous pair of readers had named, each drawing fresh findings from
+  the next pair. `evals/repair-protocol.md` §4b records what follows:
+  **counting findings is not a comparison** — asked for faults, a reader produces
+  faults — and **iterating until a text comes back clean does not terminate.**
+- **What is evidence is convergence.** Six readers over three rewrites of one
+  sentence all landed on the same thing: a `path:line` reference will not behave
+  as a noun. Inflect it and a possessive cannot attach; spell it out and you have
+  the possessive chain §11 is about; attach it with a comma and it reads as a
+  translated note line. `layer-2-sentence.md` §11 now says to give it a place
+  rather than a role — a locative — and that if it resists every prose form, the
+  content was a list entry.
+- **`layer-2-sentence.md` §10 gains the limit pro-drop was missing.** A dropped
+  subject asks the reader to look backwards; when the nearest candidate is a file
+  path or an identifier there is nothing there to find. Two readers put it the
+  same way unprompted.
+- **§8's worked example was replaced, and its three failed drafts are kept.** The
+  first hung a possessive on a file reference, the second built a possessive
+  chain, the third read as a note line — which is the section's own argument for
+  why the source used a list.
+- **`layer-3-surface.md` §9's evidence was understated and is corrected upward.**
+  The findings did not stop at three: the tray that is *filled* rather than laid
+  out, dumplings that *open* rather than burst, filling that *mixes* rather than
+  spreads. Each pair in that section now changes only the pairing, deliberately
+  leaving a converb untightened, because a pair that repairs four things teaches
+  none of them.
+- **`CONTRIBUTING.md`: check the `İnsan:` line before shipping it.** Three worked
+  examples written this week violated rules in this same repository — a forbidden
+  verb pairing, a possessive on a file reference, an unrecoverable subject.
+- **`scripts/check-doses.sh` had a false positive of its own**: it could not tell
+  a register from a file name, so citing `evals/input/blog-6.md` inside a rule
+  about verb-noun pairings read as that rule naming blog register. Inline code
+  spans are stripped before the scan, and the check was verified still to fail on
+  a real omission.
+
+### Rules are mechanisms, and two entries were not
+
+- **`CONTRIBUTING.md` gains the convention `layer-2-sentence.md` has stated about
+  itself since it was written**, in a place a contributor would find it: an entry
+  is the generic mechanism, then right/wrong pairs, then where it stops. Never a
+  lookup entry. The test is whether it helps with a case that is not in its
+  examples.
+- **`layer-3-surface.md` §8's entry was rewritten twice, and the second time is
+  the one that matters.** It went in titled *"`daha sonra` becoming `sonra`"* —
+  one word pair. Generalising it to "English marks comparison inside the word"
+  was still wrong, and wrong in the way worth recording: **the test it produced
+  answered *no* for the example it was written from.** Nothing is compared in
+  `Daha sonra izle`, or in *"Daha önce hiç gitmedim"*. `daha sonra` and `daha
+  önce` are fixed two-word adverbs, not comparatives.
+- **The mechanism is anaphora, and the class is much larger.** `sonra` borrows
+  its meaning from a neighbour — it means *after that* and needs the text to have
+  said what *that* was. Prose always has, which is why the bare word is correct
+  and ordinary there. A button has nothing in front of it. The same is true of
+  `önce`, `orada`, `bunu`, `o zaman`, `tekrar` and a bare `de/da`, so the question
+  to ask of any string that will stand alone is *what does the reader have to
+  already know for this to mean anything, and does anything on the screen tell
+  them.* Genuine comparatives — `less`, `longer`, `further` — are kept as a
+  separate note, because only the first half is about isolation.
+- This is an `atomic`-column rule reached without an `atomic` register, recorded
+  in `docs/design/2026-09-04-shape-axis.md` as the case for the shape axis rather
+  than against it.
+- **`layer-3-surface.md` §9 is new: collocation, the verb the noun actually
+  takes.** *"Sarımsaklı yoğurdu ezdim"* had been filed as an anecdote about what
+  the counters missed. It is an instance of a category with no coverage at all,
+  and the three findings from that one paragraph turn out to be three different
+  shapes with three different repairs — a wrong pairing, a calqued pairing, and
+  an agency error that removes the cook from her own kitchen. Thin evidence, one
+  reader, and it says so; what carries it is that every instance is checkable by
+  anybody who has crushed garlic.
+- **The judge error rate was being quoted as a caveat on the wrong question.** It
+  was measured on "which of these two whole texts reads more human", a global
+  preference with nothing to check it against. A reading pass asks for a quoted
+  sentence, which the recipient can verify — which is why the fidelity check,
+  asking that shape of question, is the instrument this repository calls
+  objective. `repair-protocol.md` §4b now says what the pass does owe instead:
+  evidence per finding that does not reduce to the reader's ear.
+
+### Not countable is not the same as not measurable
+
+- **A defect was declared unactionable because `grep` could not find it, and a
+  reader settled it in one question.** `evals/fixtures/devrik.md` said resolving
+  the post-verbal-tail shape "needs a parse". It needed three clean-context
+  readers and one open question: *what reads wrong here*.
+- **`layer-2-sentence.md` §8 gains the shape, with the distinction the readers
+  drew.** One named the verbless tail and its mechanism unprompted — *"bağlanacağı
+  yüklem yok, cümle yarıda kesilmiş gibi duruyor"* — and a second found the same
+  shape in an unrelated procedure. A third, given the blog paragraph this had all
+  been argued about, produced **four other complaints and never mentioned the
+  tail**. So the rule is not "nothing after the verb": a short adverbial trailing
+  a narrative is invisible, a verbless proposition trailing a document somebody
+  is reading to find something is named on sight.
+- **`evals/repair-protocol.md` §4b makes the reading pass a named instrument**
+  with a protocol: do not lead the witness, clean context, one quotation per
+  finding, run a control, and negative results count. The fidelity check and the
+  diagnostic judge were already reading passes; this writes down what keeps one
+  honest.
+- **`CONTRIBUTING.md` gains a third rule.** Deterministic tools bound
+  correctness — orthography, vowel harmony, the apostrophe, a banned mark.
+  Reading passes bound quality. A count of a judgement is not a measurement of
+  it, and the error rates measured on readers still apply to readers.
+- **The control was not clean and it is recorded as not clean:** the runbook
+  chosen as one turned out to contain the shape, and the reader found it there
+  too.
+- **Something no counter had found, found by accident.** *"Sarımsaklı yoğurdu
+  ezdim"* — you crush the garlic, not the yoghurt. It has been in
+  `evals/input/blog-6.md` through nine rounds, both skills' outputs and every
+  counting pass, unremarked.
+
+### `daha sonra` is not `sonra`, and the control says why
+
+- **`layer-3-surface.md` §8 gains its first entry measured actually firing.**
+  English builds the comparative inside the word, Turkish with a separate `daha`,
+  and dropping it does not weaken the word — `sonra` is *after* and *then*, `daha
+  sonra` is *later*.
+- Given the English strings, two independent generations both wrote `Sonra izle`,
+  `Sonra oku`, `Sonra hatırlat`. **Given the same tasks described in Turkish with
+  no English in front of it, the same model wrote `Daha Sonra İzle`.** The
+  Turkish is not the problem; the mapping is. And where English spends a separate
+  word on the comparison — `older posts`, `see more` — `daha` survives every time.
+- **Deliberately not added to `evals/signals/calques.txt`.** Bare `sonra` is
+  correct in most of its occurrences, so a counter for it would report the
+  postposition and the sequencer as defects.
+
+### A claim that was too strong, and the gap correcting it exposed
+
+- **`evals/fixtures/devrik.md` claimed a corpus sentence was "correct" and used
+  it to argue the counter cannot be built.** A reader disagreed with the
+  sentence. *"…pul biberi son anda attım, yanmasın diye."* against *"…pul biberi
+  yanmasın diye son anda attım."*: the second is the canonical placement, the
+  purpose clause in the preverbal zone and the sentence closing on its verb.
+  The first is not wrong — appending the reason is something people say — but
+  calling it correct asserted a judgement nobody had made.
+- The argument survives in a narrower form and is better for it: the regex finds
+  both shapes and **nothing in the match tells them apart**, not because one is
+  right, but because whether a trailing tail earns its place turns on register,
+  on length, and on whether the tail is an afterthought or the sentence's whole
+  content. A count reports the shape, never the judgement.
+- **The gap it exposed is wider than the one it was about: no section of
+  `layer-2-sentence.md` covers adverbial placement.** §3 decides which single
+  element takes the preverbal slot; nothing says where a purpose clause belongs
+  when it is not the focus. Searching that file for `diye`, `adverbial` or
+  `purpose clause` returns nothing, and the sentence is untouched in the unaided
+  baseline and in `v7`, `v9`, `v10`, `v11` and the competitor's output — which is
+  what a rule nobody has written looks like from outside.
+- The A/B pair is recorded as the first concrete repair for the class: **move the
+  tail into the preverbal zone, not delete it.** No rule is written from it; one
+  reader's judgement on one sentence is a lead.
+- **Two further readings arrived and the second one corrected the first.** The
+  sentence now has five defensible forms. The fourth is what §2 prescribes — the
+  `-ip` converb — and it fuses two separate kitchen steps into one motion, which
+  looked like a rule degrading a sentence. The fifth adds one particle,
+  `pul biberi **de**`, and undoes exactly that: it marks the pepper as a second
+  thing alongside the butter. `de` is the first item in §9's own list.
+- **So the finding is not "a rule applied by the book makes this worse".** It is
+  that **§2 applied alone makes it worse and §2 applied with §9 makes it better**,
+  and nothing in `layer-2-sentence.md` says the sections repair each other's side
+  effects. "Reading the layer as a whole" says two sections carry most of the
+  work; it does not say a converb can flatten a sequence and that a particle is
+  what puts the sequence back. That is a claim about how the layer is read, and
+  it is unmeasured — five readings of one sentence by one reader.
+- None of it can go into the reference file: `blog-6` is in the evaluation corpus
+  and round eight established that an example drawn from the corpus it is measured
+  on stops being a test. It stays in the fixture, where it is data.
+
 ### Round nine — issue #9: both changes rejected, and one fidelity site found
 
 - **No rule was added to the skill this round.** Both halves of the change under
