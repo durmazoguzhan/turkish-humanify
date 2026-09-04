@@ -39,11 +39,26 @@ sits where a converb belongs, and every sentence lands in the same
 eighteen-to-twenty-five-word band. Readers notice the flatness before they can
 name it.
 
-> **Machine Turkish** — Bu yaklaşımı denedik ancak beklediğimiz sonucu alamadık ve bir süre sonra tamamen farklı bir yöntem üzerinde çalışmaya başladık. Ekip olarak bu kararın doğru olduğunu düşünüyoruz çünkü yeni yöntem hem daha hızlı hem de bakımı daha kolay bir çözüm sunuyor.
+> **In** · `evals/input/technical-3.md`
+>
+> **Git Rebase ile Merge Arasındaki Fark**
+>
+> Bir dalda çalışırken ana dal ilerlemeye devam eder. Er ya da geç bu iki çizgiyi birleştirmeniz gerekir **ve** Git bunun için iki yol sunar: merge ve rebase. İkisi de sonuçta aynı kodu bir araya getirir, **ama** commit geçmişine bıraktıkları iz taban tabana zıt**tır**.
 
-> **Human Turkish** — Bu yaklaşımı denedik. Olmadı. Bir süre sonra bambaşka bir yöntemin üzerine oturduk. Ekip olarak da doğru karar olduğunu düşünüyoruz, çünkü yenisi hem daha hızlı çalışıyor hem de bakımı bizi daha az yoruyor.
+> **Out** · `evals/output/v11/technical-3.md`
+>
+> **Git'te merge ile rebase: aynı kod, farklı geçmiş**
+>
+> Bir dalda çalışırken ana dal ilerlemeye devam eder. Er ya da geç bu iki çizgiyi birleştirmeniz gerekir, Git **de** bunun için iki yol sunar: merge ve rebase. İkisi de sonuçta aynı kodu bir araya getirir. Commit geçmişine bıraktıkları iz **ise** taban tabana **zıt**.
 
-Both are correct Turkish. Only one of them was written by somebody.
+Three sentences, four rules. The reflex `ve` became a comma, one long sentence
+became two, the English *but* became the Turkish particle `ise`, and `zıttır`
+lost a `-DIr` that Turkish does not need in the present tense. Nothing was added:
+the new title's *aynı kod, farklı geçmiş* is the paragraph's own claim.
+
+**The input is not bad Turkish.** It is grammatical, fluent and completely flat,
+and flatness is the thing a reader feels without being able to name it. That is
+what this skill is for; if the input were broken, a proofreader would do.
 
 ---
 

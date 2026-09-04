@@ -38,7 +38,7 @@ voices apply the same way in both modes.
 ## 3. Pick a voice
 
 Read `references/voices.md`. Default to the register's own voice; override when
-the user names one ("denemeci sesle yaz") or supplies a sample ("şu metindeki
+the user names one ("denemeci üslubuyla yaz") or supplies a sample ("şu metindeki
 gibi yaz"), and in that case read the sample's voice off it — on the nine
 dimensions that file lists — before writing anything.
 
