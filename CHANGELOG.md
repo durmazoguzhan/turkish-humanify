@@ -2,6 +2,44 @@
 
 ## Unreleased
 
+### The reading pass has a floor, and it is twelve readers deep
+
+- **Not one text came back clean.** Twelve readers, five texts, the same open
+  question. Three successive rewrites of the same two sentences, each repairing
+  what the previous pair of readers had named, each drawing fresh findings from
+  the next pair. `evals/repair-protocol.md` §4b records what follows:
+  **counting findings is not a comparison** — asked for faults, a reader produces
+  faults — and **iterating until a text comes back clean does not terminate.**
+- **What is evidence is convergence.** Six readers over three rewrites of one
+  sentence all landed on the same thing: a `path:line` reference will not behave
+  as a noun. Inflect it and a possessive cannot attach; spell it out and you have
+  the possessive chain §11 is about; attach it with a comma and it reads as a
+  translated note line. `layer-2-sentence.md` §11 now says to give it a place
+  rather than a role — a locative — and that if it resists every prose form, the
+  content was a list entry.
+- **`layer-2-sentence.md` §10 gains the limit pro-drop was missing.** A dropped
+  subject asks the reader to look backwards; when the nearest candidate is a file
+  path or an identifier there is nothing there to find. Two readers put it the
+  same way unprompted.
+- **§8's worked example was replaced, and its three failed drafts are kept.** The
+  first hung a possessive on a file reference, the second built a possessive
+  chain, the third read as a note line — which is the section's own argument for
+  why the source used a list.
+- **`layer-3-surface.md` §9's evidence was understated and is corrected upward.**
+  The findings did not stop at three: the tray that is *filled* rather than laid
+  out, dumplings that *open* rather than burst, filling that *mixes* rather than
+  spreads. Each pair in that section now changes only the pairing, deliberately
+  leaving a converb untightened, because a pair that repairs four things teaches
+  none of them.
+- **`CONTRIBUTING.md`: check the `İnsan:` line before shipping it.** Three worked
+  examples written this week violated rules in this same repository — a forbidden
+  verb pairing, a possessive on a file reference, an unrecoverable subject.
+- **`scripts/check-doses.sh` had a false positive of its own**: it could not tell
+  a register from a file name, so citing `evals/input/blog-6.md` inside a rule
+  about verb-noun pairings read as that rule naming blog register. Inline code
+  spans are stripped before the scan, and the check was verified still to fail on
+  a real omission.
+
 ### Rules are mechanisms, and two entries were not
 
 - **`CONTRIBUTING.md` gains the convention `layer-2-sentence.md` has stated about

@@ -359,6 +359,18 @@ somebody who does not cook, or does not use the thing being described.
 > AI: Mantılar suya girdiğinde yüzeye çıkmalarını izledim.
 > İnsan: Mantıları suya attığımda yüzeye çıkmalarını izledim.
 
+> AI: Tepsiyi tek başıma doldurdum.
+> İnsan: Mantıları tepsiye tek başıma dizdim.
+
+> AI: Bazıları açıldı, içlerindeki kıyma suya karıştı.
+> İnsan: Bazıları patladı, içlerindeki harç suya dağıldı.
+
+**Each pair changes only the pairing**, and that is how a worked example has to
+be built. `attığımda` is left where it is even though a converb would tighten it,
+because tightening it would teach two rules at once and the reader could not tell
+which one this section is. Repair the collocation; leave the rest visibly
+unrepaired for the section that owns it.
+
 Three shapes, and they are worth telling apart because the repair differs.
 The first is a **wrong pairing**: crushing is what happens to the garlic, not to
 the yoghurt. The second is a **calque of an English pairing** — *the colour was
@@ -378,9 +390,15 @@ makes a reader stop and reconstruct what was meant. And an established term is
 never a collocation error, however odd it looks from outside: *dava açmak*,
 *hesap kesmek*, *sözleşme feshetmek* are what they are.
 
-**What this rests on.** One paragraph, one reader, three findings — thinner than
-most of this file. It is here on strength of a different kind: every one of the
-three is checkable by anybody who has crushed garlic, so the evidence does not
-depend on trusting the reader's ear. The paragraph had been through nine
-evaluation rounds, both skills' outputs and every counting pass with none of
-them noticed.
+**What this rests on, and it grew while being written.** One paragraph, read by
+three people who were told nothing about it, and the findings did not stop: the
+garlic, the tray that is filled rather than laid out, the dumplings that *open*
+rather than burst, the filling that *mixes* rather than spreads. Every one is a
+different verb-noun pairing, and every one is checkable by anybody who has
+cooked — which is a different kind of strength from a rate, because the evidence
+does not depend on trusting anyone's ear.
+
+The paragraph is `evals/input/blog-6.md`. It went through nine evaluation rounds,
+both skills' outputs and every counting pass with none of this noticed, which is
+what a category with no section looks like from inside a project that has one for
+everything else.

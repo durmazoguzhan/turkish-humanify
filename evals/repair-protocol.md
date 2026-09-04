@@ -302,6 +302,26 @@ Carrying a number measured on one question over to a different one is exactly th
 error `CONTRIBUTING.md`'s second rule names. An old measurement is not owed
 deference because it was expensive.
 
+**The floor, measured 2026-09-04, and it decides how the pass may be used.**
+Twelve readers over five texts, every one asked the same open question. **Not one
+text came back clean.** Three successive rewrites of the same two sentences, each
+repairing what the previous round's readers had named, each drawing fresh
+findings from the next pair of readers.
+
+Two things follow, and the second is the one that costs.
+
+**Counting findings is not a comparison.** Asked for faults, a reader produces
+faults, so "version B drew fewer" measures nothing. What is evidence is
+**convergence**: the same fault named independently by readers looking at
+different variants of the text. Six readers over three rewrites of one finding
+all landed on the file reference, and that is why `layer-2-sentence.md` §11 now
+has a rule about it.
+
+**Iterating until the text comes back clean does not terminate.** Clean never
+arrives, so a pass run that way stops when patience runs out and calls that a
+result. Decide before running what would settle the question, take the answer,
+and stop.
+
 **What it does still owe.** Evidence, per finding, that somebody else can check —
 the quotation, and a reason that does not reduce to the reader's ear. Reader B's
 strongest finding in the worked instance is that you crush the garlic and not the

@@ -91,6 +91,19 @@ pairs, and — this part matters as much as the rule — says where the rule sto
 and it is a repository-wide convention that was never written down anywhere a
 contributor would find it.
 
+**A worked pair changes only the thing the section is about.** If the `İnsan:`
+line also tightens a converb, swaps a synonym and fixes the punctuation, the
+reader cannot tell which of the four changes is the rule, and the example teaches
+over-editing on top of whatever it was for. Repair the one thing; leave the rest
+visibly unrepaired.
+
+**And check the `İnsan:` line before shipping it.** Three worked examples written
+on 2026-09-04 violated rules in this same repository — one used a verb pairing
+`layer-3-surface.md` §9 forbids, one hung a possessive on a file reference, one
+put a subject where §10 says the reader cannot recover it. A reading pass on the
+`İnsan:` side costs one subagent and catches this; see
+`evals/repair-protocol.md` §4b, including its floor.
+
 The test is one question: **does this entry help with a case that is not in its
 examples?** If it only fires on the exact string that prompted it, it is a lookup
 table with prose around it, and it will be wrong the first time the same

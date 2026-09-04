@@ -193,6 +193,15 @@ example drawn from the corpus it is measured on stops being a test — the
 generation after that fix returned the example's title verbatim. So the pair
 lives here, where it is data, and not there, where it would become an answer key.
 
+**A reader disagreed with the converb too, which is recorded and not acted on.**
+Given the same paragraph with `atıp` in it — *"Mantıları suya atıp yüzeye
+çıkmalarını izledim"* — one reader objected that *"-ıp ile iki eylemin
+sıkıştırılması, mutfakta anlatan birinin değil çeviri metnin ritmi"*. That is the
+D objection arriving from outside, which makes it two independent instances of
+the same intuition. It is still not a rule: Probe A found the skill does not
+perform this fusion, so there is nothing to write a limit against, and one reader
+on one text is a lead.
+
 **Two things worth keeping from that pair.** It is the first concrete repair
 anybody has written for Class C — *move the tail into the preverbal zone*, not
 delete it — and it exposes a gap wider than Class C: **no section of
