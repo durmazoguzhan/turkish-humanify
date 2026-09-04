@@ -1,4 +1,4 @@
-# Türkçe Humanizer — corporate-2.md
+# Competitor output — corporate-2.md
 
 ## Register Teşhisi
 

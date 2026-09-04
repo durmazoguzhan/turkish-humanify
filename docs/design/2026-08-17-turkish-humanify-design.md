@@ -33,7 +33,7 @@ arranged in English architecture:
 - Turkish fuses clauses with a rich **converb** system (`-ip`, `-erek`, `-ince`,
   `-dikçe`, `-meden`, `-ken`). LLMs reach for `ve` because English reaches for *and*.
 
-The existing skill in this space, `turkce-humanizer`, is a genuine improvement over
+The existing skill in this space is a genuine improvement over
 nothing: it removes punctuation inflation, `-mektedir` inflation, sentence monotony,
 the "sadece X değil aynı zamanda Y" calque, and hollow closings. But it operates at
 the surface. It cleans sentences; the *composition* stays English. Remove every em
@@ -51,7 +51,7 @@ equivalent must survive untouched.
 2. Work in two directions: repair existing text, and write new text natively.
 3. Cover four registers with different intervention doses.
 4. Never invent facts, never force-translate technical terms, never change meaning.
-5. Be measurably better than `turkce-humanizer` on a shared corpus.
+5. Be measurably better than `competitor` on a shared corpus.
 6. Ship through three channels from one repository: Claude Code plugin,
    `npx skills add`, and skillsllm.com.
 
@@ -303,9 +303,9 @@ smells like a template?
 
 ### 11.3 Comparison
 
-The same twelve inputs are also run through `turkce-humanizer`, giving a three-way
-comparison — raw AI output / turkce-humanizer / turkish-humanify. The claim "better
-than turkce-humanizer" is only made on that evidence.
+The same twelve inputs are also run through `competitor`, giving a three-way
+comparison — raw AI output / competitor / turkish-humanify. The claim "better
+than competitor" is only made on that evidence.
 
 ## 12. Open decision: prose language experiment
 
@@ -337,6 +337,6 @@ rationalised afterwards.
 3. `rubric.md` and `count.sh`.
 4. Language experiment (§12) → decision.
 5. Remaining reference files in the winning language.
-6. Full run over the corpus; three-way comparison against `turkce-humanizer`.
+6. Full run over the corpus; three-way comparison against `competitor`.
 7. Iterate on whatever the rubric exposes.
 8. README, CHANGELOG, publish to GitHub under the personal account.

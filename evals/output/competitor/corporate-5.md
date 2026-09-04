@@ -1,4 +1,4 @@
-# Türkçe Humanizer Çıktısı — corporate-5
+# Competitor output — corporate-5
 
 ## Register Teşhisi
 

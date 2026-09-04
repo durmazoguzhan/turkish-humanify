@@ -1,4 +1,4 @@
-# Türkçe Humanizer — Çıktı
+# Competitor output
 
 **Register teşhisi:** Akademik-kurumsal (akademik makale özeti). Kullanıcı onayı istenmediği için teşhis doğrudan uygulandı. Faz 2'de yalnızca **Sinyal 15 (cümle uzunluğu patlamaları)** ve **Sinyal 18 (öz-düzeltme)** kullanıldı; ayrıca pasif bağımlılığını (Sinyal 11) onarmak için sınırlı ölçüde **Sinyal 22 (birinci çoğul)** uygulandı. Konuşma bağlaçları, retorik soru, duyusal detay ve diyalog izi bu register'da devre dışı bırakıldı.
 

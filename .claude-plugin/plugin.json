@@ -1,7 +1,7 @@
 {
   "name": "turkish-humanify",
-  "version": "0.4.6",
-  "description": "Writes and repairs Turkish that reads as human-written: native sentence architecture, register-aware intervention, and technical terms left intact",
+  "version": "0.4.7",
+  "description": "Turkish humanizer: writes and repairs Turkish that reads as human-written — native sentence architecture, register-aware intervention, and technical terms left intact",
   "author": {
     "name": "Oguzhan Durmaz",
     "email": "durmazoguzhan@yahoo.com"
@@ -12,9 +12,13 @@
   "keywords": [
     "turkish",
     "turkce",
-    "writing",
     "humanizer",
+    "turkish-humanizer",
+    "ai-humanizer",
+    "text-humanizer",
+    "writing",
     "localization",
+    "nlp",
     "skills"
   ]
 }

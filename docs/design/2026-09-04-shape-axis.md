@@ -132,7 +132,7 @@ column, which is the confusion that produced both issues.
 
 ## The rejected alternative, and why it is worth naming
 
-The competing skill `turkce-humanizer` solved this in v3.0–v3.2 with a
+The competing skill solved this in v3.0–v3.2 with a
 register-independent pre-pass called **Yapı Koruma**: lists stay lists, headings,
 tables, blockquotes and code blocks are untouched, and the document skeleton is
 off limits unless the user explicitly asks for it to change. It sidesteps the

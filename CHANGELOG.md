@@ -2,6 +2,46 @@
 
 ## Unreleased
 
+### The README is two READMEs, and the comparison arm lost its name
+
+- **`README.md` was rewritten around worked pairs rather than around prose.**
+  Roughly thirty before/after pairs now carry what four paragraphs of explanation
+  used to assert, grouped by the layer that produces them, and two Mermaid
+  diagrams carry the two decisions a reader was previously asked to reconstruct:
+  the mode-register-voice-layers pipeline, and how a voice gets chosen. English
+  prose is down by about a third; the file is longer because the examples are new.
+- **`README.tr.md` added**, and written through the skill rather than about it.
+  It obeys the invariants it documents: no em dash outside the examples that
+  exist to show one, ranges on the plain hyphen, decimal comma, technical terms
+  kept and inflected from pronunciation. The two files carry the same sections,
+  the same anchors and the same numbers, so a drift between them is visible.
+- **The counting-bug tally was unified at ten.** `README.md` had said ten in one
+  place and eight in another and `CONTRIBUTING.md` said eight; `evals/rubric.md`
+  documents ten numbered bugs, so ten is what all three now say.
+- **Three worked examples were violating the invariants they sit next to.**
+  `layer-2-sentence.md` §13's `İnsan:` line joined two clauses with an em dash,
+  which invariant 2 forbids; it is a sentence break now, which is also a better
+  demonstration of the length variance that section is about. `write-mode.md`
+  had an em dash in a `Sağlam:` placeholder example, now a colon like its
+  sibling, and an en dash between two placeholders in a `Fazla:` line, now the
+  plain hyphen `layer-3-surface.md` §5 requires. The `AI:` lines that carry an
+  em dash or an en dash on purpose were left alone: showing the error is their
+  job. The README quotes the §13 pair, so both language versions moved with it.
+- **Every reference to the comparison skill was removed, including its name.**
+  The two comparison-output directories are now `evals/output/competitor/` and
+  `evals/output/competitor-text/`, the twelve report headings inside the full outputs are neutral, and the prose in
+  `RESULTS.md`, `RESULTS-write.md`, `rubric.md`, `repair-protocol.md`,
+  `fixtures/devrik.md` and the three design documents refers to `competitor`.
+  **The byte-identical guarantee is intact**: git records every file under
+  `competitor-text/` as a pure rename, which is the arm the judges were given.
+  `repair-protocol.md` §2 records the rename so a later reader does not have to
+  infer it.
+- **Repository metadata was rewritten for discoverability.** The GitHub
+  description, eighteen topics, and the `keywords` in `.claude-plugin/plugin.json`
+  and `tags` in `marketplace.json` now name the thing people search for. The
+  plugin description leads with "Turkish humanizer".
+
+
 ### The reading pass has a floor, and it is twelve readers deep
 
 - **Not one text came back clean.** Twelve readers, five texts, the same open
@@ -287,7 +327,7 @@
   boast `references/rewrite-mode.md` deleted two rounds ago on the grounds that a
   rule reporting its own perfect compliance does not get checked. Replaced with
   the actual record: four findings in round seven, one in round eight.
-- `README.md` also conceded document-structure preservation to `turkce-humanizer`
+- `README.md` also conceded document-structure preservation to `competitor`
   outright; round nine measured this skill at ten of eleven, so the concession is
   now stated at its measured size — their guarantee against our measurement.
 - Corpus count 21 → 26, counting bugs 8 → 10, both in `README.md` and
@@ -357,7 +397,7 @@
 
 ### Repair mode re-measured after the split
 
-- Round five in `evals/RESULTS.md`: **16-5 against `turkce-humanizer` across
+- Round five in `evals/RESULTS.md`: **16-5 against `competitor` across
   twenty-one files**, two-sided p=0.027, competitor arm held byte-identical.
   Corporate went from 2-3 to 4-1 and is no longer the register this skill loses;
   academic went from 5-0 to 3-2.
@@ -430,7 +470,7 @@ First release.
   subagents given ordinary short prompts, plus published Turkish excerpts for
   calibration.
 - `count.sh` and a fixture test with hand-verified counts.
-- Three-way comparison against `turkce-humanizer` in `evals/RESULTS.md`:
+- Three-way comparison against `competitor` in `evals/RESULTS.md`:
   both skills beat raw model output decisively; the two skills tie on blind
   reading quality; fidelity is 0 added claims against 23.
 

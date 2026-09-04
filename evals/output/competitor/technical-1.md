@@ -1,4 +1,4 @@
-# Türkçe Humanizer Çıktısı — technical-1
+# Competitor output — technical-1
 
 ## 1. Tespit Raporu
 

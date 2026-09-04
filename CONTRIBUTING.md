@@ -190,7 +190,7 @@ it justifies a rule. Loosen the cheap instrument, not the expensive one.
 
 ## Touching `evals/count.sh`
 
-Eight counting bugs have been found in this file, and every one of them had
+Ten counting bugs have been found in this file, and every one of them had
 already produced a confident wrong finding that was reported as a result. If you
 change a regex:
 

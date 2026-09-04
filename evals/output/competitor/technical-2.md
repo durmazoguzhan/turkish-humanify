@@ -1,4 +1,4 @@
-# Türkçe Humanizer — Çıktı Raporu
+# Competitor output — report
 
 **Kaynak:** `evals/input/technical-2.md`
 **Register teşhisi:** Analitik / teknik blog (Deneme-blog ucunda). Metin baştan sona "siz" hitabı kullanıyor, retorik soru zaten var, ton öğretici ama resmi değil. Bu yüzden Faz 2'yi tam uyguladım — argo ve ağır konuşma dili ("valla," "ulan") hariç, çünkü metin teknik bir referans olarak da okunacak.

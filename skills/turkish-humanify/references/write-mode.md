@@ -75,7 +75,7 @@ final vowel until it is filled. `[Fırın adı]'nda` breaks: *Ekmekçi'nde* but
 *Fırın'da*. Write around the join instead of guessing:
 
 > Kırılgan: [Fırın adı]'nda her sabah taze ekmek çıkıyor.
-> Sağlam: Her sabah taze ekmek çıkıyor — [Fırın adı].
+> Sağlam: Her sabah taze ekmek çıkan bir yer var: [Fırın adı].
 
 > Kırılgan: [Ürün adı]'yla başlayın.
 > Sağlam: Şu ürünle başlayın: [Ürün adı].
@@ -87,7 +87,7 @@ phone number. It is not for every specific the sentence could live without.
 > Fazla: Gün, mahalle uyanmadan [saat]'te başlıyor.
 > İyi: Gün, mahalle uyanmadan başlıyor.
 
-> Fazla: Akşamüstü [saat]–[saat] arası tezgah çabuk boşalıyor.
+> Fazla: Akşamüstü [saat]-[saat] arası tezgah çabuk boşalıyor.
 > İyi: Akşamüstü tezgah çabuk boşalıyor.
 
 Measured: one 400-word bakery post came out with eighteen placeholders, eleven
