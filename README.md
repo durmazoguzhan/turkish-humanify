@@ -1,4 +1,9 @@
-# turkish-humanify
+<h1>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="brand/logo-dark.png">
+    <img alt="turkish-humanify" src="brand/logo.png" width="460">
+  </picture>
+</h1>
 
 A Claude skill for Turkish that reads as if a person wrote it.
 
@@ -181,6 +186,17 @@ update key Claude Code compares against, so it is derived by `scripts/version.sh
 and enforced in CI rather than maintained by hand — it had already drifted
 through a mode split and seven counter fixes while still claiming `1.0.0`.
 
+## Brand
+
+`brand/` holds the logo, the variants and `brand/guidelines.md`. The mark draws
+the converb: two arms arrive, one body leaves, and the conjunction that English
+would have needed is the width that went missing.
+
+It was made with [svg-logo-maker](https://github.com/durmazoguzhan/svg-logo-maker)
+and every number in the guidelines is measured rather than asserted — which is
+how the accent colour came to change, the first one being outside what a press
+can reach.
+
 ## Licence
 
-MIT. See `LICENSE`.
+MIT. See `LICENSE`. The logo and the files in `brand/` are covered by it too.

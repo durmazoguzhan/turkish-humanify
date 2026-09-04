@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1539.07 352">
+  <title>turkish-humanify</title>
+  <!-- Live text is the master. outline.sh freezes it at delivery; keep this
+       file editable, because a wordmark you cannot retype you cannot fix. -->
+  <g id="icon" transform="translate(-20, -48) scale(0.875)">
+    <path id="arm-upper" fill="#14171A"
+          d="M 96 128 L 152 128 C 224 128, 232 216, 272 216 L 416 216 L 416 256 L 272 256 C 216 256, 208 184, 152 184 L 96 184 Z"/>
+    <path id="arm-lower" fill="#B7543C"
+          d="M 96 384 L 152 384 C 224 384, 232 296, 272 296 L 416 296 L 416 256 L 272 256 C 216 256, 208 328, 152 328 L 96 328 Z"/>
+  </g>
+  <text id="wordmark" x="456" y="214.081"
+        font-family="Lato" font-weight="700" font-size="133.5"
+        fill="#14171A">turkish<tspan fill="#B7543C">-</tspan>humanify</text>
+</svg>

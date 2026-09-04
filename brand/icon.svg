@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="41.600 13.600 324.800 324.800"><defs id="defs14" />
+  <title id="title2">turkish-humanify</title>
+  
+  <g id="icon" transform="matrix(0.875,0,0,0.875,-20,-48)">
+    <path id="arm-upper" fill="#14171a" d="m 96,128 h 56 c 72,0 80,88 120,88 h 144 v 40 H 272 c -56,0 -64,-72 -120,-72 H 96 Z" />
+    <path id="arm-lower" fill="#b7543c" d="m 96,384 h 56 c 72,0 80,-88 120,-88 H 416 V 256 H 272 c -56,0 -64,72 -120,72 H 96 Z" />
+  </g>
+  </svg>
