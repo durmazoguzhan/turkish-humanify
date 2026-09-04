@@ -21,7 +21,7 @@
   <a href="#nasıl-çalışıyor">Nasıl çalışıyor</a> ·
   <a href="#ne-değişiyor">Öncesi / sonrası</a> ·
   <a href="#registerlar-aynı-iddia-üç-doz">Register'lar</a> ·
-  <a href="#sesler-kim-konuşuyor">Sesler</a> ·
+  <a href="#üslup-kim-konuşuyor">Üslup</a> ·
   <a href="#kanıt">Kanıt</a> ·
   <a href="#sık-sorulanlar">Sık sorulanlar</a>
 </p>
@@ -38,11 +38,26 @@ LLM Türkçesi dilbilgisi açısından kusursuz, ama içi boş. Kelimeler Türk�
 gerektiren yere `ve` giriyor, her cümle aynı 18-25 kelimelik banda oturuyor.
 Okur bu düzlüğü, adını koyamadan fark eder.
 
-> **Makine Türkçesi:** Bu yaklaşımı denedik ancak beklediğimiz sonucu alamadık ve bir süre sonra tamamen farklı bir yöntem üzerinde çalışmaya başladık. Ekip olarak bu kararın doğru olduğunu düşünüyoruz çünkü yeni yöntem hem daha hızlı hem de bakımı daha kolay bir çözüm sunuyor.
+> **Girdi** · `evals/input/technical-3.md`
+>
+> **Git Rebase ile Merge Arasındaki Fark**
+>
+> Bir dalda çalışırken ana dal ilerlemeye devam eder. Er ya da geç bu iki çizgiyi birleştirmeniz gerekir **ve** Git bunun için iki yol sunar: merge ve rebase. İkisi de sonuçta aynı kodu bir araya getirir, **ama** commit geçmişine bıraktıkları iz taban tabana zıt**tır**.
 
-> **İnsan Türkçesi:** Bu yaklaşımı denedik. Olmadı. Bir süre sonra bambaşka bir yöntemin üzerine oturduk. Ekip olarak da doğru karar olduğunu düşünüyoruz, çünkü yenisi hem daha hızlı çalışıyor hem de bakımı bizi daha az yoruyor.
+> **Çıktı** · `evals/output/v11/technical-3.md`
+>
+> **Git'te merge ile rebase: aynı kod, farklı geçmiş**
+>
+> Bir dalda çalışırken ana dal ilerlemeye devam eder. Er ya da geç bu iki çizgiyi birleştirmeniz gerekir, Git **de** bunun için iki yol sunar: merge ve rebase. İkisi de sonuçta aynı kodu bir araya getirir. Commit geçmişine bıraktıkları iz **ise** taban tabana **zıt**.
 
-İkisi de doğru Türkçe. Ama birini biri yazmış.
+Üç cümle, dört kural. Refleks `ve` virgüle döndü, uzun cümle ikiye bölündü,
+İngilizcenin *but*'ı yerini `ise` parçacığına bıraktı, `zıttır` da Türkçenin
+geniş zamanda ihtiyaç duymadığı `-DIr`'i bıraktı. Hiçbir şey eklenmedi: yeni
+başlıktaki *aynı kod, farklı geçmiş*, paragrafın kendi iddiası.
+
+**Girdi kötü Türkçe değil.** Dilbilgisi yerinde, akıcı, ve tamamen düz. Okurun
+adını koyamadan hissettiği şey de o düzlük. Bu skill onun için var; girdi bozuk
+olsaydı bir düzeltmen yeterdi.
 
 ---
 
@@ -84,7 +99,7 @@ flowchart LR
     IN(["Türkçe metin<br/>ya da brief"]) --> MODE{"Metin<br/>verildi mi?"}
     MODE -- "evet" --> RP["<b>onarım</b><br/>sadakat kilitli:<br/>hiçbir şey eklenmez"]
     MODE -- "hayır, brief" --> WR["<b>yazma</b><br/>ilk cümleden önce<br/>Türkçe kurgu"]
-    RP --> DOSE["register ve ses<br/>dozu belirler"]
+    RP --> DOSE["register ve üslup<br/>dozu belirler"]
     WR --> DOSE
     DOSE --> L1["<b>Katman 1</b><br/>kompozisyon"]
     L1 --> L2["<b>Katman 2</b><br/>cümle"]
@@ -202,7 +217,7 @@ hepsini, kör hakemler tam da bu kuralların ürettiği çıktıda teşhis etti.
 
 Ölçülmüş örnek: bir blog yazısında skill dört cümleyi `ama` ile bitirdi.
 Kaynakta bu kalıp **sıfır** kez geçiyordu. Kaynağın hiç kullanmadığı bir aracın
-dört yüz kelimede dört kez çıkması ses değil, doldurulmuş bir kota. Bu yüzden
+dört yüz kelimede dört kez çıkması üslup değil, doldurulmuş bir kota. Bu yüzden
 her araç metin çıkmadan önce silme testinden geçiyor: kaldır, hiçbir şey
 kaybolmuyorsa süstü, gider.
 
@@ -235,17 +250,17 @@ Aynı iddia, üç dozda. Değişen şey yazanın ne kadar duyulduğu; içerik de
 
 ---
 
-## Sesler: kim konuşuyor
+## Üslup: kim konuşuyor
 
-Buradaki ses "samimi" ya da "akıcı" değil; o kelimeler hiçbir talimat taşımıyor.
-Ses, **gözlenebilir dokuz boyuttaki** bir konum: hitap, cümle uzunluğu ve
+Buradaki üslup "samimi" ya da "akıcı" değil; o kelimeler hiçbir talimat
+taşımıyor. Üslup, **gözlenebilir dokuz boyuttaki** bir konum: hitap, cümle uzunluğu ve
 salınımı, cümlecik bağlama biçimi, kip dağılımı, parçacık yoğunluğu, terim
 tercihi, devriklik oranı, paragraf uzunluğu, somutluk.
 
 ```mermaid
 flowchart TD
-    Q{"Kullanıcı bir ses adı verdi mi,<br/>ya da örnek metin mi bıraktı?"}
-    Q -- "ses adı verdi" --> USE(["O profili kullan"])
+    Q{"Kullanıcı bir üslup adı verdi mi,<br/>ya da örnek metin mi bıraktı?"}
+    Q -- "üslup adı verdi" --> USE(["O profili kullan"])
     Q -- "örnek bıraktı" --> READ(["Dokuz boyutu örnekten oku,<br/>yazmaya başlamadan önce<br/>hepsini yaz"])
     Q -- "ikisi de yok" --> REG{Register}
     REG -- "blog / deneme" --> B(["senli-benli anlatıcı"])
@@ -255,7 +270,7 @@ flowchart TD
     E(["denemeci"]) -. "asla varsayılan değil: metne birinci tekil<br/>şahıs koyuyor, o yüzden seçiliyor" .-> REG
 ```
 
-| Ses | Kim konuşuyor | Bir cümlesi |
+| Üslup | Kim konuşuyor | Bir cümlesi |
 |---|---|---|
 | `senli-benli anlatıcı` | daha yeni dönmüş, masanın karşısından anlatıyor | Güzeldi orası, gerçekten. |
 | `teknik anlatıcı` | bunu geçen ay gecenin ikisinde debug etmiş, aynı geceyi sana yaşatmıyor | Blog yazısı beş dakika eski kalabilir. Stok adedi kalamaz. |
@@ -263,7 +278,7 @@ flowchart TD
 | `kurumsal ama insan` | müşterinin mailine bizzat cevap yazan kurucu | Sözleşme yok, istediğiniz an iptal edersiniz. |
 | `nötr-resmi` | bilerek hiç kimse; ama işini bilen birinin editlediği bir hiç kimse | Ampirik alanyazın tek yönlü bir tablo sunmamaktadır. |
 
-**Ses, zaten orada duran malzemeye karşı alınan tavırdan çıkıyor; yeni
+**Üslup, zaten orada duran malzemeye karşı alınan tavırdan çıkıyor; yeni
 malzemeden değil.** Sıralama, vurgu, çekince koyma, zorluğu itiraf etme ve
 öz-düzeltme her zaman elinin altında. Kaynağın anlatmadığı birinci tekil bir
 deneyim değil. Bu sınır, aşağıda anlatılan ölçülmüş bir hatadan çıktı.

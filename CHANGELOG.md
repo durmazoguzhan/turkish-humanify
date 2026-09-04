@@ -2,6 +2,30 @@
 
 ## Unreleased
 
+### The headline example is a real run now, and `voice` is `üslup`
+
+- **`README.tr.md` says `üslup` where it said `ses`.** `ses` was defensible and it
+  was already the project's own word: `SKILL.md` expected the user to type
+  *"denemeci sesle yaz"*. It loses on collocation instead. In an AI tool's README
+  `ses` collides with audio, and the collision bites hardest in the pipeline
+  diagram, where the term appears about 150 lines before the section that defines
+  it. `üslup` is said in Turkish, inflects cleanly and carries no second sense.
+  `SKILL.md` moved with it, so the docs and the router name the same thing.
+- **The headline before/after pair was not a real run, and now it is.** It was the
+  hand-authored teaching pair from `layer-2-sentence.md` §13, written to
+  illustrate one rule, and it does not survive being the first thing a reader
+  sees: the input is a fluent paragraph and the output is clipped enough that a
+  native reader called the input better. The pair is now
+  `evals/input/technical-3.md` against `evals/output/v11/technical-3.md`, quoted
+  verbatim with both paths cited. Three sentences carry four rules — the reflex
+  `ve`, one long sentence split in two, English *but* becoming `ise`, and `zıttır`
+  losing its `-DIr` — and nothing is added, which the reader can check because the
+  files are in the repository.
+- **The README now says the input is not bad Turkish.** It is grammatical, fluent
+  and flat, and flatness is the thing being repaired. Claiming otherwise invites
+  exactly the objection that produced this change.
+
+
 ### The README is two READMEs, and the comparison arm lost its name
 
 - **`README.md` was rewritten around worked pairs rather than around prose.**
