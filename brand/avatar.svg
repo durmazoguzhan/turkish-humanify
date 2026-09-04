@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <title>turkish-humanify avatar</title>
+  <!-- Full bleed, no rounded corners: GitHub crops this to a circle and a
+       rounded square inside a circle reads as a mistake. -->
+  <rect id="plate" x="0" y="0" width="512" height="512" fill="#14171A"/>
+  <g id="icon">
+    <path id="arm-upper" fill="#FAF7F2"
+          d="M 96 128 L 152 128 C 224 128, 232 216, 272 216 L 416 216 L 416 256 L 272 256 C 216 256, 208 184, 152 184 L 96 184 Z"/>
+    <path id="arm-lower" fill="#B7543C"
+          d="M 96 384 L 152 384 C 224 384, 232 296, 272 296 L 416 296 L 416 256 L 272 256 C 216 256, 208 328, 152 328 L 96 328 Z"/>
+  </g>
+</svg>
